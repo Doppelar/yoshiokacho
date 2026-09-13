@@ -4,6 +4,7 @@ import type { BillStatusEnum } from "../types";
 export function getCardStatusLabel(status: BillStatusEnum): string {
   switch (status) {
     case "introduced":
+      return "議事日程掲載";
     case "in_originating_house":
     case "in_receiving_house":
       return "国会審議中";

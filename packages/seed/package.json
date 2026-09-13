@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "seed": "tsx main/run.ts",
+    "seed:yoshioka": "tsx yoshioka/run.ts",
     "seed:csv": "tsx csv/import-csv.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
     "seed:general-questions": "tsx general-questions/import-general-questions.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

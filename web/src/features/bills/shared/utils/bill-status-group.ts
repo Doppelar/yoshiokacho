@@ -19,7 +19,7 @@ export type BillStatusGroup = (typeof BILL_STATUS_GROUPS)[number];
 
 export const BILL_STATUS_GROUP_LABELS: Record<BillStatusGroup, string> = {
   all: "すべて",
-  deliberating: "審議中",
+  deliberating: "掲載・審議中",
   waiting: "審議待ち",
   enacted: "実施済み",
   rejected: "否決",
@@ -28,9 +28,8 @@ export const BILL_STATUS_GROUP_LABELS: Record<BillStatusGroup, string> = {
 /**
  * status をタブのグループに畳む。
  *
- * 既存の `getCardStatusLabel` と同じ畳み方にする。あちらは `introduced` を
- * 「国会審議中」に含めるので、ここで「審議待ち」に落とすと、カードに
- * 「国会審議中」と出ている法案が「審議中」タブに現れない。
+ * `introduced` は議事日程への掲載のみ確認できている議案も含む。
+ * 審議開始を断定しないよう、タブ名は「掲載・審議中」とする。
  *
  * 結果として「審議待ち」に残るのは `preparing`（提出前）だけになる。
  */
