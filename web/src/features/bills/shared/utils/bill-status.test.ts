@@ -10,8 +10,8 @@ describe("getCardStatusLabel", () => {
     expect(getCardStatusLabel(status)).toBe(expected);
   });
 
-  it("enacted → 法案成立", () => {
-    expect(getCardStatusLabel("enacted")).toBe("法案成立");
+  it("enacted → 実施済み", () => {
+    expect(getCardStatusLabel("enacted")).toBe("実施済み");
   });
 
   it("rejected → 否決", () => {

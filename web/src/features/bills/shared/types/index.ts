@@ -100,7 +100,7 @@ export function getBillStatusLabel(
       }
       return "審議中"; // フォールバック
     case "enacted":
-      return "成立";
+      return "実施済み";
     case "rejected":
       return "否決";
     default:

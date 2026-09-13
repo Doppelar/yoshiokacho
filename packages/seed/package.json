@@ -9,6 +9,10 @@
     "seed:csv": "tsx csv/import-csv.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
+    "seed:general-questions": "tsx general-questions/import-general-questions.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@mirai-gikai/supabase": "workspace:*",
@@ -18,6 +22,7 @@
   "devDependencies": {
     "@types/node": "^22.5.5",
     "tsx": "^4.19.1",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.4"
   }
 }
