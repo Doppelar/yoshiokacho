@@ -51,11 +51,21 @@ export async function BillDetailLayout({
         <Container>
           {/* 議案ステータス進捗 */}
           <div className="my-8">
-            <BillStatusProgress
-              status={bill.status}
-              originatingHouse={bill.originating_house}
-              statusNote={bill.status_note}
-            />
+            {bill.slug?.startsWith("yoshioka-") ? (
+              <section className="rounded-lg border p-6">
+                <h2 className="text-xl font-bold mb-3">議事日程への掲載状況</h2>
+                <p>{bill.status_note}</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  審議経過・議決結果は出典の公式資料をご確認ください。
+                </p>
+              </section>
+            ) : (
+              <BillStatusProgress
+                status={bill.status}
+                originatingHouse={bill.originating_house}
+                statusNote={bill.status_note}
+              />
+            )}
           </div>
 
           <BillContent bill={bill} />
