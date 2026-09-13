@@ -30,10 +30,10 @@ export function Footer() {
 function FooterLogoSection() {
   return (
     <div className="flex flex-col items-center text-center mb-9">
-      <Link href={routes.home()} aria-label="みらい議会 トップページ">
+      <Link href={routes.home()} aria-label="みらい議会＠吉岡町 トップページ">
         <Image
           src="/img/logo.svg"
-          alt="みらい議会"
+          alt="みらい議会＠吉岡町"
           width={150}
           height={128}
           className="h-auto"
@@ -93,8 +93,9 @@ function FooterPolicies() {
 
 function FooterCopyright() {
   return (
-    <div className="text-center text-sm font-medium text-slate-800">
-      © 2025 Team Mirai All rights Reserved
+    <div className="flex flex-col items-center gap-2 text-center text-sm font-medium text-slate-800">
+      <p>これは政党チームみらいが運営しているものではありません</p>
+      <p>© 2026 みらい議会＠吉岡町 All rights Reserved</p>
     </div>
   );
 }

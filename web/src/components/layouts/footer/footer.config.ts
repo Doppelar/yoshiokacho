@@ -24,13 +24,8 @@ export const primaryLinks: FooterLink[] = [
     external: true,
   },
   {
-    label: "チームみらいについて",
-    href: EXTERNAL_LINKS.TEAM_MIRAI_ABOUT,
-    external: true,
-  },
-  {
-    label: "寄附で応援する",
-    href: EXTERNAL_LINKS.DONATION,
+    label: "本家「みらい議会」を見る",
+    href: "https://gikai.team-mir.ai/",
     external: true,
   },
 ];

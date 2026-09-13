@@ -1,11 +1,11 @@
 {
-  "name": "みらい議会",
-  "short_name": "みらい議会",
+  "name": "みらい議会＠吉岡町",
+  "short_name": "みらい議会＠吉岡町",
   "description": "国会で今どんな法案が検討されているか、わかりやすく伝えるプラットフォーム",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F4F0",
-  "theme_color": "#2aa693",
+  "theme_color": "#50c878",
   "orientation": "portrait-primary",
   "icons": [
     {
