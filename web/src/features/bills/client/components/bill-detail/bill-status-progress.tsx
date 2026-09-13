@@ -27,10 +27,10 @@ interface ProgressStepProps {
 
 // 基本ステップ定義
 const BASE_STEPS = [
-  { label: "法案\n提出" },
-  { label: "衆議院\n審議" },
-  { label: "参議院\n審議" },
-  { label: "法案\n成立" },
+  { label: "質問\n通告" },
+  { label: "本会議\n質問" },
+  { label: "執行部\n答弁" },
+  { label: "対応\n完了" },
 ] as const;
 
 // ステータスバッジコンポーネント
@@ -108,7 +108,7 @@ export function BillStatusProgress({
 
   return (
     <>
-      <h2 className="text-[22px] font-bold mb-4">👉 審議のステータス</h2>
+      <h2 className="text-[22px] font-bold mb-4">👉 質問の状況</h2>
       <div className="bg-white rounded-lg border p-6">
         <div className="flex flex-col items-center gap-7">
           {/* ステータスメッセージバッジ */}
