@@ -51,7 +51,6 @@ export type BillWithContent = Bill & {
   mirai_stance?: MiraiStance;
   tags: BillTag[];
   featured_tag?: FeaturedTag;
-  hasPublicInterview?: boolean;
   /** 公開レポート件数。一覧の回答数バッジと「声が集まっている順」に使う。 */
   publicReportCount?: number;
 };

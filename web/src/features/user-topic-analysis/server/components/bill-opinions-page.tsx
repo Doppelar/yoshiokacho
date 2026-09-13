@@ -7,8 +7,6 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/layouts/container";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/breadcrumb";
 import { getBillById } from "@/features/bills/server/loaders/get-bill-by-id";
-import { InterviewLandingSection } from "@/features/interview-config/client/components/interview-landing-section";
-import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
 import { routes } from "@/lib/routes";
 import { RespondentList } from "../../client/components/respondent-list";
 import { getPublicBillRespondents } from "../loaders/get-public-bill-respondents";
@@ -19,10 +17,9 @@ interface BillOpinionsPageProps {
 
 /** AIインタビューの回答一覧（議案単位で公開レポートを回答者ごとに表示）。 */
 export async function BillOpinionsPage({ billId }: BillOpinionsPageProps) {
-  const [bill, respondents, interviewConfig] = await Promise.all([
+  const [bill, respondents] = await Promise.all([
     getBillById(billId),
     getPublicBillRespondents(billId),
-    getInterviewConfig(billId),
   ]);
 
   if (!bill) {
@@ -76,11 +73,6 @@ export async function BillOpinionsPage({ billId }: BillOpinionsPageProps) {
             <p className="py-8 text-center text-mirai-text-muted">
               公開されている回答はまだありません
             </p>
-          )}
-
-          {/* AIインタビューCTA */}
-          {interviewConfig != null && (
-            <InterviewLandingSection billId={billId} />
           )}
         </div>
       </Container>

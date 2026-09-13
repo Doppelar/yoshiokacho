@@ -3,24 +3,17 @@ import type { Database } from "@mirai-gikai/supabase";
 import {
   convertToModelMessages,
   streamText,
-  tool,
   type LanguageModel,
   type UIMessage,
 } from "ai";
-import { z } from "zod";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
 import type { BillWithContent } from "@/features/bills/shared/types";
-import {
-  SUGGEST_INTERVIEW_TOOL_NAME,
-  SUGGEST_INTERVIEW_TOOL_TYPE,
-} from "@/features/chat/shared/constants";
 import {
   findBillContentByDifficulty,
   findPublishedBillById,
 } from "@/features/bills/server/repositories/bill-repository";
 import { ChatError, ChatErrorCode } from "@/features/chat/shared/types/errors";
 import { pickChatKnowledgeSource } from "@/features/chat/shared/utils/pick-chat-knowledge-source";
-import { findPublicInterviewConfigByBillId } from "@/features/interview-config/server/repositories/interview-config-repository";
 import { env } from "@/lib/env";
 import {
   type CompiledPrompt,
@@ -36,7 +29,6 @@ import {
 
 export type ChatMessageMetadata = {
   billContext?: BillWithContent;
-  hasInterviewConfig?: boolean;
   pageContext?: {
     type: "home" | "bill";
     bills?: Array<{ id: string; name: string; summary?: string }>;
@@ -104,29 +96,14 @@ export async function handleChatRequest({
   const modelName =
     typeof model === "string" ? model : (model.modelId ?? "unknown");
 
-  // Determine if interview suggestion should be enabled
-  const shouldSuggestInterview = await determineShouldSuggestInterview(
-    context,
-    messages
-  );
-
-  // Build system prompt with interview suggestion instructions
-  const pageType =
-    context.pageContext?.type ?? (context.billContext ? "bill" : undefined);
-  const systemPrompt = buildSystemPromptWithInterviewInstructions(
-    promptResult.content,
-    shouldSuggestInterview,
-    pageType
-  );
-
   // Build tools configuration
-  const tools = buildTools(shouldSuggestInterview);
+  const tools = buildTools();
 
   // Generate streaming response
   try {
     const result = streamText({
       model,
-      system: systemPrompt,
+      system: promptResult.content,
       messages: await convertToModelMessages(messages),
       tools,
       onFinish: async (event) => {
@@ -172,7 +149,6 @@ function extractChatContext(
 
   return {
     billContext: metadata?.billContext,
-    hasInterviewConfig: metadata?.hasInterviewConfig,
     pageContext: metadata?.pageContext,
     difficultyLevel: (metadata?.difficultyLevel ||
       "normal") as DifficultyLevelEnum,
@@ -290,121 +266,14 @@ function extractGatewayCost(event: {
   return Number.isFinite(numericCost) ? numericCost : undefined;
 }
 
-const INTERVIEW_AWARENESS_BASE = `
-
-## AIインタビュー機能について
-みらい議会には「AIインタビュー」機能があります。これは法案ごとに提供される機能で、ユーザーがAIインタビュアーと対話形式で法案に対する意見や知見を共有できる仕組みです。インタビュー結果は分析・レポート化され、政策議論に活用されます。
-`;
-
-const INTERVIEW_AWARENESS_PROMPT_BILL = `${INTERVIEW_AWARENESS_BASE}
-この法案のインタビュー機能が現在利用可能かどうかは状況によって異なります。インタビューについて質問された場合は、この機能の存在を説明した上で、法案詳細ページでインタビューへの案内が表示されているか確認するよう案内してください。
-`;
-
-const INTERVIEW_AWARENESS_PROMPT_HOME = `${INTERVIEW_AWARENESS_BASE}
-インタビューについて質問された場合は、この機能の存在を説明した上で、利用可否は法案ごとに異なるため、興味のある法案の詳細ページでインタビューへの案内が表示されているか確認するよう案内してください。
-`;
-
-const INTERVIEW_SUGGESTION_PROMPT = `
-
-## AIインタビュー提案について
-この法案にはAIインタビュー機能があります。以下の条件に該当する場合、通常のテキスト応答と併せて suggest_interview ツールを呼び出してください。
-ただし、1つの会話の中で suggest_interview ツールを呼び出すのは1回のみとしてください。
-
-### suggest_interview を呼び出す条件:
-- ユーザーがこの法案の当事者や関係者であることがわかった場合
-- ユーザーがこの法案について専門的な知識を持っていると判断できる場合
-- ユーザーがこの法案に対して具体的な提言や意見を述べた場合
-- ユーザーがインタビューや意見提出について質問した場合
-- ユーザーが自分の意見を共有したい、政策に反映してほしいと表明した場合
-
-### 重要:
-- suggest_interview ツールの呼び出しは、通常のテキスト応答と同時に行ってください。ツールだけを呼び出してテキスト応答を省略しないでください。
-- ツールの呼び出しは会話全体で最大1回です。既に呼び出し済みの場合は再度呼び出さないでください。
-`;
-
-/**
- * インタビュー提案を有効にすべきか判定
- *
- * 以下のすべてを満たす場合にtrueを返す:
- * - 法案ページである
- * - サーバー側でインタビュー設定が公開状態であることを確認
- * - 会話中にまだsuggest_interviewツールが呼び出されていない
- *
- * NOTE: インタビュー回答済みでも導線を表示する（再回答の促進のため）
- */
-async function determineShouldSuggestInterview(
-  context: ChatMessageMetadata,
-  messages: UIMessage<ChatMessageMetadata>[]
-): Promise<boolean> {
-  if (!context.billContext) {
-    return false;
-  }
-
-  if (hasExistingSuggestInterview(messages)) {
-    return false;
-  }
-
-  // サーバー側でインタビュー設定の存在を検証（クライアント側のメタデータを信頼しない）
-  const { data: interviewConfig } = await findPublicInterviewConfigByBillId(
-    context.billContext.id
-  );
-  return !!interviewConfig;
-}
-
-/**
- * 会話履歴にsuggest_interviewツール呼び出しが既に存在するか判定
- */
-function hasExistingSuggestInterview(
-  messages: UIMessage<ChatMessageMetadata>[]
-): boolean {
-  return messages.some(
-    (msg) =>
-      msg.role === "assistant" &&
-      msg.parts.some(
-        (part) =>
-          "toolCallId" in part && part.type === SUGGEST_INTERVIEW_TOOL_TYPE
-      )
-  );
-}
-
-/**
- * インタビュー提案の指示をシステムプロンプトに追加
- */
-function buildSystemPromptWithInterviewInstructions(
-  basePrompt: string,
-  shouldSuggestInterview: boolean,
-  pageType: "home" | "bill" | undefined
-): string {
-  if (pageType === "home") {
-    return basePrompt + INTERVIEW_AWARENESS_PROMPT_HOME;
-  }
-  if (pageType !== "bill") {
-    return basePrompt;
-  }
-  let prompt = basePrompt + INTERVIEW_AWARENESS_PROMPT_BILL;
-  if (shouldSuggestInterview) {
-    prompt += INTERVIEW_SUGGESTION_PROMPT;
-  }
-  return prompt;
-}
-
 /**
  * チャットで使用するツール一覧を構築
  */
-function buildTools(shouldSuggestInterview: boolean) {
+function buildTools() {
   // biome-ignore lint/suspicious/noExplicitAny: OpenAI web_search tool type incompatibility
   const tools: Record<string, any> = {
     web_search: openai.tools.webSearch(),
   };
-
-  if (shouldSuggestInterview) {
-    tools[SUGGEST_INTERVIEW_TOOL_NAME] = tool({
-      description:
-        "ユーザーが法案の当事者・有識者であると判断された場合、またはインタビューについて聞かれた場合に呼び出す。通常のテキスト応答と同時に呼び出すこと。",
-      inputSchema: z.object({}),
-      execute: async () => ({ suggested: true }),
-    });
-  }
 
   return tools;
 }

@@ -1,7 +1,5 @@
 import { Container } from "@/components/layouts/container";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
-import { InterviewLandingSection } from "@/features/interview-config/client/components/interview-landing-section";
-import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
 import { getPublicReportsByBillId } from "@/features/interview-report/server/loaders/get-public-reports-by-bill-id";
 import { BillTopicsPreviewSection } from "@/features/user-topic-analysis/server/components/bill-topics-preview-section";
 import { getPublicTopicAnalysis } from "@/features/user-topic-analysis/server/loaders/get-public-topic-analysis";
@@ -22,12 +20,10 @@ export async function BillDetailLayout({
   bill,
   currentDifficulty,
 }: BillDetailLayoutProps) {
-  const [interviewConfig, publicReportsResult, topicAnalysis] =
-    await Promise.all([
-      getInterviewConfig(bill.id),
-      getPublicReportsByBillId(bill.id),
-      getPublicTopicAnalysis(bill.id),
-    ]);
+  const [publicReportsResult, topicAnalysis] = await Promise.all([
+    getPublicReportsByBillId(bill.id),
+    getPublicTopicAnalysis(bill.id),
+  ]);
 
   return (
     <div className="container mx-auto pb-8 max-w-4xl">
@@ -37,14 +33,9 @@ export async function BillDetailLayout({
         - BillDetailClientでクライアントサイド機能（テキスト選択、チャット連携）を提供
         - このパターンによりSSRを保持しつつインタラクティブ機能を実装
       */}
-      <BillDetailClient
-        bill={bill}
-        currentDifficulty={currentDifficulty}
-        hasInterviewConfig={interviewConfig != null}
-      >
+      <BillDetailClient bill={bill} currentDifficulty={currentDifficulty}>
         <BillDetailHeader
           bill={bill}
-          hasInterviewConfig={interviewConfig != null}
           opinionCount={topicAnalysis?.total_opinions ?? 0}
           topicCount={topicAnalysis?.topics.length ?? 0}
         />
@@ -72,11 +63,6 @@ export async function BillDetailLayout({
           />
         </div>
 
-        {interviewConfig != null && (
-          <div className="my-8">
-            <InterviewLandingSection billId={bill.id} />
-          </div>
-        )}
         {/* シェアボタン */}
         <div className="my-8">
           <BillShareButtons bill={bill} />

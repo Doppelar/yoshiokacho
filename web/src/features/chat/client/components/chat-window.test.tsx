@@ -191,7 +191,6 @@ describe("ChatWindow", () => {
       metadata: {
         billContext: undefined,
         difficultyLevel: "normal",
-        hasInterviewConfig: undefined,
         pageContext: { type: "home" },
         sessionId: "session-1",
       },
@@ -219,7 +218,6 @@ describe("ChatWindow", () => {
       metadata: {
         billContext: undefined,
         difficultyLevel: "normal",
-        hasInterviewConfig: undefined,
         pageContext: { type: "home" },
         sessionId: "session-1",
       },

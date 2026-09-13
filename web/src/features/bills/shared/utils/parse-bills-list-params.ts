@@ -14,8 +14,6 @@ export type BillsListParams = {
   /** タグ id。null は「すべて」。 */
   tagId: string | null;
   sort: BillSortKey;
-  /** AIインタビュー受付中のみに絞るか。 */
-  interviewOnly: boolean;
 };
 
 /** ページ・コンポーネント間で共有する searchParams の形。 */
@@ -24,7 +22,6 @@ export type BillsListSearchParams = {
   status?: string | string[];
   tag?: string | string[];
   sort?: string | string[];
-  interview?: string | string[];
 };
 
 function firstValue(value: string | string[] | undefined): string | undefined {
@@ -37,7 +34,6 @@ export const DEFAULT_BILLS_LIST_PARAMS: Readonly<BillsListParams> = {
   status: "all",
   tagId: null,
   sort: DEFAULT_BILL_SORT,
-  interviewOnly: false,
 };
 
 /**
@@ -56,7 +52,6 @@ export function parseBillsListParams(
     status: isBillStatusGroup(status) ? status : "all",
     tagId: tag || null,
     sort: isBillSortKey(sort) ? sort : DEFAULT_BILL_SORT,
-    interviewOnly: firstValue(searchParams.interview) === "1",
   };
 }
 
@@ -75,7 +70,6 @@ export function buildBillsListQuery(
   if (next.status !== "all") params.set("status", next.status);
   if (next.tagId) params.set("tag", next.tagId);
   if (next.sort !== DEFAULT_BILL_SORT) params.set("sort", next.sort);
-  if (next.interviewOnly) params.set("interview", "1");
 
   const queryString = params.toString();
   return queryString ? `?${queryString}` : "";

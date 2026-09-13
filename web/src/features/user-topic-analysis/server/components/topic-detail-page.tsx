@@ -7,8 +7,6 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/layouts/container";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/breadcrumb";
 import { getBillById } from "@/features/bills/server/loaders/get-bill-by-id";
-import { InterviewLandingSection } from "@/features/interview-config/client/components/interview-landing-section";
-import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
 import { countPublicReportsByBillId } from "@/features/interview-report/server/repositories/interview-report-repository";
 import { routes } from "@/lib/routes";
 import { TopicOpinionList } from "../../client/components/topic-opinion-list";
@@ -87,11 +85,10 @@ export async function TopicDetailPage({
   topicId,
   filter = "all",
 }: TopicDetailPageProps) {
-  const [bill, detail, publicReportCount, interviewConfig] = await Promise.all([
+  const [bill, detail, publicReportCount] = await Promise.all([
     getBillById(billId),
     getPublicTopicDetail(billId, topicId, filter),
     countPublicReportsByBillId(billId),
-    getInterviewConfig(billId),
   ]);
 
   if (!bill || !detail) {
@@ -173,11 +170,6 @@ export async function TopicDetailPage({
               nowMs={nowMs}
             />
           </div>
-
-          {/* AIインタビューCTA */}
-          {interviewConfig != null && (
-            <InterviewLandingSection billId={billId} />
-          )}
         </div>
       </Container>
     </div>

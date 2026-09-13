@@ -4,7 +4,6 @@
 export const CACHE_TAGS = {
   BILLS: "bills",
   DIET_SESSIONS: "diet-sessions",
-  INTERVIEW_CONFIGS: "interview-configs",
   // admin のレポート公開操作が revalidate するタグ。
   PUBLIC_INTERVIEW_REPORTS: "public-interview-reports",
 } as const;

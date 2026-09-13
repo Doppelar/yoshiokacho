@@ -6,7 +6,6 @@ import type { BillWithContent } from "../../shared/types";
 import {
   findPublishedBillsByDietSession,
   findTagsByBillIds,
-  findBillIdsWithPublicInterview,
 } from "../repositories/bill-repository";
 
 /**
@@ -33,12 +32,9 @@ const _getCachedBillsByDietSession = unstable_cache(
       return [];
     }
 
-    // タグ情報とインタビュー状態を一括取得
+    // タグ情報を一括取得
     const billIds = data.map((item) => item.id);
-    const [tagsByBillId, interviewBillIds] = await Promise.all([
-      findTagsByBillIds(billIds),
-      findBillIdsWithPublicInterview(billIds),
-    ]);
+    const tagsByBillId = await findTagsByBillIds(billIds);
 
     const billsWithContent: BillWithContent[] = data.map((item) => {
       const { bill_contents, ...bill } = item;
@@ -48,7 +44,6 @@ const _getCachedBillsByDietSession = unstable_cache(
           ? bill_contents[0]
           : undefined,
         tags: tagsByBillId.get(item.id) ?? [],
-        hasPublicInterview: interviewBillIds.has(item.id),
       };
     });
 
@@ -57,6 +52,6 @@ const _getCachedBillsByDietSession = unstable_cache(
   ["bills-by-diet-session"],
   {
     revalidate: 600, // 10分
-    tags: [CACHE_TAGS.BILLS, CACHE_TAGS.INTERVIEW_CONFIGS],
+    tags: [CACHE_TAGS.BILLS],
   }
 );

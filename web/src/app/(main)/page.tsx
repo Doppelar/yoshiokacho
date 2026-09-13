@@ -7,7 +7,6 @@ import { BillSearchOverlay } from "@/features/bills/client/components/bill-searc
 import { BillsByTagSection } from "@/features/bills/server/components/bills-by-tag-section";
 import { CategoryTabs } from "@/features/bills/server/components/category-tabs";
 import { FeaturedBillSection } from "@/features/bills/server/components/featured-bill-section";
-import { InterviewOpenBillSection } from "@/features/bills/server/components/interview-open-bill-section";
 import { PreviousSessionSection } from "@/features/bills/server/components/previous-session-section";
 import { getFeaturedTags } from "@/features/bills/server/loaders/get-featured-tags";
 import { getSuggestableBills } from "@/features/bills/server/loaders/get-suggestable-bills";
@@ -29,13 +28,7 @@ export default async function Home() {
   const japanTime = getJapanTime();
   // ゆくゆくタグ機能がマージされたらBFFに統合する
   const [
-    {
-      billsByTag,
-      featuredBills,
-      interviewOpenBills,
-      comingSoonBills,
-      previousSessionData,
-    },
+    { billsByTag, featuredBills, comingSoonBills, previousSessionData },
     currentSession,
     latestClosedSession,
     currentDifficulty,
@@ -55,7 +48,6 @@ export default async function Home() {
   const { tagGroups, shownBills, featuredBillIds } = pickHomeSections({
     billsByTag,
     featuredBills,
-    interviewOpenBills,
     inSession,
   });
 
@@ -99,13 +91,6 @@ export default async function Home() {
       <Container className="">
         <div className="py-10">
           <main className="flex flex-col gap-16">
-            {/*
-              AIインタビュー受付中セクション。意見を出せる法案を最初に見せる。
-              会期では絞らない（閉会中でも受付中なら案内する）ため、注目と違って
-              inSession で出し分けない。
-            */}
-            <InterviewOpenBillSection bills={interviewOpenBills} />
-
             {/*
               注目の法案は会期中だけ出す。閉会中に「注目」を掲げても、審議が
               動いていない期間の情報を強調することになる。

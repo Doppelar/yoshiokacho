@@ -5,8 +5,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layouts/container";
 import { getBillById } from "@/features/bills/server/loaders/get-bill-by-id";
-import { InterviewLandingSection } from "@/features/interview-config/client/components/interview-landing-section";
-import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
 import { getReportReactionsBatch } from "@/features/report-reaction/server/loaders/get-report-reactions";
 import { routes } from "@/lib/routes";
 import { PublicOpinionsList } from "../../client/components/public-opinions-list";
@@ -26,10 +24,9 @@ export async function PublicOpinionsPage({
   initialFilter,
   initialSort,
 }: PublicOpinionsPageProps) {
-  const [bill, initialData, interviewConfig] = await Promise.all([
+  const [bill, initialData] = await Promise.all([
     getBillById(billId),
     getInitialPublicReportsByBillId(billId, initialFilter, initialSort),
-    getInterviewConfig(billId),
   ]);
 
   if (!bill) {
@@ -91,12 +88,6 @@ export async function PublicOpinionsPage({
           initialSort={initialSort}
         />
 
-        {/* AIインタビューCTAバナー */}
-        {interviewConfig != null && (
-          <div className="my-8">
-            <InterviewLandingSection billId={billId} />
-          </div>
-        )}
         {/* パンくずリスト */}
         <div className="pb-8">
           <OpinionsBreadcrumb billId={billId} />

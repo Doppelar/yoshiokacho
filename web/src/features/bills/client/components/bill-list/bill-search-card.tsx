@@ -28,8 +28,7 @@ export function BillSearchCard({ bill }: { bill: BillWithContent }) {
   const title = bill.bill_content?.title || bill.name;
   const summary = bill.bill_content?.summary;
   const reportCount = bill.publicReportCount ?? 0;
-  const hasBadges =
-    bill.tags.length > 0 || bill.hasPublicInterview || reportCount > 0;
+  const hasBadges = bill.tags.length > 0 || reportCount > 0;
 
   return (
     <Card className="overflow-hidden border border-black shadow-none transition-colors hover:bg-muted/50">
@@ -86,9 +85,6 @@ export function BillSearchCard({ bill }: { bill: BillWithContent }) {
             {bill.tags.map((tag) => (
               <BillTag key={tag.id} tag={tag} />
             ))}
-            {bill.hasPublicInterview && (
-              <BillPill>AIインタビュー受付中</BillPill>
-            )}
             {/* 回答が集まっている議案だけ数字を出す。0人と書くと参加をためらわせる。 */}
             {reportCount > 0 && (
               <BillPill>💬 {reportCount}人がAIインタビューに回答</BillPill>

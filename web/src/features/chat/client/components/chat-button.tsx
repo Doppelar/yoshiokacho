@@ -24,7 +24,6 @@ const ANIMATION_DURATION = {
 
 interface ChatButtonProps {
   billContext?: BillWithContent;
-  hasInterviewConfig?: boolean;
   difficultyLevel: string;
   pageContext?: {
     type: "home" | "bill";
@@ -42,7 +41,7 @@ export interface ChatButtonRef {
 }
 
 export const ChatButton = forwardRef<ChatButtonRef, ChatButtonProps>(
-  ({ billContext, hasInterviewConfig, difficultyLevel, pageContext }, ref) => {
+  ({ billContext, difficultyLevel, pageContext }, ref) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isCompact, setIsCompact] = useState(false);
     const [showText, setShowText] = useState(true);
@@ -75,7 +74,6 @@ export const ChatButton = forwardRef<ChatButtonRef, ChatButtonProps>(
           text: questionText,
           metadata: {
             billContext,
-            hasInterviewConfig,
             difficultyLevel,
             pageContext,
             sessionId,
@@ -173,7 +171,6 @@ export const ChatButton = forwardRef<ChatButtonRef, ChatButtonProps>(
 
         <ChatWindow
           billContext={billContext}
-          hasInterviewConfig={hasInterviewConfig}
           difficultyLevel={difficultyLevel}
           chatState={chatState}
           isOpen={isOpen}

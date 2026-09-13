@@ -10,7 +10,6 @@ const defaults: BillsListParams = {
   status: "all",
   tagId: null,
   sort: "new",
-  interviewOnly: false,
 };
 
 describe("parseBillsListParams", () => {
@@ -25,14 +24,12 @@ describe("parseBillsListParams", () => {
         status: "enacted",
         tag: "zeikin",
         sort: "old",
-        interview: "1",
       })
     ).toEqual({
       query: "ガソリン",
       status: "enacted",
       tagId: "zeikin",
       sort: "old",
-      interviewOnly: true,
     });
   });
 
@@ -58,14 +55,6 @@ describe("parseBillsListParams", () => {
 
   it("空文字のタグは「すべて」扱いにする", () => {
     expect(parseBillsListParams({ tag: "   " }).tagId).toBeNull();
-  });
-
-  it("interview は 1 のときだけ真", () => {
-    expect(parseBillsListParams({ interview: "1" }).interviewOnly).toBe(true);
-    expect(parseBillsListParams({ interview: "true" }).interviewOnly).toBe(
-      false
-    );
-    expect(parseBillsListParams({ interview: "0" }).interviewOnly).toBe(false);
   });
 });
 
@@ -98,12 +87,6 @@ describe("buildBillsListQuery", () => {
     );
   });
 
-  it("インタビュー絞り込みは 1 で載せる", () => {
-    expect(buildBillsListQuery(defaults, { interviewOnly: true })).toBe(
-      "?interview=1"
-    );
-  });
-
   it("タグを外せる", () => {
     const current: BillsListParams = { ...defaults, tagId: "zeikin" };
     expect(buildBillsListQuery(current, { tagId: null })).toBe("");
@@ -115,7 +98,6 @@ describe("buildBillsListQuery", () => {
       status: "enacted",
       tagId: "zeikin",
       sort: "old",
-      interviewOnly: true,
     };
     const queryString = buildBillsListQuery(current, {});
     const parsed = Object.fromEntries(

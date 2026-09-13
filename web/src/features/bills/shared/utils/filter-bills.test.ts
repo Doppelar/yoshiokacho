@@ -6,7 +6,6 @@ function bill(
   overrides: {
     title?: string;
     tags?: string[];
-    hasPublicInterview?: boolean;
   } = {}
 ) {
   return {
@@ -14,12 +13,11 @@ function bill(
     name: `${id} 法律案`,
     bill_content: { title: overrides.title ?? `${id} のタイトル` } as never,
     tags: (overrides.tags ?? []).map((label) => ({ id: label, label })),
-    hasPublicInterview: overrides.hasPublicInterview ?? false,
   };
 }
 
 const ids = (bills: { id: string }[]) => bills.map((b) => b.id);
-const base = { query: "", tagId: null, interviewOnly: false };
+const base = { query: "", tagId: null };
 
 describe("filterBills", () => {
   it("既定では絞り込まない", () => {
@@ -42,29 +40,16 @@ describe("filterBills", () => {
     expect(ids(filterBills(bills, { ...base, tagId: "税金" }))).toEqual(["a"]);
   });
 
-  it("受付中のみに絞る", () => {
-    const bills = [
-      bill("open", { hasPublicInterview: true }),
-      bill("closed", { hasPublicInterview: false }),
-    ];
-    expect(ids(filterBills(bills, { ...base, interviewOnly: true }))).toEqual([
-      "open",
-    ]);
-  });
-
   it("複数の条件を重ねる", () => {
     const bills = [
       bill("hit", {
         title: "ガソリン税",
         tags: ["税金"],
-        hasPublicInterview: true,
       }),
       bill("noTag", {
         title: "ガソリン税",
         tags: ["教育"],
-        hasPublicInterview: true,
       }),
-      bill("noInterview", { title: "ガソリン税", tags: ["税金"] }),
     ];
 
     expect(
@@ -72,7 +57,6 @@ describe("filterBills", () => {
         filterBills(bills, {
           query: "ガソリン",
           tagId: "税金",
-          interviewOnly: true,
         })
       )
     ).toEqual(["hit"]);

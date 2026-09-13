@@ -7,8 +7,6 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/layouts/container";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/breadcrumb";
 import { getBillById } from "@/features/bills/server/loaders/get-bill-by-id";
-import { InterviewLandingSection } from "@/features/interview-config/client/components/interview-landing-section";
-import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
 import { getPublicReportsByBillId } from "@/features/interview-report/server/loaders/get-public-reports-by-bill-id";
 import { routes } from "@/lib/routes";
 import { TopicList } from "../../client/components/topic-list";
@@ -20,11 +18,10 @@ interface TopicListPageProps {
 }
 
 export async function TopicListPage({ billId }: TopicListPageProps) {
-  const [bill, analysis, reportsResult, interviewConfig] = await Promise.all([
+  const [bill, analysis, reportsResult] = await Promise.all([
     getBillById(billId),
     getPublicTopicAnalysis(billId),
     getPublicReportsByBillId(billId),
-    getInterviewConfig(billId),
   ]);
 
   if (!bill) {
@@ -94,11 +91,6 @@ export async function TopicListPage({ billId }: TopicListPageProps) {
             <p className="py-8 text-center text-mirai-text-muted">
               トピック分析は準備中です
             </p>
-          )}
-
-          {/* AIインタビューCTA */}
-          {interviewConfig != null && (
-            <InterviewLandingSection billId={billId} />
           )}
         </div>
       </Container>

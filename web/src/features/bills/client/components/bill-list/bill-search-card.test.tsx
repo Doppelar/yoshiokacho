@@ -105,33 +105,29 @@ describe("BillSearchCard", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("タグ・受付中・回答数が無ければ下の段ごと出さない", () => {
+  it("タグ・回答数が無ければ下の段ごと出さない", () => {
     render(
       <BillSearchCard
         bill={createMockBill({
           tags: [],
-          hasPublicInterview: false,
           publicReportCount: 0,
         })}
       />
     );
 
-    expect(screen.queryByText("AIインタビュー受付中")).not.toBeInTheDocument();
     expect(screen.queryByText(/回答/)).not.toBeInTheDocument();
   });
 
-  it("タグと受付中を下の段に並べる", () => {
+  it("タグを下の段に並べる", () => {
     render(
       <BillSearchCard
         bill={createMockBill({
           tags: [{ id: "zeikin", label: "税金" }],
-          hasPublicInterview: true,
         })}
       />
     );
 
     expect(screen.getByText("税金")).toBeInTheDocument();
-    expect(screen.getByText("AIインタビュー受付中")).toBeInTheDocument();
   });
 
   // 0人と書くと参加をためらわせるので、集まっている議案にだけ数字を出す。

@@ -14,45 +14,6 @@ export function getBillDetailLink(
 }
 
 /**
- * インタビューLPページへのリンクを取得
- */
-export function getInterviewLPLink(
-  billId: string,
-  previewToken?: string
-): string {
-  if (previewToken) {
-    return routes.previewInterviewLP(billId, previewToken);
-  }
-  return routes.interviewLP(billId);
-}
-
-/**
- * インタビュー情報開示ページへのリンクを取得
- */
-export function getInterviewDisclosureLink(
-  billId: string,
-  previewToken?: string
-): string {
-  if (previewToken) {
-    return routes.previewInterviewDisclosure(billId, previewToken);
-  }
-  return routes.interviewDisclosure(billId);
-}
-
-/**
- * インタビューチャットページへのリンクを取得
- */
-export function getInterviewChatLink(
-  billId: string,
-  previewToken?: string
-): string {
-  if (previewToken) {
-    return routes.previewInterviewChat(billId, previewToken);
-  }
-  return routes.interviewChat(billId);
-}
-
-/**
  * インタビュー完了レポートページへのリンクを取得
  */
 export function getInterviewReportCompleteLink(reportId: string): string {

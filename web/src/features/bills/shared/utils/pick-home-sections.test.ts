@@ -14,7 +14,6 @@ const ids = (bills: { id: string }[]) => bills.map((b) => b.id);
 const base = {
   billsByTag: [] as ReturnType<typeof group>[],
   featuredBills: [] as { id: string }[],
-  interviewOpenBills: [] as { id: string }[],
   inSession: true,
 };
 
@@ -30,16 +29,6 @@ describe("pickHomeSections", () => {
         ["暮らし", ["a"]],
         ["税金", ["b"]],
       ]);
-    });
-
-    it("受付中に出した議案をタグ別から外す", () => {
-      const result = pickHomeSections({
-        ...base,
-        billsByTag: [group("暮らし", "a", "b")],
-        interviewOpenBills: [bill("b")],
-      });
-
-      expect(shape(result.tagGroups)).toEqual([["暮らし", ["a"]]]);
     });
 
     it("注目に出した議案をタグ別から外す", () => {
@@ -68,7 +57,7 @@ describe("pickHomeSections", () => {
       const result = pickHomeSections({
         ...base,
         billsByTag: [group("暮らし", "a", "x"), group("税金", "x", "b")],
-        interviewOpenBills: [bill("x")],
+        featuredBills: [bill("x")],
       });
 
       expect(shape(result.tagGroups)).toEqual([
@@ -82,7 +71,7 @@ describe("pickHomeSections", () => {
       const result = pickHomeSections({
         ...base,
         billsByTag: [group("暮らし", "a"), group("税金", "b", "c")],
-        interviewOpenBills: [bill("b"), bill("c")],
+        featuredBills: [bill("b"), bill("c")],
       });
 
       expect(shape(result.tagGroups)).toEqual([["暮らし", ["a"]]]);
@@ -94,7 +83,7 @@ describe("pickHomeSections", () => {
       pickHomeSections({
         ...base,
         billsByTag,
-        interviewOpenBills: [bill("a")],
+        featuredBills: [bill("a")],
       });
 
       expect(shape(billsByTag)).toEqual([["暮らし", ["a", "b"]]]);
@@ -102,26 +91,14 @@ describe("pickHomeSections", () => {
   });
 
   describe("shownBills", () => {
-    it("受付中・注目・タグ別に出た議案を並べる", () => {
+    it("注目・タグ別に出た議案を並べる", () => {
       const result = pickHomeSections({
         ...base,
         billsByTag: [group("暮らし", "tag1"), group("税金", "tag2")],
         featuredBills: [bill("feat")],
-        interviewOpenBills: [bill("intv")],
       });
 
-      expect(ids(result.shownBills)).toEqual(["intv", "feat", "tag1", "tag2"]);
-    });
-
-    // 受付中と注目は意図的に重複させているので、片方に寄せないと2回渡ってしまう。
-    it("受付中と注目に重複して出る議案は1件にまとめる", () => {
-      const result = pickHomeSections({
-        ...base,
-        featuredBills: [bill("both")],
-        interviewOpenBills: [bill("both")],
-      });
-
-      expect(ids(result.shownBills)).toEqual(["both"]);
+      expect(ids(result.shownBills)).toEqual(["feat", "tag1", "tag2"]);
     });
 
     it("閉会中は注目だけの議案を含めない", () => {
@@ -138,11 +115,11 @@ describe("pickHomeSections", () => {
     it("タグ別から外れた分は重ねて数えない", () => {
       const result = pickHomeSections({
         ...base,
-        billsByTag: [group("暮らし", "intv", "other")],
-        interviewOpenBills: [bill("intv")],
+        billsByTag: [group("暮らし", "feat", "other")],
+        featuredBills: [bill("feat")],
       });
 
-      expect(ids(result.shownBills)).toEqual(["intv", "other"]);
+      expect(ids(result.shownBills)).toEqual(["feat", "other"]);
     });
   });
 

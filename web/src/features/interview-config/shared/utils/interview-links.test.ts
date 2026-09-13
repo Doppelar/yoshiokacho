@@ -2,9 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   getBillDetailLink,
-  getInterviewChatLink,
   getInterviewChatLogLink,
-  getInterviewLPLink,
   getInterviewMessageLink,
   getInterviewReportCompleteLink,
   getPublicReportLink,
@@ -18,32 +16,6 @@ describe("getBillDetailLink", () => {
   it("returns preview path with token when provided", () => {
     expect(getBillDetailLink("bill-123", "tok-abc")).toBe(
       "/preview/bills/bill-123?token=tok-abc"
-    );
-  });
-});
-
-describe("getInterviewLPLink", () => {
-  it("returns interview LP path without preview token", () => {
-    expect(getInterviewLPLink("bill-123")).toBe("/bills/bill-123/interview");
-  });
-
-  it("returns preview interview LP path with token", () => {
-    expect(getInterviewLPLink("bill-123", "tok-abc")).toBe(
-      "/preview/bills/bill-123/interview?token=tok-abc"
-    );
-  });
-});
-
-describe("getInterviewChatLink", () => {
-  it("returns interview chat path without preview token", () => {
-    expect(getInterviewChatLink("bill-123")).toBe(
-      "/bills/bill-123/interview/chat"
-    );
-  });
-
-  it("returns preview interview chat path with token", () => {
-    expect(getInterviewChatLink("bill-123", "tok-abc")).toBe(
-      "/preview/bills/bill-123/interview/chat?token=tok-abc"
     );
   });
 });

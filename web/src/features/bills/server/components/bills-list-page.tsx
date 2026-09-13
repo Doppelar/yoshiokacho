@@ -185,39 +185,6 @@ export async function BillsListPage({
           </div>
         </section>
 
-        {/*
-        リンクで絞り込むのでフォーム部品ではないが、見た目はチェックボックスなので
-        状態が支援技術にも伝わるようにする。
-
-        inline-flex にすると行ボックスのベースライン計算に参加し、チェックの
-        アイコンが入った瞬間に行の高さが変わって下の一覧が数px動く。block に
-        してベースラインへの依存を切る。
-      */}
-        <Link
-          href={href({ interviewOnly: !params.interviewOnly })}
-          role="checkbox"
-          aria-checked={params.interviewOnly}
-          className="mb-4 flex w-fit items-center gap-2 text-[13px] font-bold"
-        >
-          {/*
-          枠線の有無で寸法が変わらないよう、選択時も border を残して色だけ
-          透明にする。太さが変わると行の高さが動いて一覧がずれる。
-        */}
-          <span
-            className={`flex h-[18px] w-[18px] items-center justify-center rounded-[5px] border ${
-              params.interviewOnly
-                ? "border-transparent bg-mirai-gradient"
-                : "border-mirai-border-light bg-white"
-            }`}
-            aria-hidden
-          >
-            {params.interviewOnly && (
-              <Check className="h-3 w-3 text-black" strokeWidth={3.5} />
-            )}
-          </span>
-          AIインタビュー受付中のみ表示
-        </Link>
-
         <div className="mb-3 flex items-center gap-3">
           <p className="text-[13px] font-bold text-mirai-text-secondary">
             {bills.length}件の法案

@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { isInterviewSection, isMainPage } from "@/lib/page-layout-utils";
+import { isMainPage } from "@/lib/page-layout-utils";
 import { cn } from "@/lib/utils";
 
 interface MainLayoutProps {
@@ -12,7 +12,6 @@ interface MainLayoutProps {
 export function MainLayout({ children }: MainLayoutProps) {
   const pathname = usePathname();
   const useSidebarLayout = isMainPage(pathname);
-  const isInterview = isInterviewSection(pathname);
 
   return (
     <div
@@ -20,9 +19,7 @@ export function MainLayout({ children }: MainLayoutProps) {
         // モバイルは余白なし（ヒーロー/サムネイルを画面最上部に表示）、md以上で固定
         // ヘッダー分の上余白を確保する。パンくずを持つページは各ページ側で
         // モバイル時の上余白（pt-24 md:pt-0）を付与してヘッダー埋もれを回避する。
-        "relative max-w-[700px] mx-auto md:mt-24",
-        // インタビューページ以外ではshadowを表示
-        !isInterview && "sm:shadow-lg",
+        "relative max-w-[700px] mx-auto md:mt-24 sm:shadow-lg",
         // TOP・法案一覧・法案詳細のみ、チャットサイドバー用のオフセット
         useSidebarLayout && "pc:mr-[500px] xl:ml-[calc(calc(100vw-1180px)/2)]"
       )}

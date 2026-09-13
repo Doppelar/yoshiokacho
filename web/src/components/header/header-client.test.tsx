@@ -19,12 +19,6 @@ vi.mock(
     DifficultySelector: () => null,
   })
 );
-vi.mock(
-  "@/features/interview-session/client/components/interview-header-actions",
-  () => ({
-    InterviewHeaderActions: () => null,
-  })
-);
 vi.mock("./hamburger-menu", () => ({ HamburgerMenu: () => null }));
 
 beforeEach(() => {
