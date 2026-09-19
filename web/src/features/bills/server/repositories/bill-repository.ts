@@ -12,6 +12,17 @@ import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/type
 
 /** Supabase が1リクエストで返す行数の上限（既定値）。 */
 const SUPABASE_MAX_ROWS = 1000;
+
+function getSupabaseRestEndpointForLog(): string {
+  const raw = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!raw) return "(SUPABASE_URL is not set)";
+  try {
+    const parsed = new URL(raw);
+    return `${parsed.origin}/rest/v1`;
+  } catch {
+    return "(SUPABASE_URL is invalid)";
+  }
+}
 export async function findPublishedBillsWithContents(
   difficultyLevel: DifficultyLevelEnum
 ) {
@@ -343,21 +354,40 @@ export async function countPublishedBillsByDietSession(
  */
 export async function findFeaturedTags() {
   const supabase = createAdminClient();
-  const { data, error } = await supabase
-    .from("tags")
-    .select("id, label, description, featured_priority")
-    .not("featured_priority", "is", null)
-    // 同じ優先度のタグは label で並べる。指定しないと順序が不定で、
-    // カテゴリタブの並びがデプロイごとに入れ替わりうる。
-    .order("featured_priority", { ascending: true })
-    .order("label", { ascending: true });
+  try {
+    const { data, error } = await supabase
+      .from("tags")
+      .select("id, label, description, featured_priority")
+      .not("featured_priority", "is", null)
+      // 同じ優先度のタグは label で並べる。指定しないと順序が不定で、
+      // カテゴリタブの並びがデプロイごとに入れ替わりうる。
+      .order("featured_priority", { ascending: true })
+      .order("label", { ascending: true });
 
-  if (error) {
-    console.error("Failed to fetch featured tags:", error);
+    if (error) {
+      console.error(
+        "Failed to fetch featured tags:",
+        {
+          endpoint: getSupabaseRestEndpointForLog(),
+          query: "tags(featured_priority)",
+        },
+        error
+      );
+      return null;
+    }
+
+    return data ?? [];
+  } catch (error) {
+    console.error(
+      "Transport failure while fetching featured tags:",
+      {
+        endpoint: getSupabaseRestEndpointForLog(),
+        query: "tags(featured_priority)",
+      },
+      error
+    );
     return null;
   }
-
-  return data ?? [];
 }
 
 /**
@@ -482,35 +512,44 @@ export async function findBillsWithPublicInterview(
   difficultyLevel: DifficultyLevelEnum
 ) {
   const supabase = createAdminClient();
-  const { data, error } = await supabase
-    .from("bills")
-    .select(
-      `
-      *,
-      bill_contents!inner (
-        id,
-        bill_id,
-        title,
-        summary,
-        difficulty_level,
-        created_at,
-        updated_at
-      ),
-      bills_tags (
-        tags (
+  const result = await (async () => {
+    try {
+      return await supabase
+        .from("bills")
+        .select(
+          `
+        *,
+        bill_contents!inner (
           id,
-          label
+          bill_id,
+          title,
+          summary,
+          difficulty_level,
+          created_at,
+          updated_at
+        ),
+        bills_tags (
+          tags (
+            id,
+            label
+          )
+        ),
+        interview_configs!inner (
+          id
         )
-      ),
-      interview_configs!inner (
-        id
-      )
-    `
-    )
-    .eq("publish_status", "published")
-    .eq("bill_contents.difficulty_level", difficultyLevel)
-    .eq("interview_configs.status", "public")
-    .order("submitted_date", { ascending: false, nullsFirst: false });
+      `
+        )
+        .eq("publish_status", "published")
+        .eq("bill_contents.difficulty_level", difficultyLevel)
+        .eq("interview_configs.status", "public")
+        .order("submitted_date", { ascending: false, nullsFirst: false });
+    } catch {
+      throw new Error(
+        `Failed to fetch bills with public interview (transport): endpoint=${getSupabaseRestEndpointForLog()}`
+      );
+    }
+  })();
+  const { data, error } = result;
 
   // 空配列に潰さず投げる。呼び出し元は unstable_cache の外で受けるので、
   // 一時的なDBエラーが「0件」としてキャッシュに載ることを避けられる。
@@ -541,35 +580,54 @@ export async function findBillsWithPublicInterview(
  */
 export async function findComingSoonBills(dietSessionId: string | null) {
   const supabase = createAdminClient();
-  let query = supabase
-    .from("bills")
-    .select(
+  try {
+    let query = supabase
+      .from("bills")
+      .select(
+        `
+        id,
+        name,
+        originating_house,
+        shugiin_url,
+        bill_contents (
+          title,
+          difficulty_level
+        )
       `
-      id,
-      name,
-      originating_house,
-      shugiin_url,
-      bill_contents (
-        title,
-        difficulty_level
       )
-    `
-    )
-    .eq("publish_status", "coming_soon")
-    .order("created_at", { ascending: false });
+      .eq("publish_status", "coming_soon")
+      .order("created_at", { ascending: false });
 
-  if (dietSessionId) {
-    query = query.eq("diet_session_id", dietSessionId);
-  }
+    if (dietSessionId) {
+      query = query.eq("diet_session_id", dietSessionId);
+    }
 
-  const { data, error } = await query;
+    const { data, error } = await query;
 
-  if (error) {
-    console.error("Failed to fetch coming soon bills:", error);
+    if (error) {
+      console.error(
+        "Failed to fetch coming soon bills:",
+        {
+          endpoint: getSupabaseRestEndpointForLog(),
+          query: "bills(publish_status=coming_soon)",
+        },
+        error
+      );
+      return [];
+    }
+
+    return data ?? [];
+  } catch (error) {
+    console.error(
+      "Transport failure while fetching coming soon bills:",
+      {
+        endpoint: getSupabaseRestEndpointForLog(),
+        query: "bills(publish_status=coming_soon)",
+      },
+      error
+    );
     return [];
   }
-
-  return data ?? [];
 }
 
 // ============================================================

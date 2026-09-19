@@ -12,7 +12,14 @@ import { findFeaturedTags } from "../repositories/bill-repository";
  * タグを集めると選べるカテゴリが数十件に膨らむ。出すのは featured だけにする。
  */
 export async function getFeaturedTags(): Promise<BillTag[]> {
-  return _getCachedFeaturedTags();
+  try {
+    return await _getCachedFeaturedTags();
+  } catch (error) {
+    // 失敗をキャッシュに載せないために例外は cache 関数の外で受ける。
+    // トップや一覧ページはタグ無しで継続表示できるので、全体500を避ける。
+    console.error("Failed to fetch featured tags:", error);
+    return [];
+  }
 }
 
 const _getCachedFeaturedTags = unstable_cache(

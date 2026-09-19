@@ -16,7 +16,17 @@ export async function getComingSoonBills(): Promise<ComingSoonBill[]> {
   const difficultyLevel = await getDifficultyLevel();
   const activeSession = await getActiveDietSession();
 
-  return _getCachedComingSoonBills(difficultyLevel, activeSession?.id ?? null);
+  try {
+    return await _getCachedComingSoonBills(
+      difficultyLevel,
+      activeSession?.id ?? null
+    );
+  } catch (error) {
+    // 通信失敗などで cache 関数が例外を投げた場合はトップ全体500を避ける。
+    // 例外は cache の外で受けるため、失敗結果はキャッシュされない。
+    console.error("Failed to load coming soon bills:", error);
+    return [];
+  }
 }
 
 const _getCachedComingSoonBills = unstable_cache(
