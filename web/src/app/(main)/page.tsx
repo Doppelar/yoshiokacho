@@ -12,11 +12,8 @@ import { PreviousSessionSection } from "@/features/bills/server/components/previ
 import { getFeaturedTags } from "@/features/bills/server/loaders/get-featured-tags";
 import { getSuggestableBills } from "@/features/bills/server/loaders/get-suggestable-bills";
 import { loadHomeData } from "@/features/bills/server/loaders/load-home-data";
-import type { BillWithContent } from "@/features/bills/shared/types";
-import { chatBillName } from "@/features/bills/shared/utils/chat-bill-name";
 import { pickHomeSections } from "@/features/bills/shared/utils/pick-home-sections";
 import { countTagChipItems } from "@/features/bills/shared/utils/tag-chip-items";
-import { HomeChatClient } from "@/features/chat/client/components/home-chat-client";
 import { CurrentDietSession } from "@/features/diet-sessions/client/components/current-diet-session";
 import { getCurrentDietSession } from "@/features/diet-sessions/server/loaders/get-current-diet-session";
 import { getLatestClosedDietSession } from "@/features/diet-sessions/server/loaders/get-latest-closed-diet-session";
@@ -52,7 +49,7 @@ export default async function Home() {
 
   const inSession = currentSession !== null;
 
-  const { tagGroups, shownBills, featuredBillIds } = pickHomeSections({
+  const { tagGroups } = pickHomeSections({
     billsByTag,
     featuredBills,
     interviewOpenBills,
@@ -63,15 +60,6 @@ export default async function Home() {
   // あちらも全会期を数えるため、押す前と後で数字が変わらない。
   // 候補用に取得済みの配列をそのまま使うので、集計のためのクエリは増えない。
   const searchTagChips = countTagChipItems(featuredTags, suggestableBills);
-
-  const toBillChatContext = (bill: BillWithContent) => {
-    return {
-      name: chatBillName(bill),
-      summary: bill.bill_content?.summary,
-      tags: bill.tags?.map((tag) => tag.label) || [],
-      isFeatured: featuredBillIds.has(bill.id),
-    };
-  };
 
   return (
     <>
@@ -147,12 +135,6 @@ export default async function Home() {
         {/* 免責事項 */}
         <BillDisclaimer />
       </Container>
-
-      {/* チャット機能 */}
-      <HomeChatClient
-        currentDifficulty={currentDifficulty}
-        bills={shownBills.map(toBillChatContext)}
-      />
     </>
   );
 }

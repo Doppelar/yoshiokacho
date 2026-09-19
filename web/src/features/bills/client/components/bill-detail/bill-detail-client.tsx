@@ -1,13 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useRef } from "react";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
-import { TextSelectionWrapper } from "@/features/bills/client/components/text-selection-tooltip/text-selection-wrapper";
-import {
-  ChatButton,
-  type ChatButtonRef,
-} from "@/features/chat/client/components/chat-button";
 import type { BillWithContent } from "../../../shared/types";
 
 interface BillDetailClientProps {
@@ -26,30 +20,10 @@ interface BillDetailClientProps {
  *   SSRを保持しつつクライアントサイド機能を実装
  */
 export function BillDetailClient({
-  bill,
-  currentDifficulty,
-  hasInterviewConfig,
+  bill: _bill,
+  currentDifficulty: _currentDifficulty,
+  hasInterviewConfig: _hasInterviewConfig,
   children,
 }: BillDetailClientProps) {
-  const chatButtonRef = useRef<ChatButtonRef>(null);
-
-  const handleOpenChat = (selectedText: string) => {
-    chatButtonRef.current?.openWithText(selectedText);
-  };
-
-  return (
-    <>
-      <TextSelectionWrapper onOpenChat={handleOpenChat}>
-        {children}
-      </TextSelectionWrapper>
-
-      {/* チャット機能 */}
-      <ChatButton
-        ref={chatButtonRef}
-        billContext={bill}
-        hasInterviewConfig={hasInterviewConfig}
-        difficultyLevel={currentDifficulty}
-      />
-    </>
-  );
+  return <>{children}</>;
 }

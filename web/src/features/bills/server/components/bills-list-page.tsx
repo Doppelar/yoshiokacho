@@ -14,8 +14,6 @@ import type { Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layouts/container";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { getDifficultyLevel } from "@/features/bill-difficulty/server/loaders/get-difficulty-level";
-import { HomeChatClient } from "@/features/chat/client/components/home-chat-client";
 import { routes } from "@/lib/routes";
 import { BillSearchCard } from "../../client/components/bill-list/bill-search-card";
 import { BillsSortSelect } from "../../client/components/bill-list/bills-sort-select";
@@ -26,7 +24,6 @@ import {
   countByStatusGroup,
   filterByStatusGroup,
 } from "../../shared/utils/bill-status-group";
-import { chatBillName } from "../../shared/utils/chat-bill-name";
 import { filterBills } from "../../shared/utils/filter-bills";
 import {
   type BillsListParams,
@@ -53,10 +50,9 @@ export async function BillsListPage({
   searchParams: BillsListSearchParams;
 }) {
   const params = parseBillsListParams(searchParams);
-  const [allBills, featuredTags, currentDifficulty] = await Promise.all([
+  const [allBills, featuredTags] = await Promise.all([
     getBillsWithReportCounts(),
     getFeaturedTags(),
-    getDifficultyLevel(),
   ]);
 
   // タグ以外の絞り込みを先に適用し、そこからタグ絞り込みを派生させる。
@@ -264,16 +260,6 @@ export async function BillsListPage({
           </Link>
         </div>
       </Container>
-
-      {/* チャットはトップと同じものを出す。文脈は表示中の一覧に合わせる。 */}
-      <HomeChatClient
-        currentDifficulty={currentDifficulty}
-        bills={bills.map((bill) => ({
-          name: chatBillName(bill),
-          summary: bill.bill_content?.summary,
-          tags: bill.tags?.map((tag) => tag.label) ?? [],
-        }))}
-      />
     </>
   );
 }
