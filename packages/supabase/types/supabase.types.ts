@@ -709,6 +709,42 @@ export type Database = {
           },
         ]
       }
+      local_edition_applications: {
+        Row: {
+          contact_name: string
+          created_at: string
+          email: string
+          id: string
+          introduction: string
+          municipality_name: string
+          site_url: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          contact_name: string
+          created_at?: string
+          email: string
+          id?: string
+          introduction: string
+          municipality_name: string
+          site_url?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          contact_name?: string
+          created_at?: string
+          email?: string
+          id?: string
+          introduction?: string
+          municipality_name?: string
+          site_url?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       mirai_stances: {
         Row: {
           bill_id: string
