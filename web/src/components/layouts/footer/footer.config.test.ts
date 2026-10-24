@@ -11,9 +11,16 @@ describe("footer.config", () => {
     expect(hrefs).toContain(routes.developers());
   });
 
+  it("primaryLinks に連載申請ページへのリンクが含まれる", () => {
+    const hrefs = primaryLinks.map((link) => link.href);
+
+    expect(hrefs).toContain(routes.localEditionApplications());
+  });
+
   it("内部リンクには external フラグが付かない", () => {
     const internalHrefs = new Set<string>([
       routes.home(),
+      routes.localEditionApplications(),
       routes.terms(),
       routes.privacy(),
       routes.developers(),
