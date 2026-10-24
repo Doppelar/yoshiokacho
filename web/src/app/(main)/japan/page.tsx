@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layouts/container";
 import { JapanPrefectureMap } from "@/features/japan-map/client/japan-prefecture-map";
 import { ApplicationCallToAction } from "@/features/local-edition-applications/client/components/application-call-to-action";
+import { LocalEditionChangelog } from "@/features/local-edition-changelog/client/components/local-edition-changelog";
 
 export const metadata: Metadata = {
   title: "日本の都道府県 | みらい議会",
@@ -23,6 +24,7 @@ export default function JapanMapPage() {
       </div>
       <ApplicationCallToAction />
       <JapanPrefectureMap />
+      <LocalEditionChangelog />
     </Container>
   );
 }
