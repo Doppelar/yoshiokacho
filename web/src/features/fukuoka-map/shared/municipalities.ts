@@ -341,7 +341,9 @@ export const FUKUOKA_MUNICIPALITIES: readonly FukuokaMunicipality[] = [
     type: "町",
     mapX: 38,
     mapY: 16,
-    status: "upcoming",
+    status: "live",
+    href: "https://miraigikai.onga-mirai-tech.com/",
+    external: true,
   },
   {
     id: "kotake",

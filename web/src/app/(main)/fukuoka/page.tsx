@@ -9,7 +9,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "福岡県の市町村 | みらい議会",
   description:
-    "福岡県の地図から市町村を選び、各自治体のみらい議会を開きます。現在は福岡市、田川市、福津市、広川町を開けます。",
+    "福岡県の地図から市町村を選び、各自治体のみらい議会を開きます。現在は福岡市、田川市、福津市、遠賀町、広川町を開けます。",
 };
 
 export default function FukuokaMapPage() {
@@ -25,7 +25,7 @@ export default function FukuokaMapPage() {
         <p className="text-sm font-bold text-primary-accent">福岡県</p>
         <h1 className="text-3xl font-bold leading-tight">市町村のみらい議会</h1>
         <p className="text-[15px] leading-7 text-black">
-          地図上の名前、または一覧のリンクから市町村を開けます。福岡市、田川市、福津市、広川町は今すぐ開けます。ほかの市町村は準備中です。
+          地図上の名前、または一覧のリンクから市町村を開けます。福岡市、田川市、福津市、遠賀町、広川町は今すぐ開けます。ほかの市町村は準備中です。
         </p>
       </div>
 

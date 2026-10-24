@@ -141,7 +141,7 @@ function SelectedMunicipalityCard({
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {municipality.name}
-          のみらい議会は準備中です。現在は福岡市、田川市、福津市、広川町を開けます。
+          のみらい議会は準備中です。現在は福岡市、田川市、福津市、遠賀町、広川町を開けます。
         </p>
       )}
     </section>
