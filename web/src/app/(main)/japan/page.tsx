@@ -1,9 +1,7 @@
-import { PenLine } from "lucide-react";
-import type { Metadata, Route } from "next";
-import Link from "next/link";
+import type { Metadata } from "next";
 import { Container } from "@/components/layouts/container";
 import { JapanPrefectureMap } from "@/features/japan-map/client/japan-prefecture-map";
-import { routes } from "@/lib/routes";
+import { ApplicationCallToAction } from "@/features/local-edition-applications/client/components/application-call-to-action";
 
 export const metadata: Metadata = {
   title: "日本の都道府県 | みらい議会",
@@ -22,14 +20,8 @@ export default function JapanMapPage() {
         <p className="text-[15px] leading-7 text-black">
           地図上の名前、または一覧のリンクから都道府県を開けます。群馬県、埼玉県、東京都、神奈川県、静岡県、愛知県、滋賀県、奈良県、広島県、福岡県、大分県、沖縄県は今すぐ開けます。ほかの都道府県は準備中です。
         </p>
-        <Link
-          href={routes.localEditionApplications() as Route}
-          className="inline-flex items-center gap-2 text-sm font-bold text-primary-accent underline underline-offset-2 hover:opacity-80"
-        >
-          <PenLine className="size-4" aria-hidden="true" />
-          みらい議会地方版 連載申請
-        </Link>
       </div>
+      <ApplicationCallToAction />
       <JapanPrefectureMap />
     </Container>
   );
