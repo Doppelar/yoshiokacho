@@ -12,7 +12,7 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-10-24",
-    title: "全国47都道府県の県議会のみらい議会へのリンクを追加しました",
+    title: "県議会のみらい議会（全国版）へのリンクを追加しました",
     href: "https://mirai-gikai-zenkoku.vercel.app/",
   },
   {

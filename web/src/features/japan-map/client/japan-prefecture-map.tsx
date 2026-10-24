@@ -1,6 +1,5 @@
 "use client";
 
-import { ExternalLink, Landmark } from "lucide-react";
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,10 +15,6 @@ import {
   PREFECTURES,
   type Prefecture,
 } from "../shared/prefectures";
-import {
-  getPrefectureCouncilHref,
-  getPrefectureCouncilName,
-} from "../shared/utils/prefecture-council";
 
 export function JapanPrefectureMap() {
   const [selectedId, setSelectedId] = useState("gunma");
@@ -107,43 +102,27 @@ function PrefectureGroup({
 
 function SelectedPrefectureCard({ prefecture }: { prefecture: Prefecture }) {
   const live = prefecture.status === "live";
-  const councilName = getPrefectureCouncilName(prefecture.name);
   return (
     <section className="rounded-2xl border bg-white p-5">
       <p className="text-sm text-muted-foreground">選択中</p>
       <h2 className="mt-1 text-2xl font-bold">{prefecture.name}</h2>
       {live ? (
-        <p className="mt-2 text-sm">
-          {prefecture.name}の市町村地図と、{councilName}
-          のみらい議会を開けます。
-        </p>
-      ) : (
-        <p className="mt-2 text-sm text-muted-foreground">
-          {prefecture.name}
-          の市町村のみらい議会は準備中です。{councilName}
-          のみらい議会は全国版で見られます。
-        </p>
-      )}
-      <div className="mt-4 flex flex-wrap gap-3">
-        {live && (
-          <Button asChild>
+        <>
+          <p className="mt-2 text-sm">
+            {prefecture.name}の市町村地図を開きます。
+          </p>
+          <Button asChild className="mt-4">
             <Link href={(prefecture.href ?? routes.gunmaMap()) as Route}>
               {prefecture.name}の市町村を見る
             </Link>
           </Button>
-        )}
-        <Button asChild variant={live ? "outline" : "default"}>
-          <a
-            href={getPrefectureCouncilHref(prefecture.id)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Landmark aria-hidden="true" />
-            みらい議会＠{councilName}を見る
-            <ExternalLink aria-hidden="true" />
-          </a>
-        </Button>
-      </div>
+        </>
+      ) : (
+        <p className="mt-2 text-sm text-muted-foreground">
+          {prefecture.name}
+          のみらい議会は準備中です。現在は群馬県、埼玉県、東京都、神奈川県、静岡県、愛知県、滋賀県、奈良県、広島県、福岡県、大分県、沖縄県を開けます。
+        </p>
+      )}
     </section>
   );
 }

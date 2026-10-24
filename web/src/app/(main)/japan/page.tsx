@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layouts/container";
 import { JapanPrefectureMap } from "@/features/japan-map/client/japan-prefecture-map";
+import { PrefectureCouncilLink } from "@/features/japan-map/client/prefecture-council-link";
 import { ApplicationCallToAction } from "@/features/local-edition-applications/client/components/application-call-to-action";
 import { LocalEditionChangelog } from "@/features/local-edition-changelog/client/components/local-edition-changelog";
 
@@ -19,10 +20,11 @@ export default function JapanMapPage() {
           都道府県のみらい議会
         </h1>
         <p className="text-[15px] leading-7 text-black">
-          地図上の名前、または一覧のリンクから都道府県を開けます。群馬県、埼玉県、東京都、神奈川県、静岡県、愛知県、滋賀県、奈良県、広島県、福岡県、大分県、沖縄県は今すぐ開けます。ほかの都道府県は準備中です。都道府県を選ぶと、全国47都道府県の県議会のみらい議会も開けます。
+          地図上の名前、または一覧のリンクから都道府県を開けます。群馬県、埼玉県、東京都、神奈川県、静岡県、愛知県、滋賀県、奈良県、広島県、福岡県、大分県、沖縄県は今すぐ開けます。ほかの都道府県は準備中です。
         </p>
       </div>
       <ApplicationCallToAction />
+      <PrefectureCouncilLink />
       <JapanPrefectureMap />
       <LocalEditionChangelog />
     </Container>
