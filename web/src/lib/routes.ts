@@ -14,6 +14,7 @@ export const routes = {
   gunmaMap: () => "/gunma" as const,
   tokyoMap: () => "/tokyo" as const,
   saitamaMap: () => "/saitama" as const,
+  chibaMap: () => "/chiba" as const,
   shigaMap: () => "/shiga" as const,
   fukuokaMap: () => "/fukuoka" as const,
   shizuokaMap: () => "/shizuoka" as const,

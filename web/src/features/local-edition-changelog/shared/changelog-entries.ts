@@ -11,6 +11,16 @@ export type LocalEditionChangelogEntry = {
  */
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
+    date: "2026-10-25",
+    title: "みらい議会＠君津市（千葉県）を追加しました",
+    href: "https://mirai-gikai-kimitsu-web.vercel.app/",
+  },
+  {
+    date: "2026-10-25",
+    title: "みらい議会＠大分市のリンクを新しいサイトに変更しました",
+    href: "https://mirai-gikai-oitacity-web.vercel.app/",
+  },
+  {
     date: "2026-10-24",
     title: "県議会のみらい議会（全国版）へのリンクを追加しました",
     href: "https://mirai-gikai-zenkoku.vercel.app/",

@@ -120,7 +120,7 @@ function SelectedPrefectureCard({ prefecture }: { prefecture: Prefecture }) {
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {prefecture.name}
-          のみらい議会は準備中です。現在は群馬県、埼玉県、東京都、神奈川県、静岡県、愛知県、滋賀県、奈良県、広島県、福岡県、大分県、沖縄県を開けます。
+          のみらい議会は準備中です。現在は群馬県、埼玉県、千葉県、東京都、神奈川県、静岡県、愛知県、滋賀県、奈良県、広島県、福岡県、大分県、沖縄県を開けます。
         </p>
       )}
     </section>

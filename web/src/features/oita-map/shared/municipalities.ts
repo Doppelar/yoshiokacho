@@ -19,7 +19,7 @@ export const OITA_MUNICIPALITIES: readonly OitaMunicipality[] = [
     mapX: 68,
     mapY: 54,
     status: "live",
-    href: "https://script.google.com/macros/s/AKfycbyizAr2Ula1osVJZV3OIMJy8fPO7A1wNGwW5nLTjrzSMbe5pYmTlemvqDDMLsLu7AUD/exec",
+    href: "https://mirai-gikai-oitacity-web.vercel.app/",
     external: true,
   },
   {

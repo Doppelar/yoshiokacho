@@ -145,7 +145,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 35.6,
     mapX: 86,
     mapY: 60,
-    status: "upcoming",
+    status: "live",
+    href: routes.chibaMap(),
   },
   {
     id: "tokyo",
