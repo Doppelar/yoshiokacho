@@ -16,6 +16,7 @@ import { pickHomeSections } from "@/features/bills/shared/utils/pick-home-sectio
 import { countTagChipItems } from "@/features/bills/shared/utils/tag-chip-items";
 import { CurrentDietSession } from "@/features/diet-sessions/client/components/current-diet-session";
 import { getCurrentDietSession } from "@/features/diet-sessions/server/loaders/get-current-diet-session";
+import { CouncilSwitchBanner } from "@/features/gunma-map/client/council-switch-banner";
 import { getLatestClosedDietSession } from "@/features/diet-sessions/server/loaders/get-latest-closed-diet-session";
 import { getJapanTime } from "@/lib/utils/date";
 
@@ -80,6 +81,10 @@ export default async function Home() {
         {/* 検索の入口。キーワードとテーマの両方をモーダルに並べる */}
         <div className="flex justify-end pt-2">
           <BillSearchOverlay tags={searchTagChips} bills={suggestableBills} />
+        </div>
+        {/* 全国の都道府県・群馬県の市町村のみらい議会への入口 */}
+        <div className="pt-6">
+          <CouncilSwitchBanner currentLabel="みらい議会＠吉岡町" />
         </div>
       </Container>
 

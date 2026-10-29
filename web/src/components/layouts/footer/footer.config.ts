@@ -19,6 +19,10 @@ export const primaryLinks: FooterLink[] = [
     href: routes.home(),
   },
   {
+    label: "全国の都道府県",
+    href: routes.japanMap(),
+  },
+  {
     label: "連載申請",
     href: routes.localEditionApplications(),
   },
