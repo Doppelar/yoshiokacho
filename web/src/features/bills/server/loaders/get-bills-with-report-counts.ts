@@ -3,6 +3,7 @@ import "server-only";
 import { countPublicReportsByBillIds } from "@mirai-gikai/shared/report-publication/count-public-reports";
 import { unstable_cache } from "next/cache";
 import { CACHE_TAGS } from "@/lib/cache-tags";
+import { withFallback } from "@/lib/utils/with-fallback";
 import type { BillWithContent } from "../../shared/types";
 import { getBills } from "./get-bills";
 
@@ -37,8 +38,13 @@ const getCachedReportCounts = unstable_cache(
  */
 export async function getBillsWithReportCounts(): Promise<BillWithContent[]> {
   const bills = await getBills();
+  // 集計用のDB関数がない環境（吉岡町版など）でも一覧は出せるよう、失敗時は全件0とする
   const counts = new Map(
-    await getCachedReportCounts(bills.map((bill) => bill.id))
+    await withFallback(
+      getCachedReportCounts(bills.map((bill) => bill.id)),
+      [],
+      "public report counts"
+    )
   );
 
   return bills.map((bill) => ({
