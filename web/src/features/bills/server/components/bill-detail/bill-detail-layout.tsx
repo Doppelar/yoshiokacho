@@ -1,5 +1,6 @@
 import { Container } from "@/components/layouts/container";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
+import { BillPublicOpinionSection } from "@/features/bill-public-opinions/server/components/bill-public-opinion-section";
 import { InterviewLandingSection } from "@/features/interview-config/client/components/interview-landing-section";
 import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
 import { getPublicReportsByBillId } from "@/features/interview-report/server/loaders/get-public-reports-by-bill-id";
@@ -94,6 +95,11 @@ export async function BillDetailLayout({
             <InterviewLandingSection billId={bill.id} />
           </div>
         )}
+        {/* 住民・専門家の意見（賛成・反対） */}
+        <div className="my-8">
+          <BillPublicOpinionSection billId={bill.id} />
+        </div>
+
         {/* シェアボタン */}
         <div className="my-8">
           <BillShareButtons bill={bill} />

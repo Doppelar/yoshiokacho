@@ -93,6 +93,47 @@ export type Database = {
           },
         ]
       }
+      bill_public_opinions: {
+        Row: {
+          bill_id: string
+          body: string
+          commenter_type: string
+          created_at: string
+          id: string
+          is_hidden: boolean
+          residence: string
+          stance: string
+        }
+        Insert: {
+          bill_id: string
+          body: string
+          commenter_type: string
+          created_at?: string
+          id?: string
+          is_hidden?: boolean
+          residence: string
+          stance: string
+        }
+        Update: {
+          bill_id?: string
+          body?: string
+          commenter_type?: string
+          created_at?: string
+          id?: string
+          is_hidden?: boolean
+          residence?: string
+          stance?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bill_public_opinions_bill_id_fkey"
+            columns: ["bill_id"]
+            isOneToOne: false
+            referencedRelation: "bills"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       bills: {
         Row: {
           created_at: string
