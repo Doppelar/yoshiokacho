@@ -33,7 +33,8 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.322,
     mapX: 42,
     mapY: 60,
-    status: "upcoming",
+    status: "live",
+    href: routes.takasakiHome(),
   },
   {
     id: "kiryu",

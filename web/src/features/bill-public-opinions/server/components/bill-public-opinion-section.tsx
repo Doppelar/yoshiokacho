@@ -56,7 +56,9 @@ export async function BillPublicOpinionSection({ billId }: { billId: string }) {
       </div>
 
       <div className="space-y-3">
-        <h3 className="text-lg font-bold">みんなの意見（{opinions.length}件）</h3>
+        <h3 className="text-lg font-bold">
+          みんなの意見（{opinions.length}件）
+        </h3>
         {opinions.length === 0 ? (
           <p className="text-sm text-muted-foreground">
             まだ意見はありません。最初の意見を書いてみませんか？

@@ -131,7 +131,7 @@ function SelectedMunicipalityCard({
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {municipality.name}
-          のみらい議会は準備中です。現在は吉岡町と太田市を開けます。
+          のみらい議会は準備中です。現在は吉岡町、太田市、高崎市を開けます。
         </p>
       )}
     </section>

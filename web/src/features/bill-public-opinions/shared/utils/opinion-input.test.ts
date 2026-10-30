@@ -80,7 +80,11 @@ describe("parseOpinionInput", () => {
 describe("countByStance", () => {
   it("賛否ごとに数え、0件の賛否も含める", () => {
     expect(
-      countByStance([{ stance: "for" }, { stance: "for" }, { stance: "against" }])
+      countByStance([
+        { stance: "for" },
+        { stance: "for" },
+        { stance: "against" },
+      ])
     ).toEqual({ for: 2, against: 1, neutral: 0 });
     expect(countByStance([])).toEqual({ for: 0, against: 0, neutral: 0 });
   });
