@@ -93,6 +93,47 @@ export type Database = {
           },
         ]
       }
+      bill_public_opinions: {
+        Row: {
+          bill_id: string
+          body: string
+          commenter_type: string
+          created_at: string
+          id: string
+          is_hidden: boolean
+          residence: string
+          stance: string
+        }
+        Insert: {
+          bill_id: string
+          body: string
+          commenter_type: string
+          created_at?: string
+          id?: string
+          is_hidden?: boolean
+          residence: string
+          stance: string
+        }
+        Update: {
+          bill_id?: string
+          body?: string
+          commenter_type?: string
+          created_at?: string
+          id?: string
+          is_hidden?: boolean
+          residence?: string
+          stance?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bill_public_opinions_bill_id_fkey"
+            columns: ["bill_id"]
+            isOneToOne: false
+            referencedRelation: "bills"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       bills: {
         Row: {
           created_at: string
@@ -708,6 +749,42 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      local_edition_applications: {
+        Row: {
+          contact_name: string
+          created_at: string
+          email: string
+          id: string
+          introduction: string
+          municipality_name: string
+          site_url: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          contact_name: string
+          created_at?: string
+          email: string
+          id?: string
+          introduction: string
+          municipality_name: string
+          site_url?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          contact_name?: string
+          created_at?: string
+          email?: string
+          id?: string
+          introduction?: string
+          municipality_name?: string
+          site_url?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       mirai_stances: {
         Row: {

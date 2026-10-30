@@ -40,6 +40,10 @@
       "types": "./src/content-richness/schemas.ts",
       "default": "./src/content-richness/schemas.ts"
     },
+    "./local-edition-application/parse-application": {
+      "types": "./src/local-edition-application/utils/parse-application.ts",
+      "default": "./src/local-edition-application/utils/parse-application.ts"
+    },
     "./content-richness/instructions": {
       "types": "./src/content-richness/content-richness-instructions.ts",
       "default": "./src/content-richness/content-richness-instructions.ts"

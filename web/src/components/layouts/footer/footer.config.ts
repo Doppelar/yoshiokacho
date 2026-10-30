@@ -19,6 +19,14 @@ export const primaryLinks: FooterLink[] = [
     href: routes.home(),
   },
   {
+    label: "全国の都道府県",
+    href: routes.japanMap(),
+  },
+  {
+    label: "連載申請",
+    href: routes.localEditionApplications(),
+  },
+  {
     label: "みらい議会とは",
     href: EXTERNAL_LINKS.ABOUT_NOTE,
     external: true,
@@ -31,11 +39,6 @@ export const primaryLinks: FooterLink[] = [
 ];
 
 export const policyLinks: FooterPolicyLink[] = [
-  {
-    label: "よくあるご質問",
-    href: EXTERNAL_LINKS.FAQ,
-    external: true,
-  },
   {
     label: "利用規約",
     href: routes.terms(),

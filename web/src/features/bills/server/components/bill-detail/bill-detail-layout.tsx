@@ -1,10 +1,12 @@
 import { Container } from "@/components/layouts/container";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
+import { BillPublicOpinionSection } from "@/features/bill-public-opinions/server/components/bill-public-opinion-section";
 import { InterviewLandingSection } from "@/features/interview-config/client/components/interview-landing-section";
 import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
 import { getPublicReportsByBillId } from "@/features/interview-report/server/loaders/get-public-reports-by-bill-id";
 import { BillTopicsPreviewSection } from "@/features/user-topic-analysis/server/components/bill-topics-preview-section";
 import { getPublicTopicAnalysis } from "@/features/user-topic-analysis/server/loaders/get-public-topic-analysis";
+import { withFallback } from "@/lib/utils/with-fallback";
 import { BillDetailClient } from "../../../client/components/bill-detail/bill-detail-client";
 import { BillDisclaimer } from "../../../client/components/bill-detail/bill-disclaimer";
 import { BillStatusProgress } from "../../../client/components/bill-detail/bill-status-progress";
@@ -22,11 +24,17 @@ export async function BillDetailLayout({
   bill,
   currentDifficulty,
 }: BillDetailLayoutProps) {
+  // インタビュー関連のテーブルを持たない環境（吉岡町版など）でも議案本文は
+  // 表示できるよう、付随データの取得失敗は「なし」として扱う。
   const [interviewConfig, publicReportsResult, topicAnalysis] =
     await Promise.all([
-      getInterviewConfig(bill.id),
-      getPublicReportsByBillId(bill.id),
-      getPublicTopicAnalysis(bill.id),
+      withFallback(getInterviewConfig(bill.id), null, "interview config"),
+      withFallback(
+        getPublicReportsByBillId(bill.id),
+        { reports: [], totalCount: 0 },
+        "public reports"
+      ),
+      withFallback(getPublicTopicAnalysis(bill.id), null, "topic analysis"),
     ]);
 
   return (
@@ -87,6 +95,11 @@ export async function BillDetailLayout({
             <InterviewLandingSection billId={bill.id} />
           </div>
         )}
+        {/* 住民・専門家の意見（賛成・反対） */}
+        <div className="my-8">
+          <BillPublicOpinionSection billId={bill.id} />
+        </div>
+
         {/* シェアボタン */}
         <div className="my-8">
           <BillShareButtons bill={bill} />
