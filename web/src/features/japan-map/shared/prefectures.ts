@@ -229,7 +229,9 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 36.65,
     mapX: 69,
     mapY: 49,
-    status: "upcoming",
+    status: "live",
+    href: "https://mirai-gikai-komoro-web.vercel.app/",
+    external: true,
   },
   {
     id: "gifu",
