@@ -19,6 +19,56 @@ export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   },
   {
     date: "2026-11-15",
+    title: "みらい議会＠榛東村（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-shinto-mura-cm6oxf0uxfhzxi/9ARbts_J3wHzQUWSj1DbvFtLw3vzqAMvGmY6TiA3HYg",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠安中市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-annaka-shi-dg6oxew4x0xasv/qtAfuthZNIlWGmmbE3zPM8lwN6oFhm53OSXbLE9aMEk",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠みどり市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-midori-shi-xrxt6oxexkoxtxlsz/o8DSmjeo8DXEgZp3OnyQrEhTdBMvHLjGvDvIB0KYIiQ",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠沼田市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-numata-shi-wxj6oxdxkxm9mxtxm/oAOFO2A_fVAnXjd0MaaMdWQ_zxyyCKuPCBVCP9cMStI",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠渋川市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-shibukawa-shi-x0xy6oxe4tflxg3/RAvzrb2s8Y_IZMCE7_slRG4LRPCCpSSs6gTWR202ViI",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠富岡市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-tomioka-shi-jn6oxe8xvxoxafxx/3fWAWp6KIpMsiNANLgUdrBtbvd3cUhxP4DhvekE1Oko",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠伊勢崎市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-isesaki-shi-xuxg6oxdtpxexcxfxe/1KTMitQELYirud_ViIgA-Rh6GFzuNlsecywXjBlITcs",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠桐生市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-kiryu-shi-gu6oxdqn43rxa/X0vBZIvHWen-inurtgds-tIewZLRaMLevM9Ht3MdevI",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠藤岡市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-fujioka-shi-dxk6oxdpw3gxgf/T8uk_GzLez9gTYvH74NfGh62uueKDSAIccT334cf-Eg",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠前橋市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-maebashi-shi-xixn6oxd5kh9cxk/-YH3T0WZJ_7GYS7hQleRGRScO5wr2f5wo-B1GayEiW4",
+  },
+  {
+    date: "2026-11-15",
     title: "みらい議会＠館林市のリンクを新しいサイトに変更しました",
     href: "https://muse.ai/s/mirai-gikai-tatebayashi-shi-xuxc6oxaxbxr3xw22/zDtxaeX2ZAIDDsQD_GQmKJWMiT0TpShYu6hA-TI7Lq4",
   },

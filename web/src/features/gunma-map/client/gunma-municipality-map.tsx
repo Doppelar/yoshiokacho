@@ -145,7 +145,7 @@ function SelectedMunicipalityCard({
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {municipality.name}
-          のみらい議会は準備中です。現在は吉岡町、太田市、高崎市、館林市を開けます。
+          のみらい議会は準備中です。現在は前橋市、藤岡市、桐生市、伊勢崎市、沼田市、渋川市、富岡市、安中市、みどり市、榛東村、吉岡町、太田市、高崎市、館林市を開けます。
         </p>
       )}
     </section>
