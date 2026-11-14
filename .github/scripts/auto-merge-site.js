@@ -98,12 +98,15 @@ module.exports = async ({
         run?.status === "completed" &&
         run.conclusion === "success";
     }
-    const { data: combined } = await github.rest.repos.getCombinedStatusForRef({
+    const { data: statuses } = await github.rest.repos.listCommitStatusesForRef({
       owner,
       repo,
       ref: originalSha,
     });
-    const web = combined.statuses.find(isWebStatus);
+    const latestWeb = statuses.find((status) =>
+      ["Vercel", "Vercel – web"].includes(status.context)
+    );
+    const web = latestWeb && isWebStatus(latestWeb) ? latestWeb : undefined;
     if (web && ["failure", "error"].includes(web.state))
       return core.setFailed("The web Preview failed; publication stopped.");
     if (checksReady && web?.state === "success" && pr.mergeable === true) {
