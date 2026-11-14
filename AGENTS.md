@@ -1,5 +1,14 @@
 # Repository Guidelines
 
+## 本フォークの本番運用（以下の元リポジトリ向けルールより優先）
+
+- 本番ブランチは `production`。作業用worktreeは最新の `origin/production` から分岐し、PRの比較先も `production` とする。`main`・`develop` にはpushしない。
+- 公開対象は Vercel `doppelars-projects/web`、本番URLは `https://web-olive-ten-47.vercel.app/`。別プロジェクト `yoshiokacho` は対象外。
+- 安全なサイト更新はCIとweb Preview成功後、`site-autopublish` ラベルで自動マージ対象にできる。現productionの本番URL検証が失敗中なら次を公開しない。
+- DB・秘密情報・認証・依存関係・インフラ・Actions・破壊的変更は自動マージ対象外。具体的な変更を提示してユーザーの事前承認を得る。自動化の有効化とブランチ保護などの安全設定変更も承認を要する。
+- `db-preview-approved` ラベルはユーザーがSupabase Previewの作成・マイグレーション・Preview環境変数設定を承認した場合だけ付ける。通常のサイト変更では付けない。
+- 公開完了はデプロイ成功表示だけで判断しない。本番URLの `/api/deployment` のSHA・projectIdと変更したリンクを確認する。`docs/20261115_0140_本番自動公開.md` を参照。
+
 > **Note**: `CLAUDE.md` は `AGENTS.md` へのシンボリックリンクです。ルールの追加・編集は必ず `AGENTS.md` を直接編集してください。
 
 ## 必須ルール
