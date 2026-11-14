@@ -12,6 +12,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "みらい議会＠前橋市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-maebashi-shi-xixn6oxd5kh9cxk/-YH3T0WZJ_7GYS7hQleRGRScO5wr2f5wo-B1GayEiW4",
+  },
+  {
+    date: "2026-11-15",
     title: "みらい議会＠館林市のリンクを新しいサイトに変更しました",
     href: "https://muse.ai/s/mirai-gikai-tatebayashi-shi-xuxc6oxaxbxr3xw22/zDtxaeX2ZAIDDsQD_GQmKJWMiT0TpShYu6hA-TI7Lq4",
   },

@@ -24,7 +24,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.389,
     mapX: 54,
     mapY: 54,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-maebashi-shi-xixn6oxd5kh9cxk/-YH3T0WZJ_7GYS7hQleRGRScO5wr2f5wo-B1GayEiW4",
+    external: true,
   },
   {
     id: "takasaki",
