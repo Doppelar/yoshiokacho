@@ -50,6 +50,8 @@
       "admin/src/**/*",
       "tests/**/*",
       ".github/scripts/**/*",
+      "scripts/vercel-ignore-build.mjs",
+      "scripts/utils/*.mjs",
       "!.claude/worktrees"
     ]
   }
