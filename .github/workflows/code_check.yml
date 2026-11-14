@@ -30,7 +30,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Test production safety policy
-        run: node --test .github/scripts/*.test.js
+        run: node --test .github/scripts/*.test.js scripts/utils/*.test.mjs
 
       - name: Run Biome lint & format check
         run: pnpm run lint
