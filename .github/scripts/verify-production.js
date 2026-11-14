@@ -1,21 +1,29 @@
+const { readFileSync } = require("node:fs");
+const { extractExpectedLinks } = require("./production-links.js");
 const { setTimeout: delay } = require("node:timers/promises");
 const ORIGIN = "https://web-olive-ten-47.vercel.app";
 const PROJECT = "prj_aQn1ZLzoGDBbz3yELY4NqFc5w34h";
-const EXPECTATIONS = [
-  {
-    path: "/japan",
-    links: [
-      "https://mirai-gikai-komoro-web.vercel.app/",
-      "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk",
-    ],
-  },
-  {
-    path: "/gunma",
-    links: [
-      "https://muse.ai/s/mirai-gikai-tatebayashi-shi-xuxc6oxaxbxr3xw22/zDtxaeX2ZAIDDsQD_GQmKJWMiT0TpShYu6hA-TI7Lq4",
-    ],
-  },
-];
+function loadExpectations() {
+  const maps = [
+    {
+      path: "/japan",
+      file: "web/src/features/japan-map/shared/prefectures.ts",
+    },
+    {
+      path: "/gunma",
+      file: "web/src/features/gunma-map/shared/municipalities.ts",
+    },
+    {
+      path: "/okayama",
+      file: "web/src/features/okayama-map/shared/municipalities.ts",
+    },
+  ];
+  return maps.map((map) => ({
+    path: map.path,
+    links: extractExpectedLinks(readFileSync(map.file, "utf8")),
+  }));
+}
+
 async function read(path) {
   const url = new URL(path, ORIGIN);
   if (url.origin !== ORIGIN)
@@ -29,14 +37,14 @@ async function read(path) {
   if (!response.ok) throw new Error(`${path} returned HTTP ${response.status}`);
   return response.text();
 }
-async function verify(sha, readPage = read) {
+async function verify(sha, readPage = read, expectations = loadExpectations()) {
   const marker = JSON.parse(await readPage("/api/deployment"));
   if (marker.sha !== sha || marker.projectId !== PROJECT)
     throw new Error(
       "The live URL does not serve the expected commit from the web project."
     );
   await readPage("/");
-  for (const page of EXPECTATIONS) {
+  for (const page of expectations) {
     const html = await readPage(page.path);
     const missing = new Set(page.links.filter((link) => !html.includes(link)));
     if (missing.size) {
@@ -85,4 +93,4 @@ if (require.main === module)
     console.error(error.message);
     process.exitCode = 1;
   });
-module.exports = { verify, validateRunSha };
+module.exports = { verify, validateRunSha, loadExpectations };

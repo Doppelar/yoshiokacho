@@ -368,8 +368,7 @@ export const PREFECTURES: readonly Prefecture[] = [
     mapX: 40,
     mapY: 54,
     status: "live",
-    href: "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk",
-    external: true,
+    href: routes.okayamaMap(),
   },
   {
     id: "hiroshima",

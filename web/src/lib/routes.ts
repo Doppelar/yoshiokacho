@@ -12,6 +12,7 @@ export const routes = {
   japanMap: () => "/japan" as const,
   localEditionApplications: () => "/japan/local-edition-applications" as const,
   gunmaMap: () => "/gunma" as const,
+  okayamaMap: () => "/okayama" as const,
   tokyoMap: () => "/tokyo" as const,
   saitamaMap: () => "/saitama" as const,
   chibaMap: () => "/chiba" as const,
