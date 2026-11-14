@@ -47,7 +47,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.405,
     mapX: 73,
     mapY: 48,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-kiryu-shi-gu6oxdqn43rxa/X0vBZIvHWen-inurtgds-tIewZLRaMLevM9Ht3MdevI",
+    external: true,
   },
   {
     id: "isesaki",
@@ -57,7 +59,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.311,
     mapX: 61,
     mapY: 58,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-isesaki-shi-xuxg6oxdtpxexcxfxe/1KTMitQELYirud_ViIgA-Rh6GFzuNlsecywXjBlITcs",
+    external: true,
   },
   {
     id: "ota",
@@ -110,7 +114,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.259,
     mapX: 44,
     mapY: 72,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-fujioka-shi-dxk6oxdpw3gxgf/T8uk_GzLez9gTYvH74NfGh62uueKDSAIccT334cf-Eg",
+    external: true,
   },
   {
     id: "tomioka",
