@@ -1,18 +1,18 @@
 import { AlertTriangle } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getDifficultyLevel } from "@/features/bill-difficulty/server/loaders/get-difficulty-level";
+import { BillDetailLayout } from "@/features/bills/server/components/bill-detail/bill-detail-layout";
 import { getBillByIdAdmin } from "@/features/bills/server/loaders/get-bill-by-id-admin";
 import { validatePreviewToken } from "@/features/bills/server/loaders/validate-preview-token";
-import { BillDetailLayout } from "@/features/bills/server/components/bill-detail/bill-detail-layout";
 import { env } from "@/lib/env";
 
 interface PreviewBillPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     token?: string;
-  };
+  }>;
 }
 
 function PreviewBanner() {
@@ -44,17 +44,16 @@ export default async function PreviewBillPage({
   params,
   searchParams,
 }: PreviewBillPageProps) {
+  const [{ id: billId }, { token }] = await Promise.all([params, searchParams]);
+
   // トークン検証
-  const isValidToken = await validatePreviewToken(
-    params.id,
-    searchParams.token
-  );
+  const isValidToken = await validatePreviewToken(billId, token);
   if (!isValidToken) {
     notFound();
   }
 
   // 管理者用API（非公開議案も取得可能）を使用
-  const bill = await getBillByIdAdmin(params.id);
+  const bill = await getBillByIdAdmin(billId);
   const difficulty = await getDifficultyLevel();
 
   if (!bill) {

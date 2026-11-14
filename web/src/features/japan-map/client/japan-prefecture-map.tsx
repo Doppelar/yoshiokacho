@@ -42,6 +42,7 @@ export function JapanPrefectureMap() {
               mapY={item.mapY}
               selected={item.id === selectedId}
               href={item.href}
+              external={item.external}
               onSelect={() => setSelectedId(item.id)}
             />
           ))}
@@ -92,6 +93,7 @@ function PrefectureGroup({
             name={item.name}
             selected={selectedId === item.id}
             href={item.href}
+            external={item.external}
             onSelect={() => onSelect(item.id)}
           />
         ))}
@@ -109,18 +111,30 @@ function SelectedPrefectureCard({ prefecture }: { prefecture: Prefecture }) {
       {live ? (
         <>
           <p className="mt-2 text-sm">
-            {prefecture.name}の市町村地図を開きます。
+            {prefecture.external
+              ? `${prefecture.name}のみらい議会を開きます。`
+              : `${prefecture.name}の市町村地図を開きます。`}
           </p>
           <Button asChild className="mt-4">
-            <Link href={(prefecture.href ?? routes.gunmaMap()) as Route}>
-              {prefecture.name}の市町村を見る
-            </Link>
+            {prefecture.external && prefecture.href ? (
+              <a
+                href={prefecture.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {prefecture.name}のみらい議会を見る
+              </a>
+            ) : (
+              <Link href={(prefecture.href ?? routes.gunmaMap()) as Route}>
+                {prefecture.name}の市町村を見る
+              </Link>
+            )}
           </Button>
         </>
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {prefecture.name}
-          のみらい議会は準備中です。現在は群馬県、埼玉県、千葉県、東京都、神奈川県、静岡県、愛知県、滋賀県、奈良県、広島県、福岡県、大分県、沖縄県を開けます。
+          のみらい議会は準備中です。現在は群馬県、埼玉県、千葉県、東京都、神奈川県、静岡県、愛知県、滋賀県、兵庫県、奈良県、広島県、福岡県、大分県、沖縄県を開けます。
         </p>
       )}
     </section>

@@ -44,6 +44,7 @@ export function GunmaMunicipalityMap() {
               mapY={item.mapY}
               selected={item.id === selectedId}
               href={item.href}
+              external={item.external}
               onSelect={() => setSelectedId(item.id)}
             />
           ))}
@@ -97,6 +98,7 @@ function MunicipalityGroup({
             name={item.name}
             selected={selectedId === item.id}
             href={item.href}
+            external={item.external}
             onSelect={() => onSelect(item.id)}
           />
         ))}
@@ -120,18 +122,30 @@ function SelectedMunicipalityCard({
       {live ? (
         <>
           <p className="mt-2 text-sm">
-            {municipality.name}の議会ページを開きます。
+            {municipality.external
+              ? `${municipality.name}のページを開きます。`
+              : `${municipality.name}の議会ページを開きます。`}
           </p>
           <Button asChild className="mt-4">
-            <Link href={(municipality.href ?? routes.home()) as Route}>
-              みらい議会＠{municipality.name}を見る
-            </Link>
+            {municipality.external && municipality.href ? (
+              <a
+                href={municipality.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                みらい議会＠{municipality.name}を見る
+              </a>
+            ) : (
+              <Link href={(municipality.href ?? routes.home()) as Route}>
+                みらい議会＠{municipality.name}を見る
+              </Link>
+            )}
           </Button>
         </>
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {municipality.name}
-          のみらい議会は準備中です。現在は吉岡町、太田市、高崎市を開けます。
+          のみらい議会は準備中です。現在は吉岡町、太田市、高崎市、館林市を開けます。
         </p>
       )}
     </section>

@@ -12,6 +12,7 @@ export type Municipality = {
   mapY: number;
   status: MunicipalityStatus;
   href?: string;
+  external?: boolean;
 };
 
 export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
@@ -85,7 +86,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.245,
     mapX: 82,
     mapY: 62,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/miraiyi-hui-guan-lin-shi-xfxa6ovmxjxpxown/zyu6O8KrW6kv7K9YQAuZUUrIse3rw9aLuVJvffc9SOU",
+    external: true,
   },
   {
     id: "shibukawa",
