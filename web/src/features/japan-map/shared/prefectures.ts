@@ -22,6 +22,7 @@ export type Prefecture = {
   mapY: number;
   status: PrefectureStatus;
   href?: string;
+  external?: boolean;
 };
 
 export const PREFECTURES: readonly Prefecture[] = [
@@ -311,7 +312,9 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 34.69,
     mapX: 46,
     mapY: 53,
-    status: "upcoming",
+    status: "live",
+    href: "https://mirai-gikai-takarazuka.vercel.app/",
+    external: true,
   },
   {
     id: "nara",
