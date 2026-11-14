@@ -36,6 +36,7 @@ function fixture() {
     state: "success",
     creator: { login: "vercel[bot]" },
   };
+  const statuses = [web];
   const summary = {
     addHeading() {
       return this;
@@ -73,7 +74,7 @@ function fixture() {
       },
       repos: {
         getBranch: async () => ({ data: { commit: { sha: BASE } } }),
-        getCombinedStatusForRef: async () => ({ data: { statuses: [web] } }),
+        listCommitStatusesForRef: async () => ({ data: statuses }),
       },
       actions: {
         listWorkflowRuns: async ({ workflow_id }) => ({
@@ -98,6 +99,7 @@ function fixture() {
     review,
     ci,
     web,
+    statuses,
     calls,
     now: () => (ticks++ === 0 ? 0 : 10000000),
     sleep: async () => {},
@@ -247,4 +249,14 @@ test("stops before merging unresolved review feedback", async () => {
     );
     assert.equal(f.calls[0][0], "failed");
   }
+});
+
+test("never falls back to an older success when the latest web status is unverifiable", async () => {
+  const f = fixture();
+  f.statuses.unshift({ ...f.web, state: "failure", target_url: null });
+  await run(f);
+  assert.equal(
+    f.calls.some(([operation]) => operation === "merge"),
+    false
+  );
 });
