@@ -12,6 +12,21 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "みらい議会＠沼田市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-numata-shi-wxj6oxdxkxm9mxtxm/oAOFO2A_fVAnXjd0MaaMdWQ_zxyyCKuPCBVCP9cMStI",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠渋川市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-shibukawa-shi-x0xy6oxe4tflxg3/RAvzrb2s8Y_IZMCE7_slRG4LRPCCpSSs6gTWR202ViI",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠富岡市（群馬県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-tomioka-shi-jn6oxe8xvxoxafxx/3fWAWp6KIpMsiNANLgUdrBtbvd3cUhxP4DhvekE1Oko",
+  },
+  {
+    date: "2026-11-15",
     title: "みらい議会＠伊勢崎市（群馬県）を追加しました",
     href: "https://muse.ai/s/mirai-gikai-isesaki-shi-xuxg6oxdtpxexcxfxe/1KTMitQELYirud_ViIgA-Rh6GFzuNlsecywXjBlITcs",
   },

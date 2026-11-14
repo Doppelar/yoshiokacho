@@ -82,7 +82,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.646,
     mapX: 58,
     mapY: 38,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-numata-shi-wxj6oxdxkxm9mxtxm/oAOFO2A_fVAnXjd0MaaMdWQ_zxyyCKuPCBVCP9cMStI",
+    external: true,
   },
   {
     id: "tatebayashi",
@@ -104,7 +106,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.479,
     mapX: 43,
     mapY: 48,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-shibukawa-shi-x0xy6oxe4tflxg3/RAvzrb2s8Y_IZMCE7_slRG4LRPCCpSSs6gTWR202ViI",
+    external: true,
   },
   {
     id: "fujioka",
@@ -126,7 +130,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.26,
     mapX: 33,
     mapY: 65,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-tomioka-shi-jn6oxe8xvxoxafxx/3fWAWp6KIpMsiNANLgUdrBtbvd3cUhxP4DhvekE1Oko",
+    external: true,
   },
   {
     id: "annaka",
