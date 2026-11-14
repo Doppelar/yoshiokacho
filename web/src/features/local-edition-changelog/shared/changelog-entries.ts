@@ -1,3 +1,5 @@
+import { routes } from "@/lib/routes";
+
 export type LocalEditionChangelogEntry = {
   /** YYYY-MM-DD（JST） */
   date: string;
@@ -10,6 +12,11 @@ export type LocalEditionChangelogEntry = {
  * 自治体の追加・公開などがあったら先頭に追記する。
  */
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
+  {
+    date: "2026-11-15",
+    title: "岡山県の市町村地図を公開しました",
+    href: routes.okayamaMap(),
+  },
   {
     date: "2026-11-15",
     title: "みらい議会＠館林市のリンクを新しいサイトに変更しました",
