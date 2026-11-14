@@ -1,4 +1,4 @@
-const { assessPullRequest } = require("./site-publish-policy.js");
+const { assessPullRequest, isWebStatus } = require("./site-publish-policy.js");
 module.exports = async ({
   github,
   context,
@@ -103,11 +103,7 @@ module.exports = async ({
       repo,
       ref: originalSha,
     });
-    const web = combined.statuses.find(
-      (status) =>
-        status.context === "Vercel – web" &&
-        status.creator?.login === "vercel[bot]"
-    );
+    const web = combined.statuses.find(isWebStatus);
     if (web && ["failure", "error"].includes(web.state))
       return core.setFailed("The web Preview failed; publication stopped.");
     if (checksReady && web?.state === "success" && pr.mergeable === true) {

@@ -32,6 +32,7 @@ function fixture() {
   };
   const web = {
     context: "Vercel – web",
+    target_url: "https://vercel.com/doppelars-projects/web/deployment",
     state: "success",
     creator: { login: "vercel[bot]" },
   };
