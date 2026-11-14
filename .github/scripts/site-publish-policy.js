@@ -57,4 +57,22 @@ function assessPullRequest(pr, files, owner, repository) {
   }
   return { allowed: true, reason: "Site-only update." };
 }
-module.exports = { assessPullRequest };
+
+function isWebStatus(status) {
+  if (
+    !["Vercel", "Vercel – web"].includes(status.context) ||
+    status.creator?.login !== "vercel[bot]"
+  )
+    return false;
+  try {
+    const target = new URL(status.target_url);
+    return (
+      target.origin === "https://vercel.com" &&
+      target.pathname.startsWith("/doppelars-projects/web/")
+    );
+  } catch {
+    return false;
+  }
+}
+
+module.exports = { assessPullRequest, isWebStatus };

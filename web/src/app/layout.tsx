@@ -8,20 +8,20 @@ import { env } from "@/lib/env";
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: "variable",
 });
 
 const lexendGiga = Lexend_Giga({
   variable: "--font-lexend-giga",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800", "900"],
+  weight: "variable",
 });
 
 // トピックの代表意見など、引用文を明朝体で表示するために使用
 const notoSerifJP = Noto_Serif_JP({
   variable: "--font-noto-serif-jp",
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: "variable",
 });
 
 const isDev = process.env.NODE_ENV === "development";
