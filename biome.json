@@ -49,6 +49,7 @@
       "web/src/**/*",
       "admin/src/**/*",
       "tests/**/*",
+      ".github/scripts/**/*",
       "!.claude/worktrees"
     ]
   }

@@ -1,15 +1,32 @@
-name: Migrate DB then Deploy
+name: Apply DB changes (manual)
 
 on:
-  push:
-    branches: [ main, develop ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Supabase environment approved by the user
+        required: true
+        type: choice
+        options: [staging, production]
+      confirmation:
+        description: Type APPLY DB CHANGES only after explicit user approval
+        required: true
+        type: string
 
 jobs:
-  migrate-and-deploy:
+  apply-approved-db-changes:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref_name == 'main' && 'production' || 'staging' }}
+    environment: ${{ inputs.environment }}
     steps:
-      - uses: actions/checkout@v5
+      - name: Require explicit DB approval
+        env:
+          CONFIRMATION: ${{ inputs.confirmation }}
+        run: |
+          if [ "$CONFIRMATION" != 'APPLY DB CHANGES' ]; then
+            echo 'DB changes require explicit approval.' >&2
+            exit 1
+          fi
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
       # Supabase CLI セットアップ
       - uses: supabase/setup-cli@b60b5899c73b63a2d2d651b1e90db8d4c9392f51 # v1.6.0
@@ -38,9 +55,3 @@ jobs:
           SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID: ${{ secrets.SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID }}
           SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET: ${{ secrets.SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET }}
           ADMIN_AUTH_CALLBACK_URL: ${{ secrets.ADMIN_AUTH_CALLBACK_URL }}
-
-      # 成功したら Vercel デプロイを開始
-      - name: Trigger Vercel Deploy Hook
-        run: |
-          curl -X POST "${{ secrets.WEB_VERCEL_DEPLOY_HOOK_URL }}"
-          curl -X POST "${{ secrets.ADMIN_VERCEL_DEPLOY_HOOK_URL }}"

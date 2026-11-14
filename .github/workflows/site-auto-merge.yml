@@ -1,0 +1,36 @@
+name: Site auto merge
+
+on:
+  pull_request_target:
+    branches: [production]
+    types: [opened, reopened, synchronize, ready_for_review, labeled]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-auto-merge-production
+  cancel-in-progress: false
+
+jobs:
+  safe-site-merge:
+    if: >-
+      vars.SITE_AUTOPUBLISH_ENABLED == 'true' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      contains(github.event.pull_request.labels.*.name, 'site-autopublish')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+    steps:
+      # Only trusted base code is checked out. Never run PR code with this token.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            await require('./.github/scripts/auto-merge-site.js')({github, context, core});
