@@ -251,10 +251,12 @@ test("stops before merging unresolved review feedback", async () => {
   }
 });
 
-
 test("never falls back to an older success when the latest web status is unverifiable", async () => {
   const f = fixture();
   f.statuses.unshift({ ...f.web, state: "failure", target_url: null });
   await run(f);
-  assert.equal(f.calls.some(([operation]) => operation === "merge"), false);
+  assert.equal(
+    f.calls.some(([operation]) => operation === "merge"),
+    false
+  );
 });

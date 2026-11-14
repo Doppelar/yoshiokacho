@@ -98,11 +98,13 @@ module.exports = async ({
         run?.status === "completed" &&
         run.conclusion === "success";
     }
-    const { data: statuses } = await github.rest.repos.listCommitStatusesForRef({
-      owner,
-      repo,
-      ref: originalSha,
-    });
+    const { data: statuses } = await github.rest.repos.listCommitStatusesForRef(
+      {
+        owner,
+        repo,
+        ref: originalSha,
+      }
+    );
     const latestWeb = statuses.find((status) =>
       ["Vercel", "Vercel – web"].includes(status.context)
     );
