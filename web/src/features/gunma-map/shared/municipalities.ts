@@ -87,7 +87,7 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     mapX: 82,
     mapY: 62,
     status: "live",
-    href: "https://muse.ai/s/miraiyi-hui-guan-lin-shi-xfxa6ovmxjxpxown/zyu6O8KrW6kv7K9YQAuZUUrIse3rw9aLuVJvffc9SOU",
+    href: "https://muse.ai/s/mirai-gikai-tatebayashi-shi-xuxc6oxaxbxr3xw22/zDtxaeX2ZAIDDsQD_GQmKJWMiT0TpShYu6hA-TI7Lq4",
     external: true,
   },
   {

@@ -367,7 +367,9 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 34.66,
     mapX: 40,
     mapY: 54,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk",
+    external: true,
   },
   {
     id: "hiroshima",
