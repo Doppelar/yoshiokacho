@@ -14,6 +14,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "全国版ポータルへのリンクを追加しました",
+    href: "https://mirai-gikai-portal.vercel.app/",
+  },
+  {
+    date: "2026-11-15",
     title: "岡山県の市町村地図を公開しました",
     href: routes.okayamaMap(),
   },
