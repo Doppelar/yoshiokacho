@@ -4,7 +4,7 @@
     "contexts": [
       "lint-and-typecheck",
       "integration-test",
-      "Vercel – web"
+      "Vercel"
     ]
   },
   "enforce_admins": true,
