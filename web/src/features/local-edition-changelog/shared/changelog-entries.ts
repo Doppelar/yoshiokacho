@@ -12,6 +12,16 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "みらい議会＠館林市のリンクを新しいサイトに変更しました",
+    href: "https://muse.ai/s/mirai-gikai-tatebayashi-shi-xuxc6oxaxbxr3xw22/zDtxaeX2ZAIDDsQD_GQmKJWMiT0TpShYu6hA-TI7Lq4",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠奈義町（岡山県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk",
+  },
+  {
+    date: "2026-11-15",
     title: "みらい議会＠小諸市（長野県）を追加しました",
     href: "https://mirai-gikai-komoro-web.vercel.app/",
   },
