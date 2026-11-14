@@ -142,7 +142,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.326,
     mapX: 30,
     mapY: 57,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-annaka-shi-dg6oxew4x0xasv/qtAfuthZNIlWGmmbE3zPM8lwN6oFhm53OSXbLE9aMEk",
+    external: true,
   },
   {
     id: "midori",
@@ -152,7 +154,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.505,
     mapX: 72,
     mapY: 40,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-midori-shi-xrxt6oxexkoxtxlsz/o8DSmjeo8DXEgZp3OnyQrEhTdBMvHLjGvDvIB0KYIiQ",
+    external: true,
   },
   {
     id: "shinto",
@@ -162,7 +166,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.452,
     mapX: 42,
     mapY: 53,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-shinto-mura-cm6oxf0uxfhzxi/9ARbts_J3wHzQUWSj1DbvFtLw3vzqAMvGmY6TiA3HYg",
+    external: true,
   },
   {
     id: "yoshioka",
