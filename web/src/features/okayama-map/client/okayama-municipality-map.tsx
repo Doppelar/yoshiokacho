@@ -55,8 +55,8 @@ export function OkayamaMunicipalityMap() {
 
       <p className="text-sm text-mirai-text-secondary">
         {selected && !selected.href
-          ? `${selected.name}のみらい議会は準備中です。現在は奈義町を開けます。`
-          : "地図または一覧から市町村を選んでください。奈義町は公開ページを別タブで開きます。"}
+          ? `${selected.name}のみらい議会は準備中です。27市町村の公開ページを開けます。`
+          : "地図または一覧から市町村を選んでください。各市町村の公開ページを別タブで開きます。"}
       </p>
 
       <section aria-labelledby="okayama-municipality-list">

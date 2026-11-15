@@ -4,7 +4,7 @@ import { OkayamaMapPage } from "@/features/okayama-map/server/components/okayama
 export const metadata: Metadata = {
   title: "岡山県の市町村 | みらい議会",
   description:
-    "岡山県の市町村地図から各自治体のみらい議会を選べます。現在は奈義町を開けます。",
+    "岡山県の市町村地図から各自治体のみらい議会を選べます。27市町村の公開ページを開けます。",
 };
 
 export default function Page() {

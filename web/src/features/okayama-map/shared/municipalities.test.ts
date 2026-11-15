@@ -15,14 +15,8 @@ describe("岡山県から奈義町への導線", () => {
   it("27市町村から奈義町の公開リンクを選べる", () => {
     expect(OKAYAMA_MUNICIPALITIES).toHaveLength(27);
     const nagi = OKAYAMA_MUNICIPALITIES.find((item) => item.id === "nagi");
-    expect(nagi?.href).toBe(
-      "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk"
-    );
+    expect(nagi?.href).toBe("https://mirai-gikai-nagi.vercel.app/");
     expect(nagi?.external).toBe(true);
-    expect(
-      OKAYAMA_MUNICIPALITIES.filter((item) => item.href).map(
-        (item) => item.name
-      )
-    ).toEqual(["奈義町"]);
+    expect(OKAYAMA_MUNICIPALITIES.filter((item) => item.href)).toHaveLength(27);
   });
 });

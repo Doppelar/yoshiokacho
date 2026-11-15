@@ -18,6 +18,22 @@ function loadExpectations() {
       file: "web/src/features/nagano-map/shared/municipalities.ts",
     },
     {
+      path: "/tochigi",
+      file: "web/src/features/tochigi-map/shared/municipalities.ts",
+    },
+    {
+      path: "/yamaguchi",
+      file: "web/src/features/yamaguchi-map/shared/municipalities.ts",
+    },
+    {
+      path: "/tottori",
+      file: "web/src/features/tottori-map/shared/municipalities.ts",
+    },
+    {
+      path: "/shimane",
+      file: "web/src/features/shimane-map/shared/municipalities.ts",
+    },
+    {
       path: "/okayama",
       file: "web/src/features/okayama-map/shared/municipalities.ts",
     },
