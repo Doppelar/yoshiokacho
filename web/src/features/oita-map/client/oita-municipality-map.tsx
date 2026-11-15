@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { CodhMapAttribution } from "@/features/region-map/client/map-attribution";
 import {
   MapChoiceChip,
   MapHotspot,
@@ -24,13 +25,13 @@ export function OitaMunicipalityMap() {
 
   return (
     <div className="space-y-6">
-      <div className="overflow-hidden rounded-2xl border bg-[#6aa84f] p-2 sm:p-3">
+      <div className="rounded-2xl border border-mirai-border bg-muted p-2 sm:p-3">
         <div className="relative">
           <Image
-            src="/img/oita-municipality-map.gif"
+            src="/img/oita-municipality-map.svg"
             alt="大分県の市町村地図"
-            width={430}
-            height={410}
+            width={800}
+            height={730}
             className="h-auto w-full"
             priority
           />
@@ -44,12 +45,11 @@ export function OitaMunicipalityMap() {
               href={item.href}
               external={item.external}
               onSelect={() => setSelectedId(item.id)}
+              showLabel={false}
             />
           ))}
         </div>
-        <p className="px-1 pt-2 text-right text-[10px] text-white/90">
-          © ONECOMPATH
-        </p>
+        <CodhMapAttribution prefectureCode="44" />
       </div>
 
       {selected && <SelectedMunicipalityCard municipality={selected} />}
