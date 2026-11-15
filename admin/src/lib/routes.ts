@@ -14,6 +14,10 @@ export const routes = {
   admins: () => "/admins" as const,
   tags: () => "/tags" as const,
   localEditionApplications: () => "/local-edition-applications" as const,
+  localEditionFeedback: (page = 1) =>
+    page > 1
+      ? (`/local-edition-feedback?page=${page}` as const)
+      : ("/local-edition-feedback" as const),
   dietSessions: () => "/diet-sessions" as const,
   experts: () => "/experts" as const,
   interviews: () => "/interviews" as const,
