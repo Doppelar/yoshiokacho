@@ -4,6 +4,7 @@ import {
   calculateMunicipalityCoverage,
   MUNICIPALITY_TOTAL_SOURCE,
 } from "../../shared/utils/calculate-municipality-coverage";
+import { CompletedPrefectures } from "./completed-prefectures";
 
 export function MunicipalityCoverage() {
   const { published, total, percentage } = calculateMunicipalityCoverage(
@@ -42,6 +43,7 @@ export function MunicipalityCoverage() {
           全国数の出典：総務省統計局（2025年国勢調査）
         </a>
       </p>
+      <CompletedPrefectures />
     </section>
   );
 }
