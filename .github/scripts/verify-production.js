@@ -14,6 +14,10 @@ function loadExpectations() {
       file: "web/src/features/gunma-map/shared/municipalities.ts",
     },
     {
+      path: "/nagano",
+      file: "web/src/features/nagano-map/shared/municipalities.ts",
+    },
+    {
       path: "/okayama",
       file: "web/src/features/okayama-map/shared/municipalities.ts",
     },
