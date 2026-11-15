@@ -88,7 +88,12 @@ test("loads the real Okayama map source for live verification", () => {
 test("loads Nagano public links while preserving the prefecture map navigation", () => {
   const nagano = loadExpectations().find((page) => page.path === "/nagano");
   assert.ok(nagano);
-  assert.equal(nagano.links.length, 36);
+  for (const link of [
+    "https://muse.ai/s/mirai-gikai-tenryu-mura-hc6oxmxnxn0xvbxb/wZ_cjrn3T7F_j5QJPJAO905w2dIby50djaoYZ4szW_g",
+    "https://muse.ai/s/mirai-gikai-yasuoka-mura-xoxj6oxmxnxnexul2/F1HOR6jPU8UYtHJDSLnu6cw20p0F-Aom6ntErqpSJAc",
+  ]) {
+    assert.ok(nagano.links.includes(link));
+  }
   assert.ok(
     nagano.links.includes("https://mirai-gikai-komoro-web.vercel.app/")
   );

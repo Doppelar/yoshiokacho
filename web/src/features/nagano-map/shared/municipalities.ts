@@ -465,7 +465,9 @@ export const NAGANO_MUNICIPALITIES: readonly NaganoMunicipality[] = [
     type: "村",
     mapX: 41.538,
     mapY: 92.277,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-tenryu-mura-hc6oxmxnxn0xvbxb/wZ_cjrn3T7F_j5QJPJAO905w2dIby50djaoYZ4szW_g",
+    external: true,
   },
   {
     id: "20414",
@@ -473,7 +475,9 @@ export const NAGANO_MUNICIPALITIES: readonly NaganoMunicipality[] = [
     type: "村",
     mapX: 43.12,
     mapY: 86.904,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-yasuoka-mura-xoxj6oxmxnxnexul2/F1HOR6jPU8UYtHJDSLnu6cw20p0F-Aom6ntErqpSJAc",
+    external: true,
   },
   {
     id: "20415",
@@ -481,7 +485,9 @@ export const NAGANO_MUNICIPALITIES: readonly NaganoMunicipality[] = [
     type: "村",
     mapX: 45.776,
     mapY: 81.139,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-takagi-mura-dxe6oxmxtxexexsvxb/P5aWpRkliRhpo1FJMDpPJfGBfh_IKsW4q3sk5I02RhI",
+    external: true,
   },
   {
     id: "20416",
