@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 type MapHotspotProps = {
+  showLabel?: boolean;
   name: string;
   mapX: number;
   mapY: number;
@@ -16,6 +17,7 @@ type MapHotspotProps = {
 
 export function MapHotspot({
   name,
+  showLabel = true,
   mapX,
   mapY,
   selected,
@@ -57,7 +59,7 @@ export function MapHotspot({
           style={style}
         >
           <span className={cn(dotClass, "block")} />
-          {label}
+          {showLabel && label}
         </a>
       );
     }
@@ -70,7 +72,7 @@ export function MapHotspot({
         style={style}
       >
         <span className={cn(dotClass, "block")} />
-        {label}
+        {showLabel && label}
       </Link>
     );
   }

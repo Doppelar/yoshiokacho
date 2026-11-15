@@ -114,7 +114,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 36.57,
     mapX: 82,
     mapY: 46,
-    status: "upcoming",
+    status: "live",
+    href: routes.tochigiMap(),
   },
   {
     id: "gunma",
@@ -346,7 +347,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 35.5,
     mapX: 41,
     mapY: 49,
-    status: "upcoming",
+    status: "live",
+    href: routes.tottoriMap(),
   },
   {
     id: "shimane",
@@ -356,7 +358,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 35.47,
     mapX: 30,
     mapY: 49,
-    status: "upcoming",
+    status: "live",
+    href: routes.shimaneMap(),
   },
   {
     id: "okayama",
@@ -388,7 +391,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 34.19,
     mapX: 22,
     mapY: 56,
-    status: "upcoming",
+    status: "live",
+    href: routes.yamaguchiMap(),
   },
   {
     id: "tokushima",

@@ -14,6 +14,36 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "長野県の33町村リンクを追加しました",
+    href: routes.naganoMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "栃木県の市町村地図と宇都宮市・益子町を追加しました",
+    href: routes.tochigiMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "岡山県の全27市町村リンクを公開しました",
+    href: routes.okayamaMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "山口県の市町村地図と全19市町村を追加しました",
+    href: routes.yamaguchiMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "鳥取県の市町村地図と全19市町村を追加しました",
+    href: routes.tottoriMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "島根県の市町村地図と全19市町村を追加しました",
+    href: routes.shimaneMap(),
+  },
+  {
+    date: "2026-11-15",
     title: "吉岡町の2025・2026年の議案データを追加しました",
     href: routes.billsList(),
   },
