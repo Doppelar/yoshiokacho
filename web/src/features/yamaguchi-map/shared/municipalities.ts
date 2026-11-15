@@ -9,7 +9,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 16.474,
     mapY: 55.328,
     status: "live",
-    href: "https://mirai-gikai-shimonoseki.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-shimonoseki-mxh6sxnxlwt8xww/ajwBN8jpzEJkim2Sludj7kodc08mWEkA0pXCUg4fM5M",
     external: true,
   },
   {
@@ -19,7 +19,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 31.219,
     mapY: 63.403,
     status: "live",
-    href: "https://mirai-gikai-ube.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-ube-xdxh6sxnxlkxxxqbj/85N7X9MP-r1Oc4NjnflcWGp39l3VBUBVbP77ROQio20",
     external: true,
   },
   {
@@ -29,7 +29,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 46.995,
     mapY: 51.403,
     status: "live",
-    href: "https://mirai-gikai-yamaguchi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-yamaguchi-wa6sxnxlxckxmxtxq/5Bw3KPAQgSU2Z5amAWsAzAVp2S-r5p43V01BMUt6PTE",
     external: true,
   },
   {
@@ -39,7 +39,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 43.801,
     mapY: 39.123,
     status: "live",
-    href: "https://mirai-gikai-hagi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hagi-es6sxnxlxyrrxow/g406l9caz-hC8NTabqbManj9GXb3LK2XZOpl3MtSBwg",
     external: true,
   },
   {
@@ -49,7 +49,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 46.699,
     mapY: 61.627,
     status: "live",
-    href: "https://mirai-gikai-hofu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hofu-xfxh6sxnxlxsxnxn0xd/mT1js5GFmuJrMvXR7l4I3DtJ32_dfExgqFhy1fwfJlU",
     external: true,
   },
   {
@@ -59,7 +59,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 63.504,
     mapY: 63.587,
     status: "live",
-    href: "https://mirai-gikai-kudamatsu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kudamatsu-xhxh6sxnxlxrrxs61/3ap_UOH97NDE4N2Ylb9VHW60-1mAvxafRcEuKjB9RK8",
     external: true,
   },
   {
@@ -69,7 +69,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 72.591,
     mapY: 53.094,
     status: "live",
-    href: "https://mirai-gikai-iwakuni.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-iwakuni-vxh6sxnxlx0znzxh/o6pqhEh9V9xkJhxsocGE7DhpH8jCQpadGsArze12Ekg",
     external: true,
   },
   {
@@ -79,7 +79,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 68.003,
     mapY: 67.301,
     status: "live",
-    href: "https://mirai-gikai-hikari.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hikari-gs6sxnxlxx5wxtxu/0o3eadbw-PkqWu5fgR1yTQ6ax1DdKXxQvhJYXDxmssg",
     external: true,
   },
   {
@@ -89,7 +89,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 24.293,
     mapY: 44.25,
     status: "live",
-    href: "https://mirai-gikai-nagato.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-nagato-qs6sxnxlxqjxwkxq/LEzA6Nrx4tqt9Re50i37eZOrJo4j2emu7Jr7UIUvs-A",
     external: true,
   },
   {
@@ -99,7 +99,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 75.748,
     mapY: 67.501,
     status: "live",
-    href: "https://mirai-gikai-yanai.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-yanai-mxh6sxnxm5xf0xgs/hrIVo42klWLJKYwkCZ1dWQ1rnGjnEmmU3MKihv6E-vo",
     external: true,
   },
   {
@@ -109,7 +109,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 30.029,
     mapY: 52.934,
     status: "live",
-    href: "https://mirai-gikai-mine.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-mine-xqx06sxnxlxvhxdxgq/IK88Uw32_Ac0ySpJJOXBbVe1Nn6EBoOQOyMe4ceij4o",
     external: true,
   },
   {
@@ -119,7 +119,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 60.198,
     mapY: 56.636,
     status: "live",
-    href: "https://mirai-gikai-shunan.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-shunan-xlxh6sxnxlxoxk2gxn/bzDTu3SxX35NfHtMoRL0zxQhuVH50RQHuRhn2ulscCw",
     external: true,
   },
   {
@@ -129,7 +129,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 25.051,
     mapY: 63.661,
     status: "live",
-    href: "https://mirai-gikai-sanyo-onoda.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-sanyo-onoda-x0s6sxnxm1xpf63/eY7du2-GnMUqaI9biK2bBo8fec7qvTTGrFaAIRiy4sk",
     external: true,
   },
   {
@@ -139,7 +139,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 83.792,
     mapY: 71.671,
     status: "live",
-    href: "https://mirai-gikai-suooshima.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-suooshima-xxx06sxnxmpxjxned/yWkReJelOLUskKm3ImR6adIXI5mHcodbUQ7u59qm7eo",
     external: true,
   },
   {
@@ -149,7 +149,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 80.299,
     mapY: 53.809,
     status: "live",
-    href: "https://mirai-gikai-waki.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-waki-hs6sxnxmvxbrbxz/2GPN0gypu7_28yMO3Tl0UrBN9vJ4vHX75bzoDsRt7TU",
     external: true,
   },
   {
@@ -159,7 +159,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 73.208,
     mapY: 77.483,
     status: "live",
-    href: "https://mirai-gikai-kaminoseki.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kaminoseki-xkxg6sxnxmlxu1xdxo/VCj_s_7MWbeQUCSo4IROC4gc1CBJkuPwyqquu9gkBwc",
     external: true,
   },
   {
@@ -169,7 +169,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 70.693,
     mapY: 69.415,
     status: "live",
-    href: "https://mirai-gikai-tabuse.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-tabuse-xas6sxnxmixkdvxi/KXN558l4CPYD9BmmdcqCrX_y3EQDqBsK323DqEWWR1o",
     external: true,
   },
   {
@@ -179,7 +179,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 73.864,
     mapY: 71.421,
     status: "live",
-    href: "https://mirai-gikai-hirao.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hirao-ss6sxnxmo9xtaa/VNcS1we1niM4m_pBQzXtHmwuvyKsNmlkKjpvt7bU8Uw",
     external: true,
   },
   {
@@ -189,7 +189,7 @@ export const YAMAGUCHI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 45.777,
     mapY: 32.563,
     status: "live",
-    href: "https://mirai-gikai-abu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-abu-ns6sxnxmrxzxgrxh/oAn2dFiDpqZCqhKNv4cbHrRNuKxCnqeQnSxLM4q9cO8",
     external: true,
   },
 ];

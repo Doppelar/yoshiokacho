@@ -11,6 +11,7 @@ export const routes = {
   home: () => "/" as const,
   japanMap: () => "/japan" as const,
   localEditionApplications: () => "/japan/local-edition-applications" as const,
+  aomoriMap: () => "/aomori" as const,
   gunmaMap: () => "/gunma" as const,
   okayamaMap: () => "/okayama" as const,
   naganoMap: () => "/nagano" as const,

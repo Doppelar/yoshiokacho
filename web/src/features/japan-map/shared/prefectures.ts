@@ -44,7 +44,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 40.82,
     mapX: 93,
     mapY: 14,
-    status: "upcoming",
+    status: "live",
+    href: routes.aomoriMap(),
   },
   {
     id: "iwate",

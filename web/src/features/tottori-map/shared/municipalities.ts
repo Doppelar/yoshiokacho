@@ -9,7 +9,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 71.703,
     mapY: 42.494,
     status: "live",
-    href: "https://mirai-gikai-tottori.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-tottori-xlt6sxnxkwqxu5xl/k1fkgwy0jaiyCcVNH_qCQot7fOJLcJc7CeQSo-eHLcU",
     external: true,
   },
   {
@@ -19,7 +19,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 19.575,
     mapY: 42.148,
     status: "live",
-    href: "https://mirai-gikai-yonago.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-yonago-xqt6sxnxkt36xoe/d2dn36gY7C32zW6QOhlGCtLzanvz4zbvQJYsCejRX4Q",
     external: true,
   },
   {
@@ -29,7 +29,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 44.785,
     mapY: 45.628,
     status: "live",
-    href: "https://mirai-gikai-kurayoshi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kurayoshi-za6sxnxl172xmx0/YPKEEyiXz1B4jvEVoaOa338QFUebzg_sgbeik-fd90c",
     external: true,
   },
   {
@@ -39,7 +39,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 11.223,
     mapY: 35.377,
     status: "live",
-    href: "https://mirai-gikai-sakaiminato.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-sakaiminato-wxi6sxnxkxtdwsxk/KDPMxvr_uIwFBBNy-4Bz9H8K_4lo3ylvz1X7dTZTS1I",
     external: true,
   },
   {
@@ -49,7 +49,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 85.046,
     mapY: 33.319,
     status: "live",
-    href: "https://mirai-gikai-iwami.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-iwami-jxi6sxnxl20x0oxj/EEAydy7INGYU4IQQKQL62L9FnrirB5CITvG_d7Ra9tg",
     external: true,
   },
   {
@@ -59,7 +59,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 55.462,
     mapY: 39.065,
     status: "live",
-    href: "https://mirai-gikai-yurihama.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-yurihama-bxi6sxnxl7qxf3b/TAxjGFnfY4Nvnu4MB9pIPBg3ozLV-U8DdFvcG1cdwcs",
     external: true,
   },
   {
@@ -69,7 +69,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 90.118,
     mapY: 51.055,
     status: "live",
-    href: "https://mirai-gikai-wakasa.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-wakasa-xcxi6sxnxkxp9xlxixu/8G2wMT6ATOFa4AdIvqeliagbFR_m_A0JpilzlfvxT6I",
     external: true,
   },
   {
@@ -79,7 +79,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 78.526,
     mapY: 56.906,
     status: "live",
-    href: "https://mirai-gikai-chizu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-chizu-yxi6sxnxkxrxrxby8/dvHzruKZbzw_BzgJ9hxQ2rKKS4L5agYsPMw6l4QAT0w",
     external: true,
   },
   {
@@ -89,7 +89,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 82.314,
     mapY: 46.362,
     status: "live",
-    href: "https://mirai-gikai-yazu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-yazu-xta6sxnxkxnzxrxexr/pQQyYYTSb2JttmvA7RdGEVBy5dcwZc7URheuuFEgaJg",
     external: true,
   },
   {
@@ -99,7 +99,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 54.457,
     mapY: 48.659,
     status: "live",
-    href: "https://mirai-gikai-misasa.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-misasa-wa6sxnxl38xv9xu/dFrFi00P-JXOYMSjcEVrpz4ok6Kv7b6BwlgQFiQVxOA",
     external: true,
   },
   {
@@ -109,7 +109,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 37.948,
     mapY: 40.86,
     status: "live",
-    href: "https://mirai-gikai-kotoura.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kotoura-txi6sxnxkxvfoxpxf/RIXt1_w_JvtydRZ1Ux1XAuBlmWQilmXO_ERjq51WuTM",
     external: true,
   },
   {
@@ -119,7 +119,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 46.286,
     mapY: 38.81,
     status: "live",
-    href: "https://mirai-gikai-hokuei.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hokuei-ta6sxnxl5axnwxp/q43gd7Ls_c_KHg5tQuPbQzGJ2JrzjIo5P9YZKwG7d-g",
     external: true,
   },
   {
@@ -129,7 +129,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 20.891,
     mapY: 41.366,
     status: "live",
-    href: "https://mirai-gikai-hiezu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hiezu-uxh6sxnxlr3ti4/Mg-3IwwLIzv4Oh-DH8FIadUoSUwA2JwkvzsjPP3LC_0",
     external: true,
   },
   {
@@ -139,7 +139,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 30.636,
     mapY: 40.659,
     status: "live",
-    href: "https://mirai-gikai-daisen.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-daisen-xga6sxnxlvzckxm/JqgHmBanRwjCLFcNaCtK3MwpONaGbeWImRH0AwGoE_k",
     external: true,
   },
   {
@@ -149,7 +149,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 18.978,
     mapY: 51.233,
     status: "live",
-    href: "https://mirai-gikai-nanbu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-nanbu-rt6sxnxlj9xwxxxp/vXsamdLN4EReWp0LG5n1W4rYWAzDS7dAXRJw4GOJSnA",
     external: true,
   },
   {
@@ -159,7 +159,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 24.962,
     mapY: 50.209,
     status: "live",
-    href: "https://mirai-gikai-hoki.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hoki-mt6sxnxlmxzxkfm/tGpkYFPOxmdGQnMH6eLs3pJQnM0HH-yKSphhaKOrkPw",
     external: true,
   },
   {
@@ -169,7 +169,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 13.179,
     mapY: 64.263,
     status: "live",
-    href: "https://mirai-gikai-nichinan.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-nichinan-wt6sxnxlfxm9xgi/k1alvgV1w8HWuSj06tu6hZSStxzbig4D4BOzkZZEOPY",
     external: true,
   },
   {
@@ -179,7 +179,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 23.205,
     mapY: 60.096,
     status: "live",
-    href: "https://mirai-gikai-hino.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hino-ya6sxnxlxaxyxrx0e/nA0a5SvPDSZpR0p70wnkujkiR_Cg1o2lVUEi6zrSM2U",
     external: true,
   },
   {
@@ -189,7 +189,7 @@ export const TOTTORI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 30.131,
     mapY: 53.406,
     status: "live",
-    href: "https://mirai-gikai-kofu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kofu-xqa6sxnxloxnxbxlxi/DvothkSHbMj53HVHuvKg6Bj6Xo5_y4KyWVHY7xvl4Fo",
     external: true,
   },
 ];

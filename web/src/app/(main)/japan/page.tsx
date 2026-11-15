@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layouts/container";
 import { JapanPrefectureMap } from "@/features/japan-map/client/japan-prefecture-map";
 import { PrefectureCouncilLink } from "@/features/japan-map/client/prefecture-council-link";
+import { MunicipalityCoverage } from "@/features/japan-map/server/components/municipality-coverage";
 import { ApplicationCallToAction } from "@/features/local-edition-applications/client/components/application-call-to-action";
 import { LocalEditionChangelog } from "@/features/local-edition-changelog/client/components/local-edition-changelog";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function JapanMapPage() {
   return (
     <Container className="pt-24 pb-16 md:pt-12">
+      <MunicipalityCoverage />
       <div className="mb-8 space-y-3">
         <p className="text-sm font-bold text-primary-accent">日本</p>
         <h1 className="text-3xl font-bold leading-tight">
