@@ -10,6 +10,10 @@ export const routes = {
   // ── 静的ルート ──────────────────────────────────────
   home: () => "/" as const,
   japanMap: () => "/japan" as const,
+  localEditionFeedback: (page = 1) =>
+    page > 1
+      ? (`/japan/feedback?page=${page}` as const)
+      : ("/japan/feedback" as const),
   localEditionApplications: () => "/japan/local-edition-applications" as const,
   aomoriMap: () => "/aomori" as const,
   ehimeMap: () => "/ehime" as const,

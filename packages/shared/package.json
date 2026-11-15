@@ -115,6 +115,10 @@
     "./interview-report/sync-opinions": {
       "types": "./src/interview-report/sync-opinions.ts",
       "default": "./src/interview-report/sync-opinions.ts"
+    },
+    "./local-edition-feedback/feedback": {
+      "types": "./src/local-edition-feedback/utils/feedback.ts",
+      "default": "./src/local-edition-feedback/utils/feedback.ts"
     }
   },
   "dependencies": {
