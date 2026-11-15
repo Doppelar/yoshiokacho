@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { CodhMapAttribution } from "@/features/region-map/client/map-attribution";
 import {
   MapChoiceChip,
   MapHotspot,
@@ -26,13 +27,13 @@ export function GunmaMunicipalityMap() {
 
   return (
     <div className="space-y-6">
-      <div className="overflow-hidden rounded-2xl border bg-[#6aa84f] p-2 sm:p-3">
+      <div className="rounded-2xl border border-mirai-border bg-muted p-2 sm:p-3">
         <div className="relative">
           <Image
-            src="/img/gunma-municipality-map.gif"
+            src="/img/gunma-municipality-map.svg"
             alt="群馬県の市町村地図"
-            width={480}
-            height={514}
+            width={764}
+            height={800}
             className="h-auto w-full"
             priority
           />
@@ -46,12 +47,11 @@ export function GunmaMunicipalityMap() {
               href={item.href}
               external={item.external}
               onSelect={() => setSelectedId(item.id)}
+              showLabel={false}
             />
           ))}
         </div>
-        <p className="px-1 pt-2 text-right text-[10px] text-white/90">
-          © ONECOMPATH
-        </p>
+        <CodhMapAttribution prefectureCode="10" />
       </div>
 
       {selected && <SelectedMunicipalityCard municipality={selected} />}

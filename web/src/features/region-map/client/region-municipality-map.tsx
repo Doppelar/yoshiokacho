@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { RegionMapConfig } from "../shared/types";
+import { CodhMapAttribution } from "./map-attribution";
 import { MapChoiceChip, MapHotspot } from "./map-hotspot";
 
 export function RegionMunicipalityMap({
@@ -41,22 +42,7 @@ export function RegionMunicipalityMap({
             />
           ))}
         </div>
-        <p className="mt-2 text-xs text-mirai-text-secondary">
-          地図：
-          <a
-            href={
-              "https://geoshape.ex.nii.ac.jp/city/choropleth/" +
-              prefectureCode +
-              "_city_dc.html"
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2"
-          >
-            『歴史的行政区域データセットβ版』（CODH作成）
-          </a>
-          を加工（CC BY 4.0）
-        </p>
+        <CodhMapAttribution prefectureCode={prefectureCode} />
       </div>
       <p className="text-sm text-mirai-text-secondary" aria-live="polite">
         {selected && !selected.href

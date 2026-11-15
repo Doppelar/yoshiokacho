@@ -14,6 +14,12 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-16",
+    title:
+      "群馬・埼玉・千葉・神奈川・静岡・愛知・滋賀・奈良・広島・福岡・大分・沖縄の地図を見やすい市町村境界図に変更しました",
+    href: routes.japanMap(),
+  },
+  {
+    date: "2026-11-16",
     title: "東京都の地図を見やすい区市町村境界図と23区の拡大図に変更しました",
     href: routes.tokyoMap(),
   },
