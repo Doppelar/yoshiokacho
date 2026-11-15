@@ -14,6 +14,16 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "みらい議会＠天龍村（長野県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-tenryu-mura-hc6oxmxnxn0xvbxb/wZ_cjrn3T7F_j5QJPJAO905w2dIby50djaoYZ4szW_g",
+  },
+  {
+    date: "2026-11-15",
+    title: "みらい議会＠泰阜村（長野県）を追加しました",
+    href: "https://muse.ai/s/mirai-gikai-yasuoka-mura-xoxj6oxmxnxnexul2/F1HOR6jPU8UYtHJDSLnu6cw20p0F-Aom6ntErqpSJAc",
+  },
+  {
+    date: "2026-11-15",
     title: "みらい議会＠中之条町を追加しました",
     href: "https://muse.ai/s/mirai-gikai-nakanojo-machi-lq6oxmisgxgzd/c5_rZrHZhHjMh5ndrTSZhg3SU8cpAoVjo2RuHJhAM6I",
   },
