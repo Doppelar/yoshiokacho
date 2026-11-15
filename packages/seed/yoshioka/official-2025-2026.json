@@ -1,0 +1,1465 @@
+{
+    "sessions":  [
+                     {
+                         "id":  "r8-3",
+                         "name":  "令和8年第3回吉岡町議会定例会",
+                         "startDate":  "2026-09-01",
+                         "endDate":  "2026-09-16",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "発委",
+                                           "number":  1,
+                                           "title":  "吉岡町議会委員会条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-01",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "同意",
+                                           "number":  3,
+                                           "title":  "吉岡町教育委員会委員の任命について",
+                                           "result":  "原案同意",
+                                           "decisionDate":  "2026-09-01",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "諮問",
+                                           "number":  3,
+                                           "title":  "人権擁護委員の推薦について",
+                                           "result":  "原案答申",
+                                           "decisionDate":  "2026-09-01",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  55,
+                                           "title":  "吉岡町選挙公報の発行に関する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  44,
+                                           "title":  "吉岡町印鑑登録及び証明に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  56,
+                                           "title":  "吉岡町保健センターの設置及び管理に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  45,
+                                           "title":  "よしおか温泉リバートピア吉岡の設置及び管理に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  46,
+                                           "title":  "吉岡町火入れに関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  47,
+                                           "title":  "吉岡町上下水道事業運営審議会設置条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  1,
+                                           "title":  "令和７年度吉岡町一般会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  2,
+                                           "title":  "令和７年度吉岡町学校給食事業特別会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  3,
+                                           "title":  "令和７年度吉岡町国民健康保険事業特別会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  4,
+                                           "title":  "令和７年度吉岡町介護保険事業特別会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  5,
+                                           "title":  "令和７年度吉岡町後期高齢者医療事業特別会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  6,
+                                           "title":  "令和７年度吉岡町水道事業会計利益の処分及び決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  7,
+                                           "title":  "令和７年度吉岡町下水道事業会計利益の処分及び決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  48,
+                                           "title":  "令和８年度吉岡町一般会計補正予算（第４号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  49,
+                                           "title":  "令和８年度吉岡町学校給食事業特別会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  50,
+                                           "title":  "令和８年度吉岡町国民健康保険事業特別会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  51,
+                                           "title":  "令和８年度吉岡町介護保険事業特別会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  52,
+                                           "title":  "令和８年度吉岡町後期高齢者医療事業特別会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  53,
+                                           "title":  "令和８年度吉岡町水道事業会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  54,
+                                           "title":  "令和８年度吉岡町下水道事業会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/6_kekkahyour803-2t_1.pdf"
+                                       }
+                                   ],
+                         "year":  2026
+                     },
+                     {
+                         "id":  "r8-2-extra",
+                         "name":  "令和8年第2回吉岡町議会臨時会",
+                         "startDate":  "2026-08-20",
+                         "endDate":  "2026-08-20",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/03_kekkahyou_r802r%20.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "議案",
+                                           "number":  41,
+                                           "title":  "令和６年度吉岡町役場庁舎等電気設備更新工事変更請負契約の締結について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-08-20",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/03_kekkahyou_r802r%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  42,
+                                           "title":  "令和８年度社会資本整備総合交付金事業午王頭川橋梁右岸側橋台工事請負契約の締結について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-08-20",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/03_kekkahyou_r802r%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  43,
+                                           "title":  "令和８年度吉岡町一般会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-08-20",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/03_kekkahyou_r802r%20.pdf"
+                                       }
+                                   ],
+                         "year":  2026
+                     },
+                     {
+                         "id":  "r8-2",
+                         "name":  "令和8年第2回吉岡町議会定例会",
+                         "startDate":  "2026-06-01",
+                         "endDate":  "2026-06-11",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "同意",
+                                           "number":  2,
+                                           "title":  "吉岡町固定資産評価審査委員会委員の選任について",
+                                           "result":  "原案同意",
+                                           "decisionDate":  "2026-06-01",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "承認",
+                                           "number":  2,
+                                           "title":  "吉岡町税条例の一部を改正する条例に係る専決処分の報告と承認を求めることについて",
+                                           "result":  "原案承認",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "承認",
+                                           "number":  3,
+                                           "title":  "吉岡町国民健康保険税条例の一部を改正する条例に係る専決処分の報告と承認を求めることについて",
+                                           "result":  "原案承認",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "承認",
+                                           "number":  4,
+                                           "title":  "令和８年度吉岡町一般会計補正予算（第1号）に係る専決処分の報告と承認を求めることについて",
+                                           "result":  "原案承認",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "承認",
+                                           "number":  5,
+                                           "title":  "令和８年度吉岡町学校給食事業特別会計補正予算（第１号）に係る専決処分の報告と承認を求めることについて",
+                                           "result":  "原案承認",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  32,
+                                           "title":  "吉岡町税条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  33,
+                                           "title":  "吉岡町特定教育・保育施設及び特定地域型保育事業の運営に関する基準を定める条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  34,
+                                           "title":  "吉岡町家庭的保育事業等の設備及び運営に関する基準を定める条例等の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  35,
+                                           "title":  "吉岡町特定用途制限地域における建築物の制限に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  36,
+                                           "title":  "吉岡町地区計画区域内における建築物の制限に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  37,
+                                           "title":  "吉岡町建築協定に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  38,
+                                           "title":  "令和６年度吉岡町役場庁舎空調設備更新工事変更請負契約の締結について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  39,
+                                           "title":  "令和８年度吉岡町一般会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  40,
+                                           "title":  "令和８年度消防ポンプ自動車（ＣＤ－Ｉ型）売買契約の締結について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-06-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/1633fdc88cb1216593f2c21c0b18913f_1.pdf"
+                                       }
+                                   ],
+                         "year":  2026
+                     },
+                     {
+                         "id":  "r8-1",
+                         "name":  "令和8年第1回吉岡町議会定例会",
+                         "startDate":  "2026-03-02",
+                         "endDate":  "2026-03-19",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "同意",
+                                           "number":  1,
+                                           "title":  "吉岡町農業委員会委員の任命について",
+                                           "result":  "原案同意",
+                                           "decisionDate":  "2026-03-02",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "諮問",
+                                           "number":  1,
+                                           "title":  "人権擁護委員候補者の推薦について",
+                                           "result":  "原案答申",
+                                           "decisionDate":  "2026-03-02",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "諮問",
+                                           "number":  2,
+                                           "title":  "人権擁護委員候補者の推薦について",
+                                           "result":  "原案答申",
+                                           "decisionDate":  "2026-03-02",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  8,
+                                           "title":  "吉岡町職員等の旅費に関する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  9,
+                                           "title":  "吉岡町職員定数条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  10,
+                                           "title":  "吉岡町公共施設等整備基金条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  11,
+                                           "title":  "吉岡町国民健康保険税条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  12,
+                                           "title":  "吉岡町災害弔慰金の支給に関する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  13,
+                                           "title":  "吉岡町小口資金融資促進条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  14,
+                                           "title":  "吉岡町公園条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  15,
+                                           "title":  "町道路線の認定・廃止について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  16,
+                                           "title":  "吉岡町水道事業給水条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  17,
+                                           "title":  "吉岡町下水道条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  18,
+                                           "title":  "令和７年度吉岡町一般会計補正予算（第７号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  19,
+                                           "title":  "令和７年度吉岡町国民健康保険事業特別会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  20,
+                                           "title":  "令和７年度吉岡町介護保険事業特別会計補正予算（第４号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  21,
+                                           "title":  "令和７年度吉岡町後期高齢者医療事業特別会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  22,
+                                           "title":  "令和７年度吉岡町水道事業会計補正予算（第４号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  23,
+                                           "title":  "令和７年度吉岡町下水道事業会計補正予算（第４号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  24,
+                                           "title":  "令和８年度吉岡町一般会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  25,
+                                           "title":  "令和８年度吉岡町学校給食事業特別会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  26,
+                                           "title":  "令和８年度吉岡町国民健康保険事業特別会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  27,
+                                           "title":  "令和８年度吉岡町介護保険事業特別会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  28,
+                                           "title":  "令和８年度吉岡町後期高齢者医療事業特別会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  29,
+                                           "title":  "令和８年度吉岡町水道事業会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  30,
+                                           "title":  "令和８年度吉岡町下水道事業会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "陳情",
+                                           "number":  1,
+                                           "title":  "臓器移植に関わる不正な臓器取引や移植目的の渡航等を防止し、国民が知らずに犯罪に巻き込まれることを防ぐための環境整備等を求める意見書提出の陳情",
+                                           "result":  "継続審査",
+                                           "decisionDate":  null,
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "陳情",
+                                           "number":  2,
+                                           "title":  "ｍＲＮＡワクチン（レプリコンワクチン含む）接種事業の中止の意見書提出を求める陳情",
+                                           "result":  "不採択",
+                                           "decisionDate":  "2026-03-19",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       },
+                                       {
+                                           "kind":  "陳情",
+                                           "number":  3,
+                                           "title":  "新宿区において顕在化した事例を受けて、政党機関紙の庁舎内勧誘行為に関する早期の実態把握と再発防止を求める陳情",
+                                           "result":  "継続審査",
+                                           "decisionDate":  null,
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_kekkahyou%20.pdf"
+                                       }
+                                   ],
+                         "year":  2026
+                     },
+                     {
+                         "id":  "r8-1-extra",
+                         "name":  "令和8年第1回吉岡町議会臨時会",
+                         "startDate":  "2026-01-26",
+                         "endDate":  "2026-01-28",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "承認",
+                                           "number":  1,
+                                           "title":  "令和７年度吉岡町一般会計補正予算（第５号）に係る専決処分の報告と承認を求めることについて",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  1,
+                                           "title":  "吉岡町職員の給与に関する条例等の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  2,
+                                           "title":  "吉岡町議会議員の議員報酬及び費用弁償等に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  3,
+                                           "title":  "令和７年度吉岡町一般会計補正予算（第６号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  4,
+                                           "title":  "令和７年度吉岡町国民健康保険事業特別会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  5,
+                                           "title":  "令和７年度吉岡町介護保険事業特別会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  6,
+                                           "title":  "令和７年度吉岡町水道事業会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  7,
+                                           "title":  "令和７年度吉岡町下水道事業会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       },
+                                       {
+                                           "kind":  "発委",
+                                           "number":  1,
+                                           "title":  "議案第３号令和７年度吉岡町一般会計補正予算（第６号）に対する附帯決議について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2026-01-28",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/67659676ebf43db2329f61cf030edba8.pdf"
+                                       }
+                                   ],
+                         "year":  2026
+                     },
+                     {
+                         "id":  "r7-4",
+                         "name":  "令和7年第4回吉岡町議会定例会",
+                         "startDate":  "2025-12-01",
+                         "endDate":  "2025-12-11",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "議案",
+                                           "number":  55,
+                                           "title":  "吉岡町福祉医療費支給に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  56,
+                                           "title":  "吉岡町特定乳児等通園支援事業の運営に関する基準を定める条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  57,
+                                           "title":  "吉岡町家庭的保育事業等の設備及び運営に関する基準を定める条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  58,
+                                           "title":  "吉岡町特定教育・保育施設及び特定地域型保育事業の運営に関する基準を定める条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  59,
+                                           "title":  "吉岡町放課後児童健全育成事業の設備及び運営に関する基準を定める条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  71,
+                                           "title":  "吉岡町乳児等通園支援事業の設備及び運営に関する基準を定める条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  60,
+                                           "title":  "群馬県市町村総合事務組合の規約変更に関する協議について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  61,
+                                           "title":  "群馬県市町村総合事務組合の災害弔慰金の支給等に関する事務に係る共同処理の取りやめに伴う財産処分に関する協議について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  62,
+                                           "title":  "渋川地区広域市町村圏振興整備組合規約の変更に関する協議について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  63,
+                                           "title":  "渋川地区広域市町村圏振興整備組合の共同処理する事務の変更に伴う財産処分に関する協議について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  64,
+                                           "title":  "群馬県市町村公平委員会共同設置規約の変更に関する協議について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  65,
+                                           "title":  "令和７年度吉岡町一般会計補正予算（第４号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  66,
+                                           "title":  "令和７年度吉岡町学校給食事業特別会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  67,
+                                           "title":  "令和７年度吉岡町介護保険事業特別会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  68,
+                                           "title":  "令和７年度吉岡町後期高齢者医療事業特別会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  69,
+                                           "title":  "令和７年度吉岡町水道事業会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  70,
+                                           "title":  "令和７年度吉岡町下水道事業会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       },
+                                       {
+                                           "kind":  "陳情",
+                                           "number":  1,
+                                           "title":  "吉岡町立図書館における学習環境整備に関する陳情",
+                                           "result":  "採択",
+                                           "decisionDate":  "2025-12-11",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fe863b734d95f1969a2c55a9761d2933.pdf"
+                                       }
+                                   ],
+                         "year":  2025
+                     },
+                     {
+                         "id":  "r7-3",
+                         "name":  "令和7年第3回吉岡町議会定例会",
+                         "startDate":  "2025-09-01",
+                         "endDate":  "2025-09-16",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "同意",
+                                           "number":  1,
+                                           "title":  "吉岡町教育委員会教育長の任命について",
+                                           "result":  "原案同意",
+                                           "decisionDate":  "2025-09-01",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "同意",
+                                           "number":  2,
+                                           "title":  "吉岡町教育委員会委員の任命について",
+                                           "result":  "原案同意",
+                                           "decisionDate":  "2025-09-01",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  44,
+                                           "title":  "吉岡町議会議員及び吉岡町長の選挙における選挙運動の公費負担に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  54,
+                                           "title":  "吉岡町職員の育児休業等に関する条例及び吉岡町職員の勤務時間、休暇等に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  45,
+                                           "title":  "吉岡町農業委員会の委員及び農地利用最適化推進委員の定数に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  46,
+                                           "title":  "吉岡町公園条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  1,
+                                           "title":  "令和６年度吉岡町一般会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  2,
+                                           "title":  "令和６年度吉岡町学校給食事業特別会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  3,
+                                           "title":  "令和６年度吉岡町国民健康保険事業特別会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  4,
+                                           "title":  "令和６年度吉岡町介護保険事業特別会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  5,
+                                           "title":  "令和６年度吉岡町後期高齢者医療事業特別会計歳入歳出決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  6,
+                                           "title":  "令和６年度吉岡町水道事業会計利益の処分及び決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "認定",
+                                           "number":  7,
+                                           "title":  "令和６年度吉岡町下水道事業会計利益の処分及び決算認定について",
+                                           "result":  "原案認定",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  47,
+                                           "title":  "令和７年度吉岡町一般会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  48,
+                                           "title":  "令和７年度吉岡町学校給食事業特別会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  49,
+                                           "title":  "令和７年度吉岡町国民健康保険事業特別会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  50,
+                                           "title":  "令和７年度吉岡町介護保険事業特別会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  51,
+                                           "title":  "令和７年度吉岡町後期高齢者医療事業特別会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  52,
+                                           "title":  "令和７年度吉岡町水道事業会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  53,
+                                           "title":  "令和７年度吉岡町下水道事業会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  42,
+                                           "title":  "令和７年度吉岡町一般会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-09-16",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/fa084243bd61c3e75dab3f852a926845.pdf"
+                                       }
+                                   ],
+                         "year":  2025
+                     },
+                     {
+                         "id":  "r7-3-extra",
+                         "name":  "令和7年第3回吉岡町議会臨時会",
+                         "startDate":  "2025-08-05",
+                         "endDate":  "2025-08-05",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_3r.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "議案",
+                                           "number":  43,
+                                           "title":  "令和７年度吉岡町立小中学校学習者用情報端末売買契約の締結について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-08-05",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_3r.pdf"
+                                       }
+                                   ],
+                         "year":  2025
+                     },
+                     {
+                         "id":  "r7-2",
+                         "name":  "令和7年第2回吉岡町議会定例会",
+                         "startDate":  "2025-06-02",
+                         "endDate":  "2025-06-12",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "発委",
+                                           "number":  2,
+                                           "title":  "自治体間交流推進特別委員会の設置について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-02",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  33,
+                                           "title":  "吉岡町防災会議条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  34,
+                                           "title":  "吉岡町長期継続契約を締結することができる契約を定める条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  35,
+                                           "title":  "吉岡町家庭的保育事業等の設備及び運営に関する基準を定める条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  36,
+                                           "title":  "吉岡町特定教育・保育施設及び特定地域型保育事業の運営に関する基準を定める条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  37,
+                                           "title":  "吉岡町税条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  38,
+                                           "title":  "令和７年度中央監視システム更新工事請負契約の締結について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  39,
+                                           "title":  "令和６年度（繰越）吉岡町立吉岡中学校校庭拡張工事請負契約の締結について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  40,
+                                           "title":  "令和７年度吉岡町一般会計補正予算（第１号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  41,
+                                           "title":  "吉岡町特別職の職員で非常勤のものの報酬及び費用弁償に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  42,
+                                           "title":  "令和７年度吉岡町一般会計補正予算（第２号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-06-12",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/4393b1fb4dbccc1a82b14204c3a8e3dc_1.pdf"
+                                       }
+                                   ],
+                         "year":  2025
+                     },
+                     {
+                         "id":  "r7-2-extra",
+                         "name":  "令和7年第2回吉岡町議会臨時会",
+                         "startDate":  "2025-05-01",
+                         "endDate":  "2025-05-01",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_2r.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "承認",
+                                           "number":  1,
+                                           "title":  "吉岡町税条例の一部を改正する条例に係る専決処分の報告と承認を求めることについて",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-05-01",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_2r.pdf"
+                                       },
+                                       {
+                                           "kind":  "承認",
+                                           "number":  2,
+                                           "title":  "吉岡町国民健康保険税条例の一部を改正する条例に係る専決処分の報告と承認を求めることについて",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-05-01",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_2r.pdf"
+                                       }
+                                   ],
+                         "year":  2025
+                     },
+                     {
+                         "id":  "r7-1",
+                         "name":  "令和7年第1回吉岡町議会定例会",
+                         "startDate":  "2025-03-03",
+                         "endDate":  "2025-03-21",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "発委",
+                                           "number":  1,
+                                           "title":  "吉岡町議会の個人情報の保護に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-03",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "諮問",
+                                           "number":  1,
+                                           "title":  "人権擁護委員候補者の推薦について",
+                                           "result":  "原案答申",
+                                           "decisionDate":  "2025-03-03",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "発議",
+                                           "number":  1,
+                                           "title":  "「女性差別撤廃条約選択議定書の速やかな批准を求める意見書」の国への提出について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  7,
+                                           "title":  "吉岡町議会議員の議員報酬及び費用弁償等に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  8,
+                                           "title":  "吉岡町特別職の職員で非常勤のものの報酬及び費用弁償に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  9,
+                                           "title":  "吉岡町職員の給与に関する条例等の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  10,
+                                           "title":  "吉岡町職員の勤務時間、休暇等に関する条例等の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  11,
+                                           "title":  "刑法等の一部を改正する法律の施行に伴う関係条例の整理に関する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  12,
+                                           "title":  "吉岡町行政手続における特定の個人を識別するための番号の利用等に関する法律に基づく個人番号の利用に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  13,
+                                           "title":  "吉岡町ふるさと納税型クラウドファンディング基金条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  14,
+                                           "title":  "吉岡町土砂等による埋立て等の規制に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  15,
+                                           "title":  "吉岡町家庭的保育事業等の設備及び運営に関する基準を定める条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  16,
+                                           "title":  "吉岡町小口資金融資促進条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  17,
+                                           "title":  "吉岡町渇水対策施設維持管理基金条例を廃止する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  18,
+                                           "title":  "町道路線の認定・廃止について",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  19,
+                                           "title":  "吉岡町下水道事業受益者負担に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  20,
+                                           "title":  "令和６年度吉岡町一般会計補正予算（第７号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  21,
+                                           "title":  "令和６年度吉岡町国民健康保険事業特別会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  22,
+                                           "title":  "令和６年度吉岡町介護保険事業特別会計補正予算（第４号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  23,
+                                           "title":  "令和６年度吉岡町後期高齢者医療事業特別会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  24,
+                                           "title":  "令和６年度吉岡町水道事業会計補正予算（第４号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  25,
+                                           "title":  "令和６年度吉岡町下水道事業会計補正予算（第４号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  26,
+                                           "title":  "令和７年度吉岡町一般会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  27,
+                                           "title":  "令和７年度吉岡町学校給食事業特別会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  28,
+                                           "title":  "令和７年度吉岡町国民健康保険事業特別会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  29,
+                                           "title":  "令和７年度吉岡町介護保険事業特別会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  30,
+                                           "title":  "令和７年度吉岡町後期高齢者医療事業特別会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  31,
+                                           "title":  "令和７年度吉岡町水道事業会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  32,
+                                           "title":  "令和７年度吉岡町下水道事業会計予算",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-03-21",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/8_giketsukekka_r7_1t_1.pdf"
+                                       }
+                                   ],
+                         "year":  2025
+                     },
+                     {
+                         "id":  "r7-1-extra",
+                         "name":  "令和7年第1回吉岡町議会臨時会",
+                         "startDate":  "2025-01-29",
+                         "endDate":  "2025-01-29",
+                         "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_1r.pdf",
+                         "items":  [
+                                       {
+                                           "kind":  "議案",
+                                           "number":  1,
+                                           "title":  "吉岡町職員の給与に関する条例等の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-01-29",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_1r.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  2,
+                                           "title":  "吉岡町議会議員の議員報酬及び費用弁償等に関する条例の一部を改正する条例",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-01-29",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_1r.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  3,
+                                           "title":  "令和６年度吉岡町一般会計補正予算（第６号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-01-29",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_1r.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  4,
+                                           "title":  "令和６年度吉岡町介護保険事業特別会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-01-29",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_1r.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  5,
+                                           "title":  "令和６年度吉岡町水道事業会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-01-29",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_1r.pdf"
+                                       },
+                                       {
+                                           "kind":  "議案",
+                                           "number":  6,
+                                           "title":  "令和６年度吉岡町下水道事業会計補正予算（第３号）",
+                                           "result":  "原案可決",
+                                           "decisionDate":  "2025-01-29",
+                                           "sourceUrl":  "https://www.town.yoshioka.lg.jp/gikai/kaigi/pdf/02_giketsukekka_r7_1r.pdf"
+                                       }
+                                   ],
+                         "year":  2025
+                     }
+                 ],
+    "sourceIndexes":  [
+                          "https://www.town.yoshioka.lg.jp/gikai/kekka/index.html",
+                          "https://www.town.yoshioka.lg.jp/gikai/kekka/bn_2025.html"
+                      ],
+    "notes":  [
+                  "2025年7会期・2026年5会期の公式議案審査結果表を収録。賛否一覧の重複行は追加していない。",
+                  "件名のPDF折り返しを連結し、レイアウト用空白を除去した。番号と種別は議件欄、結果は本会議表決欄を採用し、委員会審査結果と混同していない。",
+                  "2026年第1回定例会の陳情第1号・第3号は継続審査で本会議議決日が未記載のためdecisionDateをnullとした。",
+                  "2026年発委第1号は第1回臨時会と第3回定例会で異なる件名に再使用されている。別案件として会期ごとに保持する。",
+                  "2025年議案第42号は第2回・第3回定例会の両結果表に同一件名・異なる議決日で掲載されているため、出典どおり両会期に保持する。",
+                  "2026年議案第31号は対象12PDFの議件欄に掲載がない。欠番の内容は推定・補完していない。",
+                  "2026年は公式索引に掲載された9月第3回定例会までを対象とする。議案本文の個別PDFはこの議決結果一覧では掲載されていないため追加していない。"
+              ]
+}
