@@ -13,7 +13,7 @@ describe("OkayamaMunicipalityMap", () => {
     ).toBeTruthy();
     const nagi = screen.getByRole("link", { name: "奈義町のみらい議会" });
     expect(nagi.getAttribute("href")).toBe(
-      "https://mirai-gikai-nagi.vercel.app/"
+      "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk"
     );
     expect(nagi.getAttribute("target")).toBe("_blank");
     expect(nagi.getAttribute("rel")).toBe("noopener noreferrer");
@@ -23,6 +23,8 @@ describe("OkayamaMunicipalityMap", () => {
     render(<OkayamaMunicipalityMap />);
     expect(
       screen.getByRole("link", { name: "岡山市" }).getAttribute("href")
-    ).toBe("https://mirai-gikai-okayama.vercel.app/");
+    ).toBe(
+      "https://muse.ai/s/mirai-gikai-okayama-kc6sxnxix0xuxdki/sYAmu03jJtZnCf-oEjpYjsjB5LpAN7dSphDcZJ-o_68"
+    );
   });
 });
