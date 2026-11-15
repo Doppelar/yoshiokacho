@@ -129,7 +129,7 @@ function SelectedMunicipalityCard({
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {municipality.name}
-          のみらい議会は準備中です。現在は中央区、大田区、足立区を開けます。
+          のみらい議会は準備中です。現在は中央区、新宿区、世田谷区、大田区、足立区、墨田区、立川市を開けます。
         </p>
       )}
     </section>

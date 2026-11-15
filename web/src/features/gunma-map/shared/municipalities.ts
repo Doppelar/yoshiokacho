@@ -201,7 +201,9 @@ export const GUNMA_MUNICIPALITIES: readonly Municipality[] = [
     lat: 36.116,
     mapX: 34,
     mapY: 78,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-kanna-machi-wxv6p31xfmyyi/Npvb2-ptIZe0EjsIGd1PLTxD3iNtSXy35ZNH-CuGddA",
+    external: true,
   },
   {
     id: "shimonita",

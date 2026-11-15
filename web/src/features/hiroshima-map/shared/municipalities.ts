@@ -58,7 +58,9 @@ export const HIROSHIMA_MUNICIPALITIES: readonly HiroshimaMunicipality[] = [
     type: "市",
     mapX: 82,
     mapY: 50,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mierumiraifu-shan-shi-ban-nxg6fxlxtx0xy301/ECeXBNo9HHX4KqltvoNwKp55Gb6SE97eS9Ipa8hQ4Go",
+    external: true,
   },
   {
     id: "fuchu",

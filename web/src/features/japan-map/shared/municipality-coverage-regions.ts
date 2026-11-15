@@ -1,15 +1,19 @@
 import { AICHI_MUNICIPALITIES } from "@/features/aichi-map/shared/municipalities";
 import { AOMORI_MUNICIPALITIES } from "@/features/aomori-map/shared/municipalities";
 import { CHIBA_MUNICIPALITIES } from "@/features/chiba-map/shared/municipalities";
+import { EHIME_MUNICIPALITIES } from "@/features/ehime-map/shared/municipalities";
 import { FUKUOKA_MUNICIPALITIES } from "@/features/fukuoka-map/shared/municipalities";
 import { GUNMA_MUNICIPALITIES } from "@/features/gunma-map/shared/municipalities";
 import { HIROSHIMA_MUNICIPALITIES } from "@/features/hiroshima-map/shared/municipalities";
 import { KANAGAWA_MUNICIPALITIES } from "@/features/kanagawa-map/shared/municipalities";
+import { MIE_MUNICIPALITIES } from "@/features/mie-map/shared/municipalities";
 import { NAGANO_MUNICIPALITIES } from "@/features/nagano-map/shared/municipalities";
 import { NARA_MUNICIPALITIES } from "@/features/nara-map/shared/municipalities";
 import { OITA_MUNICIPALITIES } from "@/features/oita-map/shared/municipalities";
 import { OKAYAMA_MUNICIPALITIES } from "@/features/okayama-map/shared/municipalities";
 import { OKINAWA_MUNICIPALITIES } from "@/features/okinawa-map/shared/municipalities";
+import { OSAKA_MUNICIPALITIES } from "@/features/osaka-map/shared/municipalities";
+import { SAGA_MUNICIPALITIES } from "@/features/saga-map/shared/municipalities";
 import { SAITAMA_MUNICIPALITIES } from "@/features/saitama-map/shared/municipalities";
 import { SHIGA_MUNICIPALITIES } from "@/features/shiga-map/shared/municipalities";
 import { SHIMANE_MUNICIPALITIES } from "@/features/shimane-map/shared/municipalities";
@@ -26,6 +30,10 @@ const takarazuka = PREFECTURES.find((prefecture) => prefecture.id === "hyogo");
 
 /** 市町村と東京23区が対象。都道府県議会や政令指定都市の行政区は含めない。 */
 export const MUNICIPALITY_COVERAGE_REGIONS: readonly CoverageRegion[] = [
+  { prefectureId: "ehime", municipalities: EHIME_MUNICIPALITIES },
+  { prefectureId: "osaka", municipalities: OSAKA_MUNICIPALITIES },
+  { prefectureId: "mie", municipalities: MIE_MUNICIPALITIES },
+  { prefectureId: "saga", municipalities: SAGA_MUNICIPALITIES },
   { prefectureId: "aichi", municipalities: AICHI_MUNICIPALITIES },
   { prefectureId: "aomori", municipalities: AOMORI_MUNICIPALITIES },
   { prefectureId: "chiba", municipalities: CHIBA_MUNICIPALITIES },

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   MapChoiceChip,
@@ -97,14 +97,25 @@ function MunicipalityGroup({
       </h3>
       <div className="flex flex-wrap gap-2">
         {items.map((item) => (
-          <MapChoiceChip
-            key={item.id}
-            name={item.name}
-            selected={selectedId === item.id}
-            href={item.href}
-            external={item.external}
-            onSelect={() => onSelect(item.id)}
-          />
+          <Fragment key={item.id}>
+            <MapChoiceChip
+              name={item.name}
+              selected={selectedId === item.id}
+              href={item.href}
+              external={item.external}
+              onSelect={() => onSelect(item.id)}
+            />
+            {item.additionalSites?.map((site) => (
+              <MapChoiceChip
+                key={site.href}
+                name={`${item.name}（${site.label}）`}
+                selected={false}
+                href={site.href}
+                external
+                onSelect={() => onSelect(item.id)}
+              />
+            ))}
+          </Fragment>
         ))}
       </div>
     </div>
@@ -141,7 +152,7 @@ function SelectedMunicipalityCard({
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {municipality.name}
-          のみらい議会は準備中です。現在は川崎市と葉山町を開けます。
+          のみらい議会は準備中です。現在は川崎市、相模原市、葉山町を開けます。
         </p>
       )}
     </section>
