@@ -7,7 +7,8 @@ const {
 } = require("./verify-production.js");
 const SHA = "a".repeat(40);
 const marker = { sha: SHA, projectId: "prj_aQn1ZLzoGDBbz3yELY4NqFc5w34h" };
-const nagi = "https://mirai-gikai-nagi.vercel.app/";
+const nagi =
+  "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk";
 const komoro = "https://mirai-gikai-komoro-web.vercel.app/";
 const tatebayashi =
   "https://muse.ai/s/mirai-gikai-tatebayashi-shi-xuxc6oxaxbxr3xw22/zDtxaeX2ZAIDDsQD_GQmKJWMiT0TpShYu6hA-TI7Lq4";

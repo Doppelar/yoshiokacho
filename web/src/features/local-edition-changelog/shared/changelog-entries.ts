@@ -14,6 +14,21 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "山口県・鳥取県・島根県・岡山県の公開URLを修正しました",
+    href: routes.japanMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "全国地図の先頭に自治体掲載数と全国での掲載率を表示しました",
+    href: routes.japanMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "青森県の市町村地図と三戸町を追加しました",
+    href: routes.aomoriMap(),
+  },
+  {
+    date: "2026-11-15",
     title: "長野県の33町村リンクを追加しました",
     href: routes.naganoMap(),
   },

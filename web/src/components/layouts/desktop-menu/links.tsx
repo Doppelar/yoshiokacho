@@ -1,7 +1,6 @@
 import type { Route } from "next";
 import Link from "next/link";
 import { EXTERNAL_LINKS } from "@/config/external-links";
-import { routes } from "@/lib/routes";
 
 type FooterLinkItem = {
   label: string;
@@ -14,16 +13,6 @@ const links: FooterLinkItem[] = [
     label: "本家「みらい議会」を見る",
     href: "https://gikai.team-mir.ai/",
     external: true,
-  },
-  {
-    label: "利用規約",
-    href: routes.terms(),
-    external: false,
-  },
-  {
-    label: "プライバシーポリシー",
-    href: routes.privacy(),
-    external: false,
   },
   {
     label: "自主制作ガイドライン",

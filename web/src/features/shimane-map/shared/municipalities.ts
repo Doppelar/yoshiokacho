@@ -9,7 +9,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 63.453,
     mapY: 59.337,
     status: "live",
-    href: "https://mirai-gikai-matsue.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-matsue-sw6sxnxhsgqxnxe/4vZlv8ywM-TuSZVKZRpOOWi8hvQTE6YmQ_DMEbv0I5o",
     external: true,
   },
   {
@@ -19,7 +19,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 40.425,
     mapY: 79.11,
     status: "live",
-    href: "https://mirai-gikai-hamada.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hamada-ge6sxnxhqsxzxaa/SWBaNc90wJB2f-EBfK9Y9hKSxbLm2GbRyVMDkk6YarY",
     external: true,
   },
   {
@@ -29,7 +29,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 68.686,
     mapY: 35.347,
     status: "live",
-    href: "https://mirai-gikai-okinoshima.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-okinoshima-gc6sxnxj2xct9w/iowepHmTwqz2ccjykCrxeaK8LMTMpLTECAFdOl4VI40",
     external: true,
   },
   {
@@ -39,7 +39,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 55.656,
     mapY: 63.081,
     status: "live",
-    href: "https://mirai-gikai-izumo.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-izumo-oe6sxnxhl2xrxvxi/5ninJQt9I09iOKzbA4r2shch4HdAfHV6JSb3lZFKJMY",
     external: true,
   },
   {
@@ -49,7 +49,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 35.529,
     mapY: 85.157,
     status: "live",
-    href: "https://mirai-gikai-masuda.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-masuda-xkxl6sxnxgxtwxzmxa/MyIvcfh04LmI-1TjL-Jz3WWhbdx3twYUwR3HFyge1ao",
     external: true,
   },
   {
@@ -59,7 +59,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 49.192,
     mapY: 69.5,
     status: "live",
-    href: "https://mirai-gikai-oda.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-oda-xfxz6sxnxgxmxyxvxwxx/WsDoVbz9z5XM5odzUHT5n4w7iuWmOXyjowEe_VLBsOw",
     external: true,
   },
   {
@@ -69,7 +69,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 66.705,
     mapY: 63.431,
     status: "live",
-    href: "https://mirai-gikai-yasugi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-yasugi-xsxz6sxnxgxebt0xy/0lAsxoTqJzYo9BwDJ4floy7gIAHUWS6iDZDNMaJ4eaE",
     external: true,
   },
   {
@@ -79,7 +79,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 44.257,
     mapY: 74.422,
     status: "live",
-    href: "https://mirai-gikai-gotsu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-gotsu-xwe6sxnxgxy2gpi/edMQi9-TehNC0_gqJVg_L2M--dIES479tf2zkIrzrzs",
     external: true,
   },
   {
@@ -89,7 +89,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 59.153,
     mapY: 66.197,
     status: "live",
-    href: "https://mirai-gikai-unnan.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-unnan-xsd6sxnxi6px0xta/uWmUd92rWmzcS1gdyyJ3g4nXW_9_3wuJ7gnNxnURNtM",
     external: true,
   },
   {
@@ -99,7 +99,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 62.782,
     mapY: 68.817,
     status: "live",
-    href: "https://mirai-gikai-okuizumo.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-okuizumo-bxb6sxixaxjexmed/3KIoC9x3lWdCblyUkysQbWyd1r0A_CQOYJzjKN95oHw",
     external: true,
   },
   {
@@ -109,7 +109,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 55.221,
     mapY: 71.785,
     status: "live",
-    href: "https://mirai-gikai-iinan.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-iinan-xrz6sxfxgwxs16r/KJm3ZPKgrojxlVhePCSOhN9ZoVecEZEBGcVBnNcHAg8",
     external: true,
   },
   {
@@ -119,7 +119,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 48.788,
     mapY: 73.947,
     status: "live",
-    href: "https://mirai-gikai-kawamoto.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kawamoto-xbxc6sxizxv9xorxz/EPdiR5gvUfDvVpTaiAGGCo56xEf5qXLXvTvpR541RsU",
     external: true,
   },
   {
@@ -129,7 +129,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 51.795,
     mapY: 72.747,
     status: "live",
-    href: "https://mirai-gikai-misato.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-misato-xqd6sxnxi7xlxuxnxm/sfYT7MT0hrjzS1nZt92-BSjymwlKk0a8_CLYXR4d5Uo",
     external: true,
   },
   {
@@ -139,7 +139,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 49.373,
     mapY: 77.424,
     status: "live",
-    href: "https://mirai-gikai-onan.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-onan-xcxk6sxnxi4xc6xfxg/9ho0XTCdJnQjkFWaKc8LKYibe8yHBi_UK6zYlQqDnmM",
     external: true,
   },
   {
@@ -149,7 +149,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 32.155,
     mapY: 88.574,
     status: "live",
-    href: "https://mirai-gikai-tsuwano.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-tsuwano-vxk6sxnxi9lxoxrxp/GeFrrhm8nIvxcUC86nt7knYGnBbms4P7_v6KqJBFIfU",
     external: true,
   },
   {
@@ -159,7 +159,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 34.23,
     mapY: 92.189,
     status: "live",
-    href: "https://mirai-gikai-yoshika.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-yoshika-vxv6sxiz3t4dxt/iPOj25PgTJ7PhJNCMelN_iXXfzM3qWfsaXJyz-YS7BQ",
     external: true,
   },
   {
@@ -169,7 +169,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 64.192,
     mapY: 40.48,
     status: "live",
-    href: "https://mirai-gikai-ama.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-ama-xdd6sxnxigznxjxl/82a6UbJtq32dVvud0tA5tvrTm4TezyyB00P-wo61NNM",
     external: true,
   },
   {
@@ -179,7 +179,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 62.14,
     mapY: 40.096,
     status: "live",
-    href: "https://mirai-gikai-nishinoshima.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-nishinoshima-nxk6sxnxiexluwh/siXnczL9wobMoFhIkdo2cSUoUq-Qpu3dPa8lNl5M3zo",
     external: true,
   },
   {
@@ -189,7 +189,7 @@ export const SHIMANE_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 62.518,
     mapY: 42.585,
     status: "live",
-    href: "https://mirai-gikai-chibu.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-chibu-vc6sxnxixst5ixv/-KalrEyvfGwZub_RZeuv7rYZAj2csHZb_DE9C2wKnzY",
     external: true,
   },
 ];

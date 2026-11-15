@@ -1,16 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { routes } from "@/lib/routes";
-import { policyLinks, primaryLinks } from "./footer.config";
+import { primaryLinks } from "./footer.config";
 
 describe("footer.config", () => {
-  it("policyLinks に規約ページと開発者向けページへの内部リンクが含まれる", () => {
-    const hrefs = policyLinks.map((link) => link.href);
-
-    expect(hrefs).toContain(routes.terms());
-    expect(hrefs).toContain(routes.privacy());
-    expect(hrefs).toContain(routes.developers());
-  });
-
   it("primaryLinks に全国ページと連載申請ページへのリンクが含まれる", () => {
     const hrefs = primaryLinks.map((link) => link.href);
 
@@ -23,12 +15,9 @@ describe("footer.config", () => {
       routes.home(),
       routes.japanMap(),
       routes.localEditionApplications(),
-      routes.terms(),
-      routes.privacy(),
-      routes.developers(),
     ]);
 
-    for (const link of [...primaryLinks, ...policyLinks]) {
+    for (const link of primaryLinks) {
       if (internalHrefs.has(link.href)) {
         expect(link.external).toBeUndefined();
       } else {
