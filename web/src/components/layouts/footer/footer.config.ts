@@ -7,12 +7,6 @@ export type FooterLink = {
   external?: boolean;
 };
 
-export type FooterPolicyLink = {
-  label: string;
-  href: string;
-  external?: boolean;
-};
-
 export const primaryLinks: FooterLink[] = [
   {
     label: "TOP",
@@ -35,20 +29,5 @@ export const primaryLinks: FooterLink[] = [
     label: "本家「みらい議会」を見る",
     href: "https://gikai.team-mir.ai/",
     external: true,
-  },
-];
-
-export const policyLinks: FooterPolicyLink[] = [
-  {
-    label: "利用規約",
-    href: routes.terms(),
-  },
-  {
-    label: "プライバシーポリシー",
-    href: routes.privacy(),
-  },
-  {
-    label: "開発者向け",
-    href: routes.developers(),
   },
 ];
