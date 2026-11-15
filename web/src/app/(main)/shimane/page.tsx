@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <RegionMapPage
-      portalHref="https://mirai-gikai-shimane.vercel.app/"
+      portalHref="https://muse.ai/s/mirai-gikai-shimane-xee6sxnxgxb1xexsxs/Eu9aD605Qn5tAmBRip5STTAhbYBjzFJ-lgpiAfKGtkQ"
       prefectureName="島根県"
       prefectureCode="32"
       imageSrc="/img/shimane-municipality-map.svg"

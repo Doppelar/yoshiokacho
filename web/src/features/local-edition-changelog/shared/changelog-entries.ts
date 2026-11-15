@@ -14,7 +14,7 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
-    title: "山口県・鳥取県の全38自治体の公開URLを修正しました",
+    title: "山口県・鳥取県・島根県・岡山県の公開URLを修正しました",
     href: routes.japanMap(),
   },
   {

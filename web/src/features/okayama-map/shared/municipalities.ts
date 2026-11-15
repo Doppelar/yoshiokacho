@@ -18,7 +18,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 55.904,
     mapY: 59.482,
     status: "live",
-    href: "https://mirai-gikai-okayama.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-okayama-kc6sxnxix0xuxdki/sYAmu03jJtZnCf-oEjpYjsjB5LpAN7dSphDcZJ-o_68",
     external: true,
   },
   {
@@ -28,7 +28,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 43.474,
     mapY: 72.785,
     status: "live",
-    href: "https://mirai-gikai-kurashiki.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kurashiki-oc6sxnxixxcxnv4/RvKayPt-x8WTodmPZza7UB2zTME8ooN_K-IZ-5ODpRA",
     external: true,
   },
   {
@@ -38,7 +38,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 63.276,
     mapY: 23.292,
     status: "live",
-    href: "https://mirai-gikai-tsuyama.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-tsuyama-zxk6sxnxixfxpxqxmxz/zDJ9jX_EAJ2O4lB6R9IcpshU8jvMBKsgN1J1tcDZAyw",
     external: true,
   },
   {
@@ -48,7 +48,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 56.659,
     mapY: 76.29,
     status: "live",
-    href: "https://mirai-gikai-tamano.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-tamano-ev6sxnxixhpxkxqxa/yHdqylFSJZqKaSKtjQ052Ic8xZRd8P-lSmG3jeOG9og",
     external: true,
   },
   {
@@ -58,7 +58,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 26.846,
     mapY: 76.311,
     status: "live",
-    href: "https://mirai-gikai-kasaoka.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kasaoka-axi6sxjnxrk8by/mVRmEaUkppeVjzRRZbK2PPv4i6UDcpuQAamgNARmVQs",
     external: true,
   },
   {
@@ -68,7 +68,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 24.385,
     mapY: 64.959,
     status: "live",
-    href: "https://mirai-gikai-ibara.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-ibara-rxk6sxnxixlfwqx0/r7fM42X5UcUIRhVnsJ-saqdYPGGgmb92YfJzvmBRst0",
     external: true,
   },
   {
@@ -78,7 +78,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 40.361,
     mapY: 60.491,
     status: "live",
-    href: "https://mirai-gikai-soja.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-soja-xsv6sxnxixpxzgkg/pXc3Mmx5jQMMA3db7z68HCA-TF9ota1S0JnaunACheo",
     external: true,
   },
   {
@@ -88,7 +88,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 27.8,
     mapY: 50.719,
     status: "live",
-    href: "https://mirai-gikai-takahashi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-takahashi-vv6sxnxj56jxpj/8la2qNxptPpzClaUtOl2bapI1kA1yB-aEHlXzCbX8f0",
     external: true,
   },
   {
@@ -98,7 +98,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 22.661,
     mapY: 33.776,
     status: "live",
-    href: "https://mirai-gikai-niimi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-niimi-gc6sxnxjxbxokxts/fmSqbq05UgM12-EAGjap1FwvWkRoUtuqJMuCRNuGVLI",
     external: true,
   },
   {
@@ -108,7 +108,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 77.287,
     mapY: 52.358,
     status: "live",
-    href: "https://mirai-gikai-bizen.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-bizen-xeb6sxnxjxs3lxqxo/7haTfb22TYVfeOSRz-K-54RQ9xztWD4xhdOBsaU4gSI",
     external: true,
   },
   {
@@ -118,7 +118,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 70.775,
     mapY: 63.585,
     status: "live",
-    href: "https://mirai-gikai-setouchi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-setouchi-qu6sxnxjxexy91y/6i3dQAnylyPAAo1t1yAsV0tp1Aq2W9aLoApT17gPgO8",
     external: true,
   },
   {
@@ -128,7 +128,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 63.938,
     mapY: 49.312,
     status: "live",
-    href: "https://mirai-gikai-akaiwa.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-akaiwa-cxj6sxnxjrxsxwci/vuBLUH5iGg0rLEY3m0x_WmUoPRhMfJiJKzXuB-5bVB8",
     external: true,
   },
   {
@@ -138,7 +138,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 39.759,
     mapY: 23.552,
     status: "live",
-    href: "https://mirai-gikai-maniwa.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-maniwa-xexj6sxnxjxi7xx9xe/DHGIm_OYNnFODTTUn98A7KXemDdqhHijqDxdiZe_gsY",
     external: true,
   },
   {
@@ -148,7 +148,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 77.254,
     mapY: 31.467,
     status: "live",
-    href: "https://mirai-gikai-mimasaka.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-mimasaka-jxj6sxnxjxwl5xk5/mYFGOM_2KPjJ3GNt70F4dkxwQ0MQrF5Yf9aeawOGhjY",
     external: true,
   },
   {
@@ -158,7 +158,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 32.834,
     mapY: 74.709,
     status: "live",
-    href: "https://mirai-gikai-asakuchi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-asakuchi-vb6sxnxjxy8xyxxz/3mT12mCY0MT2x0eoTmich17r0qrRLKPSlRS3MzoI-l0",
     external: true,
   },
   {
@@ -168,7 +168,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 70.821,
     mapY: 48.884,
     status: "live",
-    href: "https://mirai-gikai-wake.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-wake-lc6sxnxjyqxzxbxv/1GhljGNHjyMZJGTR6ieRWpA2AE1QeFPi8-CGtJ7k-5I",
     external: true,
   },
   {
@@ -178,7 +178,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 48.807,
     mapY: 68.52,
     status: "live",
-    href: "https://mirai-gikai-hayashima.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-hayashima-au6sxnxjxpxnuks/wgQe5Pq55qzaSN0nmtCyjKKO3O5WU1dRpfg4XTk1_z4",
     external: true,
   },
   {
@@ -188,7 +188,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 30.204,
     mapY: 76.659,
     status: "live",
-    href: "https://mirai-gikai-satosho.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-satosho-hxj6sxnxjov8xuxl/XLJtmBcKuSu0U3VrUBqGyBHHTkxClBowyKRwpFCzwIg",
     external: true,
   },
   {
@@ -198,7 +198,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 32.501,
     mapY: 66.611,
     status: "live",
-    href: "https://mirai-gikai-yakage.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-yakage-xxb6sxnxkenx0xuxv/FtV9lktYNF4VhGyQho6HHQ3rmskEjTWPYIaBjfqyqHs",
     external: true,
   },
   {
@@ -208,7 +208,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 30.452,
     mapY: 17.775,
     status: "live",
-    href: "https://mirai-gikai-shinjo.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-shinjo-cu6sxnxknxdr9xm/5iy0Rdkb_rjBUXILVhCqSmzar-B7dtwSiRDPMCbgZCU",
     external: true,
   },
   {
@@ -218,7 +218,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 54.813,
     mapY: 17.525,
     status: "live",
-    href: "https://mirai-gikai-kagamino.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kagamino-ju6sxnxkixtxixxxd/neL0Uf9MbfHHpu85oGiWtXKhmkaWbZhS5cRK-QjTgt0",
     external: true,
   },
   {
@@ -228,7 +228,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 70.297,
     mapY: 30.173,
     status: "live",
-    href: "https://mirai-gikai-shoo.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-shoo-nu6sxnxkgbxt8p/EPJqV-6npRQOmFDt5EyO0yGYQxzv-3OTsjNNH_2VDUc",
     external: true,
   },
   {
@@ -238,7 +238,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 74.084,
     mapY: 23.494,
     status: "live",
-    href: "https://mirai-gikai-nagi.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk",
     external: true,
   },
   {
@@ -248,7 +248,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 85.015,
     mapY: 18.623,
     status: "live",
-    href: "https://mirai-gikai-nishiawakura.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-nishiawakura-xmb6sxnxklxpxzxwi/aHaUO3StcoDLs4XqzgtEAbkOceVd6RpvbiBldjNwTME",
     external: true,
   },
   {
@@ -258,7 +258,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 58.235,
     mapY: 41.737,
     status: "live",
-    href: "https://mirai-gikai-kumenan.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kumenan-xtt6sxnxkr1erj/zMN0HXEszRMpjMNnVOjcRmQyjk4Eellr_zViUg2AiVA",
     external: true,
   },
   {
@@ -268,7 +268,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 56.868,
     mapY: 36.515,
     status: "live",
-    href: "https://mirai-gikai-misaki.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-misaki-wu6sxnxka6g1xe/1YfAto-1Pl_VL-4Bl9u3pY8uqkNbSA19Y6CpNmLwCIc",
     external: true,
   },
   {
@@ -278,7 +278,7 @@ export const OKAYAMA_MUNICIPALITIES: readonly OkayamaMunicipality[] = [
     mapX: 43.772,
     mapY: 47.187,
     status: "live",
-    href: "https://mirai-gikai-kibichuo.vercel.app/",
+    href: "https://muse.ai/s/mirai-gikai-kibichuo-ab6sxnxkcm7y0/GMBEvnzHkG23uHLfVZUXODV9JZQhRt8g7c8LkXQRJgQ",
     external: true,
   },
 ];
