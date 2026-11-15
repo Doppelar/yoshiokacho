@@ -5,7 +5,34 @@ import {
   isInterviewPage,
   isInterviewSection,
   isMainPage,
+  isNationalEditionPage,
 } from "./page-layout-utils";
+
+describe("isNationalEditionPage", () => {
+  it("全国地図とその配下のページは全国版", () => {
+    expect(isNationalEditionPage("/japan")).toBe(true);
+    expect(isNationalEditionPage("/japan/feedback")).toBe(true);
+    expect(isNationalEditionPage("/japan/local-edition-applications")).toBe(
+      true
+    );
+    expect(isNationalEditionPage("/updates")).toBe(true);
+  });
+
+  it("都道府県の地図ページは全国版", () => {
+    expect(isNationalEditionPage("/gunma")).toBe(true);
+    expect(isNationalEditionPage("/tokyo")).toBe(true);
+    expect(isNationalEditionPage("/okinawa")).toBe(true);
+  });
+
+  it("吉岡町版のページや市のページは全国版ではない", () => {
+    expect(isNationalEditionPage("/")).toBe(false);
+    expect(isNationalEditionPage("/bills")).toBe(false);
+    expect(isNationalEditionPage("/bills/abc-123")).toBe(false);
+    expect(isNationalEditionPage("/takasaki")).toBe(false);
+    expect(isNationalEditionPage("/ota")).toBe(false);
+    expect(isNationalEditionPage("/japanese")).toBe(false);
+  });
+});
 
 describe("isMainPage", () => {
   it("returns true for the top page", () => {

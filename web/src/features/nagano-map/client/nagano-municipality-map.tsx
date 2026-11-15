@@ -6,6 +6,11 @@ import {
   MapChoiceChip,
   MapHotspot,
 } from "@/features/region-map/client/map-hotspot";
+import { ProvisionalLegend } from "@/features/region-map/client/provisional-mark";
+import {
+  countProvisionalEditions,
+  isProvisionalEdition,
+} from "@/features/region-map/shared/utils/provisional-edition";
 import { NAGANO_MUNICIPALITIES } from "../shared/municipalities";
 
 export function NaganoMunicipalityMap() {
@@ -33,6 +38,7 @@ export function NaganoMunicipalityMap() {
               selected={item.id === selectedId}
               href={item.href}
               external={item.external}
+              provisional={isProvisionalEdition(item.href)}
               onSelect={() => setSelectedId(item.id)}
             />
           ))}
@@ -56,6 +62,9 @@ export function NaganoMunicipalityMap() {
           ? `${selected.name}のみらい議会は準備中です。公開済みの市町村は、地図または一覧から開けます。`
           : "地図または一覧から市町村を選んでください。公開済みの市町村は公開ページを別タブで開きます。"}
       </p>
+      {countProvisionalEditions(NAGANO_MUNICIPALITIES) > 0 && (
+        <ProvisionalLegend />
+      )}
 
       <section aria-labelledby="nagano-municipality-list">
         <h2 id="nagano-municipality-list" className="mb-3 text-lg font-bold">
@@ -75,6 +84,7 @@ export function NaganoMunicipalityMap() {
                     selected={selectedId === item.id}
                     href={item.href}
                     external={item.external}
+                    provisional={isProvisionalEdition(item.href)}
                     onSelect={() => setSelectedId(item.id)}
                   />
                 )

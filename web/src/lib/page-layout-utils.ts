@@ -6,6 +6,27 @@
  * - チャットサイドバー用のオフセットレイアウトを使用
  */
 
+import { routes } from "./routes";
+
+/** 都道府県の地図ページ（routes の *Map）のパス一覧 */
+const PREFECTURE_MAP_PATHS = new Set<string>(
+  Object.entries(routes)
+    .filter(([name]) => name.endsWith("Map"))
+    // *Map のルートはすべて引数なし
+    .map(([, route]) => (route as () => string)())
+);
+
+/**
+ * 全国版（全国地図・都道府県ページ・地方版の更新履歴など）かどうかを判定。
+ * 全国版ではサイト名を吉岡町版ではなく全国版として表示する。
+ */
+export function isNationalEditionPage(pathname: string): boolean {
+  if (pathname === routes.japanMap()) return true;
+  if (pathname.startsWith(`${routes.japanMap()}/`)) return true;
+  if (pathname === routes.localEditionUpdates()) return true;
+  return PREFECTURE_MAP_PATHS.has(pathname);
+}
+
 /** メインページ（TOP、法案一覧、法案詳細）かどうかを判定 */
 export function isMainPage(pathname: string): boolean {
   // トップページ

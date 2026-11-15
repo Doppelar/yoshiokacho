@@ -15,6 +15,12 @@ export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-16",
     title:
+      "暫定公開（運営者募集中）のページにマークを付け、全国版のサイト名を「みらい議会 全国版」にしました",
+    href: routes.japanMap(),
+  },
+  {
+    date: "2026-11-16",
+    title:
       "群馬・埼玉・千葉・神奈川・静岡・愛知・滋賀・奈良・広島・福岡・大分・沖縄の地図を見やすい市町村境界図に変更しました",
     href: routes.japanMap(),
   },

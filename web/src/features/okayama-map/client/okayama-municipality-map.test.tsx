@@ -11,7 +11,10 @@ describe("OkayamaMunicipalityMap", () => {
     expect(
       screen.getByRole("img", { name: "岡山県の27市町村の地図" })
     ).toBeTruthy();
-    const nagi = screen.getByRole("link", { name: "奈義町のみらい議会" });
+    // 岡山県の公開ページは muse.ai 上の暫定公開なので、名前にその旨が付く
+    const nagi = screen.getByRole("link", {
+      name: "奈義町のみらい議会（暫定公開（運営者募集中））",
+    });
     expect(nagi.getAttribute("href")).toBe(
       "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk"
     );
@@ -22,7 +25,9 @@ describe("OkayamaMunicipalityMap", () => {
   it("一覧から岡山市の公開リンクを選べる", () => {
     render(<OkayamaMunicipalityMap />);
     expect(
-      screen.getByRole("link", { name: "岡山市" }).getAttribute("href")
+      screen
+        .getByRole("link", { name: "岡山市（暫定公開（運営者募集中））" })
+        .getAttribute("href")
     ).toBe(
       "https://muse.ai/s/mirai-gikai-okayama-kc6sxnxix0xuxdki/sYAmu03jJtZnCf-oEjpYjsjB5LpAN7dSphDcZJ-o_68"
     );

@@ -1,5 +1,6 @@
 "use client";
 
+import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,6 +11,7 @@ import { sendDifficultyStateEvent } from "@/lib/analytics/preference-state-event
 import { useOnPageView } from "@/lib/analytics/use-on-page-view";
 import { isInterviewPage, isMainPage } from "@/lib/page-layout-utils";
 import { routes } from "@/lib/routes";
+import { getSiteBrand } from "@/lib/site-brand";
 import { HamburgerMenu } from "./hamburger-menu";
 
 interface HeaderClientProps {
@@ -20,6 +22,9 @@ export function HeaderClient({ difficultyLevel }: HeaderClientProps) {
   const pathname = usePathname();
   const showDifficultySelector = isMainPage(pathname);
   const showInterviewActions = isInterviewPage(pathname);
+  const brand = getSiteBrand(pathname);
+  // 吉岡町版はロゴタイプ画像（サイト名入り）、全国版はテキストでサイト名を出す
+  const showYoshiokaLogotype = brand.href === routes.home();
 
   // Headerは1ページに1つだけ常時マウントされるため、
   // ここで難易度設定をページ表示のたびにGAへ送る
@@ -34,22 +39,28 @@ export function HeaderClient({ difficultyLevel }: HeaderClientProps) {
           {/* Logo / Site Title */}
           <div className="flex items-center">
             <Link
-              href={routes.home()}
+              href={brand.href as Route}
               className="flex items-center space-x-2"
-              aria-label="ホーム"
+              aria-label={`${brand.name} トップ`}
             >
               <Image
                 src="/img/logo.svg"
-                alt="みらい議会＠吉岡町"
+                alt={brand.name}
                 width={42}
                 height={36}
               />
-              <Image
-                src="/img/service-logo.svg"
-                alt="みらい議会＠吉岡町"
-                width={115}
-                height={21}
-              />
+              {showYoshiokaLogotype ? (
+                <Image
+                  src="/img/service-logo.svg"
+                  alt={brand.name}
+                  width={115}
+                  height={21}
+                />
+              ) : (
+                <span className="text-base font-bold tracking-wide text-mirai-text">
+                  {brand.name}
+                </span>
+              )}
             </Link>
           </div>
 

@@ -10,6 +10,14 @@ import {
   MapChoiceChip,
   MapHotspot,
 } from "@/features/region-map/client/map-hotspot";
+import {
+  PROVISIONAL_LABEL,
+  ProvisionalLegend,
+} from "@/features/region-map/client/provisional-mark";
+import {
+  countProvisionalEditions,
+  isProvisionalEdition,
+} from "@/features/region-map/shared/utils/provisional-edition";
 import { routes } from "@/lib/routes";
 import {
   GUNMA_MUNICIPALITIES,
@@ -46,6 +54,7 @@ export function GunmaMunicipalityMap() {
               selected={item.id === selectedId}
               href={item.href}
               external={item.external}
+              provisional={isProvisionalEdition(item.href)}
               onSelect={() => setSelectedId(item.id)}
               showLabel={false}
             />
@@ -53,6 +62,10 @@ export function GunmaMunicipalityMap() {
         </div>
         <CodhMapAttribution prefectureCode="10" />
       </div>
+
+      {countProvisionalEditions(GUNMA_MUNICIPALITIES) > 0 && (
+        <ProvisionalLegend />
+      )}
 
       {selected && <SelectedMunicipalityCard municipality={selected} />}
 
@@ -99,6 +112,7 @@ function MunicipalityGroup({
             selected={selectedId === item.id}
             href={item.href}
             external={item.external}
+            provisional={isProvisionalEdition(item.href)}
             onSelect={() => onSelect(item.id)}
           />
         ))}
@@ -113,6 +127,7 @@ function SelectedMunicipalityCard({
   municipality: Municipality;
 }) {
   const live = municipality.status === "live";
+  const provisional = isProvisionalEdition(municipality.href);
   return (
     <section className="rounded-2xl border bg-white p-5">
       <p className="text-sm text-muted-foreground">選択中</p>
@@ -125,6 +140,8 @@ function SelectedMunicipalityCard({
             {municipality.external
               ? `${municipality.name}のページを開きます。`
               : `${municipality.name}の議会ページを開きます。`}
+            {provisional &&
+              `このページは${PROVISIONAL_LABEL}です。地域の運営者が決まるまで、運営チームが暫定的に公開しています。`}
           </p>
           <Button asChild className="mt-4">
             {municipality.external && municipality.href ? (
