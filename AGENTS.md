@@ -2,6 +2,9 @@
 
 ## 本フォークの本番運用（以下の元リポジトリ向けルールより優先）
 
+- 地方版の導線は必ず「全国地図 → 都道府県の市町村地図 → 自治体の公開サイト」とする。公開自治体が1件だけでも都道府県から外部の市町村サイトへ直接遷移させない。
+- 通常のリンク追加・表示調整はスピードを優先し、変更対象の確認と既存CIに検証を絞る。ローカル全体テスト・全体ビルドの重複実行や本番確認の反復は省略する。DB・秘密情報・破壊的変更の事前確認と既存の必須CIは維持する。
+
 - 本番ブランチは `production`。作業用worktreeは最新の `origin/production` から分岐し、PRの比較先も `production` とする。`main`・`develop` にはpushしない。
 - 公開対象は Vercel `doppelars-projects/web`、本番URLは `https://web-olive-ten-47.vercel.app/`。別プロジェクト `yoshiokacho` は対象外。
 - 安全なサイト更新はCIとweb Preview成功後、`site-autopublish` ラベルで自動マージ対象にできる。現productionの本番URL検証が失敗中なら次を公開しない。

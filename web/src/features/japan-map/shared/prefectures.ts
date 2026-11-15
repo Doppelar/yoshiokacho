@@ -230,8 +230,7 @@ export const PREFECTURES: readonly Prefecture[] = [
     mapX: 69,
     mapY: 49,
     status: "live",
-    href: "https://mirai-gikai-komoro-web.vercel.app/",
-    external: true,
+    href: routes.naganoMap(),
   },
   {
     id: "gifu",

@@ -84,3 +84,12 @@ test("loads the real Okayama map source for live verification", () => {
   assert.ok(okayama);
   assert.ok(okayama.links.includes(nagi));
 });
+
+test("loads Nagano public links while preserving the prefecture map navigation", () => {
+  const nagano = loadExpectations().find((page) => page.path === "/nagano");
+  assert.ok(nagano);
+  assert.equal(nagano.links.length, 36);
+  assert.ok(
+    nagano.links.includes("https://mirai-gikai-komoro-web.vercel.app/")
+  );
+});
