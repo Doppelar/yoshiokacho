@@ -810,6 +810,24 @@ export type Database = {
         }
         Relationships: []
       }
+      local_edition_feedback_rate_limits: {
+        Row: {
+          key: string
+          request_count: number
+          window_start: string
+        }
+        Insert: {
+          key: string
+          request_count?: number
+          window_start: string
+        }
+        Update: {
+          key?: string
+          request_count?: number
+          window_start?: string
+        }
+        Relationships: []
+      }
       mirai_stances: {
         Row: {
           bill_id: string
@@ -1242,6 +1260,10 @@ export type Database = {
           p_min_content_richness: number
         }
         Returns: number
+      }
+      consume_local_edition_feedback_rate_limit: {
+        Args: { p_key: string; p_limit: number; p_window_start: string }
+        Returns: boolean
       }
       count_bulk_publish_targets: {
         Args: {

@@ -39,7 +39,7 @@ export async function consumeFeedbackRateLimit(
   limit: number
 ) {
   const { data, error } = await createAdminClient().rpc(
-    "increment_api_rate_limit",
+    "consume_local_edition_feedback_rate_limit",
     {
       p_key: key,
       p_window_start: windowStart,

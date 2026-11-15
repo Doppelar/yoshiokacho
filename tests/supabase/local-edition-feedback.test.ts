@@ -36,7 +36,10 @@ describe("全国一覧の意見掲示板（実DB）", () => {
   });
   afterAll(async () => {
     await adminClient.from("local_edition_feedback").delete().in("id", ids);
-    await adminClient.from("api_rate_limits").delete().eq("key", rateKey);
+    await adminClient
+      .from("local_edition_feedback_rate_limits")
+      .delete()
+      .eq("key", rateKey);
   });
   it("投稿を即時公開し、非表示本文を公開一覧へ出さない", async () => {
     const body = `即時公開テスト ${randomUUID()}`;
