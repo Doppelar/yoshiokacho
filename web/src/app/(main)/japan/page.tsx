@@ -5,6 +5,7 @@ import { PrefectureCouncilLink } from "@/features/japan-map/client/prefecture-co
 import { MunicipalityCoverage } from "@/features/japan-map/server/components/municipality-coverage";
 import { ApplicationCallToAction } from "@/features/local-edition-applications/client/components/application-call-to-action";
 import { LocalEditionChangelog } from "@/features/local-edition-changelog/client/components/local-edition-changelog";
+import { FeedbackBoardLink } from "@/features/local-edition-feedback/server/components/feedback-board-link";
 
 export const metadata: Metadata = {
   title: "日本の都道府県 | みらい議会",
@@ -27,6 +28,7 @@ export default function JapanMapPage() {
       <ApplicationCallToAction />
       <PrefectureCouncilLink />
       <JapanPrefectureMap />
+      <FeedbackBoardLink />
       <LocalEditionChangelog />
     </Container>
   );

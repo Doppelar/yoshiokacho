@@ -786,6 +786,30 @@ export type Database = {
         }
         Relationships: []
       }
+      local_edition_feedback: {
+        Row: {
+          body: string
+          created_at: string
+          display_name: string
+          id: string
+          is_hidden: boolean
+        }
+        Insert: {
+          body: string
+          created_at?: string
+          display_name?: string
+          id?: string
+          is_hidden?: boolean
+        }
+        Update: {
+          body?: string
+          created_at?: string
+          display_name?: string
+          id?: string
+          is_hidden?: boolean
+        }
+        Relationships: []
+      }
       mirai_stances: {
         Row: {
           bill_id: string
