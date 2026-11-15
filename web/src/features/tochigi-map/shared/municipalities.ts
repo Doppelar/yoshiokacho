@@ -42,7 +42,9 @@ export const TOCHIGI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "市",
     mapX: 37.307,
     mapY: 59.588,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-kanuma-shi-xsxx6xv4gxhxmyixy/oZl9bWVqN-9TcR9C-ary5Ys-_3SFyrABapXZYdjUhx0",
+    external: true,
   },
   {
     id: "09206",
