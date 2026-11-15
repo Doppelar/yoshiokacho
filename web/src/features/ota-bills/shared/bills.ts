@@ -1,18 +1,11 @@
-export type OtaBillStatus = "審議中" | "実施済み・可決";
+import { OTA_OFFICIAL_SESSIONS as OTA_SESSIONS } from "./official-sessions";
+import type { OtaBill, OtaLegacyBill } from "./types/ota-bill";
+import { buildOtaBills } from "./utils/build-ota-bills";
 
-export type OtaBill = {
-  id: string;
-  number: number;
-  name: string;
-  officialName: string;
-  status: OtaBillStatus;
-  thumbnailUrl: string | null;
-  normal: string | null;
-  hard: string | null;
-  sources: readonly string[];
-};
+export type { OtaBill, OtaBillStatus } from "./types/ota-bill";
+export { OTA_SESSIONS };
 
-export const OTA_BILLS: readonly OtaBill[] = [
+const ORIGINAL_OTA_BILLS: readonly OtaLegacyBill[] = [
   {
     id: "92",
     number: 92,
@@ -309,6 +302,21 @@ export const OTA_BILLS: readonly OtaBill[] = [
   },
 ];
 
+export const OTA_BILLS: readonly OtaBill[] = buildOtaBills(
+  OTA_SESSIONS,
+  ORIGINAL_OTA_BILLS
+);
+
 export function getOtaBillById(id: string): OtaBill | undefined {
   return OTA_BILLS.find((bill) => bill.id === id);
+}
+
+export function getOtaSession(sessionId?: string) {
+  return (
+    OTA_SESSIONS.find((session) => session.id === sessionId) ?? OTA_SESSIONS[0]
+  );
+}
+
+export function getOtaBillsForSession(sessionId: string): OtaBill[] {
+  return OTA_BILLS.filter((bill) => bill.sessionId === sessionId);
 }

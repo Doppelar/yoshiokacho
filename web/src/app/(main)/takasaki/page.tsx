@@ -7,6 +7,11 @@ export const metadata: Metadata = {
     "高崎市議会でどんな議案が審議され、どう決まったかを、会派・議員ごとの賛否とあわせて伝えるページです。",
 };
 
-export default function TakasakiHomePage() {
-  return <TakasakiHome />;
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ session?: string }>;
+}) {
+  const { session } = await searchParams;
+  return <TakasakiHome sessionId={session} />;
 }

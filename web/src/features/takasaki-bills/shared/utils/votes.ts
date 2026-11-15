@@ -22,10 +22,10 @@ export function formatItemName(item: Pick<TakasakiItem, "kind" | "number">) {
  * 反対に挙がっていない議員は賛成とする。
  */
 export function tallyRollCall(
-  session: Pick<TakasakiSession, "members" | "chair">,
+  session: Pick<TakasakiSession, "members" | "chair" | "voteDetails">,
   item: Pick<TakasakiItem, "rollCall">
 ): RollCallTally | null {
-  if (!item.rollCall) return null;
+  if (session.voteDetails === "unconfirmed" || !item.rollCall) return null;
 
   const against = new Set(item.rollCall.against);
   const byFaction = new Map<string, FactionVote>();
@@ -57,10 +57,12 @@ export function tallyRollCall(
 
 /** 議決結果の表示。起立採決は「（賛成多数）」などを添える */
 export function formatResult(
-  session: Pick<TakasakiSession, "members" | "chair">,
+  session: Pick<TakasakiSession, "members" | "chair" | "voteDetails">,
   item: Pick<TakasakiItem, "result" | "rollCall">
 ): string {
   if (item.result === null) return "報告";
+  if (session.voteDetails === "unconfirmed")
+    return item.result === "―" ? "資料に結果の記載なし" : item.result;
   const tally = tallyRollCall(session, item);
   if (!tally) return `${item.result}（全会一致）`;
   const majority =
@@ -73,6 +75,8 @@ const KIND_ORDER: Record<TakasakiItemKind, number> = {
   請願: 1,
   意見書案: 2,
   報告: 3,
+  承認: 4,
+  議員提出: 5,
 };
 
 /** 賛否が分かれたものを先に、残りは種類・番号順に並べる */
