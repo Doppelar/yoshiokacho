@@ -32,6 +32,19 @@ export function MunicipalityCoverage() {
           {percentage.toFixed(1)}％
         </p>
       </div>
+      <div
+        role="progressbar"
+        aria-label="全国の自治体掲載率"
+        aria-valuemin={0}
+        aria-valuemax={total}
+        aria-valuenow={published}
+        className="mt-3 h-3 overflow-hidden rounded-full bg-mirai-brand-mint"
+      >
+        <div
+          className="h-full rounded-full bg-primary-accent"
+          style={{ width: `${percentage}%` }}
+        />
+      </div>
       <p className="mt-3 text-xs leading-5 text-muted-foreground">
         公開リンクのある市区町村を集計。東京23区を含みます。
         <a
