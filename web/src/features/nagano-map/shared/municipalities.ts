@@ -485,7 +485,9 @@ export const NAGANO_MUNICIPALITIES: readonly NaganoMunicipality[] = [
     type: "村",
     mapX: 45.776,
     mapY: 81.139,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-takagi-mura-dxe6oxmxtxexexsvxb/P5aWpRkliRhpo1FJMDpPJfGBfh_IKsW4q3sk5I02RhI",
+    external: true,
   },
   {
     id: "20416",

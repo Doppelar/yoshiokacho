@@ -21,10 +21,10 @@ describe("NaganoMunicipalityMap", () => {
 
   it("準備中の市町村を選ぶと県内に留まって案内を表示する", () => {
     render(<NaganoMunicipalityMap />);
-    fireEvent.click(screen.getByRole("button", { name: "喬木村（準備中）" }));
+    fireEvent.click(screen.getByRole("button", { name: "豊丘村（準備中）" }));
     expect(
       screen.getByText(
-        "喬木村のみらい議会は準備中です。公開済みの市町村は、地図または一覧から開けます。"
+        "豊丘村のみらい議会は準備中です。公開済みの市町村は、地図または一覧から開けます。"
       )
     ).toBeTruthy();
   });
