@@ -274,7 +274,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 34.73,
     mapX: 57,
     mapY: 61,
-    status: "upcoming",
+    status: "live",
+    href: routes.mieMap(),
   },
   {
     id: "shiga",
@@ -305,7 +306,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 34.69,
     mapX: 50,
     mapY: 58,
-    status: "upcoming",
+    status: "live",
+    href: routes.osakaMap(),
   },
   {
     id: "hyogo",
@@ -423,7 +425,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 33.84,
     mapX: 30,
     mapY: 62,
-    status: "upcoming",
+    status: "live",
+    href: routes.ehimeMap(),
   },
   {
     id: "kochi",
@@ -454,7 +457,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 33.25,
     mapX: 9,
     mapY: 60,
-    status: "upcoming",
+    status: "live",
+    href: routes.sagaMap(),
   },
   {
     id: "nagasaki",

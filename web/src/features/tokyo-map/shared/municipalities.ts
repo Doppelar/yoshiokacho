@@ -46,7 +46,9 @@ export const TOKYO_MUNICIPALITIES: readonly TokyoMunicipality[] = [
     group: "区",
     mapX: 60,
     mapY: 28,
-    status: "upcoming",
+    status: "live",
+    href: "https://miraigikai-shinjuku-web.vercel.app/",
+    external: true,
   },
   {
     id: "bunkyo",
@@ -70,7 +72,9 @@ export const TOKYO_MUNICIPALITIES: readonly TokyoMunicipality[] = [
     group: "区",
     mapX: 74,
     mapY: 26,
-    status: "upcoming",
+    status: "live",
+    href: "https://mirai-gikai-sumida.gorisan.info/",
+    external: true,
   },
   {
     id: "koto",
@@ -112,7 +116,9 @@ export const TOKYO_MUNICIPALITIES: readonly TokyoMunicipality[] = [
     group: "区",
     mapX: 56,
     mapY: 38,
-    status: "upcoming",
+    status: "live",
+    href: "https://civictech-setagaya.org/",
+    external: true,
   },
   {
     id: "shibuya",
@@ -218,7 +224,9 @@ export const TOKYO_MUNICIPALITIES: readonly TokyoMunicipality[] = [
     group: "市",
     mapX: 36,
     mapY: 24,
-    status: "upcoming",
+    status: "live",
+    href: "https://mirai-gikai-tachikawa-web.vercel.app/",
+    external: true,
   },
   {
     id: "musashino",

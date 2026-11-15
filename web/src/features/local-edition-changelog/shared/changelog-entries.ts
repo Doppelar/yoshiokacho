@@ -14,6 +14,32 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "群馬県神流町を追加しました",
+    href: routes.gunmaMap(),
+  },
+  {
+    date: "2026-11-15",
+    title:
+      "リンク集と照合し、新宿区・世田谷区・墨田区・相模原市・枚方市・桑名市・唐津市を追加しました",
+    href: routes.japanMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "愛媛県の市町村地図と松山市を追加しました",
+    href: routes.ehimeMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "広島県福山市を追加しました",
+    href: routes.hiroshimaMap(),
+  },
+  {
+    date: "2026-11-15",
+    title: "東京都立川市を追加しました",
+    href: routes.tokyoMap(),
+  },
+  {
+    date: "2026-11-15",
     title: "栃木県鹿沼市を追加しました",
     href: routes.tochigiMap(),
   },

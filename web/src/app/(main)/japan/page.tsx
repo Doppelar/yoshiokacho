@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layouts/container";
 import { JapanPrefectureMap } from "@/features/japan-map/client/japan-prefecture-map";
 import { PrefectureCouncilLink } from "@/features/japan-map/client/prefecture-council-link";
+import { LocalEditionLinkCollection } from "@/features/japan-map/server/components/local-edition-link-collection";
 import { MunicipalityCoverage } from "@/features/japan-map/server/components/municipality-coverage";
 import { ApplicationCallToAction } from "@/features/local-edition-applications/client/components/application-call-to-action";
 import { LocalEditionChangelog } from "@/features/local-edition-changelog/client/components/local-edition-changelog";
@@ -28,6 +29,7 @@ export default function JapanMapPage() {
       <PrefectureCouncilLink />
       <JapanPrefectureMap />
       <LocalEditionChangelog />
+      <LocalEditionLinkCollection />
     </Container>
   );
 }

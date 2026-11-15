@@ -9,6 +9,7 @@ export type KanagawaMunicipality = {
   status: KanagawaMunicipalityStatus;
   href?: string;
   external?: boolean;
+  additionalSites?: readonly { label: string; href: string }[];
 };
 
 export const KANAGAWA_PREF_COUNCIL_HREF =
@@ -39,7 +40,15 @@ export const KANAGAWA_MUNICIPALITIES: readonly KanagawaMunicipality[] = [
     type: "市",
     mapX: 42,
     mapY: 18,
-    status: "upcoming",
+    status: "live",
+    href: "https://miraigikai-sagamihara.vercel.app/",
+    additionalSites: [
+      {
+        label: "別サイト",
+        href: "https://mirai-gikai-sagamihara.vercel.app/",
+      },
+    ],
+    external: true,
   },
   {
     id: "yokosuka",
