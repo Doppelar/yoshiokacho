@@ -13,6 +13,11 @@ export type LocalEditionChangelogEntry = {
  */
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
+    date: "2026-11-16",
+    title: "東京都の地図を見やすい区市町村境界図と23区の拡大図に変更しました",
+    href: routes.tokyoMap(),
+  },
+  {
     date: "2026-11-15",
     title: "青森市・弘前市・八戸市・黒石市・五所川原市を追加しました",
     href: routes.aomoriMap(),

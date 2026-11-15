@@ -13,6 +13,24 @@ import {
   type TokyoMunicipality,
 } from "../shared/municipalities";
 
+const TOKYO_MAPS = [
+  {
+    caption: "多摩地域と23区",
+    src: "/img/tokyo-mainland-map.svg",
+    alt: "東京都の多摩地域と23区の地図",
+    height: 425,
+    includes: (item: TokyoMunicipality) =>
+      item.group === "市" || item.group === "町村",
+  },
+  {
+    caption: "23区（拡大図）",
+    src: "/img/tokyo-23-wards-map.svg",
+    alt: "東京23区の地図",
+    height: 801,
+    includes: (item: TokyoMunicipality) => item.group === "区",
+  },
+] as const;
+
 export function TokyoMunicipalityMap() {
   const [selectedId, setSelectedId] = useState("chuo");
   const selected =
@@ -21,31 +39,50 @@ export function TokyoMunicipalityMap() {
 
   return (
     <div className="space-y-6">
-      <div className="overflow-hidden rounded-2xl border bg-[#6aa84f] p-2 sm:p-3">
-        <div className="relative">
-          <Image
-            src="/img/tokyo-municipality-map.gif"
-            alt="東京都の区市町村地図"
-            width={480}
-            height={356}
-            className="h-auto w-full"
-            priority
-          />
-          {TOKYO_MUNICIPALITIES.map((item) => (
-            <MapHotspot
-              key={item.id}
-              name={item.name}
-              mapX={item.mapX}
-              mapY={item.mapY}
-              selected={item.id === selectedId}
-              href={item.href}
-              external={item.external}
-              onSelect={() => setSelectedId(item.id)}
-            />
-          ))}
-        </div>
-        <p className="px-1 pt-2 text-right text-[10px] text-white/90">
-          © ONECOMPATH
+      <div className="space-y-3 rounded-2xl border border-mirai-border bg-muted p-2 sm:p-3">
+        {TOKYO_MAPS.map((map) => (
+          <figure key={map.src}>
+            <figcaption className="mb-1 px-1 text-sm font-bold">
+              {map.caption}
+            </figcaption>
+            <div className="relative">
+              <Image
+                src={map.src}
+                alt={map.alt}
+                width={800}
+                height={map.height}
+                className="h-auto w-full"
+                priority
+              />
+              {TOKYO_MUNICIPALITIES.filter(map.includes).map((item) =>
+                item.mapX === undefined || item.mapY === undefined ? null : (
+                  <MapHotspot
+                    key={item.id}
+                    name={item.name}
+                    mapX={item.mapX}
+                    mapY={item.mapY}
+                    selected={item.id === selectedId}
+                    href={item.href}
+                    external={item.external}
+                    onSelect={() => setSelectedId(item.id)}
+                    showLabel={false}
+                  />
+                )
+              )}
+            </div>
+          </figure>
+        ))}
+        <p className="px-1 text-xs text-mirai-text-secondary">
+          島しょ部の9町村は、下の一覧から選べます。地図：
+          <a
+            href="https://geoshape.ex.nii.ac.jp/city/choropleth/13_city_dc.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
+            『歴史的行政区域データセットβ版』（CODH作成）
+          </a>
+          を加工（CC BY 4.0）
         </p>
       </div>
 
