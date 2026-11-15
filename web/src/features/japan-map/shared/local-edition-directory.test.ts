@@ -7,6 +7,7 @@ import { OSAKA_MUNICIPALITIES } from "@/features/osaka-map/shared/municipalities
 import { SAGA_MUNICIPALITIES } from "@/features/saga-map/shared/municipalities";
 import { routes } from "@/lib/routes";
 import { MUNICIPALITY_COVERAGE_REGIONS } from "./municipality-coverage-regions";
+import { PREFECTURE_MUNICIPALITY_TOTALS } from "./prefecture-municipality-totals";
 import { PREFECTURES } from "./prefectures";
 
 const regions = [
@@ -178,6 +179,7 @@ describe("全国ページと地方版リンク集の照合", () => {
     regions
   )("$idの全市町村を重複なく登録し、地図の範囲内に配置する", (region) => {
     expect(region.municipalities).toHaveLength(region.total);
+    expect(PREFECTURE_MUNICIPALITY_TOTALS[region.id]).toBe(region.total);
     expect(new Set(region.municipalities.map((item) => item.id)).size).toBe(
       region.total
     );
