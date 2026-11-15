@@ -6,8 +6,9 @@ import { Container } from "@/components/layouts/container";
 import { Card } from "@/components/ui/card";
 import { CouncilSwitchBanner } from "@/features/gunma-map/client/council-switch-banner";
 import { routes } from "@/lib/routes";
-import { TAKASAKI_SESSION_R8_5 } from "../../shared/session-r8-5";
-import type { TakasakiItem } from "../../shared/types";
+import { TAKASAKI_SESSIONS } from "../../shared/sessions";
+import type { TakasakiItem, TakasakiSession } from "../../shared/types";
+import { findTakasakiSession } from "../../shared/utils/sessions";
 import {
   formatItemName,
   formatResult,
@@ -16,8 +17,8 @@ import {
 } from "../../shared/utils/votes";
 import { TakasakiDisclaimer } from "./takasaki-disclaimer";
 
-export function TakasakiHome() {
-  const session = TAKASAKI_SESSION_R8_5;
+export function TakasakiHome({ sessionId }: { sessionId?: string }) {
+  const session = findTakasakiSession(sessionId);
   const items = sortItemsForDisplay(session.items);
   const splitItems = items.filter((item) => item.rollCall);
   const otherItems = items.filter((item) => !item.rollCall);
@@ -38,6 +39,18 @@ export function TakasakiHome() {
         </p>
       </section>
 
+      <nav aria-label="高崎市議会の会期" className="mt-8 flex flex-wrap gap-3">
+        {TAKASAKI_SESSIONS.map((entry) => (
+          <Link
+            key={entry.id}
+            href={routes.takasakiHome(entry.id) as Route}
+            aria-current={entry.id === session.id ? "page" : undefined}
+            className="rounded-lg border border-mirai-border px-3 py-2 text-sm underline underline-offset-2"
+          >
+            {entry.name}
+          </Link>
+        ))}
+      </nav>
       <section className="flex flex-col gap-2 pt-10">
         <h2 className="text-[22px] font-bold leading-[1.48] text-black">
           {session.name}
@@ -47,17 +60,24 @@ export function TakasakiHome() {
         </p>
       </section>
 
-      <section className="flex flex-col gap-4 pt-6">
-        <h3 className="text-lg font-bold">賛否が分かれた議案</h3>
-        {splitItems.map((item) => (
-          <ItemCard key={item.id} item={item} highlight />
-        ))}
-      </section>
+      {session.voteDetails === "unconfirmed" && (
+        <p className="mt-4 text-sm text-mirai-text-secondary">
+          議決結果は公式資料の記載です。この会期の議員別賛否は未掲載のため、賛否人数や全会一致かどうかは表示していません。
+        </p>
+      )}
+      {splitItems.length > 0 && (
+        <section className="flex flex-col gap-4 pt-6">
+          <h3 className="text-lg font-bold">賛否が分かれた議案</h3>
+          {splitItems.map((item) => (
+            <ItemCard key={item.id} item={item} session={session} highlight />
+          ))}
+        </section>
+      )}
 
       <section className="flex flex-col gap-3 py-10">
-        <h3 className="text-lg font-bold">そのほかの議案など（全会一致）</h3>
+        <h3 className="text-lg font-bold">議案・報告など</h3>
         {otherItems.map((item) => (
-          <ItemCard key={item.id} item={item} />
+          <ItemCard key={item.id} item={item} session={session} />
         ))}
       </section>
 
@@ -68,12 +88,13 @@ export function TakasakiHome() {
 
 function ItemCard({
   item,
+  session,
   highlight = false,
 }: {
   item: TakasakiItem;
+  session: TakasakiSession;
   highlight?: boolean;
 }) {
-  const session = TAKASAKI_SESSION_R8_5;
   const tally = tallyRollCall(session, item);
 
   return (

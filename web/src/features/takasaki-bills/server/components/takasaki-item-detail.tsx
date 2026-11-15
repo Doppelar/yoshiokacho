@@ -24,7 +24,7 @@ export function TakasakiItemDetail({
   return (
     <Container className="pt-24 pb-16 md:pt-12">
       <Link
-        href={routes.takasakiHome() as Route}
+        href={routes.takasakiHome(session.id) as Route}
         className="text-sm font-bold underline underline-offset-2 hover:opacity-80"
       >
         みらい議会＠高崎市に戻る
@@ -98,6 +98,10 @@ export function TakasakiItemDetail({
             {session.chair}）は採決に加わりません。
           </p>
         </section>
+      ) : session.voteDetails === "unconfirmed" ? (
+        <p className="mt-8 text-sm text-mirai-text-secondary">
+          この会期の議員別賛否は未転記です。賛否人数や全会一致かどうかは、このページから断定できません。公式資料で確認してください。
+        </p>
       ) : (
         item.result !== null && (
           <p className="mt-8 text-sm text-mirai-text-secondary">

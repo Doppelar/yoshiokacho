@@ -14,6 +14,21 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-15",
+    title: "吉岡町の2025・2026年の議案データを追加しました",
+    href: routes.billsList(),
+  },
+  {
+    date: "2026-11-15",
+    title: "高崎市の2025・2026年の全10会期の議案・議決結果を掲載しました",
+    href: routes.takasakiHome(),
+  },
+  {
+    date: "2026-11-15",
+    title: "太田市の2025・2026年の9会議の議案・議決結果を掲載しました",
+    href: routes.otaHome(),
+  },
+  {
+    date: "2026-11-15",
     title: "みらい議会＠喬木村（長野県）を追加しました",
     href: "https://muse.ai/s/mirai-gikai-takagi-mura-dxe6oxmxtxexexsvxb/P5aWpRkliRhpo1FJMDpPJfGBfh_IKsW4q3sk5I02RhI",
   },

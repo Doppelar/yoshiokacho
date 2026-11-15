@@ -27,9 +27,15 @@ export const routes = {
   oitaMap: () => "/oita" as const,
   hiroshimaMap: () => "/hiroshima" as const,
   aichiMap: () => "/aichi" as const,
-  otaHome: () => "/ota" as const,
+  otaHome: (sessionId?: string) =>
+    sessionId
+      ? (`/ota?session=${encodeURIComponent(sessionId)}` as const)
+      : ("/ota" as const),
   otaBillDetail: (billId: string) => `/ota/bills/${billId}` as const,
-  takasakiHome: () => "/takasaki" as const,
+  takasakiHome: (sessionId?: string) =>
+    sessionId
+      ? (`/takasaki?session=${encodeURIComponent(sessionId)}` as const)
+      : ("/takasaki" as const),
   takasakiBillDetail: (itemId: string) => `/takasaki/bills/${itemId}` as const,
   terms: () => "/terms" as const,
   privacy: () => "/privacy" as const,

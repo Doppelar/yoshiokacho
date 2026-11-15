@@ -1,4 +1,10 @@
-export type TakasakiItemKind = "議案" | "報告" | "請願" | "意見書案";
+export type TakasakiItemKind =
+  | "議案"
+  | "報告"
+  | "請願"
+  | "意見書案"
+  | "承認"
+  | "議員提出";
 
 export type TakasakiCouncilMember = {
   name: string;
@@ -22,6 +28,8 @@ export type TakasakiItem = {
 };
 
 export type TakasakiSession = {
+  /** 未転記の議員別賛否を全会一致と扱わない。 */
+  voteDetails?: "unconfirmed";
   id: string;
   name: string;
   period: string;
