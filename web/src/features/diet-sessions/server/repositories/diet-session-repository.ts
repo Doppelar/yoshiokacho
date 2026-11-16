@@ -121,3 +121,12 @@ export async function findLatestClosedDietSession(
   }
   return data;
 }
+
+export async function findArchiveDietSessions() {
+  const { data, error } = await createAdminClient()
+    .from("diet_sessions")
+    .select("id,name,start_date")
+    .order("start_date", { ascending: false });
+  if (error) throw new Error("会期一覧の取得に失敗しました");
+  return data ?? [];
+}
