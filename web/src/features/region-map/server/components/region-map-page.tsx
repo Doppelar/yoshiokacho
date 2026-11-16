@@ -13,7 +13,10 @@ import {
 
 export function RegionMapPage(config: RegionMapConfig) {
   const liveCount = config.municipalities.filter((item) => item.href).length;
-  const provisionalCount = countProvisionalEditions(config.municipalities);
+  const provisionalCount = countProvisionalEditions(
+    config.prefectureCode,
+    config.municipalities
+  );
   const liveSummary =
     provisionalCount > 0
       ? `公開済みの${liveCount}市町村は今すぐ開けます（うち${provisionalCount}市町村は暫定公開・運営者募集中）。ほかの市町村は準備中です。`
@@ -43,7 +46,9 @@ export function RegionMapPage(config: RegionMapConfig) {
             className="text-sm font-bold text-primary-accent underline underline-offset-2"
           >
             県全体の一覧サイトを見る
-            {isProvisionalEdition(config.portalHref) && <ProvisionalMark />}
+            {isProvisionalEdition(config.prefectureCode, config.portalHref) && (
+              <ProvisionalMark />
+            )}
           </a>
         )}
       </div>

@@ -38,7 +38,7 @@ export function NaganoMunicipalityMap() {
               selected={item.id === selectedId}
               href={item.href}
               external={item.external}
-              provisional={isProvisionalEdition(item.href)}
+              provisional={isProvisionalEdition("20", item.href)}
               onSelect={() => setSelectedId(item.id)}
             />
           ))}
@@ -62,7 +62,7 @@ export function NaganoMunicipalityMap() {
           ? `${selected.name}のみらい議会は準備中です。公開済みの市町村は、地図または一覧から開けます。`
           : "地図または一覧から市町村を選んでください。公開済みの市町村は公開ページを別タブで開きます。"}
       </p>
-      {countProvisionalEditions(NAGANO_MUNICIPALITIES) > 0 && (
+      {countProvisionalEditions("20", NAGANO_MUNICIPALITIES) > 0 && (
         <ProvisionalLegend />
       )}
 
@@ -84,7 +84,7 @@ export function NaganoMunicipalityMap() {
                     selected={selectedId === item.id}
                     href={item.href}
                     external={item.external}
-                    provisional={isProvisionalEdition(item.href)}
+                    provisional={isProvisionalEdition("20", item.href)}
                     onSelect={() => setSelectedId(item.id)}
                   />
                 )

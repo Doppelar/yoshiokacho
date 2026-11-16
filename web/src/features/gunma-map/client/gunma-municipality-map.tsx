@@ -54,7 +54,7 @@ export function GunmaMunicipalityMap() {
               selected={item.id === selectedId}
               href={item.href}
               external={item.external}
-              provisional={isProvisionalEdition(item.href)}
+              provisional={isProvisionalEdition("10", item.href)}
               onSelect={() => setSelectedId(item.id)}
               showLabel={false}
             />
@@ -63,7 +63,7 @@ export function GunmaMunicipalityMap() {
         <CodhMapAttribution prefectureCode="10" />
       </div>
 
-      {countProvisionalEditions(GUNMA_MUNICIPALITIES) > 0 && (
+      {countProvisionalEditions("10", GUNMA_MUNICIPALITIES) > 0 && (
         <ProvisionalLegend />
       )}
 
@@ -112,7 +112,7 @@ function MunicipalityGroup({
             selected={selectedId === item.id}
             href={item.href}
             external={item.external}
-            provisional={isProvisionalEdition(item.href)}
+            provisional={isProvisionalEdition("10", item.href)}
             onSelect={() => onSelect(item.id)}
           />
         ))}
@@ -127,7 +127,7 @@ function SelectedMunicipalityCard({
   municipality: Municipality;
 }) {
   const live = municipality.status === "live";
-  const provisional = isProvisionalEdition(municipality.href);
+  const provisional = isProvisionalEdition("10", municipality.href);
   return (
     <section className="rounded-2xl border bg-white p-5">
       <p className="text-sm text-muted-foreground">選択中</p>
