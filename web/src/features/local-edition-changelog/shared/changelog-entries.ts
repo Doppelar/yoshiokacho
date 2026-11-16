@@ -19,6 +19,11 @@ export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   },
   {
     date: "2026-11-16",
+    title: "青森県の21市町を追加しました（十和田市・むつ市・七戸町など）",
+    href: routes.aomoriMap(),
+  },
+  {
+    date: "2026-11-16",
     title:
       "暫定公開（運営者募集中）のページにマークを付け、全国版のサイト名を「みらい議会 全国版」にしました",
     href: routes.japanMap(),
