@@ -571,24 +571,40 @@ describe("bill-repository 統合テスト", () => {
       expect(found).toBeDefined();
     });
 
-    it("dietSessionIdがnullの場合は全会期から取得できる", async () => {
-      const bill = await createTestBill({
-        publish_status: "published",
-        submitted_date: new Date().toISOString(),
+    it("会期を絞らなければ過去の公開議案に新しい議案を追加できる", async () => {
+      const oldSession = await createTestDietSession({
+        slug: `cumulative-old-${Date.now()}`,
+        start_date: "2026-06-01",
+        end_date: "2026-06-11",
       });
-      billIds.push(bill.id);
-      await createTestBillContent(bill.id, { difficulty_level: "normal" });
-      const tag = await createTestTag({
-        label: `tag-no-session-${Date.now()}`,
+      const newSession = await createTestDietSession({
+        slug: `cumulative-new-${Date.now()}`,
+        start_date: "2026-09-01",
+        end_date: "2026-09-16",
       });
+      dietSessionIds.push(oldSession.id, newSession.id);
+      const tag = await createTestTag();
       tagIds.push(tag.id);
-      await createTestBillTag(bill.id, tag.id);
-
-      const result = await findPublishedBillsByTag(tag.id, "normal", null);
-
-      expect(result).not.toBeNull();
-      const found = result?.find((r) => r.bill_id === bill.id);
-      expect(found).toBeDefined();
+      const expectedIds: string[] = [];
+      for (const session of [oldSession, newSession]) {
+        const bill = await createTestBill({
+          diet_session_id: session.id,
+          publish_status: "published",
+        });
+        billIds.push(bill.id);
+        expectedIds.push(bill.id);
+        await createTestBillContent(bill.id, { difficulty_level: "normal" });
+        await createTestBillTag(bill.id, tag.id);
+      }
+      const all = await findPublishedBillsByTag(tag.id, "normal", null);
+      expect(all?.map((row) => row.bill_id).sort()).toEqual(expectedIds.sort());
+      const filtered = await findPublishedBillsByTag(
+        tag.id,
+        "normal",
+        newSession.id
+      );
+      expect(filtered).toHaveLength(1);
+      expect(filtered?.[0].bills?.diet_session_id).toBe(newSession.id);
     });
   });
 
