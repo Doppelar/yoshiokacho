@@ -14,6 +14,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-16",
+    title: "京都府の市町村地図と京都市（暫定公開）を追加しました",
+    href: routes.kyotoMap(),
+  },
+  {
+    date: "2026-11-16",
     title:
       "暫定公開（運営者募集中）のページにマークを付け、全国版のサイト名を「みらい議会 全国版」にしました",
     href: routes.japanMap(),

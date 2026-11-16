@@ -12,6 +12,7 @@ export const PREFECTURE_MUNICIPALITY_TOTALS: Readonly<Record<string, number>> =
     hiroshima: 23,
     hyogo: 41,
     kanagawa: 33,
+    kyoto: 26,
     mie: 29,
     nagano: 77,
     nara: 39,

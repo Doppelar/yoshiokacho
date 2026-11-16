@@ -27,6 +27,7 @@ export const routes = {
   yamaguchiMap: () => "/yamaguchi" as const,
   tottoriMap: () => "/tottori" as const,
   shimaneMap: () => "/shimane" as const,
+  kyotoMap: () => "/kyoto" as const,
   localEditionUpdates: () => "/updates" as const,
   tokyoMap: () => "/tokyo" as const,
   saitamaMap: () => "/saitama" as const,
