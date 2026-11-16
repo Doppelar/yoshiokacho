@@ -52,4 +52,45 @@ describe("RegionMunicipalityMap", () => {
     ).toBeTruthy();
     expect(screen.queryByRole("heading", { name: "村", level: 3 })).toBeNull();
   });
+  it("専用サイトへのリンクには暫定公開の表示を出さない", () => {
+    render(<RegionMunicipalityMap {...config} />);
+    expect(screen.queryByText(/暫定公開（運営者募集中）/)).toBeNull();
+  });
+  it("muse.ai 上のページは暫定公開（運営者募集中）と示し、凡例を出す", () => {
+    render(
+      <RegionMunicipalityMap
+        {...config}
+        municipalities={[
+          ...config.municipalities,
+          {
+            id: "31202",
+            name: "米子市",
+            type: "市",
+            mapX: 60,
+            mapY: 20,
+            status: "live",
+            href: "https://muse.ai/s/mirai-gikai-yonago-x/abc",
+            external: true,
+          },
+        ]}
+      />
+    );
+    expect(
+      screen.getByRole("link", {
+        name: "米子市のみらい議会（暫定公開（運営者募集中））",
+      })
+    ).toBeTruthy();
+    const chip = screen.getByRole("link", {
+      name: "米子市（暫定公開（運営者募集中））",
+    });
+    expect(chip.getAttribute("href")).toBe(
+      "https://muse.ai/s/mirai-gikai-yonago-x/abc"
+    );
+    expect(
+      screen.getByText(/のマークは暫定公開（運営者募集中）です/)
+    ).toBeTruthy();
+    expect(
+      screen.getByRole("link", { name: "鳥取市のみらい議会" })
+    ).toBeTruthy();
+  });
 });

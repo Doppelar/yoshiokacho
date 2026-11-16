@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { isInterviewPage } from "@/lib/page-layout-utils";
-import { routes } from "@/lib/routes";
+import { getSiteBrand, type SiteBrand } from "@/lib/site-brand";
 import { primaryLinks } from "./footer.config";
 
 export function Footer() {
@@ -15,24 +15,29 @@ export function Footer() {
     return null;
   }
 
+  const brand = getSiteBrand(pathname);
+
   return (
     <footer className="bg-mirai-gradient text-slate-900">
       <div className="mx-auto flex w-full max-w-[500px] flex-col items-center px-6 py-14 pb-20 text-center">
-        <FooterLogoSection />
+        <FooterLogoSection brand={brand} />
         <FooterPrimaryLinks />
-        <FooterCopyright />
+        <FooterCopyright brand={brand} />
       </div>
     </footer>
   );
 }
 
-function FooterLogoSection() {
+function FooterLogoSection({ brand }: { brand: SiteBrand }) {
   return (
     <div className="flex flex-col items-center text-center mb-9">
-      <Link href={routes.home()} aria-label="みらい議会＠吉岡町 トップページ">
+      <Link
+        href={brand.href as Route}
+        aria-label={`${brand.name} トップページ`}
+      >
         <Image
           src="/img/logo.svg"
-          alt="みらい議会＠吉岡町"
+          alt={brand.name}
           width={150}
           height={128}
           className="h-auto"
@@ -68,11 +73,11 @@ function FooterPrimaryLinks() {
   );
 }
 
-function FooterCopyright() {
+function FooterCopyright({ brand }: { brand: SiteBrand }) {
   return (
     <div className="flex flex-col items-center gap-2 text-center text-sm font-medium text-slate-800">
       <p>これは政党チームみらいが運営しているものではありません</p>
-      <p>© 2026 みらい議会＠吉岡町 All rights Reserved</p>
+      <p>© 2026 {brand.name} All rights Reserved</p>
     </div>
   );
 }

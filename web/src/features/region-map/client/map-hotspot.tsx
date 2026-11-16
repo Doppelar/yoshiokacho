@@ -3,6 +3,7 @@
 import type { Route } from "next";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { PROVISIONAL_LABEL, ProvisionalMark } from "./provisional-mark";
 
 type MapHotspotProps = {
   showLabel?: boolean;
@@ -12,6 +13,8 @@ type MapHotspotProps = {
   selected: boolean;
   href?: string;
   external?: boolean;
+  /** 運営者が決まるまで運営チームが暫定公開しているページ */
+  provisional?: boolean;
   onSelect: () => void;
 };
 
@@ -23,9 +26,13 @@ export function MapHotspot({
   selected,
   href,
   external,
+  provisional = false,
   onSelect,
 }: MapHotspotProps) {
   const live = Boolean(href);
+  const ariaLabel = provisional
+    ? `${name}のみらい議会（${PROVISIONAL_LABEL}）`
+    : `${name}のみらい議会`;
   const style = { left: `${mapX}%`, top: `${mapY}%` };
   const wrapperClass = cn(
     "absolute -translate-x-1/2 -translate-y-1/2",
@@ -45,6 +52,7 @@ export function MapHotspot({
     const label = (
       <span className="absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap rounded bg-black px-1.5 py-0.5 text-[10px] font-bold leading-none text-white shadow">
         {name}
+        {provisional && <ProvisionalMark className="h-3 w-3" />}
       </span>
     );
 
@@ -54,7 +62,7 @@ export function MapHotspot({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${name}のみらい議会`}
+          aria-label={ariaLabel}
           className={wrapperClass}
           style={style}
         >
@@ -67,7 +75,7 @@ export function MapHotspot({
     return (
       <Link
         href={href as Route}
-        aria-label={`${name}のみらい議会`}
+        aria-label={ariaLabel}
         className={wrapperClass}
         style={style}
       >
@@ -94,6 +102,8 @@ type MapChoiceChipProps = {
   selected: boolean;
   href?: string;
   external?: boolean;
+  /** 運営者が決まるまで運営チームが暫定公開しているページ */
+  provisional?: boolean;
   onSelect: () => void;
 };
 
@@ -102,9 +112,16 @@ export function MapChoiceChip({
   selected,
   href,
   external,
+  provisional = false,
   onSelect,
 }: MapChoiceChipProps) {
   const live = Boolean(href);
+  const content = (
+    <>
+      {name}
+      {provisional && <ProvisionalMark />}
+    </>
+  );
   const className = cn(
     "rounded-full border px-3 py-1.5 text-sm font-medium",
     selected
@@ -123,14 +140,14 @@ export function MapChoiceChip({
           rel="noopener noreferrer"
           className={className}
         >
-          {name}
+          {content}
         </a>
       );
     }
 
     return (
       <Link href={href as Route} className={className}>
-        {name}
+        {content}
       </Link>
     );
   }

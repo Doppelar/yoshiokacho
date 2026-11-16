@@ -3,8 +3,13 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { RegionMapConfig } from "../shared/types";
+import {
+  countProvisionalEditions,
+  isProvisionalEdition,
+} from "../shared/utils/provisional-edition";
 import { CodhMapAttribution } from "./map-attribution";
 import { MapChoiceChip, MapHotspot } from "./map-hotspot";
+import { ProvisionalLegend } from "./provisional-mark";
 
 export function RegionMunicipalityMap({
   prefectureName,
@@ -15,6 +20,7 @@ export function RegionMunicipalityMap({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = municipalities.find((item) => item.id === selectedId);
   const listId = "municipality-list-" + prefectureCode;
+  const hasProvisional = countProvisionalEditions(municipalities) > 0;
 
   return (
     <div className="space-y-6">
@@ -37,6 +43,7 @@ export function RegionMunicipalityMap({
               selected={item.id === selectedId}
               href={item.href}
               external={item.external}
+              provisional={isProvisionalEdition(item.href)}
               onSelect={() => setSelectedId(item.id)}
               showLabel={false}
             />
@@ -50,6 +57,7 @@ export function RegionMunicipalityMap({
             "のみらい議会は準備中です。公開済みの市町村は、地図または一覧から開けます。"
           : "地図または一覧から市町村を選んでください。公開済みの市町村は、各リンクから開けます。"}
       </p>
+      {hasProvisional && <ProvisionalLegend />}
       <section aria-labelledby={listId}>
         <h2 id={listId} className="mb-3 text-lg font-bold">
           市町村を選ぶ
@@ -70,6 +78,7 @@ export function RegionMunicipalityMap({
                     selected={selectedId === item.id}
                     href={item.href}
                     external={item.external}
+                    provisional={isProvisionalEdition(item.href)}
                     onSelect={() => setSelectedId(item.id)}
                   />
                 ))}

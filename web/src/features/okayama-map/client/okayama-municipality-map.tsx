@@ -6,6 +6,11 @@ import {
   MapChoiceChip,
   MapHotspot,
 } from "@/features/region-map/client/map-hotspot";
+import { ProvisionalLegend } from "@/features/region-map/client/provisional-mark";
+import {
+  countProvisionalEditions,
+  isProvisionalEdition,
+} from "@/features/region-map/shared/utils/provisional-edition";
 import { OKAYAMA_MUNICIPALITIES } from "../shared/municipalities";
 
 export function OkayamaMunicipalityMap() {
@@ -35,6 +40,7 @@ export function OkayamaMunicipalityMap() {
               selected={item.id === selectedId}
               href={item.href}
               external={item.external}
+              provisional={isProvisionalEdition(item.href)}
               onSelect={() => setSelectedId(item.id)}
             />
           ))}
@@ -58,6 +64,9 @@ export function OkayamaMunicipalityMap() {
           ? `${selected.name}のみらい議会は準備中です。27市町村の公開ページを開けます。`
           : "地図または一覧から市町村を選んでください。各市町村の公開ページを別タブで開きます。"}
       </p>
+      {countProvisionalEditions(OKAYAMA_MUNICIPALITIES) > 0 && (
+        <ProvisionalLegend />
+      )}
 
       <section aria-labelledby="okayama-municipality-list">
         <h2 id="okayama-municipality-list" className="mb-3 text-lg font-bold">
@@ -77,6 +86,7 @@ export function OkayamaMunicipalityMap() {
                     selected={selectedId === item.id}
                     href={item.href}
                     external={item.external}
+                    provisional={isProvisionalEdition(item.href)}
                     onSelect={() => setSelectedId(item.id)}
                   />
                 )
