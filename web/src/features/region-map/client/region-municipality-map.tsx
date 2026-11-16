@@ -20,7 +20,8 @@ export function RegionMunicipalityMap({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = municipalities.find((item) => item.id === selectedId);
   const listId = "municipality-list-" + prefectureCode;
-  const hasProvisional = countProvisionalEditions(municipalities) > 0;
+  const hasProvisional =
+    countProvisionalEditions(prefectureCode, municipalities) > 0;
 
   return (
     <div className="space-y-6">
@@ -43,7 +44,7 @@ export function RegionMunicipalityMap({
               selected={item.id === selectedId}
               href={item.href}
               external={item.external}
-              provisional={isProvisionalEdition(item.href)}
+              provisional={isProvisionalEdition(prefectureCode, item.href)}
               onSelect={() => setSelectedId(item.id)}
               showLabel={false}
             />
@@ -78,7 +79,10 @@ export function RegionMunicipalityMap({
                     selected={selectedId === item.id}
                     href={item.href}
                     external={item.external}
-                    provisional={isProvisionalEdition(item.href)}
+                    provisional={isProvisionalEdition(
+                      prefectureCode,
+                      item.href
+                    )}
                     onSelect={() => setSelectedId(item.id)}
                   />
                 ))}
