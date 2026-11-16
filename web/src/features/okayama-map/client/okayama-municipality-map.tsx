@@ -40,7 +40,7 @@ export function OkayamaMunicipalityMap() {
               selected={item.id === selectedId}
               href={item.href}
               external={item.external}
-              provisional={isProvisionalEdition(item.href)}
+              provisional={isProvisionalEdition("33", item.href)}
               onSelect={() => setSelectedId(item.id)}
             />
           ))}
@@ -64,7 +64,7 @@ export function OkayamaMunicipalityMap() {
           ? `${selected.name}のみらい議会は準備中です。27市町村の公開ページを開けます。`
           : "地図または一覧から市町村を選んでください。各市町村の公開ページを別タブで開きます。"}
       </p>
-      {countProvisionalEditions(OKAYAMA_MUNICIPALITIES) > 0 && (
+      {countProvisionalEditions("33", OKAYAMA_MUNICIPALITIES) > 0 && (
         <ProvisionalLegend />
       )}
 
@@ -86,7 +86,7 @@ export function OkayamaMunicipalityMap() {
                     selected={selectedId === item.id}
                     href={item.href}
                     external={item.external}
-                    provisional={isProvisionalEdition(item.href)}
+                    provisional={isProvisionalEdition("33", item.href)}
                     onSelect={() => setSelectedId(item.id)}
                   />
                 )
