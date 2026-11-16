@@ -1,23 +1,21 @@
 import { Container } from "@/components/layouts/container";
 import { About } from "@/components/top/about";
 import { ComingSoonSection } from "@/components/top/coming-soon-section";
-import { getDifficultyLevel } from "@/features/bill-difficulty/server/loaders/get-difficulty-level";
 import { BillDisclaimer } from "@/features/bills/client/components/bill-detail/bill-disclaimer";
 import { BillSearchOverlay } from "@/features/bills/client/components/bill-search-overlay";
-import { BillsByTagSection } from "@/features/bills/server/components/bills-by-tag-section";
 import { CategoryTabs } from "@/features/bills/server/components/category-tabs";
 import { FeaturedBillSection } from "@/features/bills/server/components/featured-bill-section";
+import { HomeBillArchive } from "@/features/bills/server/components/home-bill-archive";
 import { InterviewOpenBillSection } from "@/features/bills/server/components/interview-open-bill-section";
-import { PreviousSessionSection } from "@/features/bills/server/components/previous-session-section";
 import { getFeaturedTags } from "@/features/bills/server/loaders/get-featured-tags";
+import { getHomeBillArchive } from "@/features/bills/server/loaders/get-home-bill-archive";
 import { getSuggestableBills } from "@/features/bills/server/loaders/get-suggestable-bills";
 import { loadHomeData } from "@/features/bills/server/loaders/load-home-data";
-import { pickHomeSections } from "@/features/bills/shared/utils/pick-home-sections";
 import { countTagChipItems } from "@/features/bills/shared/utils/tag-chip-items";
 import { CurrentDietSession } from "@/features/diet-sessions/client/components/current-diet-session";
 import { getCurrentDietSession } from "@/features/diet-sessions/server/loaders/get-current-diet-session";
-import { CouncilSwitchBanner } from "@/features/gunma-map/client/council-switch-banner";
 import { getLatestClosedDietSession } from "@/features/diet-sessions/server/loaders/get-latest-closed-diet-session";
+import { CouncilSwitchBanner } from "@/features/gunma-map/client/council-switch-banner";
 import { getJapanTime } from "@/lib/utils/date";
 
 /** カテゴリタブの「注目」から飛ばす先。 */
@@ -27,35 +25,24 @@ export default async function Home() {
   const japanTime = getJapanTime();
   // ゆくゆくタグ機能がマージされたらBFFに統合する
   const [
-    {
-      billsByTag,
-      featuredBills,
-      interviewOpenBills,
-      comingSoonBills,
-      previousSessionData,
-    },
+    { billsByTag, featuredBills, interviewOpenBills, comingSoonBills },
     currentSession,
     latestClosedSession,
-    currentDifficulty,
     suggestableBills,
     featuredTags,
+    archive,
   ] = await Promise.all([
     loadHomeData(),
     getCurrentDietSession(japanTime),
     getLatestClosedDietSession(japanTime),
-    getDifficultyLevel(),
     getSuggestableBills(),
     getFeaturedTags(),
+    getHomeBillArchive(
+      `${japanTime.getFullYear()}-${String(japanTime.getMonth() + 1).padStart(2, "0")}-${String(japanTime.getDate()).padStart(2, "0")}`
+    ),
   ]);
 
   const inSession = currentSession !== null;
-
-  const { tagGroups } = pickHomeSections({
-    billsByTag,
-    featuredBills,
-    interviewOpenBills,
-    inSession,
-  });
 
   // モーダルの件数は全会期の公開議案から数える。チップの飛び先が /bills で、
   // あちらも全会期を数えるため、押す前と後で数字が変わらない。
@@ -111,27 +98,19 @@ export default async function Home() {
               </section>
             )}
 
-            {/* タグ別議案一覧セクション（タグに紐づく議案を全件出す） */}
-            <BillsByTagSection billsByTag={tagGroups} />
+            {/* 全公開議案を会期・月別にまとめる */}
+            <HomeBillArchive
+              archive={archive}
+              featuredBills={featuredBills}
+              interviewOpenBills={interviewOpenBills}
+              inSession={inSession}
+            />
 
             {/* Coming soonセクション */}
             <ComingSoonSection bills={comingSoonBills} />
           </main>
         </div>
       </Container>
-
-      {/* 前回の国会セクション（Archive） */}
-      {previousSessionData && (
-        <div className="bg-mirai-surface-muted py-10">
-          <Container>
-            <PreviousSessionSection
-              session={previousSessionData.session}
-              bills={previousSessionData.bills}
-              totalBillCount={previousSessionData.totalBillCount}
-            />
-          </Container>
-        </div>
-      )}
 
       <Container>
         {/* みらい議会とは セクション */}
