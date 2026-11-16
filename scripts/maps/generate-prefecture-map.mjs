@@ -20,6 +20,7 @@ const PREFECTURES = {
   gunma: { code: "10", name: "群馬県", labelSize: 12 },
   hiroshima: { code: "34", name: "広島県", labelSize: 13 },
   kanagawa: { code: "14", name: "神奈川県", labelSize: 12 },
+  kyoto: { code: "26", name: "京都府", labelSize: 12 },
   nara: { code: "29", name: "奈良県", labelSize: 12 },
   oita: { code: "44", name: "大分県", labelSize: 13 },
   okinawa: {

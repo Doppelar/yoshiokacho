@@ -6,6 +6,7 @@ import { FUKUOKA_MUNICIPALITIES } from "@/features/fukuoka-map/shared/municipali
 import { GUNMA_MUNICIPALITIES } from "@/features/gunma-map/shared/municipalities";
 import { HIROSHIMA_MUNICIPALITIES } from "@/features/hiroshima-map/shared/municipalities";
 import { KANAGAWA_MUNICIPALITIES } from "@/features/kanagawa-map/shared/municipalities";
+import { KYOTO_MUNICIPALITIES } from "@/features/kyoto-map/shared/municipalities";
 import { MIE_MUNICIPALITIES } from "@/features/mie-map/shared/municipalities";
 import { NAGANO_MUNICIPALITIES } from "@/features/nagano-map/shared/municipalities";
 import { NARA_MUNICIPALITIES } from "@/features/nara-map/shared/municipalities";
@@ -41,6 +42,7 @@ export const MUNICIPALITY_COVERAGE_REGIONS: readonly CoverageRegion[] = [
   { prefectureId: "gunma", municipalities: GUNMA_MUNICIPALITIES },
   { prefectureId: "hiroshima", municipalities: HIROSHIMA_MUNICIPALITIES },
   { prefectureId: "kanagawa", municipalities: KANAGAWA_MUNICIPALITIES },
+  { prefectureId: "kyoto", municipalities: KYOTO_MUNICIPALITIES },
   { prefectureId: "nagano", municipalities: NAGANO_MUNICIPALITIES },
   { prefectureId: "nara", municipalities: NARA_MUNICIPALITIES },
   { prefectureId: "oita", municipalities: OITA_MUNICIPALITIES },

@@ -296,7 +296,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 35.02,
     mapX: 51,
     mapY: 53,
-    status: "upcoming",
+    status: "live",
+    href: routes.kyotoMap(),
   },
   {
     id: "osaka",

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { KYOTO_MUNICIPALITIES } from "@/features/kyoto-map/shared/municipalities";
 import { SHIMANE_MUNICIPALITIES } from "@/features/shimane-map/shared/municipalities";
 import { TOCHIGI_MUNICIPALITIES } from "@/features/tochigi-map/shared/municipalities";
 import { TOTTORI_MUNICIPALITIES } from "@/features/tottori-map/shared/municipalities";
@@ -10,6 +11,7 @@ describe("県別市町村地図データ", () => {
     ["鳥取県", TOTTORI_MUNICIPALITIES, 19],
     ["島根県", SHIMANE_MUNICIPALITIES, 19],
     ["栃木県", TOCHIGI_MUNICIPALITIES, 25],
+    ["京都府", KYOTO_MUNICIPALITIES, 26],
   ] as const) {
     it(name + "の全自治体を重複せず保持し、地図上に配置する", () => {
       expect(data).toHaveLength(expectedCount);
