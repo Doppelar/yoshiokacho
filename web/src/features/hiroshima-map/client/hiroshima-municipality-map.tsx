@@ -145,7 +145,7 @@ function SelectedMunicipalityCard({
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
           {municipality.name}
-          のみらい議会は準備中です。現在は安芸高田市と福山市を開けます。
+          のみらい議会は準備中です。現在は広島市、安芸高田市、福山市を開けます。
         </p>
       )}
     </section>

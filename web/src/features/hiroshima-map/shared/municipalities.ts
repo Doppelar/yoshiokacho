@@ -18,7 +18,9 @@ export const HIROSHIMA_MUNICIPALITIES: readonly HiroshimaMunicipality[] = [
     type: "市",
     mapX: 30.3,
     mapY: 58,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-hiroshima-shi-xnu6ba9xpxskxsn/9q5kEUXEWxqHfqmmwTa0nOgBfP_loXr09OCMzwWCqVw",
+    external: true,
   },
   {
     id: "kure",
