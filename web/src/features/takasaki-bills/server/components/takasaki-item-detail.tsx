@@ -5,11 +5,13 @@ import Link from "next/link";
 import { Container } from "@/components/layouts/container";
 import { routes } from "@/lib/routes";
 import type { TakasakiItem, TakasakiSession } from "../../shared/types";
+import { getCommitteeDeliberations } from "../../shared/utils/deliberations";
 import {
   formatItemName,
   formatResult,
   tallyRollCall,
 } from "../../shared/utils/votes";
+import { TakasakiCommitteeDeliberations } from "./takasaki-committee-deliberations";
 import { TakasakiDisclaimer } from "./takasaki-disclaimer";
 
 export function TakasakiItemDetail({
@@ -51,6 +53,10 @@ export function TakasakiItemDetail({
           <dd className="mt-1 font-bold">{session.period}</dd>
         </div>
       </dl>
+
+      <TakasakiCommitteeDeliberations
+        deliberations={getCommitteeDeliberations(item.id)}
+      />
 
       {tally ? (
         <section className="mt-8 space-y-4">
