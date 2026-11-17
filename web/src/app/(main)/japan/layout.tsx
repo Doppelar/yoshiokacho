@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://web-olive-ten-47.vercel.app"),
   title,
   description,
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false },
+  },
   keywords: ["みらい議会", "地方版", "地方議会", "市町村", "議案"],
   openGraph: {
     type: "website",

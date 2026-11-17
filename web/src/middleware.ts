@@ -10,6 +10,7 @@ import {
   getBasicAuthConfig,
   validateBasicAuth,
 } from "./lib/basic-auth";
+import { isNationalEditionPage } from "./lib/page-layout-utils";
 import { updateSupabaseSession } from "./lib/supabase/middleware";
 
 /**
@@ -32,6 +33,11 @@ export async function middleware(request: NextRequest) {
 
   // Supabaseセッションをリフレッシュ（トークン期限切れ時に自動更新）
   const response = await updateSupabaseSession(request);
+
+  // 全国一覧・県別地図などは、検索結果への掲載とリンク追跡を許可しない。
+  if (isNationalEditionPage(request.nextUrl.pathname)) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  }
 
   // URLパラメータからdifficulty Cookieをセット
   _applyDifficultyCookie(request, response);

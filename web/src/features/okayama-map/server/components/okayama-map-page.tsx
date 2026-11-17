@@ -1,3 +1,4 @@
+import { DirectoryNotice } from "@/features/region-map/server/components/directory-notice";
 import "server-only";
 
 import Link from "next/link";
@@ -8,6 +9,7 @@ import { OkayamaMunicipalityMap } from "../../client/okayama-municipality-map";
 export function OkayamaMapPage() {
   return (
     <Container className="pt-36 pb-16 md:pt-12">
+      <DirectoryNotice />
       <div className="mb-8 space-y-3">
         <Link
           href={routes.japanMap()}

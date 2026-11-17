@@ -77,11 +77,11 @@ describe("RegionMunicipalityMap", () => {
     );
     expect(
       screen.getByRole("link", {
-        name: "米子市のみらい議会（暫定公開（運営者募集中））",
+        name: "米子市のみらい議会（暫定公開（運営者募集中））（MUSEで作成）",
       })
     ).toBeTruthy();
     const chip = screen.getByRole("link", {
-      name: "米子市（暫定公開（運営者募集中））",
+      name: "米子市（暫定公開（運営者募集中））（MUSEで作成）",
     });
     expect(chip.getAttribute("href")).toBe(
       "https://muse.ai/s/mirai-gikai-yonago-x/abc"

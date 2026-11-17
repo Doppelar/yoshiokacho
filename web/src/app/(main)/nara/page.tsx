@@ -4,6 +4,7 @@ import { Container } from "@/components/layouts/container";
 import { Button } from "@/components/ui/button";
 import { NaraMunicipalityMap } from "@/features/nara-map/client/nara-municipality-map";
 import { NARA_PREF_COUNCIL_HREF } from "@/features/nara-map/shared/municipalities";
+import { DirectoryNotice } from "@/features/region-map/server/components/directory-notice";
 import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function NaraMapPage() {
   return (
     <Container className="pt-24 pb-16 md:pt-12">
+      <DirectoryNotice />
       <div className="mb-8 space-y-3">
         <Link
           href={routes.japanMap() as Route}
