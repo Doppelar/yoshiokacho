@@ -1,11 +1,13 @@
 import "server-only";
 
+import { TAKASAKI_MINUTES_SEARCH_URL } from "../../shared/deliberations";
+
 export function TakasakiDisclaimer({ sourceUrl }: { sourceUrl: string }) {
   return (
     <div className="space-y-3 pb-6">
       <h2 className="text-sm font-bold text-black">掲載コンテンツについて</h2>
       <p className="text-xs leading-relaxed text-mirai-text-note">
-        件名・付託委員会・議決結果・賛否は、高崎市議会の公式資料「議案等審議結果一覧」の記載どおりです。議案の内容の解説は、公式資料で確認できたものから順次追加します。本サイトは高崎市・高崎市議会・チームみらいの公式サイトではありません。
+        件名・付託委員会・議決結果・賛否は、高崎市議会の公式資料「議案等審議結果一覧」の記載どおりです。一般質問の項目は「質問通告要旨」の記載どおりで、質問と答弁、委員会での質疑の要旨は、本サイトが会議録の本文を読んでまとめたものです。発言そのものではないため、正確な発言は会議録で確認してください。会議録が公開されていない会期は、公開後に追加します。本サイトは高崎市・高崎市議会・チームみらいの公式サイトではありません。
       </p>
       <p className="text-xs leading-relaxed text-mirai-text-note">
         出典：
@@ -16,6 +18,15 @@ export function TakasakiDisclaimer({ sourceUrl }: { sourceUrl: string }) {
           rel="noopener noreferrer"
         >
           高崎市議会 議案等審議結果一覧（PDF）
+        </a>
+        、
+        <a
+          href={TAKASAKI_MINUTES_SEARCH_URL}
+          className="underline underline-offset-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          高崎市議会 会議録検索システム
         </a>
       </p>
     </div>
