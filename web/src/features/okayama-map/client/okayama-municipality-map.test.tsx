@@ -13,7 +13,7 @@ describe("OkayamaMunicipalityMap", () => {
     ).toBeTruthy();
     // 岡山県の公開ページは muse.ai 上の暫定公開なので、名前にその旨が付く
     const nagi = screen.getByRole("link", {
-      name: "奈義町のみらい議会（暫定公開（運営者募集中））",
+      name: "奈義町のみらい議会（暫定公開（運営者募集中））（MUSEで作成）",
     });
     expect(nagi.getAttribute("href")).toBe(
       "https://muse.ai/s/mirai-gikai-nagi-xtq6sqxakgwxvxp/q2nMcOrMbt6FUGCkTYThe4ns35jGA4XZC67zhdeO7Yk"
@@ -26,7 +26,9 @@ describe("OkayamaMunicipalityMap", () => {
     render(<OkayamaMunicipalityMap />);
     expect(
       screen
-        .getByRole("link", { name: "岡山市（暫定公開（運営者募集中））" })
+        .getByRole("link", {
+          name: "岡山市（暫定公開（運営者募集中））（MUSEで作成）",
+        })
         .getAttribute("href")
     ).toBe(
       "https://muse.ai/s/mirai-gikai-okayama-kc6sxnxix0xuxdki/sYAmu03jJtZnCf-oEjpYjsjB5LpAN7dSphDcZJ-o_68"

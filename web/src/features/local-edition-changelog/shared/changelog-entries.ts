@@ -13,6 +13,12 @@ export type LocalEditionChangelogEntry = {
  */
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
+    date: "2026-11-18",
+    title:
+      "掲載情報と共有範囲の注意書き、検索除外設定、MUSEマークを追加しました",
+    href: routes.japanMap(),
+  },
+  {
     date: "2026-11-17",
     title: "全国地図の共有プレビューを「みらい議会 地方版」に変更しました",
     href: routes.japanMap(),

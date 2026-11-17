@@ -7,6 +7,7 @@ import { MunicipalityCoverage } from "@/features/japan-map/server/components/mun
 import { ApplicationCallToAction } from "@/features/local-edition-applications/client/components/application-call-to-action";
 import { LocalEditionChangelog } from "@/features/local-edition-changelog/client/components/local-edition-changelog";
 import { FeedbackBoardLink } from "@/features/local-edition-feedback/server/components/feedback-board-link";
+import { DirectoryNotice } from "@/features/region-map/server/components/directory-notice";
 
 export const metadata: Metadata = {
   title: "日本の都道府県 | みらい議会",
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function JapanMapPage() {
   return (
     <Container className="pt-24 pb-16 md:pt-12">
+      <DirectoryNotice />
       <MunicipalityCoverage />
       <div className="mb-8 space-y-3">
         <p className="text-sm font-bold text-primary-accent">日本</p>

@@ -2,6 +2,7 @@ import type { Metadata, Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layouts/container";
 import { GunmaMunicipalityMap } from "@/features/gunma-map/client/gunma-municipality-map";
+import { DirectoryNotice } from "@/features/region-map/server/components/directory-notice";
 import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function GunmaMapPage() {
   return (
     <Container className="pt-24 pb-16 md:pt-12">
+      <DirectoryNotice />
       <div className="mb-8 space-y-3">
         <Link
           href={routes.japanMap() as Route}

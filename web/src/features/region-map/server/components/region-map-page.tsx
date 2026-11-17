@@ -1,3 +1,4 @@
+import { DirectoryNotice } from "@/features/region-map/server/components/directory-notice";
 import "server-only";
 
 import Link from "next/link";
@@ -23,6 +24,7 @@ export function RegionMapPage(config: RegionMapConfig) {
       : `公開済みの${liveCount}市町村は今すぐ開けます。ほかの市町村は準備中です。`;
   return (
     <Container className="pt-36 pb-16 md:pt-12">
+      <DirectoryNotice />
       <div className="mb-8 space-y-3">
         <Link
           href={routes.japanMap()}

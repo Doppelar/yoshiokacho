@@ -3,6 +3,8 @@
 import type { Route } from "next";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { MUSE_LABEL, MuseMark } from "../shared/components/muse-mark";
+import { isMuseUrl } from "../shared/utils/is-muse-url";
 import { PROVISIONAL_LABEL, ProvisionalMark } from "./provisional-mark";
 
 type MapHotspotProps = {
@@ -30,9 +32,12 @@ export function MapHotspot({
   onSelect,
 }: MapHotspotProps) {
   const live = Boolean(href);
-  const ariaLabel = provisional
+  const editionLabel = provisional
     ? `${name}のみらい議会（${PROVISIONAL_LABEL}）`
     : `${name}のみらい議会`;
+  const ariaLabel = isMuseUrl(href)
+    ? `${editionLabel}（${MUSE_LABEL}）`
+    : editionLabel;
   const style = { left: `${mapX}%`, top: `${mapY}%` };
   const wrapperClass = cn(
     "absolute -translate-x-1/2 -translate-y-1/2",
@@ -120,6 +125,7 @@ export function MapChoiceChip({
     <>
       {name}
       {provisional && <ProvisionalMark />}
+      {isMuseUrl(href) && <MuseMark />}
     </>
   );
   const className = cn(
