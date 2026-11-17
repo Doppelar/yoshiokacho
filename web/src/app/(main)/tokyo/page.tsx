@@ -7,7 +7,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "東京都の区市町村 | みらい議会",
   description:
-    "東京都の地図から区市町村を選び、各自治体のみらい議会を開きます。現在は中央区、新宿区、世田谷区、大田区、足立区、墨田区、立川市を開けます。",
+    "東京都の地図から区市町村を選び、各自治体のみらい議会を開きます。現在は中央区、新宿区、世田谷区、品川区、大田区、足立区、墨田区、立川市を開けます。",
 };
 
 export default function TokyoMapPage() {
@@ -25,7 +25,7 @@ export default function TokyoMapPage() {
           区市町村のみらい議会
         </h1>
         <p className="text-[15px] leading-7 text-black">
-          地図上の名前、または一覧のリンクから区市町村を開けます。中央区、新宿区、世田谷区、大田区、足立区、墨田区、立川市は今すぐ開けます。ほかの区市町村は準備中です。
+          地図上の名前、または一覧のリンクから区市町村を開けます。中央区、新宿区、世田谷区、品川区、大田区、足立区、墨田区、立川市は今すぐ開けます。ほかの区市町村は準備中です。
         </p>
       </div>
       <TokyoMunicipalityMap />
