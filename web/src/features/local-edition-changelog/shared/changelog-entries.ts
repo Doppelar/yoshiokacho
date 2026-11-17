@@ -14,6 +14,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-17",
+    title: "栃木県下野市を追加しました",
+    href: routes.tochigiMap(),
+  },
+  {
+    date: "2026-11-17",
     title: "石川県の市町地図と能美市・かほく市を追加しました",
     href: routes.ishikawaMap(),
   },
