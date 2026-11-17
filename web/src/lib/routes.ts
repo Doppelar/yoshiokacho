@@ -22,6 +22,7 @@ export const routes = {
   sagaMap: () => "/saga" as const,
   gunmaMap: () => "/gunma" as const,
   okayamaMap: () => "/okayama" as const,
+  ishikawaMap: () => "/ishikawa" as const,
   naganoMap: () => "/nagano" as const,
   tochigiMap: () => "/tochigi" as const,
   yamaguchiMap: () => "/yamaguchi" as const,
