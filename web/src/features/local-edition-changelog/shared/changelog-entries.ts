@@ -14,6 +14,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-17",
+    title: "全国地図の共有プレビューを「みらい議会 地方版」に変更しました",
+    href: routes.japanMap(),
+  },
+  {
+    date: "2026-11-17",
     title: "栃木県下野市を追加しました",
     href: routes.tochigiMap(),
   },
