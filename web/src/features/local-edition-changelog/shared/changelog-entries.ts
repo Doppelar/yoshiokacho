@@ -14,6 +14,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-18",
+    title: "ラッパのマークを外し、MUSEの表示に説明を統一しました",
+    href: routes.japanMap(),
+  },
+  {
+    date: "2026-11-18",
     title:
       "暫定版の作成者は有志であり、掲載内容を保証できないことを明記しました",
     href: routes.japanMap(),
