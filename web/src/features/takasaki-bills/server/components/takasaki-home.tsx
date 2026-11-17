@@ -1,5 +1,6 @@
 import "server-only";
 
+import { MessagesSquare } from "lucide-react";
 import type { Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layouts/container";
@@ -8,6 +9,10 @@ import { CouncilSwitchBanner } from "@/features/gunma-map/client/council-switch-
 import { routes } from "@/lib/routes";
 import { TAKASAKI_SESSIONS } from "../../shared/sessions";
 import type { TakasakiItem, TakasakiSession } from "../../shared/types";
+import {
+  getGeneralQuestions,
+  hasCommitteeQuestions,
+} from "../../shared/utils/deliberations";
 import { findTakasakiSession } from "../../shared/utils/sessions";
 import {
   formatItemName,
@@ -16,12 +21,17 @@ import {
   tallyRollCall,
 } from "../../shared/utils/votes";
 import { TakasakiDisclaimer } from "./takasaki-disclaimer";
+import {
+  GENERAL_QUESTIONS_SECTION_ID,
+  TakasakiGeneralQuestions,
+} from "./takasaki-general-questions";
 
 export function TakasakiHome({ sessionId }: { sessionId?: string }) {
   const session = findTakasakiSession(sessionId);
   const items = sortItemsForDisplay(session.items);
   const splitItems = items.filter((item) => item.rollCall);
   const otherItems = items.filter((item) => !item.rollCall);
+  const generalQuestions = getGeneralQuestions(session.id);
 
   return (
     <Container className="pt-24 pb-16 md:pt-12">
@@ -35,7 +45,7 @@ export function TakasakiHome({ sessionId }: { sessionId?: string }) {
           できる限りわかりやすく
         </h1>
         <p className="mt-4 text-[15px] leading-7 text-black">
-          みらい議会＠高崎市は、高崎市議会でどんな議案が審議され、どう決まったかを伝えるページです。議決結果と、賛否が分かれた議案の会派・議員ごとの賛否を、市議会の公式資料のとおり掲載しています。
+          みらい議会＠高崎市は、高崎市議会でどんな議論が交わされ、どう決まったかを伝えるページです。議決結果と会派・議員ごとの賛否に加え、会議録をもとに、一般質問での質問と市の答弁、委員会での議案の質疑の要旨を掲載しています。
         </p>
       </section>
 
@@ -58,6 +68,15 @@ export function TakasakiHome({ sessionId }: { sessionId?: string }) {
         <p className="text-sm text-mirai-text-secondary">
           会期：{session.period}／全{session.items.length}件
         </p>
+        {generalQuestions && (
+          <a
+            href={`#${GENERAL_QUESTIONS_SECTION_ID}`}
+            className="text-sm font-bold underline underline-offset-2"
+          >
+            一般質問（{generalQuestions.questions.length}
+            人）の質問と答弁を見る
+          </a>
+        )}
       </section>
 
       {session.voteDetails === "unconfirmed" && (
@@ -80,6 +99,8 @@ export function TakasakiHome({ sessionId }: { sessionId?: string }) {
           <ItemCard key={item.id} item={item} session={session} />
         ))}
       </section>
+
+      {generalQuestions && <TakasakiGeneralQuestions set={generalQuestions} />}
 
       <TakasakiDisclaimer sourceUrl={session.sourceUrl} />
     </Container>
@@ -127,6 +148,12 @@ function ItemCard({
             </span>
           )}
         </p>
+        {hasCommitteeQuestions(item.id) && (
+          <p className="mt-2 inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-xs font-bold">
+            <MessagesSquare aria-hidden="true" className="h-3.5 w-3.5" />
+            委員会での質疑あり
+          </p>
+        )}
       </Card>
     </Link>
   );
