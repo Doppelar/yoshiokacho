@@ -15,7 +15,7 @@ type MapHotspotProps = {
   selected: boolean;
   href?: string;
   external?: boolean;
-  /** 運営者が決まるまで運営チームが暫定公開しているページ */
+  /** 有志の方が作成した暫定版（運営者募集中） */
   provisional?: boolean;
   onSelect: () => void;
 };
@@ -107,7 +107,7 @@ type MapChoiceChipProps = {
   selected: boolean;
   href?: string;
   external?: boolean;
-  /** 運営者が決まるまで運営チームが暫定公開しているページ */
+  /** 有志の方が作成した暫定版（運営者募集中） */
   provisional?: boolean;
   onSelect: () => void;
 };
