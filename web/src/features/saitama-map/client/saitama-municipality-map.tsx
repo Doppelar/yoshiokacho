@@ -140,7 +140,8 @@ function SelectedMunicipalityCard({
         </>
       ) : (
         <p className="mt-2 text-sm text-muted-foreground">
-          {municipality.name}のみらい議会は準備中です。現在は所沢市を開けます。
+          {municipality.name}
+          のみらい議会は準備中です。現在は所沢市と八潮市を開けます。
         </p>
       )}
     </section>
