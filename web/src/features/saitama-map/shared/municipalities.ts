@@ -252,7 +252,9 @@ export const SAITAMA_MUNICIPALITIES: readonly SaitamaMunicipality[] = [
     type: "市",
     mapX: 92.2,
     mapY: 83.6,
-    status: "upcoming",
+    status: "live",
+    href: "https://mirai-gikai-yashio-city.vercel.app/",
+    external: true,
   },
   {
     id: "fujimi",

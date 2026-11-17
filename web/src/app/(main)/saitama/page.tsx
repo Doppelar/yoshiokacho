@@ -7,7 +7,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "埼玉県の市町村 | みらい議会",
   description:
-    "埼玉県の地図から市町村を選び、各自治体のみらい議会を開きます。現在は所沢市を開けます。",
+    "埼玉県の地図から市町村を選び、各自治体のみらい議会を開きます。現在は所沢市と八潮市を開けます。",
 };
 
 export default function SaitamaMapPage() {
@@ -23,7 +23,7 @@ export default function SaitamaMapPage() {
         <p className="text-sm font-bold text-primary-accent">埼玉県</p>
         <h1 className="text-3xl font-bold leading-tight">市町村のみらい議会</h1>
         <p className="text-[15px] leading-7 text-black">
-          地図上の名前、または一覧のリンクから市町村を開けます。所沢市は今すぐ開けます。ほかの市町村は準備中です。
+          地図上の名前、または一覧のリンクから市町村を開けます。所沢市と八潮市は今すぐ開けます。ほかの市町村は準備中です。
         </p>
       </div>
       <SaitamaMunicipalityMap />
