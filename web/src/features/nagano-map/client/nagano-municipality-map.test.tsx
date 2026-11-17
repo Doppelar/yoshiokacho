@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { NaganoMunicipalityMap } from "./nagano-municipality-map";
 
@@ -8,10 +8,14 @@ afterEach(cleanup);
 describe("NaganoMunicipalityMap", () => {
   it("県内地図を表示し、小諸市を別タブで開くリンクを提供する", () => {
     render(<NaganoMunicipalityMap />);
-    expect(
-      screen.getByRole("img", { name: "長野県の77市町村の地図" })
-    ).toBeTruthy();
-    const komoro = screen.getByRole("link", { name: "小諸市のみらい議会" });
+    const mapImage = screen.getByRole("img", {
+      name: "長野県の77市町村の地図",
+    });
+    const map = mapImage.parentElement;
+    if (!map) throw new Error("地図のコンテナがありません");
+    const komoro = within(map).getByRole("link", {
+      name: "小諸市のみらい議会",
+    });
     expect(komoro.getAttribute("href")).toBe(
       "https://mirai-gikai-komoro-web.vercel.app/"
     );
