@@ -4,9 +4,11 @@ import "server-only";
 import Link from "next/link";
 import { Container } from "@/components/layouts/container";
 import { routes } from "@/lib/routes";
-import { ProvisionalMark } from "../../client/provisional-mark";
+import { ProvisionalStatus } from "../../client/provisional-mark";
 import { RegionMunicipalityMap } from "../../client/region-municipality-map";
+import { MuseMark } from "../../shared/components/muse-mark";
 import type { RegionMapConfig } from "../../shared/types";
+import { isMuseUrl } from "../../shared/utils/is-muse-url";
 import {
   countProvisionalEditions,
   isProvisionalEdition,
@@ -48,8 +50,9 @@ export function RegionMapPage(config: RegionMapConfig) {
             className="text-sm font-bold text-primary-accent underline underline-offset-2"
           >
             県全体の一覧サイトを見る
+            {isMuseUrl(config.portalHref) && <MuseMark />}
             {isProvisionalEdition(config.prefectureCode, config.portalHref) && (
-              <ProvisionalMark />
+              <ProvisionalStatus />
             )}
           </a>
         )}

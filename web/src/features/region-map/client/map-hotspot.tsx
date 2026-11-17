@@ -5,7 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { MUSE_LABEL, MuseMark } from "../shared/components/muse-mark";
 import { isMuseUrl } from "../shared/utils/is-muse-url";
-import { PROVISIONAL_LABEL, ProvisionalMark } from "./provisional-mark";
+import { PROVISIONAL_LABEL, ProvisionalStatus } from "./provisional-mark";
 
 type MapHotspotProps = {
   showLabel?: boolean;
@@ -57,7 +57,7 @@ export function MapHotspot({
     const label = (
       <span className="absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap rounded bg-black px-1.5 py-0.5 text-[10px] font-bold leading-none text-white shadow">
         {name}
-        {provisional && <ProvisionalMark className="h-3 w-3" />}
+        {provisional && <ProvisionalStatus />}
       </span>
     );
 
@@ -124,7 +124,7 @@ export function MapChoiceChip({
   const content = (
     <>
       {name}
-      {provisional && <ProvisionalMark />}
+      {provisional && <ProvisionalStatus />}
       {isMuseUrl(href) && <MuseMark />}
     </>
   );

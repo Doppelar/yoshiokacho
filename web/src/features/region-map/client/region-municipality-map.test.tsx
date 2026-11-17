@@ -80,6 +80,8 @@ describe("RegionMunicipalityMap", () => {
         name: "米子市のみらい議会（暫定公開（運営者募集中））（MUSEで作成）",
       })
     ).toBeTruthy();
+    expect(document.querySelector(".lucide-megaphone")).toBeNull();
+    expect(screen.getAllByText("MUSE").length).toBeGreaterThan(0);
     const chip = screen.getByRole("link", {
       name: "米子市（暫定公開（運営者募集中））（MUSEで作成）",
     });
@@ -87,7 +89,7 @@ describe("RegionMunicipalityMap", () => {
       "https://muse.ai/s/mirai-gikai-yonago-x/abc"
     );
     expect(
-      screen.getByText(/のマークは暫定公開（運営者募集中）です/)
+      screen.getByText(/の表示は、MUSEで作成されたサイトへのリンクです/)
     ).toBeTruthy();
     expect(
       screen.getByRole("link", { name: "鳥取市のみらい議会" })
