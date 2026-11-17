@@ -141,7 +141,7 @@ function SelectedMunicipalityCard({
               ? `${municipality.name}のページを開きます。`
               : `${municipality.name}の議会ページを開きます。`}
             {provisional &&
-              `このページは${PROVISIONAL_LABEL}です。地域の運営者が決まるまで、運営チームが暫定的に公開しています。`}
+              `リンク先は${PROVISIONAL_LABEL}です。有志の方が作成した暫定版を紹介しており、掲載内容は保証できません。`}
           </p>
           <Button asChild className="mt-4">
             {municipality.external && municipality.href ? (
