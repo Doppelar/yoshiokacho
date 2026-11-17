@@ -13,6 +13,11 @@ export type LocalEditionChangelogEntry = {
  */
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
+    date: "2026-11-17",
+    title: "東京都品川区を追加しました",
+    href: routes.tokyoMap(),
+  },
+  {
     date: "2026-11-16",
     title: "広島県広島市を追加しました",
     href: routes.hiroshimaMap(),

@@ -91,7 +91,9 @@ export const TOKYO_MUNICIPALITIES: readonly TokyoMunicipality[] = [
     group: "区",
     mapX: 45.9,
     mapY: 69.9,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-shinagawa-ku-xiy6wsxqwxmj8a/I9zmXcobDtg82y_PYlhBJGfejB_9TNfyol4EU56knQk",
+    external: true,
   },
   {
     id: "meguro",
