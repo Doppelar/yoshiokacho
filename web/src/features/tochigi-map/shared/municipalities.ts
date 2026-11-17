@@ -116,7 +116,9 @@ export const TOCHIGI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "市",
     mapX: 53.923,
     mapY: 75.942,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-shimotsuke-shi-pi6xwmxzxfxxxi0xx/jG7t2xwKPfGC0ThdfKRViYsDZIog8F18WwSxaipoJCk",
+    external: true,
   },
   {
     id: "09301",
