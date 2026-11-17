@@ -74,11 +74,18 @@ describe("全市町村掲載達成", () => {
     ).toEqual([]);
   });
 
-  it("実データでは群馬と中国地方の5県が達成している", () => {
+  it("実データでは群馬・長野と中国地方の6県が達成している", () => {
     expect(
       getCompletedPrefectures(MUNICIPALITY_COVERAGE_REGIONS)
         .map((item) => item.prefectureId)
         .sort()
-    ).toEqual(["gunma", "okayama", "shimane", "tottori", "yamaguchi"]);
+    ).toEqual([
+      "gunma",
+      "nagano",
+      "okayama",
+      "shimane",
+      "tottori",
+      "yamaguchi",
+    ]);
   });
 });

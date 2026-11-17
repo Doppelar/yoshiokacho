@@ -14,6 +14,17 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-17",
+    title: "石川県の市町地図と能美市・かほく市を追加しました",
+    href: routes.ishikawaMap(),
+  },
+  {
+    date: "2026-11-17",
+    title:
+      "長野県の小布施町・高山村・山ノ内町・木島平村・野沢温泉村を追加しました",
+    href: routes.naganoMap(),
+  },
+  {
+    date: "2026-11-17",
     title: "埼玉県八潮市を追加しました",
     href: routes.saitamaMap(),
   },

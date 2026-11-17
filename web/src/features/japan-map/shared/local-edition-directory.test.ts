@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { EHIME_MUNICIPALITIES } from "@/features/ehime-map/shared/municipalities";
+import { ISHIKAWA_MUNICIPALITIES } from "@/features/ishikawa-map/shared/municipalities";
 import { KANAGAWA_MUNICIPALITIES } from "@/features/kanagawa-map/shared/municipalities";
 import { MIE_MUNICIPALITIES } from "@/features/mie-map/shared/municipalities";
 import { OSAKA_MUNICIPALITIES } from "@/features/osaka-map/shared/municipalities";
@@ -11,6 +12,13 @@ import { PREFECTURE_MUNICIPALITY_TOTALS } from "./prefecture-municipality-totals
 import { PREFECTURES } from "./prefectures";
 
 const regions = [
+  {
+    id: "ishikawa",
+    code: "17",
+    total: 19,
+    municipalities: ISHIKAWA_MUNICIPALITIES,
+    href: routes.ishikawaMap(),
+  },
   {
     id: "ehime",
     code: "38",

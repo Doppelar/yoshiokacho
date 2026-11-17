@@ -201,7 +201,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 36.59,
     mapX: 60,
     mapY: 44,
-    status: "upcoming",
+    status: "live",
+    href: routes.ishikawaMap(),
   },
   {
     id: "fukui",

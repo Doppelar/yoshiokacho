@@ -18,6 +18,26 @@ describe("長野県の公開市町村への導線", () => {
   });
   it.each([
     [
+      "20541",
+      "https://muse.ai/s/mirai-gikai-obuse-machi-xkxk6pxnxuxrxeuxg0/ntYZDMaITL_1Nuzw2iGuDJX41HCthfyOmoQGhVvLug8",
+    ],
+    [
+      "20543",
+      "https://muse.ai/s/mirai-gikai-takayama-mura-nagano-kr6pxnxuxwxcc1xa/zye4TxV7LVYOFGzVZoDgcHc3gvmwm5DusrAgq-98tGU",
+    ],
+    [
+      "20561",
+      "https://muse.ai/s/mirai-gikai-yamanouchi-machi-xzc6pxnxvanmj9/4JsK-cBAggN0vzxy5B8kRFYHbrQv7ZuT72zOIA5XJOQ",
+    ],
+    [
+      "20562",
+      "https://muse.ai/s/mirai-gikai-kijimadaira-mura-nd6pxnxuxkxexuxxv/A6LnWokazXc5d0k6BTUXSUGI9FNQuipxOlYA_YmfPRM",
+    ],
+    [
+      "20563",
+      "https://muse.ai/s/mirai-gikai-nozawaonsen-mura-wr6pxnxuxouxgxzxu/ANKhHJoFBOJn9iUL71JZtYvvERXX4Rl9_oPpdvnP_3c",
+    ],
+    [
       "20413",
       "https://muse.ai/s/mirai-gikai-tenryu-mura-hc6oxmxnxn0xvbxb/wZ_cjrn3T7F_j5QJPJAO905w2dIby50djaoYZ4szW_g",
     ],
