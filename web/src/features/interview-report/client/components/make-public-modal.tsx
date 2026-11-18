@@ -43,10 +43,10 @@ export function MakePublicModal({
           </ConsentCheckListItem>
           <OpenDataNoticeItem />
           <ConsentCheckListItem>
-            さまざまな意見が公開されることで、より深い法案議論が実現できます。
+            さまざまな意見が公開されることで、より深い議案の議論が実現できます。
           </ConsentCheckListItem>
           <p className="text-sm text-black">
-            非公開で提出した場合でも、ご意見は党内での政策検討に活用させていただきます。
+            非公開で提出した場合、ご意見は公開されず、賛否の件数などの集計にだけ使います。
           </p>
         </div>
 

@@ -32,14 +32,21 @@ export async function CouncilItemInterviewSection({
         AIインタビューで意見を伝える
       </h2>
       <p className="mt-2 text-sm text-mirai-text-secondary">
-        AIの質問に答えながら、この議案への考えを整理して伝えられます（10分ほど）。
-        無料で使える範囲で運用しているため、利用が多い日や月末は受付を止めることがあります。
+        この議案についてのご意見をお聞かせください。AIの質問に答えながら、考えを整理できます（10分ほど）。公開を選んだご意見は、だれでも読めるようにこのサイトで公開します。
+        無料で使える範囲で運用しているため、利用が多いときは受付を一時停止することがあります。
       </p>
-      <Button asChild className="mt-4">
-        <Link href={routes.interviewLP(billId) as Route}>
-          AIインタビューを始める
-        </Link>
-      </Button>
+      <div className="mt-4 flex flex-wrap gap-3">
+        <Button asChild>
+          <Link href={routes.interviewLP(billId) as Route}>
+            AIインタビューを始める
+          </Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link href={routes.billOpinions(billId) as Route}>
+            寄せられた意見を見る
+          </Link>
+        </Button>
+      </div>
     </section>
   );
 }

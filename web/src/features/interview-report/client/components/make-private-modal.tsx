@@ -54,9 +54,7 @@ export function MakePrivateModal({
           <CheckListItem>
             非公開にした場合、あなたのご意見が世の中に公開されることはありません。
           </CheckListItem>
-          <CheckListItem>
-            チームみらい党内での政策検討に最大限活用させていただきます。
-          </CheckListItem>
+          <CheckListItem>賛否の件数などの集計にだけ使います。</CheckListItem>
         </div>
 
         <div className="space-y-3 mt-6">
