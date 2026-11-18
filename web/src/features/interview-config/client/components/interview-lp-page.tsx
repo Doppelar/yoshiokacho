@@ -38,12 +38,12 @@ const FEATURES: {
   {
     iconSrc: "/icons/interview-messages.svg",
     iconSize: { w: 33, h: 26 },
-    text: "寄せられた回答はチームみらいの政策検討に活用します",
+    text: "議案についてのご意見をお聞かせください",
   },
   {
     iconSrc: "/icons/interview-landmark.svg",
     iconSize: { w: 30, h: 29 },
-    text: "ご意見はチームみらいを通じて国会に届けられる可能性があります",
+    text: "公開を選んだご意見は、だれでも読めるようにこのサイトで公開します",
   },
 ];
 
@@ -149,7 +149,7 @@ function _InterviewOverviewSection({
       </h2>
       <div className="space-y-4 text-[15px] font-normal text-black leading-[1.87]">
         <p>
-          国会で検討されている
+          議会で審議されている
           <Link
             href={billLink as Route}
             className="text-primary underline underline-offset-2 hover:opacity-70 transition-opacity"
@@ -159,7 +159,7 @@ function _InterviewOverviewSection({
           について、AIがあなたの考えを深掘りするチャット型インタビューです
         </p>
         <p>
-          いただいたご意見は、政策研究や国会での審議に活用し、みらい議会上に公開される可能性があります。
+          議案についてのご意見をお聞かせください。公開を選んだご意見は、だれでも読めるようにこのサイトで公開します。
         </p>
       </div>
       <div>

@@ -13,7 +13,7 @@ function getCheckPoints(): string[] {
   return [
     "所要時間は約5分〜",
     "AIがあなたのご意見を深掘り",
-    "チームみらいの政策検討に活用",
+    "公開を選んだ意見はサイトで公開",
   ];
 }
 
@@ -22,7 +22,7 @@ function _InterviewBadge() {
     <div className="flex">
       <div className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-mirai-surface-tag rounded-2xl">
         <span className="text-[11px] font-medium text-black leading-[1.09]">
-          法案の当事者・有識者の方へ
+          議案についてご意見のある方へ
         </span>
       </div>
     </div>

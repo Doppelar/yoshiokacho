@@ -9,13 +9,9 @@ import { getBillDetailLink } from "@/features/interview-config/shared/utils/inte
 import { PublicStatusSection } from "@/features/interview-report/client/components/public-status-section";
 import { getInterviewReportById } from "@/features/interview-report/server/loaders/get-interview-report-by-id";
 import { getInterviewMessages } from "@/features/interview-session/server/loaders/get-interview-messages";
-import { getAuthenticatedUser } from "@/features/interview-session/server/utils/verify-session-ownership";
-import { ExpertRegistrationSection } from "../../client/components/expert-registration-section";
 import { ReportContent } from "../../shared/components/report-content";
-import { isExpertRegistrationTargetRole } from "../../shared/utils/expert-registration-validation";
 import { parseOpinions } from "../../shared/utils/format-utils";
 import { countCharacters } from "../../shared/utils/report-utils";
-import { getExpertRegistrationStatus } from "../loaders/get-expert-registration-status";
 
 interface ReportCompletePageProps {
   reportId: string;
@@ -34,16 +30,10 @@ export async function ReportCompletePage({
 
   const billId = report.bill_id;
 
-  const isExpertRole = isExpertRegistrationTargetRole(report.role);
-  const authResult = await getAuthenticatedUser();
-
-  // 法案・メッセージ・有識者登録状況を並列取得
-  const [bill, messages, isExpertRegistered] = await Promise.all([
+  // 法案・メッセージを並列取得
+  const [bill, messages] = await Promise.all([
     getBillById(billId),
     getInterviewMessages(report.interview_session_id),
-    isExpertRole && authResult.authenticated
-      ? getExpertRegistrationStatus(authResult.userId)
-      : Promise.resolve(false),
   ]);
 
   if (!bill) {
@@ -76,7 +66,7 @@ export async function ReportCompletePage({
 
           {/* 活用メッセージ */}
           <p className="text-sm text-gray-800">
-            いただいた声は政策検討に最大限活用します
+            公開を選んだご意見は、このサイトでだれでも読めるようになります
           </p>
         </div>
       </div>
@@ -115,12 +105,7 @@ export async function ReportCompletePage({
             messages={messages}
             roleDescription={report.role_description}
             opinions={opinions}
-          >
-            {/* 有識者リスト登録バナー */}
-            {isExpertRole && !isExpertRegistered && (
-              <ExpertRegistrationSection />
-            )}
-          </ReportContent>
+          />
         </div>
       </div>
     </div>
