@@ -3,22 +3,11 @@ import "server-only";
 import { createAdminClient } from "@mirai-gikai/supabase";
 import {
   type BillPublicOpinionInput,
-  type CommenterType,
-  isCommenterType,
-  isResidence,
-  isStance,
-  type Residence,
-  type Stance,
+  type PublicOpinion,
+  toPublicOpinion,
 } from "../../shared/utils/opinion-input";
 
-export type BillPublicOpinion = {
-  id: string;
-  commenterType: CommenterType;
-  stance: Stance;
-  residence: Residence;
-  body: string;
-  createdAt: string;
-};
+export type BillPublicOpinion = PublicOpinion;
 
 const PUBLIC_OPINION_LIMIT = 200;
 
@@ -39,24 +28,8 @@ export async function findVisibleOpinionsByBillId(
   }
 
   return (data ?? []).flatMap((row) => {
-    const { commenter_type, stance, residence } = row;
-    if (
-      !isCommenterType(commenter_type) ||
-      !isStance(stance) ||
-      !isResidence(residence)
-    ) {
-      return [];
-    }
-    return [
-      {
-        id: row.id,
-        commenterType: commenter_type,
-        stance,
-        residence,
-        body: row.body,
-        createdAt: row.created_at,
-      },
-    ];
+    const opinion = toPublicOpinion(row);
+    return opinion ? [opinion] : [];
   });
 }
 

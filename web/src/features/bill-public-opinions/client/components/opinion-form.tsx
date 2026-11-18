@@ -11,18 +11,30 @@ import {
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { submitBillPublicOpinion } from "../../server/actions/submit-bill-public-opinion";
 import {
   COMMENTER_TYPE_LABELS,
   COMMENTER_TYPES,
   OPINION_BODY_MAX_LENGTH,
-  RESIDENCE_LABELS,
+  type RawOpinionFields,
   RESIDENCES,
+  type Residence,
   STANCE_LABELS,
   STANCES,
+  type SubmitOpinionResult,
 } from "../../shared/utils/opinion-input";
 
-export function OpinionForm({ billId }: { billId: string }) {
+export type SubmitOpinion = (
+  fields: RawOpinionFields
+) => Promise<SubmitOpinionResult>;
+
+export function OpinionForm({
+  submit,
+  residenceLabels,
+}: {
+  /** 議案IDなどを bind 済みの Server Action */
+  submit: SubmitOpinion;
+  residenceLabels: Record<Residence, string>;
+}) {
   const router = useRouter();
   const bodyId = useId();
   const [bodyLength, setBodyLength] = useState(0);
@@ -37,8 +49,7 @@ export function OpinionForm({ billId }: { billId: string }) {
     const read = (name: string) => String(formData.get(name) ?? "");
 
     startTransition(async () => {
-      const result = await submitBillPublicOpinion({
-        billId,
+      const result = await submit({
         commenterType: read("commenterType"),
         stance: read("stance"),
         residence: read("residence"),
@@ -82,7 +93,7 @@ export function OpinionForm({ billId }: { billId: string }) {
         name="residence"
         options={RESIDENCES.map((value) => ({
           value,
-          label: RESIDENCE_LABELS[value],
+          label: residenceLabels[value],
         }))}
         disabled={pending}
       />

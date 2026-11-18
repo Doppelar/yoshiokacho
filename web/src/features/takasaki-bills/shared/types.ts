@@ -82,3 +82,13 @@ export type TakasakiSession = {
   chair: string;
   items: readonly TakasakiItem[];
 };
+
+/**
+ * 会議録でどんな議論が交わされたかのまとめ（本サイト作成）。
+ * plain は中学生にもわかる言葉、detailed は専門用語や金額を含む詳しい内容。
+ * 各要素が1段落。
+ */
+export type TakasakiDebateSummary = {
+  plain: readonly string[];
+  detailed: readonly string[];
+};

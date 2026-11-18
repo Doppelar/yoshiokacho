@@ -37,6 +37,8 @@ export default defineConfig({
         "../../packages/topic-analysis-core/src/public/public-server.ts"
       ),
       "server-only": path.resolve(__dirname, "server-only-stub.ts"),
+      // web のリポジトリが import する @/ を解決する
+      "@": path.resolve(__dirname, "../../web/src"),
     },
   },
 });

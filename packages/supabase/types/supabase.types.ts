@@ -330,6 +330,42 @@ export type Database = {
           },
         ]
       }
+      council_item_opinions: {
+        Row: {
+          body: string
+          commenter_type: string
+          council: string
+          created_at: string
+          id: string
+          is_hidden: boolean
+          item_id: string
+          residence: string
+          stance: string
+        }
+        Insert: {
+          body: string
+          commenter_type: string
+          council: string
+          created_at?: string
+          id?: string
+          is_hidden?: boolean
+          item_id: string
+          residence: string
+          stance: string
+        }
+        Update: {
+          body?: string
+          commenter_type?: string
+          council?: string
+          created_at?: string
+          id?: string
+          is_hidden?: boolean
+          item_id?: string
+          residence?: string
+          stance?: string
+        }
+        Relationships: []
+      }
       diet_sessions: {
         Row: {
           created_at: string

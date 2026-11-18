@@ -3,8 +3,11 @@ import "server-only";
 import type { Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layouts/container";
+import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
+import { CouncilItemOpinionSection } from "@/features/council-item-opinions/server/components/council-item-opinion-section";
 import { routes } from "@/lib/routes";
 import type { TakasakiItem, TakasakiSession } from "../../shared/types";
+import { getItemDebateSummary } from "../../shared/utils/debate-summaries";
 import { getCommitteeDeliberations } from "../../shared/utils/deliberations";
 import {
   formatItemName,
@@ -12,16 +15,20 @@ import {
   tallyRollCall,
 } from "../../shared/utils/votes";
 import { TakasakiCommitteeDeliberations } from "./takasaki-committee-deliberations";
+import { TakasakiDebateSummarySection } from "./takasaki-debate-summary";
 import { TakasakiDisclaimer } from "./takasaki-disclaimer";
 
 export function TakasakiItemDetail({
   session,
   item,
+  level,
 }: {
   session: TakasakiSession;
   item: TakasakiItem;
+  level: DifficultyLevelEnum;
 }) {
   const tally = tallyRollCall(session, item);
+  const debateSummary = getItemDebateSummary(item.id);
 
   return (
     <Container className="pt-24 pb-16 md:pt-12">
@@ -54,8 +61,17 @@ export function TakasakiItemDetail({
         </div>
       </dl>
 
+      {debateSummary && (
+        <TakasakiDebateSummarySection
+          title="委員会でどんな議論があったか"
+          summary={debateSummary}
+          level={level}
+        />
+      )}
+
       <TakasakiCommitteeDeliberations
         deliberations={getCommitteeDeliberations(item.id)}
+        expanded={level === "hard"}
       />
 
       {tally ? (
@@ -115,6 +131,10 @@ export function TakasakiItemDetail({
           </p>
         )
       )}
+
+      <div className="mt-10">
+        <CouncilItemOpinionSection council="takasaki" itemId={item.id} />
+      </div>
 
       <div className="mt-10">
         <TakasakiDisclaimer sourceUrl={session.sourceUrl} />

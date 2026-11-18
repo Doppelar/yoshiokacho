@@ -13,6 +13,11 @@ const YOSHIOKA_BRAND: SiteBrand = {
   href: routes.home(),
 };
 
+const TAKASAKI_BRAND: SiteBrand = {
+  name: "みらい議会＠高崎市",
+  href: routes.takasakiHome(),
+};
+
 const NATIONAL_BRAND: SiteBrand = {
   name: "みらい議会 全国版",
   href: routes.japanMap(),
@@ -20,8 +25,15 @@ const NATIONAL_BRAND: SiteBrand = {
 
 /**
  * 表示中のページに合わせたサイト名とロゴのリンク先。
- * 全国地図と都道府県ページは吉岡町版ではなく全国版として見せる。
+ * 全国地図と都道府県ページは全国版、高崎市のページは高崎市版として見せる。
  */
 export function getSiteBrand(pathname: string): SiteBrand {
-  return isNationalEditionPage(pathname) ? NATIONAL_BRAND : YOSHIOKA_BRAND;
+  if (isNationalEditionPage(pathname)) return NATIONAL_BRAND;
+  if (isTakasakiPage(pathname)) return TAKASAKI_BRAND;
+  return YOSHIOKA_BRAND;
+}
+
+function isTakasakiPage(pathname: string): boolean {
+  const home = routes.takasakiHome();
+  return pathname === home || pathname.startsWith(`${home}/`);
 }
