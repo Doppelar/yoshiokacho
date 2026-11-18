@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { ChatError, ChatErrorCode } from "../../shared/types/errors";
 import { chatErrorToResponse } from "./chat-error-response";
 
@@ -24,7 +24,7 @@ describe("chatErrorToResponse", () => {
       new ChatError(ChatErrorCode.SYSTEM_MONTHLY_COST_LIMIT_REACHED)
     );
     expect(res.status).toBe(429);
-    expect(await res.text()).toContain("今月の利用上限");
+    expect(await res.text()).toContain("受付を一時停止");
   });
 
   it("その他の ChatError で 500 を返す", async () => {

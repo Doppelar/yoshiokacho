@@ -52,3 +52,15 @@ export function getJstMonthRange(): { from: string; to: string } {
     to: endUtc.toISOString(),
   };
 }
+
+/**
+ * 直近 days 日間の時間範囲を取得（UTC形式で返す）。
+ * AI Gateway の無料枠（30日ごと）に合わせ、暦月ではなく直近の期間で集計するために使う。
+ */
+export function getRollingRange(
+  days: number,
+  now: Date = new Date()
+): { from: string; to: string } {
+  const from = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
+  return { from: from.toISOString(), to: now.toISOString() };
+}

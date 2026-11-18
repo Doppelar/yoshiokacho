@@ -2,8 +2,10 @@ import "server-only";
 
 import type { Route } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { Container } from "@/components/layouts/container";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
+import { CouncilItemInterviewSection } from "@/features/council-item-interviews/server/components/council-item-interview-section";
 import { CouncilItemOpinionSection } from "@/features/council-item-opinions/server/components/council-item-opinion-section";
 import { routes } from "@/lib/routes";
 import type { TakasakiItem, TakasakiSession } from "../../shared/types";
@@ -131,6 +133,13 @@ export function TakasakiItemDetail({
           </p>
         )
       )}
+
+      <div className="mt-10">
+        {/* DB確認を待たずにページ本体を表示する */}
+        <Suspense fallback={null}>
+          <CouncilItemInterviewSection council="takasaki" itemId={item.id} />
+        </Suspense>
+      </div>
 
       <div className="mt-10">
         <CouncilItemOpinionSection council="takasaki" itemId={item.id} />

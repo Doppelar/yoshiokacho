@@ -178,6 +178,27 @@ describe("find_open_data_interview_reports", () => {
     expect(rows.map((r) => r.summary)).not.toContain("非公開議案");
   });
 
+  it("高崎市など他の議会の議案（council あり）のレポートは除外する", async () => {
+    const bill = await createTestBill({
+      publish_status: "published",
+      council: "takasaki",
+      slug: `takasaki-test-${Date.now()}`,
+    });
+    billIds.push(bill.id);
+    const config = await createTestInterviewConfig(bill.id);
+
+    const session = await createTestSession(config.id, testUser.id);
+    await createTestReport(session.id, {
+      is_public_by_user: true,
+      is_public_by_admin: true,
+      is_data_reuse_consented: true,
+      summary: "他の議会の議案",
+    });
+
+    const rows = await findOpenData({});
+    expect(rows.map((r) => r.summary)).not.toContain("他の議会の議案");
+  });
+
   it("新しい順に返り、カーソル以降のページを取得できる", async () => {
     const bill = await createTestBill({ publish_status: "published" });
     billIds.push(bill.id);

@@ -35,6 +35,7 @@ const baseBill: BillWithContent = {
   name: "サンプル法案（第XXX回国会提出）",
   status: "in_originating_house",
   originating_house: "HR",
+  council: null,
   is_featured: false,
   is_review_completed: true,
   thumbnail_url: null,

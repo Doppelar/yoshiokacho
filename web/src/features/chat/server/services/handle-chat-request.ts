@@ -2,32 +2,36 @@ import { openai } from "@ai-sdk/openai";
 import type { Database } from "@mirai-gikai/supabase";
 import {
   convertToModelMessages,
+  type LanguageModel,
   streamText,
   tool,
-  type LanguageModel,
   type UIMessage,
 } from "ai";
 import { z } from "zod";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
+import {
+  findBillContentByDifficulty,
+  findPublishedBillById,
+} from "@/features/bills/server/repositories/bill-repository";
 import type { BillWithContent } from "@/features/bills/shared/types";
 import {
   SUGGEST_INTERVIEW_TOOL_NAME,
   SUGGEST_INTERVIEW_TOOL_TYPE,
 } from "@/features/chat/shared/constants";
-import {
-  findBillContentByDifficulty,
-  findPublishedBillById,
-} from "@/features/bills/server/repositories/bill-repository";
 import { ChatError, ChatErrorCode } from "@/features/chat/shared/types/errors";
 import { pickChatKnowledgeSource } from "@/features/chat/shared/utils/pick-chat-knowledge-source";
 import { findPublicInterviewConfigByBillId } from "@/features/interview-config/server/repositories/interview-config-repository";
+import { AI_MODELS } from "@/lib/ai/models";
 import { env } from "@/lib/env";
 import {
   type CompiledPrompt,
   createPromptProvider,
   type PromptProvider,
 } from "@/lib/prompt";
-import { AI_MODELS } from "@/lib/ai/models";
+import {
+  extractGatewayCost,
+  getModelName,
+} from "../../shared/utils/cost-utils";
 import { isWithinDailyCostLimit, recordChatUsage } from "./cost-tracker";
 import {
   checkSystemDailyCostLimit,
@@ -101,8 +105,7 @@ export async function handleChatRequest({
   );
   // Model configuration
   const model = deps?.model ?? AI_MODELS.gpt5_4_mini_fast;
-  const modelName =
-    typeof model === "string" ? model : (model.modelId ?? "unknown");
+  const modelName = getModelName(model);
 
   // Determine if interview suggestion should be enabled
   const shouldSuggestInterview = await determineShouldSuggestInterview(
@@ -131,7 +134,7 @@ export async function handleChatRequest({
       tools,
       onFinish: async (event) => {
         try {
-          const providerCost = extractGatewayCost(event);
+          const providerCost = extractGatewayCost(event.providerMetadata);
           await recordChatUsage({
             userId,
             sessionId: context.sessionId || undefined,
@@ -269,25 +272,6 @@ function buildUsageMetadata(
     finishReason,
     stepCount,
   };
-}
-
-function extractGatewayCost(event: {
-  providerMetadata?: unknown;
-}): number | undefined {
-  const providerMetadata = event.providerMetadata;
-  if (!providerMetadata || typeof providerMetadata !== "object") {
-    return undefined;
-  }
-
-  const gatewayCost = (
-    providerMetadata as {
-      gateway?: { cost?: unknown };
-    }
-  ).gateway?.cost;
-
-  const numericCost = Number(gatewayCost);
-
-  return Number.isFinite(numericCost) ? numericCost : undefined;
 }
 
 const INTERVIEW_AWARENESS_BASE = `

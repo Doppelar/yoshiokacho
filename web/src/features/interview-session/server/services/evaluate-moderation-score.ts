@@ -1,13 +1,21 @@
 import "server-only";
 
-import { generateObject, type LanguageModel } from "ai";
-import { DEFAULT_MODERATION_MODEL } from "@/lib/ai/models";
-import { moderationResultSchema } from "@mirai-gikai/shared/moderation/schemas";
 import { buildModerationPrompt } from "@mirai-gikai/shared/moderation/build-prompt";
+import { moderationResultSchema } from "@mirai-gikai/shared/moderation/schemas";
 import {
   determineModerationStatus,
   type ModerationStatus,
 } from "@mirai-gikai/shared/moderation/status";
+import {
+  generateObject,
+  type LanguageModel,
+  type LanguageModelUsage,
+} from "ai";
+import {
+  extractGatewayCost,
+  getModelName,
+} from "@/features/chat/shared/utils/cost-utils";
+import { DEFAULT_MODERATION_MODEL } from "@/lib/ai/models";
 
 /** テスト時にモック注入するための外部依存 */
 export type ModerationDeps = {
@@ -25,6 +33,10 @@ type ModerationOutput = {
   score: number;
   status: ModerationStatus;
   reasoning: string;
+  /** 利用コストの記録用 */
+  model: string;
+  usage: LanguageModelUsage;
+  costUsd: number | undefined;
 };
 
 /**
@@ -37,7 +49,7 @@ export async function evaluateModerationScore(
   const { system, user } = buildModerationPrompt(input);
   const model = deps?.model ?? DEFAULT_MODERATION_MODEL;
 
-  const { object } = await generateObject({
+  const { object, usage, providerMetadata } = await generateObject({
     model,
     schema: moderationResultSchema,
     system,
@@ -52,5 +64,8 @@ export async function evaluateModerationScore(
     score: object.score,
     status,
     reasoning: object.reasoning,
+    model: getModelName(model),
+    usage,
+    costUsd: extractGatewayCost(providerMetadata),
   };
 }

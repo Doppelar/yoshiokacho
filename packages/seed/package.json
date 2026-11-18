@@ -10,7 +10,8 @@
     "seed:general-questions": "tsx general-questions/import-general-questions.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "takasaki:interview-sql": "tsx takasaki/run-interview-sql.ts"
   },
   "dependencies": {
     "@mirai-gikai/supabase": "workspace:*",

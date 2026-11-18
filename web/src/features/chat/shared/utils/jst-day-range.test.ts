@@ -1,5 +1,9 @@
-import { describe, it, expect, vi, afterEach } from "vitest";
-import { getJstDayRange, getJstMonthRange } from "./jst-day-range";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import {
+  getJstDayRange,
+  getJstMonthRange,
+  getRollingRange,
+} from "./jst-day-range";
 
 describe("getJstDayRange", () => {
   afterEach(() => {
@@ -101,5 +105,20 @@ describe("getJstMonthRange", () => {
     const to = new Date(range.to).getTime();
 
     expect(to - from).toBe(31 * 24 * 60 * 60 * 1000);
+  });
+});
+
+describe("getRollingRange", () => {
+  it("指定時刻から直近 N 日前までの範囲を返す", () => {
+    const now = new Date("2026-11-19T00:00:00.000Z");
+    expect(getRollingRange(30, now)).toEqual({
+      from: "2026-10-20T00:00:00.000Z",
+      to: "2026-11-19T00:00:00.000Z",
+    });
+  });
+
+  it("月をまたいでも暦月で区切らない", () => {
+    const now = new Date("2026-12-01T00:00:00.000Z");
+    expect(getRollingRange(30, now).from).toBe("2026-11-01T00:00:00.000Z");
   });
 });

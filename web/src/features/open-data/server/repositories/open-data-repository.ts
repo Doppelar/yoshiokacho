@@ -108,6 +108,7 @@ export async function findOpenDataPublishedBills(params: {
     .from("bills")
     .select(openDataBillSelect("title, summary"))
     .eq("publish_status", "published")
+    .is("council", null)
     .eq("bill_contents.difficulty_level", params.difficulty);
 
   if (params.cursor) {
@@ -144,6 +145,7 @@ export async function findOpenDataPublishedBillById(params: {
     .select(openDataBillSelect("title, summary, content"))
     .eq("id", params.billId)
     .eq("publish_status", "published")
+    .is("council", null)
     .eq("bill_contents.difficulty_level", params.difficulty)
     .maybeSingle();
 

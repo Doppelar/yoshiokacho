@@ -20,20 +20,25 @@ export type OfficialYoshiokaSession = {
 
 const START = "<!-- yoshioka-official-result -->";
 const END = "<!-- /yoshioka-official-result -->";
-const quote = (value: string | null) =>
+export const quote = (value: string | null) =>
   value === null ? "NULL" : `'${value.replaceAll("'", "''")}'`;
 
-export function officialUuid(key: string): string {
+/** 議会とキーから、毎回同じUUID（v5相当）を作る */
+export function councilUuid(council: string, key: string): string {
   const namespace = Buffer.from("6ba7b8109dad11d180b400c04fd430c8", "hex");
   const bytes = createHash("sha1")
     .update(namespace)
-    .update(`mirai-gikai:yoshioka:${key}`)
+    .update(`mirai-gikai:${council}:${key}`)
     .digest()
     .subarray(0, 16);
   bytes[6] = (bytes[6] & 15) | 80;
   bytes[8] = (bytes[8] & 63) | 128;
   const hex = bytes.toString("hex");
   return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
+export function officialUuid(key: string): string {
+  return councilUuid("yoshioka", key);
 }
 
 function requireSource(value: string) {
