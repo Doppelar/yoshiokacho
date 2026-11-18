@@ -1,4 +1,9 @@
-export const COMMENTER_TYPES = ["citizen", "expert"] as const;
+export const COMMENTER_TYPES = [
+  "citizen",
+  "affected",
+  "business",
+  "expert",
+] as const;
 export const STANCES = ["for", "against", "neutral"] as const;
 export const RESIDENCES = ["in_town", "out_of_town"] as const;
 
@@ -10,6 +15,8 @@ export const OPINION_BODY_MAX_LENGTH = 1000;
 
 export const COMMENTER_TYPE_LABELS: Record<CommenterType, string> = {
   citizen: "一般市民",
+  affected: "当事者",
+  business: "事業者",
   expert: "専門家",
 };
 
