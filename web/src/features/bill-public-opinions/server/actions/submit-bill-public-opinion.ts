@@ -2,21 +2,20 @@
 
 import { revalidatePath } from "next/cache";
 import { routes } from "@/lib/routes";
-import { parseOpinionInput } from "../../shared/utils/opinion-input";
+import {
+  parseOpinionInput,
+  type RawOpinionFields,
+  type SubmitOpinionResult,
+} from "../../shared/utils/opinion-input";
 import { insertBillPublicOpinion } from "../repositories/bill-public-opinion-repository";
 
-export type SubmitBillPublicOpinionResult =
-  | { ok: true }
-  | { ok: false; error: string };
+export type SubmitBillPublicOpinionResult = SubmitOpinionResult;
 
-export async function submitBillPublicOpinion(input: {
-  billId: string;
-  commenterType: string;
-  stance: string;
-  residence: string;
-  body: string;
-}): Promise<SubmitBillPublicOpinionResult> {
-  const parsed = parseOpinionInput(input);
+export async function submitBillPublicOpinion(
+  billId: string,
+  fields: RawOpinionFields
+): Promise<SubmitBillPublicOpinionResult> {
+  const parsed = parseOpinionInput({ billId, ...fields });
   if (!parsed.ok) return parsed;
 
   try {

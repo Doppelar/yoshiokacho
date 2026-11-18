@@ -5,10 +5,12 @@ import type { Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layouts/container";
 import { Card } from "@/components/ui/card";
+import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
 import { CouncilSwitchBanner } from "@/features/gunma-map/client/council-switch-banner";
 import { routes } from "@/lib/routes";
 import { TAKASAKI_SESSIONS } from "../../shared/sessions";
 import type { TakasakiItem, TakasakiSession } from "../../shared/types";
+import { getSessionDebateSummary } from "../../shared/utils/debate-summaries";
 import {
   getGeneralQuestions,
   hasCommitteeQuestions,
@@ -20,18 +22,26 @@ import {
   sortItemsForDisplay,
   tallyRollCall,
 } from "../../shared/utils/votes";
+import { TakasakiDebateSummarySection } from "./takasaki-debate-summary";
 import { TakasakiDisclaimer } from "./takasaki-disclaimer";
 import {
   GENERAL_QUESTIONS_SECTION_ID,
   TakasakiGeneralQuestions,
 } from "./takasaki-general-questions";
 
-export function TakasakiHome({ sessionId }: { sessionId?: string }) {
+export function TakasakiHome({
+  sessionId,
+  level,
+}: {
+  sessionId?: string;
+  level: DifficultyLevelEnum;
+}) {
   const session = findTakasakiSession(sessionId);
   const items = sortItemsForDisplay(session.items);
   const splitItems = items.filter((item) => item.rollCall);
   const otherItems = items.filter((item) => !item.rollCall);
   const generalQuestions = getGeneralQuestions(session.id);
+  const debateSummary = getSessionDebateSummary(session.id);
 
   return (
     <Container className="pt-24 pb-16 md:pt-12">
@@ -45,7 +55,7 @@ export function TakasakiHome({ sessionId }: { sessionId?: string }) {
           できる限りわかりやすく
         </h1>
         <p className="mt-4 text-[15px] leading-7 text-black">
-          みらい議会＠高崎市は、高崎市議会でどんな議論が交わされ、どう決まったかを伝えるページです。議決結果と会派・議員ごとの賛否に加え、会議録をもとに、一般質問での質問と市の答弁、委員会での議案の質疑の要旨を掲載しています。
+          みらい議会＠高崎市は、高崎市議会でどんな議論が交わされ、どう決まったかを伝えるページです。議決結果と会派・議員ごとの賛否に加え、会議録をもとに、一般質問での質問と市の答弁、委員会での議案の質疑の要旨を掲載しています。議案ごとに、どなたでも賛成・反対の意見を投稿できます。
         </p>
       </section>
 
@@ -78,6 +88,14 @@ export function TakasakiHome({ sessionId }: { sessionId?: string }) {
           </a>
         )}
       </section>
+
+      {debateSummary && (
+        <TakasakiDebateSummarySection
+          title="この会期でどんな議論があったか"
+          summary={debateSummary}
+          level={level}
+        />
+      )}
 
       {session.voteDetails === "unconfirmed" && (
         <p className="mt-4 text-sm text-mirai-text-secondary">

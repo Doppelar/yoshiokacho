@@ -3,7 +3,9 @@ import {
   countByStance,
   isStance,
   OPINION_BODY_MAX_LENGTH,
+  parseOpinionFields,
   parseOpinionInput,
+  toPublicOpinion,
 } from "./opinion-input";
 
 const validInput = {
@@ -94,5 +96,53 @@ describe("isStance", () => {
   it("想定した値だけ true を返す", () => {
     expect(isStance("neutral")).toBe(true);
     expect(isStance("unknown")).toBe(false);
+  });
+});
+
+describe("toPublicOpinion", () => {
+  const row = {
+    id: "id-1",
+    commenter_type: "expert",
+    stance: "against",
+    residence: "out_of_town",
+    body: "本文",
+    created_at: "2026-11-18T00:00:00Z",
+  };
+
+  it("DBの行を公開用の形に変換する", () => {
+    expect(toPublicOpinion(row)).toEqual({
+      id: "id-1",
+      commenterType: "expert",
+      stance: "against",
+      residence: "out_of_town",
+      body: "本文",
+      createdAt: "2026-11-18T00:00:00Z",
+    });
+  });
+
+  it("想定外の値を含む行は null を返す", () => {
+    expect(toPublicOpinion({ ...row, stance: "maybe" })).toBeNull();
+    expect(toPublicOpinion({ ...row, residence: "tokyo" })).toBeNull();
+  });
+});
+
+describe("parseOpinionFields", () => {
+  it("議案IDなしで立場・賛否・お住まい・本文を検証する", () => {
+    expect(
+      parseOpinionFields({
+        commenterType: "citizen",
+        stance: "neutral",
+        residence: "in_town",
+        body: " 意見 ",
+      })
+    ).toEqual({
+      ok: true,
+      value: {
+        commenterType: "citizen",
+        stance: "neutral",
+        residence: "in_town",
+        body: "意見",
+      },
+    });
   });
 });

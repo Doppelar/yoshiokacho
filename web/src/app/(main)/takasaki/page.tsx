@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getDifficultyLevel } from "@/features/bill-difficulty/server/loaders/get-difficulty-level";
 import { TakasakiHome } from "@/features/takasaki-bills/server/components/takasaki-home";
 
 export const metadata: Metadata = {
@@ -12,6 +13,9 @@ export default async function Page({
 }: {
   searchParams: Promise<{ session?: string }>;
 }) {
-  const { session } = await searchParams;
-  return <TakasakiHome sessionId={session} />;
+  const [{ session }, level] = await Promise.all([
+    searchParams,
+    getDifficultyLevel(),
+  ]);
+  return <TakasakiHome sessionId={session} level={level} />;
 }
