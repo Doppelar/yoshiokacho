@@ -1,13 +1,19 @@
 import "server-only";
 
+import { ChevronDown } from "lucide-react";
 import type { TakasakiCommitteeDeliberation } from "../../shared/types";
 import { ExchangeBlock, MinutesLink } from "./takasaki-general-questions";
 
-/** 議案詳細に表示する、付託された委員会での質疑の要旨 */
+/**
+ * 議案詳細に表示する、付託された委員会での質疑の要旨。
+ * expanded のとき（「詳しく」設定）は、やりとりを最初から開いて表示する。
+ */
 export function TakasakiCommitteeDeliberations({
   deliberations,
+  expanded,
 }: {
   deliberations: readonly TakasakiCommitteeDeliberation[];
+  expanded: boolean;
 }) {
   if (deliberations.length === 0) return null;
   return (
@@ -31,13 +37,24 @@ export function TakasakiCommitteeDeliberations({
             <p className="text-sm font-bold">{deliberation.vote}</p>
           </div>
           {deliberation.exchanges.length > 0 ? (
-            <ol className="space-y-3">
-              {deliberation.exchanges.map((exchange) => (
-                <li key={exchange.question}>
-                  <ExchangeBlock exchange={exchange} />
-                </li>
-              ))}
-            </ol>
+            <details open={expanded} className="group">
+              <summary className="flex cursor-pointer list-none items-center gap-1 text-sm font-bold underline underline-offset-2 [&::-webkit-details-marker]:hidden">
+                質疑のやりとり（{deliberation.exchanges.length}件）を
+                <span className="group-open:hidden">見る</span>
+                <span className="hidden group-open:inline">閉じる</span>
+                <ChevronDown
+                  aria-hidden="true"
+                  className="size-4 transition-transform group-open:rotate-180"
+                />
+              </summary>
+              <ol className="mt-3 space-y-3">
+                {deliberation.exchanges.map((exchange) => (
+                  <li key={exchange.question}>
+                    <ExchangeBlock exchange={exchange} />
+                  </li>
+                ))}
+              </ol>
+            </details>
           ) : (
             <p className="text-sm text-mirai-text-secondary">
               委員会では質疑はありませんでした。

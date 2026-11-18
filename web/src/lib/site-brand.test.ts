@@ -18,4 +18,14 @@ describe("getSiteBrand", () => {
     expect(getSiteBrand("/gunma").name).toBe("みらい議会 全国版");
     expect(getSiteBrand("/tokyo").name).toBe("みらい議会 全国版");
   });
+
+  it("高崎市のページでは高崎市版の名前と高崎市トップへのリンクを返す", () => {
+    for (const pathname of ["/takasaki", "/takasaki/bills/r8-4-gian-54"]) {
+      expect(getSiteBrand(pathname)).toEqual({
+        name: "みらい議会＠高崎市",
+        href: "/takasaki",
+      });
+    }
+    expect(getSiteBrand("/takasakishi").name).toBe("みらい議会＠吉岡町");
+  });
 });

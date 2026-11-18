@@ -24,17 +24,41 @@ export const RESIDENCE_LABELS: Record<Residence, string> = {
   out_of_town: "町外",
 };
 
-export type BillPublicOpinionInput = {
-  billId: string;
+/** 公開する意見（非表示のものは含めない） */
+export type PublicOpinion = {
+  id: string;
+  commenterType: CommenterType;
+  stance: Stance;
+  residence: Residence;
+  body: string;
+  createdAt: string;
+};
+
+/** 議案に依らない意見の入力項目 */
+export type OpinionFields = {
   commenterType: CommenterType;
   stance: Stance;
   residence: Residence;
   body: string;
 };
 
-export type ParseOpinionResult =
-  | { ok: true; value: BillPublicOpinionInput }
+export type RawOpinionFields = {
+  commenterType: string;
+  stance: string;
+  residence: string;
+  body: string;
+};
+
+export type BillPublicOpinionInput = OpinionFields & { billId: string };
+
+export type ParseResult<T> =
+  | { ok: true; value: T }
   | { ok: false; error: string };
+
+export type ParseOpinionResult = ParseResult<BillPublicOpinionInput>;
+
+/** 意見の投稿（Server Action）の結果 */
+export type SubmitOpinionResult = { ok: true } | { ok: false; error: string };
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -46,17 +70,10 @@ function isOneOf<T extends string>(
   return (values as readonly string[]).includes(value);
 }
 
-/** フォーム入力を検証し、保存できる形に整える */
-export function parseOpinionInput(raw: {
-  billId: string;
-  commenterType: string;
-  stance: string;
-  residence: string;
-  body: string;
-}): ParseOpinionResult {
-  if (!UUID_PATTERN.test(raw.billId)) {
-    return { ok: false, error: "議案が見つかりません。" };
-  }
+/** 立場・賛否・お住まい・本文を検証し、保存できる形に整える */
+export function parseOpinionFields(
+  raw: RawOpinionFields
+): ParseResult<OpinionFields> {
   if (!isOneOf(COMMENTER_TYPES, raw.commenterType)) {
     return { ok: false, error: "立場（一般市民・専門家）を選んでください。" };
   }
@@ -64,7 +81,7 @@ export function parseOpinionInput(raw: {
     return { ok: false, error: "賛成・反対・どちらでもないを選んでください。" };
   }
   if (!isOneOf(RESIDENCES, raw.residence)) {
-    return { ok: false, error: "お住まい（町内・町外）を選んでください。" };
+    return { ok: false, error: "お住まいを選んでください。" };
   }
 
   const body = raw.body.trim();
@@ -81,13 +98,24 @@ export function parseOpinionInput(raw: {
   return {
     ok: true,
     value: {
-      billId: raw.billId,
       commenterType: raw.commenterType,
       stance: raw.stance,
       residence: raw.residence,
       body,
     },
   };
+}
+
+/** フォーム入力を検証し、保存できる形に整える（吉岡町の議案） */
+export function parseOpinionInput(
+  raw: RawOpinionFields & { billId: string }
+): ParseOpinionResult {
+  if (!UUID_PATTERN.test(raw.billId)) {
+    return { ok: false, error: "議案が見つかりません。" };
+  }
+  const fields = parseOpinionFields(raw);
+  if (!fields.ok) return fields;
+  return { ok: true, value: { billId: raw.billId, ...fields.value } };
 }
 
 /** 賛否ごとの件数を数える（0件の賛否も含める） */
@@ -112,4 +140,31 @@ export function isCommenterType(value: string): value is CommenterType {
 
 export function isResidence(value: string): value is Residence {
   return isOneOf(RESIDENCES, value);
+}
+
+/** DBの行を公開用の意見に変換する。想定外の値を含む行は null（表示しない） */
+export function toPublicOpinion(row: {
+  id: string;
+  commenter_type: string;
+  stance: string;
+  residence: string;
+  body: string;
+  created_at: string;
+}): PublicOpinion | null {
+  const { commenter_type, stance, residence } = row;
+  if (
+    !isCommenterType(commenter_type) ||
+    !isStance(stance) ||
+    !isResidence(residence)
+  ) {
+    return null;
+  }
+  return {
+    id: row.id,
+    commenterType: commenter_type,
+    stance,
+    residence,
+    body: row.body,
+    createdAt: row.created_at,
+  };
 }
