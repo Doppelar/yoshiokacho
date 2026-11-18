@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { AOMORI_MUNICIPALITIES } from "@/features/aomori-map/shared/municipalities";
 import { KYOTO_MUNICIPALITIES } from "@/features/kyoto-map/shared/municipalities";
 import { SHIMANE_MUNICIPALITIES } from "@/features/shimane-map/shared/municipalities";
 import { TOCHIGI_MUNICIPALITIES } from "@/features/tochigi-map/shared/municipalities";
@@ -7,6 +8,7 @@ import { YAMAGUCHI_MUNICIPALITIES } from "@/features/yamaguchi-map/shared/munici
 
 describe("県別市町村地図データ", () => {
   for (const [name, data, expectedCount] of [
+    ["青森県", AOMORI_MUNICIPALITIES, 40],
     ["山口県", YAMAGUCHI_MUNICIPALITIES, 19],
     ["鳥取県", TOTTORI_MUNICIPALITIES, 19],
     ["島根県", SHIMANE_MUNICIPALITIES, 19],
