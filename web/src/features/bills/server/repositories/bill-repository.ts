@@ -45,6 +45,7 @@ export async function findPublishedBillsWithContents(
     `
     )
     .eq("publish_status", "published")
+    .is("council", null)
     .eq("bill_contents.difficulty_level", difficultyLevel)
     .order("submitted_date", { ascending: false, nullsFirst: false });
 
@@ -76,6 +77,7 @@ export async function findPublishedBillsForSuggest(
     `
     )
     .eq("publish_status", "published")
+    .is("council", null)
     .eq("bill_contents.difficulty_level", difficultyLevel)
     // 提出日は null と同日の重複があるので、id を第2キーにして順序を固定する。
     // 候補は上位数件で打ち切るため、並びが揺れると出る候補そのものが変わる。
@@ -260,6 +262,7 @@ export async function findPublishedBillsByDietSession(
     )
     .eq("diet_session_id", dietSessionId)
     .eq("publish_status", "published")
+    .is("council", null)
     .eq("bill_contents.difficulty_level", difficultyLevel)
     .order("status_order", { ascending: true })
     .order("submitted_date", { ascending: false, nullsFirst: false });
@@ -299,6 +302,7 @@ export async function findPreviousSessionBills(
     )
     .eq("diet_session_id", dietSessionId)
     .eq("publish_status", "published")
+    .is("council", null)
     .eq("bill_contents.difficulty_level", difficultyLevel)
     .order("status_order", { ascending: true })
     .order("submitted_date", { ascending: false, nullsFirst: false })
@@ -328,6 +332,7 @@ export async function countPublishedBillsByDietSession(
     })
     .eq("diet_session_id", dietSessionId)
     .eq("publish_status", "published")
+    .is("council", null)
     .eq("bill_contents.difficulty_level", difficultyLevel);
 
   if (error) {
@@ -427,6 +432,7 @@ export async function findPublishedBillsByTag(
     )
     .eq("tag_id", tagId)
     .eq("bills.publish_status", "published")
+    .is("bills.council", null)
     .eq("bills.bill_contents.difficulty_level", difficultyLevel);
 
   if (dietSessionId) {
@@ -475,6 +481,7 @@ export async function findFeaturedBillsWithContents(
     `
     )
     .eq("is_featured", true)
+    .is("council", null)
     .eq("bill_contents.difficulty_level", difficultyLevel)
     .order("submitted_date", { ascending: false, nullsFirst: false });
 
@@ -540,6 +547,7 @@ export async function findBillsWithPublicInterview(
       `
         )
         .eq("publish_status", "published")
+        .is("council", null)
         .eq("bill_contents.difficulty_level", difficultyLevel)
         .eq("interview_configs.status", "public")
         .order("submitted_date", { ascending: false, nullsFirst: false });
@@ -596,6 +604,7 @@ export async function findComingSoonBills(dietSessionId: string | null) {
       `
       )
       .eq("publish_status", "coming_soon")
+      .is("council", null)
       .order("created_at", { ascending: false });
 
     if (dietSessionId) {

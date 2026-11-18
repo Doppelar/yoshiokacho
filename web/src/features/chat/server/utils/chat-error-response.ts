@@ -16,7 +16,7 @@ export function chatErrorToResponse(error: unknown): Response {
         );
       case ChatErrorCode.SYSTEM_MONTHLY_COST_LIMIT_REACHED:
         return textResponse(
-          "今月の利用上限に達しました。来月1日以降に再度お試しください。",
+          "利用上限に達したため、受付を一時停止しています。しばらく日をおいて再度お試しください。",
           429
         );
       default:

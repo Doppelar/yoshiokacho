@@ -3,6 +3,8 @@ import "server-only";
 import { buildInterviewOpinionRows } from "@mirai-gikai/shared/interview-report/build-opinion-rows";
 import type { InterviewOpinionSource } from "@mirai-gikai/shared/interview-report/schema";
 import { syncInterviewOpinions } from "@mirai-gikai/shared/interview-report/sync-opinions";
+import { recordChatUsage } from "@/features/chat/server/services/cost-tracker";
+import { isWithinSystemCostLimits } from "@/features/chat/server/services/system-cost-guard";
 import type { InterviewReportData } from "../../shared/schemas";
 import type { InterviewReport } from "../../shared/types";
 import { buildCompletedInterviewReportInsert } from "../../shared/utils/complete-interview-report";
@@ -16,6 +18,8 @@ import { evaluateModerationScore } from "./evaluate-moderation-score";
 
 type CompleteInterviewSessionParams = {
   sessionId: string;
+  /** モデレーションのAI利用コストを記録する利用者。未指定なら記録しない */
+  userId?: string;
   isPublicByUser?: boolean;
   isDataReuseConsented?: boolean;
 };
@@ -25,11 +29,16 @@ type CompleteInterviewSessionParams = {
  */
 export async function completeInterviewSession({
   sessionId,
+  userId,
   isPublicByUser,
   isDataReuseConsented,
 }: CompleteInterviewSessionParams): Promise<InterviewReport> {
-  // メッセージ履歴を取得（新しい順）
-  const messages = await findInterviewMessagesBySessionIdDesc(sessionId);
+  // メッセージ履歴（新しい順）と予算上限の確認は互いに独立なので並列に行う
+  // 無料枠を超えないよう、システム全体の予算上限に達していたらモデレーションのAIを呼ばない
+  const [messages, canUseAi] = await Promise.all([
+    findInterviewMessagesBySessionIdDesc(sessionId),
+    isWithinSystemCostLimits(),
+  ]);
 
   // 最新のアシスタントメッセージからレポートを抽出
   let reportData: InterviewReportData | null = null;
@@ -50,32 +59,49 @@ export async function completeInterviewSession({
   const MODERATION_TIMEOUT_MS = 30_000;
   let moderationScore: number | null = null;
   let moderationReasoning: string | null = null;
-  try {
-    const moderation = await Promise.race([
-      evaluateModerationScore({
-        summary: reportData.summary,
-        opinions: reportData.opinions,
-        roleDescription: reportData.role_description,
-        messages: [...messages].reverse().map((m) => ({
-          role: m.role,
-          content: m.content,
-        })),
-      }),
-      new Promise<never>((_, reject) =>
-        setTimeout(
-          () => reject(new Error("Moderation evaluation timed out")),
-          MODERATION_TIMEOUT_MS
-        )
-      ),
-    ]);
-    moderationScore = moderation.score;
-    moderationReasoning = moderation.reasoning;
-  } catch (error) {
-    // モデレーション失敗はレポート保存をブロックしない
-    const message = error instanceof Error ? error.message : "Unknown error";
-    console.error(
-      `Moderation evaluation failed for session ${sessionId}: ${message}`
-    );
+  if (!canUseAi) {
+    console.warn(`Moderation skipped for session ${sessionId}: cost limit`);
+  } else {
+    try {
+      const moderation = await Promise.race([
+        evaluateModerationScore({
+          summary: reportData.summary,
+          opinions: reportData.opinions,
+          roleDescription: reportData.role_description,
+          messages: [...messages].reverse().map((m) => ({
+            role: m.role,
+            content: m.content,
+          })),
+        }),
+        new Promise<never>((_, reject) =>
+          setTimeout(
+            () => reject(new Error("Moderation evaluation timed out")),
+            MODERATION_TIMEOUT_MS
+          )
+        ),
+      ]);
+      moderationScore = moderation.score;
+      moderationReasoning = moderation.reasoning;
+      if (userId) {
+        await recordChatUsage({
+          userId,
+          sessionId,
+          promptName: "interview-moderation",
+          model: moderation.model,
+          usage: moderation.usage,
+          costUsd: moderation.costUsd,
+          metadata: { pageType: "interview", finishReason: null, stepCount: 0 },
+        }).catch((usageError) => {
+          console.error("Failed to record moderation usage:", usageError);
+        });
+      }
+    } catch (error) {
+      // モデレーション失敗はレポート保存をブロックしない
+      const message = error instanceof Error ? error.message : "Unknown error";
+      console.error(
+        `Moderation evaluation failed for session ${sessionId}: ${message}`
+      );
+    }
   }
 
   // レポートを保存（UPSERT）

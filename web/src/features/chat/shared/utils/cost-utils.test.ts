@@ -1,5 +1,23 @@
 import { describe, expect, it } from "vitest";
-import { parseCost, resolveCostUsd } from "./cost-utils";
+import {
+  extractGatewayCost,
+  getModelName,
+  parseCost,
+  resolveCostUsd,
+} from "./cost-utils";
+
+describe("getModelName", () => {
+  it("文字列はそのまま、モデルオブジェクトは modelId を返す", () => {
+    expect(getModelName("openai/gpt-5.2")).toBe("openai/gpt-5.2");
+    expect(getModelName({ modelId: "anthropic/claude-haiku-4.5" })).toBe(
+      "anthropic/claude-haiku-4.5"
+    );
+  });
+
+  it("modelId がなければ unknown を返す", () => {
+    expect(getModelName({})).toBe("unknown");
+  });
+});
 
 describe("parseCost", () => {
   it("正常な数値をそのまま返す", () => {
@@ -51,5 +69,21 @@ describe("resolveCostUsd", () => {
 
   it("トークンが0でoverrideもなければ0を返す", () => {
     expect(resolveCostUsd("any-model", zeroUsage)).toBe(0);
+  });
+});
+
+describe("extractGatewayCost", () => {
+  it("AI Gateway の請求額を数値で取り出す", () => {
+    expect(extractGatewayCost({ gateway: { cost: "0.0012" } })).toBe(0.0012);
+    expect(extractGatewayCost({ gateway: { cost: 0.5 } })).toBe(0.5);
+  });
+
+  it("請求額が無い・数値でないときは undefined を返す", () => {
+    expect(extractGatewayCost(undefined)).toBeUndefined();
+    expect(extractGatewayCost({})).toBeUndefined();
+    expect(extractGatewayCost({ gateway: {} })).toBeUndefined();
+    expect(extractGatewayCost({ gateway: { cost: null } })).toBeUndefined();
+    expect(extractGatewayCost({ gateway: { cost: "" } })).toBeUndefined();
+    expect(extractGatewayCost({ gateway: { cost: "abc" } })).toBeUndefined();
   });
 });

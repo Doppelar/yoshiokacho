@@ -37,6 +37,7 @@ export async function POST(req: Request) {
   try {
     const report = await completeInterviewSession({
       sessionId,
+      userId: ownershipResult.userId,
       isPublicByUser,
       isDataReuseConsented: dataReuseConsented,
     });

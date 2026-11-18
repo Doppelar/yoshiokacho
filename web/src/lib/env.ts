@@ -3,6 +3,11 @@
  * アプリケーション全体で使用する環境変数を一元管理
  */
 
+import {
+  FREE_TIER_COST_CAPS_USD,
+  resolveCostLimitUsd,
+} from "./utils/cost-limit";
+
 if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
   throw new Error("環境変数 NEXT_PUBLIC_SUPABASE_URL が設定されていません");
 }
@@ -13,46 +18,23 @@ if (!process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY) {
   );
 }
 
-const chatDailyUserCostLimitUsdRaw =
+// AIの利用コスト上限。無料枠を超えないよう、環境変数の値は天井で頭打ちにする
+const chatDailyUserCostLimitUsd = resolveCostLimitUsd(
   process.env.CHAT_DAILY_USER_COST_LIMIT_USD ||
-  process.env.CHAT_DAILY_COST_LIMIT_USD ||
-  "0.5";
-
-const chatDailyUserCostLimitUsd = Number(chatDailyUserCostLimitUsdRaw);
-
-if (Number.isNaN(chatDailyUserCostLimitUsd) || chatDailyUserCostLimitUsd <= 0) {
-  throw new Error(
-    "環境変数 CHAT_DAILY_USER_COST_LIMIT_USD は正の数値で指定してください"
-  );
-}
-
-const chatDailyTotalCostLimitUsdRaw =
-  process.env.CHAT_DAILY_TOTAL_COST_LIMIT_USD || "50";
-
-const chatDailyTotalCostLimitUsd = Number(chatDailyTotalCostLimitUsdRaw);
-
-if (
-  Number.isNaN(chatDailyTotalCostLimitUsd) ||
-  chatDailyTotalCostLimitUsd <= 0
-) {
-  throw new Error(
-    "環境変数 CHAT_DAILY_TOTAL_COST_LIMIT_USD は正の数値で指定してください"
-  );
-}
-
-const chatMonthlyTotalCostLimitUsdRaw =
-  process.env.CHAT_MONTHLY_TOTAL_COST_LIMIT_USD || "1000";
-
-const chatMonthlyTotalCostLimitUsd = Number(chatMonthlyTotalCostLimitUsdRaw);
-
-if (
-  Number.isNaN(chatMonthlyTotalCostLimitUsd) ||
-  chatMonthlyTotalCostLimitUsd <= 0
-) {
-  throw new Error(
-    "環境変数 CHAT_MONTHLY_TOTAL_COST_LIMIT_USD は正の数値で指定してください"
-  );
-}
+    process.env.CHAT_DAILY_COST_LIMIT_USD,
+  FREE_TIER_COST_CAPS_USD.dailyUser,
+  "CHAT_DAILY_USER_COST_LIMIT_USD"
+);
+const chatDailyTotalCostLimitUsd = resolveCostLimitUsd(
+  process.env.CHAT_DAILY_TOTAL_COST_LIMIT_USD,
+  FREE_TIER_COST_CAPS_USD.dailyTotal,
+  "CHAT_DAILY_TOTAL_COST_LIMIT_USD"
+);
+const chatMonthlyTotalCostLimitUsd = resolveCostLimitUsd(
+  process.env.CHAT_MONTHLY_TOTAL_COST_LIMIT_USD,
+  FREE_TIER_COST_CAPS_USD.monthlyTotal,
+  "CHAT_MONTHLY_TOTAL_COST_LIMIT_USD"
+);
 
 export const env = {
   webUrl: process.env.NEXT_PUBLIC_WEB_URL || "http://localhost:3000",

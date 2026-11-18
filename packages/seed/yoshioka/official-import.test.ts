@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   buildOfficialImportSql,
+  councilUuid,
   mergeOfficialNote,
   officialStatus,
   officialUuid,
@@ -30,6 +31,18 @@ describe("official Yoshioka import", () => {
       new Set(["2026:議案:1", "2025:議案:1", "2026:認定:1"].map(officialUuid))
         .size
     ).toBe(3);
+  });
+  it("keeps the UUIDs already stored in the production DB", () => {
+    // 本番に登録済みの吉岡町データとIDがずれないよう、既知の値で固定する
+    expect(officialUuid("bill:r8-1-gian-1")).toBe(
+      "b8fb8299-ba8b-5034-bd8d-20d08d3be7f9"
+    );
+    expect(councilUuid("yoshioka", "bill:r8-1-gian-1")).toBe(
+      officialUuid("bill:r8-1-gian-1")
+    );
+    expect(councilUuid("takasaki", "bill:r8-1-gian-1")).not.toBe(
+      officialUuid("bill:r8-1-gian-1")
+    );
   });
   it("keeps existing explanation and replaces only its official-results prefix", () => {
     const once = mergeOfficialNote("住民への影響の解説", "原案可決");

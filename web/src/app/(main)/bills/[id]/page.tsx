@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import type { Metadata, Route } from "next";
+import { notFound, redirect } from "next/navigation";
 import { getDifficultyLevel } from "@/features/bill-difficulty/server/loaders/get-difficulty-level";
-import { getBillById } from "@/features/bills/server/loaders/get-bill-by-id";
 import { BillDetailLayout } from "@/features/bills/server/components/bill-detail/bill-detail-layout";
+import { getBillById } from "@/features/bills/server/loaders/get-bill-by-id";
+import { getCouncilItemPathForBill } from "@/features/council-item-opinions/shared/utils/councils";
 import { env } from "@/lib/env";
 import { routes } from "@/lib/routes";
 
@@ -70,6 +71,13 @@ export default async function BillDetailPage({ params }: BillDetailPageProps) {
 
   if (!billWithContent) {
     notFound();
+  }
+
+  // 高崎市など他の議会の議案は、その議会の議案ページで表示する
+  if (billWithContent.council !== null) {
+    const councilItemPath = getCouncilItemPathForBill(billWithContent);
+    if (councilItemPath === null) notFound();
+    redirect(councilItemPath as Route);
   }
 
   return (

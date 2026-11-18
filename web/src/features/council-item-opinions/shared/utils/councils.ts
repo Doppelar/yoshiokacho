@@ -50,3 +50,25 @@ export function parseCouncilItemOpinionInput(
   if (!fields.ok) return fields;
   return { ok: true, value: { council, itemId, ...fields.value } };
 }
+
+/** 議会の議案を bills に登録するときの slug（例: takasaki-r8-4-gian-54） */
+export function toCouncilBillSlug(council: CouncilId, itemId: string): string {
+  return `${council}-${itemId}`;
+}
+
+/**
+ * bills の council・slug から、その議会の議案ページのパスを返す。
+ * 吉岡町の議案（council が NULL）や、静的データにない議案なら null。
+ */
+export function getCouncilItemPathForBill(bill: {
+  council: string | null;
+  slug: string | null;
+}): string | null {
+  const { council, slug } = bill;
+  if (council === null || slug === null || !isCouncilId(council)) return null;
+  const prefix = `${council}-`;
+  if (!slug.startsWith(prefix)) return null;
+  const itemId = slug.slice(prefix.length);
+  if (!COUNCILS[council].hasItem(itemId)) return null;
+  return COUNCILS[council].itemPath(itemId);
+}

@@ -16,8 +16,11 @@ import {
   recordChatUsage,
 } from "@/features/chat/server/services/cost-tracker";
 import { ChatError, ChatErrorCode } from "@/features/chat/shared/types/errors";
+import {
+  extractGatewayCost,
+  getModelName,
+} from "@/features/chat/shared/utils/cost-utils";
 import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
-import { resolveInterviewChatLoaders } from "@/features/interview-session/shared/utils/resolve-interview-chat-loaders";
 import type { InterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config-admin";
 import { getInterviewConfigAdmin } from "@/features/interview-config/server/loaders/get-interview-config-admin";
 import { getInterviewQuestions } from "@/features/interview-config/server/loaders/get-interview-questions";
@@ -33,6 +36,7 @@ import type {
   InterviewMessage,
   InterviewSession,
 } from "@/features/interview-session/shared/types";
+import { resolveInterviewChatLoaders } from "@/features/interview-session/shared/utils/resolve-interview-chat-loaders";
 import { DEFAULT_INTERVIEW_CHAT_MODEL } from "@/lib/ai/models";
 import { env } from "@/lib/env";
 import { logger } from "@/lib/logger";
@@ -266,8 +270,7 @@ async function generateStreamingResponse({
     ? (summaryModel ?? configChatModel ?? DEFAULT_INTERVIEW_CHAT_MODEL)
     : (chatModel ?? configChatModel ?? DEFAULT_INTERVIEW_CHAT_MODEL);
 
-  const modelName =
-    typeof model === "string" ? model : (model.modelId ?? "unknown");
+  const modelName = getModelName(model);
 
   const handleError = (error: unknown) => {
     console.error("LLM generation error:", error);
@@ -295,7 +298,7 @@ async function generateStreamingResponse({
 
     // LLM利用コストを記録
     try {
-      const providerCost = extractGatewayCost(event);
+      const providerCost = extractGatewayCost(event.providerMetadata);
       await recordChatUsage({
         userId,
         sessionId,
@@ -377,23 +380,4 @@ async function generateStreamingResponse({
     handleError(error);
     throw error;
   }
-}
-
-function extractGatewayCost(event: {
-  providerMetadata?: unknown;
-}): number | undefined {
-  const providerMetadata = event.providerMetadata;
-  if (!providerMetadata || typeof providerMetadata !== "object") {
-    return undefined;
-  }
-
-  const gatewayCost = (
-    providerMetadata as {
-      gateway?: { cost?: unknown };
-    }
-  ).gateway?.cost;
-
-  const numericCost = Number(gatewayCost);
-
-  return Number.isFinite(numericCost) ? numericCost : undefined;
 }

@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { isCouncilId, parseCouncilItemOpinionInput } from "./councils";
+import {
+  getCouncilItemPathForBill,
+  isCouncilId,
+  parseCouncilItemOpinionInput,
+  toCouncilBillSlug,
+} from "./councils";
 
 const fields = {
   commenterType: "citizen",
@@ -48,5 +53,43 @@ describe("isCouncilId", () => {
   it("登録済みの議会だけ true を返す", () => {
     expect(isCouncilId("takasaki")).toBe(true);
     expect(isCouncilId("toString")).toBe(false);
+  });
+});
+
+describe("toCouncilBillSlug / getCouncilItemPathForBill", () => {
+  it("議会の議案の slug から議会ページのパスに戻せる", () => {
+    const slug = toCouncilBillSlug("takasaki", "r8-4-gian-54");
+    expect(slug).toBe("takasaki-r8-4-gian-54");
+    expect(getCouncilItemPathForBill({ council: "takasaki", slug })).toBe(
+      "/takasaki/bills/r8-4-gian-54"
+    );
+  });
+
+  it("吉岡町の議案・不明な議会・静的データにない議案は null", () => {
+    expect(
+      getCouncilItemPathForBill({ council: null, slug: "some-bill" })
+    ).toBeNull();
+    expect(
+      getCouncilItemPathForBill({
+        council: "unknown",
+        slug: "unknown-r8-4-gian-54",
+      })
+    ).toBeNull();
+    expect(
+      getCouncilItemPathForBill({
+        council: "takasaki",
+        slug: "takasaki-no-such-item",
+      })
+    ).toBeNull();
+    expect(
+      getCouncilItemPathForBill({ council: "takasaki", slug: null })
+    ).toBeNull();
+    // slug の議会名と council が食い違う
+    expect(
+      getCouncilItemPathForBill({
+        council: "takasaki",
+        slug: "yoshioka-r8-4-gian-54",
+      })
+    ).toBeNull();
   });
 });
