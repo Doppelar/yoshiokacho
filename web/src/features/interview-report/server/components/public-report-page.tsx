@@ -13,7 +13,6 @@ import { ShareArticleButton } from "@/features/interview-report/client/component
 import { routes } from "@/lib/routes";
 import { getOrigin } from "@/lib/utils/url";
 import { BackToBillButton } from "../../shared/components/back-to-bill-button";
-import { ChatLogSection } from "../../shared/components/chat-log-section";
 import { ReportIntervieweeCard } from "../../shared/components/report-interviewee-card";
 import { ReportMainOpinions } from "../../shared/components/report-main-opinions";
 import { ReportProblemButton } from "../../shared/components/report-problem-button";
@@ -23,17 +22,11 @@ import { getPublicReportById } from "../loaders/get-public-report-by-id";
 interface PublicReportPageProps {
   reportId: string;
   from?: "opinions";
-  /** 引用元の逐語テキスト。会話ログ内の該当箇所を太字表示する。 */
-  highlightQuote?: string;
-  /** ハイライト対象のメッセージID。指定したメッセージ内のみ太字化し、無関係なメッセージは対象外にする。 */
-  highlightMessageId?: string;
 }
 
 export async function PublicReportPage({
   reportId,
   from,
-  highlightQuote,
-  highlightMessageId,
 }: PublicReportPageProps) {
   const data = await getPublicReportById(reportId);
 
@@ -86,16 +79,9 @@ export async function PublicReportPage({
           />
 
           {/* 主な意見 */}
-          <ReportMainOpinions opinions={opinions} reportId={reportId} />
+          <ReportMainOpinions opinions={opinions} />
 
-          {/* すべての会話ログ */}
-          {data.messages.length > 0 && (
-            <ChatLogSection
-              messages={data.messages}
-              highlightQuote={highlightQuote}
-              highlightMessageId={highlightMessageId}
-            />
-          )}
+          {/* 会話ログ（AIとのやりとり全文）は公開しない。主な意見と要約のみ載せる */}
 
           {/* AIインタビューCTA */}
           {interviewConfig != null && (
