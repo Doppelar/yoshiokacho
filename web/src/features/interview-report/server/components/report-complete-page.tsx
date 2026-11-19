@@ -4,6 +4,7 @@ import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SiteBrandBill } from "@/components/layouts/site-brand-provider";
 import { getBillById } from "@/features/bills/server/loaders/get-bill-by-id";
 import { getBillDetailLink } from "@/features/interview-config/shared/utils/interview-links";
 import { PublicStatusSection } from "@/features/interview-report/client/components/public-status-section";
@@ -46,6 +47,7 @@ export async function ReportCompletePage({
 
   return (
     <div className="min-h-dvh bg-mirai-surface">
+      <SiteBrandBill billId={billId} />
       {/* ヘッダーセクション */}
       <div className="bg-white rounded-b-[32px] px-4 pt-30 md:pt-16 pb-8">
         <div className="flex flex-col items-center gap-4">

@@ -5,14 +5,18 @@ import { Header } from "@/components/header";
 import { AuthGate } from "@/components/layouts/auth-gate";
 import { Footer } from "@/components/layouts/footer/footer";
 import { MainLayout } from "@/components/layouts/main-layout";
+import { SiteBrandProvider } from "@/components/layouts/site-brand-provider";
+import { getCouncilBills } from "@/features/council-item-interviews/server/loaders/get-council-bills";
 import { env } from "@/lib/env";
 import { RubyfulInitializer } from "@/lib/rubyful";
 
-export default function MainGroupLayout({
+export default async function MainGroupLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const councilBills = await getCouncilBills();
+
   return (
     <>
       <SpeedInsights />
@@ -20,13 +24,15 @@ export default function MainGroupLayout({
       <RubyfulInitializer />
       <AuthGate />
 
-      <MainLayout>
-        <Header />
-        <main className="min-h-dvh md:min-h-[calc(100dvh-96px)] bg-mirai-surface">
-          {children}
-        </main>
-        <Footer />
-      </MainLayout>
+      <SiteBrandProvider councilBills={councilBills}>
+        <MainLayout>
+          <Header />
+          <main className="min-h-dvh md:min-h-[calc(100dvh-96px)] bg-mirai-surface">
+            {children}
+          </main>
+          <Footer />
+        </MainLayout>
+      </SiteBrandProvider>
     </>
   );
 }

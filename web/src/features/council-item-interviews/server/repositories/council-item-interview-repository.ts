@@ -32,3 +32,22 @@ export async function findCouncilItemInterviewBillId(
 
   return data?.id ?? null;
 }
+
+/** 吉岡町以外の議会の議案（bills.council が入っているもの）の ID と議会 */
+export async function findCouncilBills(): Promise<
+  { id: string; council: string }[]
+> {
+  const supabase = createAdminClient();
+  const { data, error } = await supabase
+    .from("bills")
+    .select("id, council")
+    .not("council", "is", null);
+
+  if (error) {
+    throw new Error(`議会の議案の取得に失敗しました: ${error.message}`);
+  }
+
+  return data.flatMap(({ id, council }) =>
+    council === null ? [] : [{ id, council }]
+  );
+}
