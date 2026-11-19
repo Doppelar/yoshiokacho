@@ -15,6 +15,7 @@ export const routes = {
       ? (`/japan/feedback?page=${page}` as const)
       : ("/japan/feedback" as const),
   localEditionApplications: () => "/japan/local-edition-applications" as const,
+  iryoForum: () => "/japan/iryo" as const,
   aomoriMap: () => "/aomori" as const,
   ehimeMap: () => "/ehime" as const,
   osakaMap: () => "/osaka" as const,

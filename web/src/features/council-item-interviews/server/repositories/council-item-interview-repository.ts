@@ -1,17 +1,14 @@
 import "server-only";
 
 import { createAdminClient } from "@mirai-gikai/supabase";
-import {
-  type CouncilId,
-  toCouncilBillSlug,
-} from "@/features/council-item-opinions/shared/utils/councils";
+import { toCouncilBillSlug } from "@/features/council-item-opinions/shared/utils/councils";
 
 /**
- * 議会の議案に、受付中のAIインタビューがあれば、その議案（bills）のIDを返す。
- * なければ null。
+ * 議会の議案（または全国版のテーマ）に、受付中のAIインタビューがあれば、
+ * その議案（bills）のIDを返す。なければ null。
  */
 export async function findCouncilItemInterviewBillId(
-  council: CouncilId,
+  council: string,
   itemId: string
 ): Promise<string | null> {
   const supabase = createAdminClient();

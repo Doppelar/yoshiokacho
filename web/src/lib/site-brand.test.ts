@@ -46,6 +46,16 @@ describe("getSiteBrand", () => {
     ).toBe("みらい議会＠高崎市");
   });
 
+  it("全国版のテーマのインタビュー・回答一覧では全国版にする", () => {
+    const councilBills = { "bill-n": "national" };
+    expect(getSiteBrand("/bills/bill-n/interview", councilBills).name).toBe(
+      "みらい議会 全国版"
+    );
+    expect(getSiteBrand("/bills/bill-n/opinions", councilBills).name).toBe(
+      "みらい議会 全国版"
+    );
+  });
+
   it("吉岡町の議案や未知の議会の議案は吉岡町版のままにする", () => {
     const councilBills = { "bill-x": "unknown" };
     expect(getSiteBrand("/bills/bill-y/interview", councilBills).name).toBe(

@@ -6,6 +6,10 @@ import { Button } from "@/components/ui/button";
 import type { BillWithContent } from "@/features/bills/shared/types";
 import { formatEstimatedDuration } from "@/features/interview-config/shared/utils/format-estimated-duration";
 import {
+  getInterviewCopy,
+  type InterviewCopy,
+} from "@/features/interview-config/shared/utils/interview-copy";
+import {
   getBillDetailLink,
   getInterviewDisclosureLink,
 } from "@/features/interview-config/shared/utils/interview-links";
@@ -25,11 +29,13 @@ interface InterviewLPPageProps {
   userReports?: UserReportsResult | null;
 }
 
-const FEATURES: {
+const getFeatures = (
+  copy: InterviewCopy
+): {
   iconSrc: string;
   iconSize: { w: number; h: number };
   text: string;
-}[] = [
+}[] => [
   {
     iconSrc: "/icons/interview-ear.svg",
     iconSize: { w: 21, h: 29 },
@@ -38,7 +44,7 @@ const FEATURES: {
   {
     iconSrc: "/icons/interview-messages.svg",
     iconSize: { w: 33, h: 26 },
-    text: "議案についてのご意見をお聞かせください",
+    text: copy.askOpinion,
   },
   {
     iconSrc: "/icons/interview-landmark.svg",
@@ -69,10 +75,12 @@ function _InterviewLPHeader({ bill }: { bill: BillWithContent }) {
 function _InterviewLPHero({
   bill,
   billId,
+  copy,
   sessionInfo,
   previewToken,
 }: {
   bill: BillWithContent;
+  copy: InterviewCopy;
   billId: string;
   sessionInfo: LatestInterviewSession | null;
   previewToken?: string;
@@ -84,11 +92,11 @@ function _InterviewLPHero({
       <div className="flex flex-col items-center gap-3">
         <div className="inline-flex items-center justify-center gap-2 px-6 py-1 mb-3 bg-primary rounded-2xl">
           <span className="text-[13px] font-medium text-white leading-tight">
-            当事者・有識者の方へ
+            {copy.badge}
           </span>
         </div>
         <h1 className="text-2xl font-bold text-center leading-[1.5]">
-          法案についてのAIインタビュー
+          {copy.heading}
         </h1>
         <Link href={billLink as Route}>
           <div className="inline-flex items-center justify-center gap-2.5 px-4 py-2 bg-white rounded-xl hover:bg-gray-50 transition-opacity cursor-pointer">
@@ -101,7 +109,7 @@ function _InterviewLPHero({
       </div>
 
       <div className="flex flex-col gap-4 w-full max-w-[334px] pl-4">
-        {FEATURES.map((feature) => (
+        {getFeatures(copy).map((feature) => (
           <div key={feature.text} className="flex items-center gap-4">
             <div className="flex-shrink-0 w-[54px] h-[54px] bg-white rounded-[30px] flex items-center justify-center">
               <Image
@@ -134,10 +142,12 @@ function _InterviewLPHero({
 function _InterviewOverviewSection({
   billId,
   billName,
+  copy,
   previewToken,
 }: {
   billId: string;
   billName: string;
+  copy: InterviewCopy;
   previewToken?: string;
 }) {
   const billLink = getBillDetailLink(billId, previewToken);
@@ -149,17 +159,18 @@ function _InterviewOverviewSection({
       </h2>
       <div className="space-y-4 text-[15px] font-normal text-black leading-[1.87]">
         <p>
-          議会で審議されている
+          {copy.overviewPrefix}
           <Link
             href={billLink as Route}
             className="text-primary underline underline-offset-2 hover:opacity-70 transition-opacity"
           >
             {billName}
           </Link>
-          について、AIがあなたの考えを深掘りするチャット型インタビューです
+          {copy.overviewSuffix}
         </p>
         <p>
-          議案についてのご意見をお聞かせください。公開を選んだご意見は、だれでも読めるようにこのサイトで公開します。
+          {copy.askOpinion}
+          。公開を選んだご意見は、だれでも読めるようにこのサイトで公開します。
         </p>
       </div>
       <div>
@@ -168,7 +179,7 @@ function _InterviewOverviewSection({
             variant="outline"
             className="w-full border border-black rounded-[100px] h-[48px] px-6 font-bold text-[15px] hover:opacity-90 transition-opacity flex items-center justify-center gap-4"
           >
-            <span>法案詳細はこちら</span>
+            <span>{copy.detailLink}</span>
             <ArrowRight className="size-4" />
           </Button>
         </Link>
@@ -278,10 +289,12 @@ function _InterviewDisclosureLink({
 
 function _InterviewFooterActions({
   billId,
+  copy,
   sessionInfo,
   previewToken,
 }: {
   billId: string;
+  copy: InterviewCopy;
   sessionInfo: LatestInterviewSession | null;
   previewToken?: string;
 }) {
@@ -297,7 +310,7 @@ function _InterviewFooterActions({
       <Link href={billLink as Route}>
         <Button variant="outline" className="w-full">
           <Undo2 className="size-5" />
-          <span>法案詳細に戻る</span>
+          <span>{copy.backLink}</span>
         </Button>
       </Link>
     </div>
@@ -311,6 +324,7 @@ export function InterviewLPPage({
   previewToken,
   userReports,
 }: InterviewLPPageProps) {
+  const copy = getInterviewCopy(bill.council);
   return (
     <div className="flex flex-col gap-8 pb-8 bg-mirai-light-gradient">
       <_InterviewLPHeader bill={bill} />
@@ -318,6 +332,7 @@ export function InterviewLPPage({
         <_InterviewLPHero
           bill={bill}
           billId={bill.id}
+          copy={copy}
           sessionInfo={sessionInfo}
           previewToken={previewToken}
         />
@@ -332,6 +347,7 @@ export function InterviewLPPage({
         <_InterviewOverviewSection
           billId={bill.id}
           billName={bill.bill_content?.title ?? bill.name}
+          copy={copy}
           previewToken={previewToken}
         />
         <_InterviewDurationSection
@@ -345,6 +361,7 @@ export function InterviewLPPage({
         />
         <_InterviewFooterActions
           billId={bill.id}
+          copy={copy}
           sessionInfo={sessionInfo}
           previewToken={previewToken}
         />

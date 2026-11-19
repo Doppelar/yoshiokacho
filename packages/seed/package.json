@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "takasaki:interview-sql": "tsx takasaki/run-interview-sql.ts"
+    "takasaki:interview-sql": "tsx takasaki/run-interview-sql.ts",
+    "national:iryo-interview-sql": "tsx national/run-iryo-interview-sql.ts"
   },
   "dependencies": {
     "@mirai-gikai/supabase": "workspace:*",

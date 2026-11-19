@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layouts/container";
+import { IryoForumBanner } from "@/features/iryo-forum/server/components/iryo-forum-banner";
 import { JapanPrefectureMap } from "@/features/japan-map/client/japan-prefecture-map";
 import { PrefectureCouncilLink } from "@/features/japan-map/client/prefecture-council-link";
 import { LocalEditionLinkCollection } from "@/features/japan-map/server/components/local-edition-link-collection";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function JapanMapPage() {
   return (
     <Container className="pt-24 pb-16 md:pt-12">
+      <IryoForumBanner />
       <DirectoryNotice />
       <MunicipalityCoverage />
       <div className="mb-8 space-y-3">
