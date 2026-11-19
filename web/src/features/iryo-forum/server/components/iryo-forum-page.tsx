@@ -51,7 +51,7 @@ export async function IryoForumPage() {
       <section className="rounded-2xl bg-mirai-light-gradient px-5 py-6">
         <p className="flex items-center gap-1 text-sm font-bold text-primary-accent">
           <HeartPulse className="size-4" aria-hidden />
-          みらい議会 全国版
+          コミュニティ
         </p>
         <h1 className="mt-2 text-3xl font-bold leading-tight">
           {IRYO_FORUM.title}
