@@ -61,7 +61,7 @@ export const HIROSHIMA_MUNICIPALITIES: readonly HiroshimaMunicipality[] = [
     mapX: 88.2,
     mapY: 53.8,
     status: "live",
-    href: "https://muse.ai/s/mierumiraifu-shan-shi-ban-nxg6fxlxtx0xy301/ECeXBNo9HHX4KqltvoNwKp55Gb6SE97eS9Ipa8hQ4Go",
+    href: "https://muse.ai/s/mierumirai-fukuyama-shi-ban-qxu6g2pgxcjxok/THMagsWp8dOPiWrMkt8wsZHVSYeiJSiXvqXDbC8VI1A",
     external: true,
   },
   {
