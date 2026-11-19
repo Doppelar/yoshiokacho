@@ -1,8 +1,10 @@
 import { generateText } from "ai";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import {
+  orderByCooldown,
   parseModelList,
   replaceGeminiModelInUrl,
+  resetGeminiCooldowns,
   resolveLanguageModel,
   tuneThinkingForModel,
 } from "./resolve-language-model";
@@ -41,6 +43,27 @@ function createFakeFetch(statusByModel: Record<string, number>) {
   };
   return { fakeFetch, requests };
 }
+
+// 混雑したモデルの後回しはテストをまたいで残るため、毎回消す
+beforeEach(() => {
+  resetGeminiCooldowns();
+});
+
+describe("orderByCooldown", () => {
+  it("後回し中のモデルを末尾に回し、期限が過ぎたら元の順に戻す", () => {
+    const until = new Map([["a", 1_000]]);
+    expect(orderByCooldown(["a", "b", "c"], until, 500)).toEqual([
+      "b",
+      "c",
+      "a",
+    ]);
+    expect(orderByCooldown(["a", "b", "c"], until, 1_500)).toEqual([
+      "a",
+      "b",
+      "c",
+    ]);
+  });
+});
 
 describe("parseModelList", () => {
   it("カンマ区切りを前後の空白・空要素を除いて配列にする", () => {
@@ -321,5 +344,33 @@ describe("思考の軽量化が未対応のとき", () => {
 
     expect(result.text).toBe("ok");
     expect(levels).toEqual(["minimal", "low"]);
+  });
+});
+
+describe("混雑したモデルの後回し", () => {
+  it("混雑（503）したモデルは、次の呼び出しでは後回しにする", async () => {
+    const calls: string[] = [];
+    const fakeFetch: typeof fetch = async (input) => {
+      const model = String(input).match(/\/models\/([^:]+):/)?.[1] ?? "";
+      calls.push(model);
+      return model === "gemini-a" && calls.length === 1
+        ? geminiError(503)
+        : geminiOk(`from ${model}`);
+    };
+    const model = resolveLanguageModel("anthropic/claude-haiku-4.5", {
+      apiKey: "test-key",
+      model: "gemini-a,gemini-b",
+      fetch: fakeFetch,
+    });
+
+    await generateText({ model, prompt: "1回目", maxRetries: 0 });
+    const second = await generateText({
+      model,
+      prompt: "2回目",
+      maxRetries: 0,
+    });
+
+    expect(calls).toEqual(["gemini-a", "gemini-b", "gemini-b"]);
+    expect(second.text).toBe("from gemini-b");
   });
 });

@@ -29,14 +29,41 @@ export type FallbackTiming = {
   maxRounds: number;
   /** この時間を過ぎたら新しく試さない（画面を長く待たせない） */
   deadlineMs: number;
+  /** 混雑・無応答だったモデルを、この時間だけ後回しにする */
+  cooldownMs: number;
 };
 
 const DEFAULT_TIMING: FallbackTiming = {
-  responseTimeoutMs: 20_000,
+  responseTimeoutMs: 10_000,
   roundWaitMs: 1_500,
   maxRounds: 3,
   deadlineMs: 60_000,
+  cooldownMs: 180_000,
 };
+
+/**
+ * 混雑・無応答だったモデルと、後回しにする期限（サーバーのインスタンス内で共有）。
+ * 次の人が同じ混雑したモデルを待たされないようにする。
+ */
+const cooldownUntil = new Map<string, number>();
+
+/** テスト用：後回しの記録を消す */
+export function resetGeminiCooldowns(): void {
+  cooldownUntil.clear();
+}
+
+/** 後回し中のモデルを末尾に回した順番（元の順番は保つ） */
+export function orderByCooldown(
+  models: readonly string[],
+  until: ReadonlyMap<string, number>,
+  now: number
+): string[] {
+  const cooling = (model: string) => (until.get(model) ?? 0) > now;
+  return [
+    ...models.filter((model) => !cooling(model)),
+    ...models.filter(cooling),
+  ];
+}
 
 /**
  * Gemini に送る既定の設定。
@@ -148,7 +175,7 @@ function createModelFallbackFetch(
 
     for (let round = 0; round < timing.maxRounds; round++) {
       if (round > 0) await sleep(timing.roundWaitMs * round);
-      for (const model of models) {
+      for (const model of orderByCooldown(models, cooldownUntil, Date.now())) {
         if (unusable.has(model)) continue;
         if (Date.now() - startedAt > timing.deadlineMs) break;
         const modelUrl = replaceGeminiModelInUrl(url, model);
@@ -174,14 +201,20 @@ function createModelFallbackFetch(
           response = await send(originalBody);
         }
         if (response === "timeout") {
+          cooldownUntil.set(model, Date.now() + timing.cooldownMs);
           console.warn(`Gemini model ${model} timed out; trying next`);
           continue;
         }
         if (!FALLBACK_STATUSES.has(response.status)) {
+          cooldownUntil.delete(model);
           await lastFailure?.body?.cancel();
           return response;
         }
-        if (!TRANSIENT_STATUSES.has(response.status)) unusable.add(model);
+        if (TRANSIENT_STATUSES.has(response.status)) {
+          cooldownUntil.set(model, Date.now() + timing.cooldownMs);
+        } else {
+          unusable.add(model);
+        }
         console.warn(
           `Gemini model ${model} failed with ${response.status}; trying next`
         );
