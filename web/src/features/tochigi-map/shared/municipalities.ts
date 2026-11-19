@@ -26,7 +26,9 @@ export const TOCHIGI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "市",
     mapX: 40.941,
     mapY: 78.672,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-tochigi-shi-xgs6xmxyxqmnc5xk/b4W5UfUPSgxohe17RdcUMRZHPNmqRl1-N86zpTvegJo",
+    external: true,
   },
   {
     id: "09204",
