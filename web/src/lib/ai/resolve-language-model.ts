@@ -1,12 +1,27 @@
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
-import type { LanguageModel } from "ai";
+import {
+  defaultSettingsMiddleware,
+  type LanguageModel,
+  wrapLanguageModel,
+} from "ai";
 
 export type GoogleAiConfig = {
   /** Google AI Studio の API キー（なければ AI Gateway を使う） */
   apiKey: string | undefined;
   /** Gemini API のモデル名（例: gemini-3.8-flash） */
   model: string;
+  /** テストで差し替えるための fetch（通常は省略） */
+  fetch?: typeof fetch;
 };
+
+/**
+ * Gemini に送る既定の設定。
+ * 思考（推論）を既定のままにすると応答に数分かかり、
+ * ページ表示がタイムアウトするため最小にする。
+ */
+const GEMINI_DEFAULT_PROVIDER_OPTIONS = {
+  google: { thinkingConfig: { thinkingLevel: "minimal" } },
+} as const;
 
 /**
  * 使うAIモデルを決める。
@@ -18,5 +33,13 @@ export function resolveLanguageModel(
   config: GoogleAiConfig
 ): LanguageModel {
   if (!config.apiKey) return gatewayModel;
-  return createGoogleGenerativeAI({ apiKey: config.apiKey })(config.model);
+  return wrapLanguageModel({
+    model: createGoogleGenerativeAI({
+      apiKey: config.apiKey,
+      fetch: config.fetch,
+    })(config.model),
+    middleware: defaultSettingsMiddleware({
+      settings: { providerOptions: GEMINI_DEFAULT_PROVIDER_OPTIONS },
+    }),
+  });
 }
