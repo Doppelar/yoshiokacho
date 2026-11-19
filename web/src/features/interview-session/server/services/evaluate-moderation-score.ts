@@ -16,6 +16,8 @@ import {
   getModelName,
 } from "@/features/chat/shared/utils/cost-utils";
 import { DEFAULT_MODERATION_MODEL } from "@/lib/ai/models";
+import { resolveLanguageModel } from "@/lib/ai/resolve-language-model";
+import { env } from "@/lib/env";
 
 /** テスト時にモック注入するための外部依存 */
 export type ModerationDeps = {
@@ -47,7 +49,8 @@ export async function evaluateModerationScore(
   deps?: ModerationDeps
 ): Promise<ModerationOutput> {
   const { system, user } = buildModerationPrompt(input);
-  const model = deps?.model ?? DEFAULT_MODERATION_MODEL;
+  const model =
+    deps?.model ?? resolveLanguageModel(DEFAULT_MODERATION_MODEL, env.googleAi);
 
   const { object, usage, providerMetadata } = await generateObject({
     model,
