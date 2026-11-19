@@ -155,3 +155,109 @@ describe("resolveLanguageModel", () => {
     ).rejects.toThrow();
   });
 });
+
+describe("resolveLanguageModel の再試行", () => {
+  const FAST = {
+    responseTimeoutMs: 30,
+    roundWaitMs: 1,
+    maxRounds: 3,
+    deadlineMs: 5_000,
+  };
+
+  /** モデルごとに「何回目の呼び出しで何を返すか」を決める偽の fetch */
+  function createScriptedFetch(
+    script: Record<string, readonly (number | "hang")[]>
+  ) {
+    const calls: string[] = [];
+    const fakeFetch: typeof fetch = (input, init) => {
+      const model = String(input).match(/\/models\/([^:]+):/)?.[1] ?? "";
+      const nth = calls.filter((name) => name === model).length;
+      calls.push(model);
+      const steps = script[model] ?? [200];
+      const step = steps[Math.min(nth, steps.length - 1)];
+      if (step === "hang") {
+        // 応答を返さず、中断されたら失敗する
+        return new Promise((_, reject) => {
+          init?.signal?.addEventListener("abort", () =>
+            reject(new DOMException("aborted", "AbortError"))
+          );
+        });
+      }
+      return Promise.resolve(
+        step === 200 ? geminiOk(`from ${model}`) : geminiError(step)
+      );
+    };
+    return { fakeFetch, calls };
+  }
+
+  const resolve = (models: string, fakeFetch: typeof fetch) =>
+    resolveLanguageModel("anthropic/claude-haiku-4.5", {
+      apiKey: "test-key",
+      model: models,
+      fetch: fakeFetch,
+      timing: FAST,
+    });
+
+  it("全モデルが混雑（503）なら、少し待ってもう一周する", async () => {
+    const { fakeFetch, calls } = createScriptedFetch({
+      "gemini-a": [503, 200],
+      "gemini-b": [503],
+    });
+
+    const result = await generateText({
+      model: resolve("gemini-a,gemini-b", fakeFetch),
+      prompt: "テスト",
+      maxRetries: 0,
+    });
+
+    expect(result.text).toBe("from gemini-a");
+    expect(calls).toEqual(["gemini-a", "gemini-b", "gemini-a"]);
+  });
+
+  it("応答が返らないモデルは時間切れで飛ばし、次のモデルを使う", async () => {
+    const { fakeFetch, calls } = createScriptedFetch({
+      "gemini-a": ["hang"],
+    });
+
+    const result = await generateText({
+      model: resolve("gemini-a,gemini-b", fakeFetch),
+      prompt: "テスト",
+      maxRetries: 0,
+    });
+
+    expect(result.text).toBe("from gemini-b");
+    expect(calls).toEqual(["gemini-a", "gemini-b"]);
+  });
+
+  it("上限（429）・未対応（404）のモデルは次の周で試さない", async () => {
+    const { fakeFetch, calls } = createScriptedFetch({
+      "gemini-a": [429],
+      "gemini-b": [404],
+      "gemini-c": [503, 200],
+    });
+
+    const result = await generateText({
+      model: resolve("gemini-a,gemini-b,gemini-c", fakeFetch),
+      prompt: "テスト",
+      maxRetries: 0,
+    });
+
+    expect(result.text).toBe("from gemini-c");
+    expect(calls).toEqual(["gemini-a", "gemini-b", "gemini-c", "gemini-c"]);
+  });
+
+  it("何周しても通らなければエラーにする（周回数に上限がある）", async () => {
+    const { fakeFetch, calls } = createScriptedFetch({
+      "gemini-a": [503],
+    });
+
+    await expect(
+      generateText({
+        model: resolve("gemini-a", fakeFetch),
+        prompt: "テスト",
+        maxRetries: 0,
+      })
+    ).rejects.toThrow();
+    expect(calls).toHaveLength(FAST.maxRounds);
+  });
+});
