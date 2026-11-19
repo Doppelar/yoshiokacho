@@ -4,7 +4,7 @@ import type { LanguageModel } from "ai";
 export type GoogleAiConfig = {
   /** Google AI Studio の API キー（なければ AI Gateway を使う） */
   apiKey: string | undefined;
-  /** Gemini API のモデル名（例: gemini-2.5-flash） */
+  /** Gemini API のモデル名（例: gemini-3.8-flash） */
   model: string;
 };
 
