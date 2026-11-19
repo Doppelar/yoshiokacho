@@ -65,6 +65,18 @@ describe("toCouncilBillSlug / getCouncilItemPathForBill", () => {
     );
   });
 
+  it("全国版のテーマ（national-iryo）はテーマのページを返し、未知のテーマは null", () => {
+    expect(
+      getCouncilItemPathForBill({ council: "national", slug: "national-iryo" })
+    ).toBe("/japan/iryo");
+    expect(
+      getCouncilItemPathForBill({ council: "national", slug: "national-nope" })
+    ).toBeNull();
+    expect(
+      getCouncilItemPathForBill({ council: "national", slug: "takasaki-iryo" })
+    ).toBeNull();
+  });
+
   it("吉岡町の議案・不明な議会・静的データにない議案は null", () => {
     expect(
       getCouncilItemPathForBill({ council: null, slug: "some-bill" })

@@ -5,6 +5,10 @@ import {
   type RawOpinionFields,
   type Residence,
 } from "@/features/bill-public-opinions/shared/utils/opinion-input";
+import {
+  IRYO_TOPIC_ID,
+  NATIONAL_COUNCIL,
+} from "@/features/iryo-forum/shared/forum";
 import { findTakasakiItem } from "@/features/takasaki-bills/shared/utils/sessions";
 import { routes } from "@/lib/routes";
 
@@ -52,12 +56,18 @@ export function parseCouncilItemOpinionInput(
 }
 
 /** 議会の議案を bills に登録するときの slug（例: takasaki-r8-4-gian-54） */
-export function toCouncilBillSlug(council: CouncilId, itemId: string): string {
+export function toCouncilBillSlug(council: string, itemId: string): string {
   return `${council}-${itemId}`;
 }
 
+/** 全国版のテーマ（bills.council = national）ごとのページ */
+const NATIONAL_TOPIC_PATHS: Readonly<Record<string, string>> = {
+  [IRYO_TOPIC_ID]: routes.iryoForum(),
+};
+
 /**
  * bills の council・slug から、その議会の議案ページのパスを返す。
+ * 全国版のテーマ（council = national）は、そのテーマのページを返す。
  * 吉岡町の議案（council が NULL）や、静的データにない議案なら null。
  */
 export function getCouncilItemPathForBill(bill: {
@@ -65,6 +75,11 @@ export function getCouncilItemPathForBill(bill: {
   slug: string | null;
 }): string | null {
   const { council, slug } = bill;
+  if (council === NATIONAL_COUNCIL && slug !== null) {
+    const prefix = `${NATIONAL_COUNCIL}-`;
+    if (!slug.startsWith(prefix)) return null;
+    return NATIONAL_TOPIC_PATHS[slug.slice(prefix.length)] ?? null;
+  }
   if (council === null || slug === null || !isCouncilId(council)) return null;
   const prefix = `${council}-`;
   if (!slug.startsWith(prefix)) return null;

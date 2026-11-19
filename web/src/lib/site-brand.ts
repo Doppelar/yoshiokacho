@@ -26,6 +26,8 @@ const NATIONAL_BRAND: SiteBrand = {
 /** 議会ID（bills.council）ごとのサイト名 */
 const COUNCIL_BRANDS: Readonly<Record<string, SiteBrand>> = {
   takasaki: TAKASAKI_BRAND,
+  // 全国版のテーマ（医療のこれから など）のAIインタビュー
+  national: NATIONAL_BRAND,
 };
 
 /** 吉岡町以外の議会の議案（bills.id → bills.council） */
