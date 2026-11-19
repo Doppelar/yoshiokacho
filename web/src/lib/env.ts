@@ -62,10 +62,11 @@ export const env = {
    */
   googleAi: {
     apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || undefined,
-    // 無料枠の1日の上限が大きい順（3.5/3.1 Flash Lite は500回、3.8 Flash は20回）
+    // 無料枠の1日の上限が大きい順（3.5/3.1 Flash Lite は500回、ほかの Gemini は20回）。
+    // 混雑で全滅しないよう、別枠の Gemini と Gemma 4（1日14,400回）も最後に控えとして置く
     model:
       process.env.GOOGLE_AI_MODEL ||
-      "gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-3.1-flash-lite-preview,gemini-3.8-flash",
+      "gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-3.1-flash-lite-preview,gemini-2.5-flash-lite,gemini-3.6-flash,gemini-3-flash-preview,gemini-3.8-flash,gemma-4-31b-it,gemma-4-26b-it",
   },
 } as const;
 
