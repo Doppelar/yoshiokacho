@@ -1,6 +1,6 @@
 import "server-only";
 
-import { Bot, ExternalLink, HeartPulse, Users } from "lucide-react";
+import { Bot, ExternalLink, HeartPulse, ListChecks, Users } from "lucide-react";
 import type { Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layouts/container";
@@ -10,7 +10,7 @@ import { routes } from "@/lib/routes";
 import { withFallback } from "@/lib/utils/with-fallback";
 import {
   IRYO_FORUM,
-  IRYO_THEMES,
+  IRYO_THEME_DETAILS,
   IRYO_TOPIC_ID,
   NATIONAL_COUNCIL,
 } from "../../shared/forum";
@@ -53,6 +53,29 @@ export async function IryoForumPage() {
       </section>
 
       <section
+        aria-labelledby="iryo-themes-heading"
+        className="mt-8 rounded-2xl border bg-white p-5"
+      >
+        <h2
+          id="iryo-themes-heading"
+          className="flex items-center gap-2 text-lg font-bold"
+        >
+          <ListChecks className="size-5" aria-hidden />
+          テーマ詳細
+        </h2>
+        <p className="mt-2 text-[15px] leading-7">{IRYO_FORUM.themeIntro}</p>
+        <p className="mt-3 text-sm font-bold">
+          扱うテーマは、以下を想定しています。
+        </p>
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-[15px] leading-7">
+          {IRYO_THEME_DETAILS.map(({ detail }) => (
+            <li key={detail}>{detail}</li>
+          ))}
+        </ul>
+        <p className="mt-3 text-[15px] leading-7">{IRYO_FORUM.themeOutro}</p>
+      </section>
+
+      <section
         aria-labelledby="iryo-interview-heading"
         className="mt-8 rounded-2xl border bg-white p-5"
       >
@@ -61,21 +84,11 @@ export async function IryoForumPage() {
           className="flex items-center gap-2 text-lg font-bold"
         >
           <Bot className="size-5" aria-hidden />
-          AIインタビュー：医療制度のどんなことに関心がありますか？
+          AIインタビュー：上のテーマのどこに関心がありますか？
         </h2>
         <p className="mt-2 text-sm leading-6 text-mirai-text-secondary">
           AIの質問に答えながら、関心のあるテーマや身近で感じていることをお聞かせください（10分ほど）。公開を選んだご意見は、だれでも読めるようにこのサイトで公開します。病名や治療内容など、個人の健康に関わることは書かないでください。
         </p>
-        <ul className="mt-3 flex flex-wrap gap-2" aria-label="テーマの例">
-          {IRYO_THEMES.filter((theme) => theme !== "その他").map((theme) => (
-            <li
-              key={theme}
-              className="rounded-full bg-muted px-3 py-1 text-xs font-bold"
-            >
-              {theme}
-            </li>
-          ))}
-        </ul>
         {billId === null ? (
           <p className="mt-4 text-sm font-bold">
             AIインタビューは準備中です。もうしばらくお待ちください。
