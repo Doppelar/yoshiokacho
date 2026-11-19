@@ -26,6 +26,8 @@ import { TimeUpPrompt } from "./time-up-prompt";
 interface InterviewChatClientProps {
   billId: string;
   billTitle: string;
+  /** 最初の案内（既定は法案向け） */
+  startMessage?: string;
   sessionId: string;
   initialMessages: Array<{
     id: string;
@@ -44,6 +46,7 @@ interface InterviewChatClientProps {
 export function InterviewChatClient({
   billId,
   billTitle,
+  startMessage = "法案についてのAIインタビューを開始します。",
   sessionId,
   initialMessages,
   mode,
@@ -177,7 +180,7 @@ export function InterviewChatClient({
             {messages.length === 0 && !object && (
               <div className="flex flex-col gap-4">
                 <p className="text-sm font-bold leading-[1.8] text-mirai-text">
-                  法案についてのAIインタビューを開始します。
+                  {startMessage}
                 </p>
                 <p className="text-sm text-gray-600">
                   あなたの意見や経験をお聞かせください。

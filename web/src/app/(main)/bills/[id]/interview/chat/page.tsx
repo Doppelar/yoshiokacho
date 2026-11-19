@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getInterviewCopy } from "@/features/interview-config/shared/utils/interview-copy";
 
 export const dynamic = "force-dynamic";
 
@@ -47,6 +48,7 @@ export default async function InterviewChatPage({
       <InterviewChatClient
         billId={billId}
         billTitle={bill.bill_content?.title ?? bill.name}
+        startMessage={getInterviewCopy(bill.council).chatStart}
         sessionId={session.id}
         initialMessages={messages}
         mode={interviewConfig.mode}

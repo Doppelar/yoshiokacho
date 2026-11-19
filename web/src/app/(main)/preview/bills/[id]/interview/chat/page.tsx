@@ -1,7 +1,9 @@
 import { AlertTriangle } from "lucide-react";
 import { notFound } from "next/navigation";
+import { getInterviewCopy } from "@/features/interview-config/shared/utils/interview-copy";
 
 export const dynamic = "force-dynamic";
+
 import { getBillByIdAdmin } from "@/features/bills/server/loaders/get-bill-by-id-admin";
 import { validatePreviewToken } from "@/features/bills/server/loaders/validate-preview-token";
 import { getInterviewConfigAdmin } from "@/features/interview-config/server/loaders/get-interview-config-admin";
@@ -86,6 +88,7 @@ export default async function InterviewPreviewChatPage({
         <InterviewChatClient
           billId={billId}
           billTitle={bill.bill_content?.title ?? bill.name}
+          startMessage={getInterviewCopy(bill.council).chatStart}
           sessionId={session.id}
           initialMessages={messages}
           mode={interviewConfig.mode}

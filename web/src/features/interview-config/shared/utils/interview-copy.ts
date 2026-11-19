@@ -11,6 +11,8 @@ export type InterviewCopy = {
   overviewSuffix: string;
   detailLink: string;
   backLink: string;
+  /** チャット画面の最初の案内 */
+  chatStart: string;
 };
 
 const BILL_COPY: InterviewCopy = {
@@ -22,6 +24,7 @@ const BILL_COPY: InterviewCopy = {
     "について、AIがあなたの考えを深掘りするチャット型インタビューです",
   detailLink: "法案詳細はこちら",
   backLink: "法案詳細に戻る",
+  chatStart: "法案についてのAIインタビューを開始します。",
 };
 
 const NATIONAL_TOPIC_COPY: InterviewCopy = {
@@ -33,6 +36,7 @@ const NATIONAL_TOPIC_COPY: InterviewCopy = {
     "について、どんなことに関心があるかをAIがチャットでうかがうインタビューです",
   detailLink: "テーマの紹介ページへ",
   backLink: "テーマの紹介ページに戻る",
+  chatStart: "テーマについてのAIインタビューを開始します。",
 };
 
 /** bills.council から、案内ページの文言を選ぶ */
