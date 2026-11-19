@@ -186,6 +186,9 @@ describe("resolveLanguageModel の再試行", () => {
     roundWaitMs: 1,
     maxRounds: 3,
     deadlineMs: 5_000,
+    cooldownMs: 180_000,
+    // 並行問い合わせは別のテストで確かめるため、ここでは起きないようにする
+    hedgeDelayMs: 10_000,
   };
 
   /** モデルごとに「何回目の呼び出しで何を返すか」を決める偽の fetch */
@@ -372,5 +375,41 @@ describe("混雑したモデルの後回し", () => {
 
     expect(calls).toEqual(["gemini-a", "gemini-b", "gemini-b"]);
     expect(second.text).toBe("from gemini-b");
+  });
+});
+
+describe("応答が遅いときの並行問い合わせ", () => {
+  it("先のモデルが遅ければ次のモデルにも問い合わせ、先に返った方を使って遅い方は中断する", async () => {
+    const calls: string[] = [];
+    let slowAborted = false;
+    const fakeFetch: typeof fetch = (input, init) => {
+      const model = String(input).match(/\/models\/([^:]+):/)?.[1] ?? "";
+      calls.push(model);
+      if (model === "gemini-slow") {
+        return new Promise((_, reject) => {
+          init?.signal?.addEventListener("abort", () => {
+            slowAborted = true;
+            reject(new DOMException("aborted", "AbortError"));
+          });
+        });
+      }
+      return Promise.resolve(geminiOk(`from ${model}`));
+    };
+    const model = resolveLanguageModel("anthropic/claude-haiku-4.5", {
+      apiKey: "test-key",
+      model: "gemini-slow,gemini-fast,gemini-unused",
+      fetch: fakeFetch,
+      timing: { responseTimeoutMs: 5_000, hedgeDelayMs: 10 },
+    });
+
+    const result = await generateText({
+      model,
+      prompt: "テスト",
+      maxRetries: 0,
+    });
+
+    expect(result.text).toBe("from gemini-fast");
+    expect(calls).toEqual(["gemini-slow", "gemini-fast"]);
+    expect(slowAborted).toBe(true);
   });
 });

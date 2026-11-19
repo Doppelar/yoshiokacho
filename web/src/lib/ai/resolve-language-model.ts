@@ -31,6 +31,8 @@ export type FallbackTiming = {
   deadlineMs: number;
   /** 混雑・無応答だったモデルを、この時間だけ後回しにする */
   cooldownMs: number;
+  /** 応答がこの時間内に返らなければ、次のモデルにも並行して問い合わせる */
+  hedgeDelayMs: number;
 };
 
 const DEFAULT_TIMING: FallbackTiming = {
@@ -39,6 +41,7 @@ const DEFAULT_TIMING: FallbackTiming = {
   maxRounds: 3,
   deadlineMs: 60_000,
   cooldownMs: 180_000,
+  hedgeDelayMs: 4_000,
 };
 
 /**
@@ -156,9 +159,15 @@ async function fetchWithResponseTimeout(
   }
 }
 
+/** 同時に問い合わせるモデルの数の上限（無料枠を使いすぎない） */
+const MAX_PARALLEL = 2;
+
 /**
- * 上から順にモデルを試し、上限・混雑・未対応・応答なしなら URL のモデル名だけ差し替えて
- * 次のモデルで送り直す fetch。全部だめなら少し待ってもう一周する。
+ * 上から順にモデルを試す fetch。
+ * - 上限・混雑・未対応・応答なしなら、URL のモデル名だけ差し替えてすぐ次のモデルへ
+ * - 応答が遅いモデルがあれば、hedgeDelayMs 後に次のモデルにも並行して問い合わせ、
+ *   先に返ってきた方を使う（残りは中断する）
+ * - 全部だめなら少し待ってもう一周する
  * 通常の応答・ストリーミングの両方で、応答本文を読む前に判定する。
  */
 function createModelFallbackFetch(
@@ -169,60 +178,128 @@ function createModelFallbackFetch(
   return async (input, init) => {
     const url = input instanceof Request ? input.url : String(input);
     const startedAt = Date.now();
+    const pastDeadline = () => Date.now() - startedAt > timing.deadlineMs;
     // 上限・未対応のモデルは、次の周では試さない
     const unusable = new Set<string>();
     let lastFailure: Response | undefined;
+    const keepFailure = async (response: Response) => {
+      await lastFailure?.body?.cancel();
+      lastFailure = response;
+    };
+
+    /** 1つのモデルに送る（思考を軽くした設定が未対応なら元の設定で送り直す） */
+    const attempt = async (model: string, signal: AbortSignal) => {
+      const send = (body: RequestInit["body"]) =>
+        fetchWithResponseTimeout(
+          baseFetch,
+          replaceGeminiModelInUrl(url, model),
+          {
+            ...init,
+            body,
+            signal: init?.signal
+              ? AbortSignal.any([init.signal, signal])
+              : signal,
+          },
+          timing.responseTimeoutMs
+        );
+      const originalBody = init?.body;
+      const tunedBody =
+        typeof originalBody === "string"
+          ? tuneThinkingForModel(originalBody, model)
+          : null;
+      const response = await send(tunedBody ?? originalBody);
+      if (tunedBody && response !== "timeout" && response.status === 400) {
+        await response.body?.cancel();
+        console.warn(`Gemini model ${model} rejected tuned thinking; retrying`);
+        return send(originalBody);
+      }
+      return response;
+    };
+
+    /** queue の順に、遅ければ並行して問い合わせ、最初に成功した応答を返す */
+    const race = (queue: readonly string[]) =>
+      new Promise<Response | null>((resolve, reject) => {
+        const inFlight = new Map<string, AbortController>();
+        let next = 0;
+        let done = false;
+        let hedgeTimer: ReturnType<typeof setTimeout> | undefined;
+        const finish = (response: Response | null) => {
+          if (done) return;
+          done = true;
+          clearTimeout(hedgeTimer);
+          for (const controller of inFlight.values()) controller.abort();
+          resolve(response);
+        };
+        const launch = () => {
+          if (done) return;
+          if (next >= queue.length || pastDeadline()) {
+            if (inFlight.size === 0) finish(null);
+            return;
+          }
+          const model = queue[next++];
+          const controller = new AbortController();
+          inFlight.set(model, controller);
+          clearTimeout(hedgeTimer);
+          hedgeTimer = setTimeout(() => {
+            if (inFlight.size < MAX_PARALLEL) launch();
+          }, timing.hedgeDelayMs);
+          attempt(model, controller.signal).then(
+            async (response) => {
+              inFlight.delete(model);
+              if (done) {
+                if (response !== "timeout") await response.body?.cancel();
+                return;
+              }
+              if (response === "timeout") {
+                cooldownUntil.set(model, Date.now() + timing.cooldownMs);
+                console.warn(`Gemini model ${model} timed out; trying next`);
+              } else if (!FALLBACK_STATUSES.has(response.status)) {
+                cooldownUntil.delete(model);
+                finish(response);
+                return;
+              } else {
+                if (TRANSIENT_STATUSES.has(response.status)) {
+                  cooldownUntil.set(model, Date.now() + timing.cooldownMs);
+                } else {
+                  unusable.add(model);
+                }
+                console.warn(
+                  `Gemini model ${model} failed with ${response.status}; trying next`
+                );
+                await keepFailure(response);
+              }
+              launch();
+            },
+            (error: unknown) => {
+              inFlight.delete(model);
+              if (done) return;
+              if (init?.signal?.aborted) {
+                done = true;
+                clearTimeout(hedgeTimer);
+                for (const other of inFlight.values()) other.abort();
+                reject(error);
+                return;
+              }
+              cooldownUntil.set(model, Date.now() + timing.cooldownMs);
+              console.warn(`Gemini model ${model} request failed; trying next`);
+              launch();
+            }
+          );
+        };
+        launch();
+      });
 
     for (let round = 0; round < timing.maxRounds; round++) {
       if (round > 0) await sleep(timing.roundWaitMs * round);
-      for (const model of orderByCooldown(models, cooldownUntil, Date.now())) {
-        if (unusable.has(model)) continue;
-        if (Date.now() - startedAt > timing.deadlineMs) break;
-        const modelUrl = replaceGeminiModelInUrl(url, model);
-        const send = (body: RequestInit["body"]) =>
-          fetchWithResponseTimeout(
-            baseFetch,
-            modelUrl,
-            { ...init, body },
-            timing.responseTimeoutMs
-          );
-        const originalBody = init?.body;
-        const tunedBody =
-          typeof originalBody === "string"
-            ? tuneThinkingForModel(originalBody, model)
-            : null;
-        let response = await send(tunedBody ?? originalBody);
-        // 軽くした設定が未対応（400）なら、同じモデルで元の設定のまま送り直す
-        if (tunedBody && response !== "timeout" && response.status === 400) {
-          await response.body?.cancel();
-          console.warn(
-            `Gemini model ${model} rejected tuned thinking; retrying`
-          );
-          response = await send(originalBody);
-        }
-        if (response === "timeout") {
-          cooldownUntil.set(model, Date.now() + timing.cooldownMs);
-          console.warn(`Gemini model ${model} timed out; trying next`);
-          continue;
-        }
-        if (!FALLBACK_STATUSES.has(response.status)) {
-          cooldownUntil.delete(model);
-          await lastFailure?.body?.cancel();
-          return response;
-        }
-        if (TRANSIENT_STATUSES.has(response.status)) {
-          cooldownUntil.set(model, Date.now() + timing.cooldownMs);
-        } else {
-          unusable.add(model);
-        }
-        console.warn(
-          `Gemini model ${model} failed with ${response.status}; trying next`
-        );
+      const queue = orderByCooldown(models, cooldownUntil, Date.now()).filter(
+        (model) => !unusable.has(model)
+      );
+      const winner = await race(queue);
+      if (winner) {
         await lastFailure?.body?.cancel();
-        lastFailure = response;
+        return winner;
       }
-      if (unusable.size === models.length) break;
-      if (Date.now() - startedAt > timing.deadlineMs) break;
+      if (unusable.size === models.length || pastDeadline()) break;
     }
 
     return (
