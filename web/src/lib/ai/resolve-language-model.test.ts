@@ -6,7 +6,7 @@ describe("resolveLanguageModel", () => {
     expect(
       resolveLanguageModel("anthropic/claude-haiku-4.5", {
         apiKey: undefined,
-        model: "gemini-2.5-flash",
+        model: "gemini-3.8-flash",
       })
     ).toBe("anthropic/claude-haiku-4.5");
   });
@@ -14,11 +14,11 @@ describe("resolveLanguageModel", () => {
   it("Google のキーがあれば Gemini API の指定モデルを使う", () => {
     const model = resolveLanguageModel("anthropic/claude-haiku-4.5", {
       apiKey: "test-key",
-      model: "gemini-2.5-flash",
+      model: "gemini-3.8-flash",
     });
     expect(typeof model).toBe("object");
     expect(model).toMatchObject({
-      modelId: "gemini-2.5-flash",
+      modelId: "gemini-3.8-flash",
       provider: expect.stringContaining("google"),
     });
   });
