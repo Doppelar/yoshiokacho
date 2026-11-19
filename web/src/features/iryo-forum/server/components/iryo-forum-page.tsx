@@ -1,11 +1,20 @@
 import "server-only";
 
-import { Bot, ExternalLink, HeartPulse, ListChecks, Users } from "lucide-react";
+import { formatFeedbackDate } from "@mirai-gikai/shared/local-edition-feedback/feedback";
+import {
+  Bot,
+  ExternalLink,
+  HeartPulse,
+  ListChecks,
+  MessageSquare,
+  Users,
+} from "lucide-react";
 import type { Route } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layouts/container";
 import { Button } from "@/components/ui/button";
 import { findCouncilItemInterviewBillId } from "@/features/council-item-interviews/server/repositories/council-item-interview-repository";
+import { FeedbackForm } from "@/features/local-edition-feedback/client/components/feedback-form";
 import { routes } from "@/lib/routes";
 import { withFallback } from "@/lib/utils/with-fallback";
 import {
@@ -14,18 +23,27 @@ import {
   IRYO_TOPIC_ID,
   NATIONAL_COUNCIL,
 } from "../../shared/forum";
-import { countIryoInterviewReports } from "../repositories/iryo-forum-repository";
+import { submitIryoPost } from "../actions/submit-iryo-post";
+import {
+  countIryoInterviewReports,
+  findVisibleTopicPosts,
+} from "../repositories/iryo-forum-repository";
 
 /** 全国版「医療のこれからを考える会」のページ */
 export async function IryoForumPage() {
   // インタビュー未登録・テーブル未作成の環境では「準備中」にする
-  const [billId, reportCount] = await Promise.all([
+  const [billId, reportCount, board] = await Promise.all([
     withFallback(
       findCouncilItemInterviewBillId(NATIONAL_COUNCIL, IRYO_TOPIC_ID),
       null,
       "iryo interview"
     ),
     withFallback(countIryoInterviewReports(), 0, "iryo interview count"),
+    withFallback(
+      findVisibleTopicPosts(IRYO_TOPIC_ID),
+      { available: false, posts: [] },
+      "iryo posts"
+    ),
   ]);
 
   return (
@@ -112,6 +130,67 @@ export async function IryoForumPage() {
               </Button>
             </div>
           </>
+        )}
+      </section>
+
+      <section
+        aria-labelledby="iryo-board-heading"
+        className="mt-8 rounded-2xl border bg-white p-5"
+      >
+        <h2
+          id="iryo-board-heading"
+          className="flex items-center gap-2 text-lg font-bold"
+        >
+          <MessageSquare className="size-5" aria-hidden />
+          掲示板
+        </h2>
+        <p className="mt-2 text-sm leading-6 text-mirai-text-secondary">
+          医療のこれからについて、経験や疑問、ニュースの感想などを自由に書き込めます。ログイン不要で、投稿はすぐに公開されます。病名や治療内容など、個人の健康に関わることは書かないでください。
+        </p>
+        {!board.available && (
+          <p role="status" className="mt-3 text-sm font-bold">
+            掲示板は準備中です。もうしばらくお待ちください。
+          </p>
+        )}
+        <div className="mt-4">
+          <FeedbackForm
+            available={board.available}
+            submit={submitIryoPost}
+            bodyLabel="投稿内容"
+            bodyPlaceholder="例：地域の病院が減っていて心配です／医療AIのニュースを見て…"
+          />
+        </div>
+        <h3 className="mt-8 font-bold">
+          みなさんの投稿{" "}
+          <span className="text-sm text-muted-foreground">
+            （{board.posts.length}件）
+          </span>
+        </h3>
+        {board.posts.length === 0 ? (
+          <p className="mt-2 text-sm text-muted-foreground">
+            まだ投稿はありません。最初の投稿をしてみませんか？
+          </p>
+        ) : (
+          <ol className="mt-3 space-y-3">
+            {board.posts.map((post) => (
+              <li key={post.id} className="rounded-xl border p-4">
+                <article>
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <h4 className="font-bold">{post.display_name}</h4>
+                    <time
+                      dateTime={post.created_at}
+                      className="text-xs text-muted-foreground"
+                    >
+                      {formatFeedbackDate(post.created_at)}
+                    </time>
+                  </div>
+                  <p className="mt-2 whitespace-pre-wrap break-words leading-7">
+                    {post.body}
+                  </p>
+                </article>
+              </li>
+            ))}
+          </ol>
         )}
       </section>
 

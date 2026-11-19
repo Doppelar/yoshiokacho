@@ -902,6 +902,33 @@ export type Database = {
           },
         ]
       }
+      national_topic_posts: {
+        Row: {
+          body: string
+          created_at: string
+          display_name: string
+          id: string
+          is_hidden: boolean
+          topic: string
+        }
+        Insert: {
+          body: string
+          created_at?: string
+          display_name?: string
+          id?: string
+          is_hidden?: boolean
+          topic: string
+        }
+        Update: {
+          body?: string
+          created_at?: string
+          display_name?: string
+          id?: string
+          is_hidden?: boolean
+          topic?: string
+        }
+        Relationships: []
+      }
       preview_tokens: {
         Row: {
           bill_id: string

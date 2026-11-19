@@ -10,7 +10,25 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { submitFeedback } from "../../server/actions/submit-feedback";
 
-export function FeedbackForm({ available = true }: { available?: boolean }) {
+type SubmitFeedback = (
+  input: unknown
+) => Promise<{ ok: true } | { ok: false; error: string }>;
+
+/**
+ * ログイン不要・即時公開の掲示板の投稿フォーム。
+ * 既定は全国一覧への意見掲示板。submit と文言を渡せば別の掲示板でも使える。
+ */
+export function FeedbackForm({
+  available = true,
+  submit = submitFeedback,
+  bodyLabel = "全国一覧へのご意見",
+  bodyPlaceholder = "掲載内容の修正、使い方のご提案などをお寄せください。",
+}: {
+  available?: boolean;
+  submit?: SubmitFeedback;
+  bodyLabel?: string;
+  bodyPlaceholder?: string;
+}) {
   const id = useId();
   const router = useRouter();
   const [pending, startTransition] = useTransition();
@@ -24,7 +42,7 @@ export function FeedbackForm({ available = true }: { available?: boolean }) {
     setSubmitted(false);
     startTransition(async () => {
       try {
-        const result = await submitFeedback({
+        const result = await submit({
           displayName: String(data.get("displayName") ?? ""),
           body: String(data.get("body") ?? ""),
           website: String(data.get("website") ?? ""),
@@ -57,7 +75,7 @@ export function FeedbackForm({ available = true }: { available?: boolean }) {
       </div>
       <div className="space-y-1.5">
         <label htmlFor={`${id}-body`} className="text-sm font-semibold">
-          全国一覧へのご意見
+          {bodyLabel}
         </label>
         <Textarea
           id={`${id}-body`}
@@ -67,7 +85,7 @@ export function FeedbackForm({ available = true }: { available?: boolean }) {
           maxLength={FEEDBACK_BODY_MAX_LENGTH}
           disabled={pending || !available}
           aria-describedby={`${id}-note`}
-          placeholder="掲載内容の修正、使い方のご提案などをお寄せください。"
+          placeholder={bodyPlaceholder}
         />
         <p id={`${id}-note`} className="text-xs text-muted-foreground">
           2000文字以内。投稿するとすぐに公開されます。メールアドレスなどの個人情報は記載しないでください。
