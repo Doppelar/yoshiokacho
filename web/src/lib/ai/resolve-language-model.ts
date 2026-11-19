@@ -17,10 +17,10 @@ export type GoogleAiConfig = {
 /**
  * Gemini に送る既定の設定。
  * 思考（推論）を既定のままにすると応答に数分かかり、
- * ページ表示がタイムアウトするため最小にする。
+ * ページ表示がタイムアウトするため low にする（gemini-3.8-flash は minimal 非対応）。
  */
 const GEMINI_DEFAULT_PROVIDER_OPTIONS = {
-  google: { thinkingConfig: { thinkingLevel: "minimal" } },
+  google: { thinkingConfig: { thinkingLevel: "low" } },
 } as const;
 
 /**

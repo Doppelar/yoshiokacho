@@ -24,7 +24,7 @@ describe("resolveLanguageModel", () => {
     });
   });
 
-  it("Gemini への送信時に思考レベルを minimal にする", async () => {
+  it("Gemini への送信時に思考レベルを low にする", async () => {
     const requests: { url: string; body: unknown }[] = [];
     const fakeFetch: typeof fetch = async (input, init) => {
       requests.push({
@@ -56,7 +56,7 @@ describe("resolveLanguageModel", () => {
     expect(requests).toHaveLength(1);
     expect(requests[0].url).toContain("gemini-3.8-flash");
     expect(requests[0].body).toMatchObject({
-      generationConfig: { thinkingConfig: { thinkingLevel: "minimal" } },
+      generationConfig: { thinkingConfig: { thinkingLevel: "low" } },
     });
   });
 });
