@@ -56,6 +56,14 @@ export const env = {
     dailyTotalCostLimitUsd: chatDailyTotalCostLimitUsd,
     monthlyTotalCostLimitUsd: chatMonthlyTotalCostLimitUsd,
   },
+  /**
+   * Google AI Studio の Gemini API。キーがあれば AI Gateway の代わりに使う
+   * （AI Gateway の無料クレジットでは会話用モデルが使えないため）。
+   */
+  googleAi: {
+    apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || undefined,
+    model: process.env.GOOGLE_AI_MODEL || "gemini-2.5-flash",
+  },
 } as const;
 
 // 型定義
