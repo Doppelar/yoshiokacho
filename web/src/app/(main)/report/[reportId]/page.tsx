@@ -10,8 +10,6 @@ interface PublicReportRouteProps {
   }>;
   searchParams: Promise<{
     from?: string | string[];
-    quote?: string | string[];
-    mid?: string | string[];
   }>;
 }
 
@@ -72,17 +70,13 @@ export default async function PublicReportRoute({
   searchParams,
 }: PublicReportRouteProps) {
   const { reportId } = await params;
-  const { from, quote, mid } = await searchParams;
+  const { from } = await searchParams;
   // 同一キーが複数指定されると配列になり得るため、先頭の値に正規化する。
   const fromValue = Array.isArray(from) ? from[0] : from;
-  const quoteValue = Array.isArray(quote) ? quote[0] : quote;
-  const midValue = Array.isArray(mid) ? mid[0] : mid;
   return (
     <PublicReportPage
       reportId={reportId}
       from={fromValue === "opinions" ? "opinions" : undefined}
-      highlightQuote={quoteValue}
-      highlightMessageId={midValue}
     />
   );
 }
