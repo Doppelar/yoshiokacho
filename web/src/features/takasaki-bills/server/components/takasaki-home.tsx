@@ -6,6 +6,11 @@ import Link from "next/link";
 import { Container } from "@/components/layouts/container";
 import { Card } from "@/components/ui/card";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
+import { getCouncilVoiceTallies } from "@/features/council-voice-tally/server/loaders/get-council-voice-tallies";
+import type {
+  VoiceTallies,
+  VoiceTally,
+} from "@/features/council-voice-tally/shared/utils/voice-tally";
 import { CouncilSwitchBanner } from "@/features/gunma-map/client/council-switch-banner";
 import { routes } from "@/lib/routes";
 import { TAKASAKI_SESSIONS } from "../../shared/sessions";
@@ -29,8 +34,9 @@ import {
   TakasakiGeneralQuestions,
 } from "./takasaki-general-questions";
 import { TakasakiItemIllustration } from "./takasaki-item-illustration";
+import { TakasakiVoiceSummary, VoiceCounts } from "./takasaki-voice-summary";
 
-export function TakasakiHome({
+export async function TakasakiHome({
   sessionId,
   level,
 }: {
@@ -43,6 +49,7 @@ export function TakasakiHome({
   const otherItems = items.filter((item) => !item.rollCall);
   const generalQuestions = getGeneralQuestions(session.id);
   const debateSummary = getSessionDebateSummary(session.id);
+  const voiceTallies: VoiceTallies = await getCouncilVoiceTallies("takasaki");
 
   return (
     <Container className="pt-24 pb-16 md:pt-12">
@@ -59,6 +66,8 @@ export function TakasakiHome({
           みらい議会＠高崎市は、高崎市議会でどんな議論が交わされ、どう決まったかを伝えるページです。議決結果と会派・議員ごとの賛否に加え、会議録をもとに、一般質問での質問と市の答弁、委員会での議案の質疑の要旨を掲載しています。議案ごとに、どなたでも賛成・反対の意見を投稿できます。
         </p>
       </section>
+
+      <TakasakiVoiceSummary tallies={voiceTallies} />
 
       <nav aria-label="高崎市議会の会期" className="mt-8 flex flex-wrap gap-3">
         {TAKASAKI_SESSIONS.map((entry) => (
@@ -107,7 +116,13 @@ export function TakasakiHome({
         <section className="flex flex-col gap-4 pt-6">
           <h3 className="text-lg font-bold">賛否が分かれた議案</h3>
           {splitItems.map((item) => (
-            <ItemCard key={item.id} item={item} session={session} highlight />
+            <ItemCard
+              key={item.id}
+              item={item}
+              session={session}
+              voices={voiceTallies[item.id]}
+              highlight
+            />
           ))}
         </section>
       )}
@@ -115,7 +130,12 @@ export function TakasakiHome({
       <section className="flex flex-col gap-3 py-10">
         <h3 className="text-lg font-bold">議案・報告など</h3>
         {otherItems.map((item) => (
-          <ItemCard key={item.id} item={item} session={session} />
+          <ItemCard
+            key={item.id}
+            item={item}
+            session={session}
+            voices={voiceTallies[item.id]}
+          />
         ))}
       </section>
 
@@ -129,10 +149,13 @@ export function TakasakiHome({
 function ItemCard({
   item,
   session,
+  voices,
   highlight = false,
 }: {
   item: TakasakiItem;
   session: TakasakiSession;
+  /** この議案に集まった声。まだなければ undefined */
+  voices?: VoiceTally;
   highlight?: boolean;
 }) {
   const tally = tallyRollCall(session, item);
@@ -174,6 +197,7 @@ function ItemCard({
             委員会での質疑あり
           </p>
         )}
+        {voices && <VoiceCounts tally={voices} className="mt-2" />}
       </Card>
     </Link>
   );
