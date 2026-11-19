@@ -1,19 +1,11 @@
-import { ArrowDown } from "lucide-react";
-import type { Route } from "next";
-import Link from "next/link";
-import { getInterviewMessageLink } from "@/features/interview-config/shared/utils/interview-links";
 import type { ParsedOpinion } from "../utils/format-utils";
 
 interface ReportMainOpinionsProps {
   opinions: ParsedOpinion[];
-  reportId: string;
 }
 
-/** レポート詳細「💬主な意見」セクション。各意見から会話ログの該当箇所へ遷移する。 */
-export function ReportMainOpinions({
-  opinions,
-  reportId,
-}: ReportMainOpinionsProps) {
+/** レポート詳細「💬主な意見」セクション。会話ログは公開しないため、意見の要旨だけを載せる。 */
+export function ReportMainOpinions({ opinions }: ReportMainOpinionsProps) {
   if (opinions.length === 0) return null;
 
   return (
@@ -39,21 +31,6 @@ export function ReportMainOpinions({
                   {opinion.content}
                 </p>
               </div>
-            )}
-            {opinion.source_message_id && (
-              <Link
-                href={
-                  getInterviewMessageLink(
-                    reportId,
-                    opinion.source_message_id
-                  ) as Route
-                }
-                prefetch={false}
-                className="flex items-center gap-2 self-end text-[13px] font-bold text-primary-accent hover:underline"
-              >
-                インタビューの前後を読む
-                <ArrowDown className="size-[18px] shrink-0" />
-              </Link>
             )}
           </div>
         ))}

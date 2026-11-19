@@ -21,7 +21,7 @@ interface RespondentCardProps {
 /**
  * 回答一覧の回答者カード（回答者1人=1カード）。
  * アバター・ロール・期待懸念/カテゴリ・回答日・要約テキストを表示し、
- * カード全体がレポート詳細（会話ログ）へのリンクになる。
+ * カード全体がレポート詳細へのリンクになる。
  */
 export function RespondentCard({ respondent, now }: RespondentCardProps) {
   const dateLabel = formatOpinionDate(respondent.created_at, now);

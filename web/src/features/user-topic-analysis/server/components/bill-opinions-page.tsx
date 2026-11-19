@@ -64,7 +64,7 @@ export async function BillOpinionsPage({ billId }: BillOpinionsPageProps) {
                 <Info className="size-3 text-primary-accent" />
               </span>
               <p className="text-[12px] leading-5 text-mirai-text">
-                実際に回答された一人ひとりのAIインタビューの内容と、会話ログを読むことができます。公開に同意されたインタビュー回答のみ掲載しています。
+                実際に回答された一人ひとりのAIインタビューの内容（主な意見と要約）を読むことができます。AIとのやりとりの全文は公開していません。公開に同意されたインタビュー回答のみ掲載しています。
               </p>
             </div>
           </div>
