@@ -10,7 +10,7 @@ export const EHIME_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 47.885,
     mapY: 32.172,
     status: "live",
-    href: "https://muse.ai/s/song-shan-shi-yi-hui-nojian-eruhua-lz6fxhkxabcxgr/6fw43I1w6tHKpeiILWdaEmYC5calQQ1nlY51Zv-cI0E",
+    href: "https://muse.ai/s/mierumirai-matsuyama-shi-ban-x0xb6g2pxoxgfxn5/HGLuUHXbtMLNIuRKlHNHD1Nv7Btjqw7bFfeRLwYng2U",
     external: true,
   },
   {
