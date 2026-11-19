@@ -1,0 +1,223 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "format": "WebP, width 1280px, quality 82",
+  "assets": [
+    {
+      "id": "hokoku-10",
+      "title": "専決処分の報告について",
+      "src": "/illustrations/takasaki/hokoku-10.webp",
+      "alt": "市の処分報告書を確認する職員のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A municipal officer carefully reviewing an administrative decision report at a desk, orderly document folders and a neutral generic civic building in the distance. Depict administrative reporting only, no imaginary decision details."
+    },
+    {
+      "id": "gian-92",
+      "title": "令和7年度高崎市一般会計及び特別会計歳入歳出決算認定について",
+      "src": "/illustrations/takasaki/gian-92.webp",
+      "alt": "市の決算書を住民と職員が確認する様子のイメージ",
+      "prompt": "Create ONE finished editorial illustration image for a Japanese municipal council proposal detail webpage. Use-case illustration-story. Asset ID takasaki-gian-92-financial-accounts. Subject: a municipal annual financial accounts review, based ONLY on the proposal title 『令和7年度高崎市一般会計及び特別会計歳入歳出決算認定について』. A calm, clear scene of two ordinary Japanese residents and a municipal staff member reviewing an open financial ledger and organized papers on a table, with a small generic Japanese city neighborhood motif in the background. Show review and civic understanding, without implying approval or disapproval. Consistent polished hand-painted editorial illustration with restrained soft gouache texture, simple rounded shapes, friendly adult proportions, warm ivory background and muted mint/teal accents matching a civic information website. Wide landscape 16:9 composition, generous breathing room, one main scene, clear at small mobile size. No text, no letters, no numbers, no captions, no symbols of political parties, no official seals or logos, no identifiable politician, no identifiable real building, no misleading charts or specific amounts. Full opaque background. Output a single standalone web illustration, not a page mockup or contact sheet."
+    },
+    {
+      "id": "gian-93",
+      "title": "令和7年度高崎市水道事業会計及び高崎市公共下水道事業会計利益の処分及び決算認定について",
+      "src": "/illustrations/takasaki/gian-93.webp",
+      "alt": "水道施設と会計書類を確認する職員のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. Municipal water and sewer annual accounts review: a utility staff member calmly checking a blank ledger beside a small model-like generic water supply facility, clean water reservoir and underground pipe cutaway. Focus on reviewing utility finances; no exact costs or promised outcomes."
+    },
+    {
+      "id": "gian-94",
+      "title": "市道路線の認定について",
+      "src": "/illustrations/takasaki/gian-94.webp",
+      "alt": "市内の道路と経路図を確認する様子のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. Recognition of municipal road routes: a generic Japanese neighborhood street with sidewalk, modest houses and planted trees, a city planner holding a simple unlabeled route drawing. Safe ordinary street scene; no specific planned construction or actual location."
+    },
+    {
+      "id": "gian-95",
+      "title": "請負契約締結について（高崎市総合保健センター・高崎市立中央図書館LED照明更新工事）",
+      "src": "/illustrations/takasaki/gian-95.webp",
+      "alt": "図書館のLED照明を点検する様子のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. LED lighting replacement contract for a public health center and central library: a maintenance worker inspecting ceiling LED lights with a librarian among library shelves, small adjoining generic public health reception motif. Lights and books convey the proposal, no building facade claimed to be real."
+    },
+    {
+      "id": "gian-96",
+      "title": "土地取得について",
+      "src": "/illustrations/takasaki/gian-96.webp",
+      "alt": "土地の図面を確認する担当者のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A neutral land acquisition review: two municipal planners looking at an unlabeled parcel map beside an ordinary open green land plot. No construction shown or promised, no actual Takasaki site."
+    },
+    {
+      "id": "gian-97",
+      "title": "財産の取得について（小型バス）",
+      "src": "/illustrations/takasaki/gian-97.webp",
+      "alt": "地域の移動を支える小型バスのイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A small unbranded Japanese community minibus at a modest neighborhood stop, with ordinary adults waiting calmly. Focus on the small bus being acquired, no claimed new route, fare, or timetable."
+    },
+    {
+      "id": "gian-98",
+      "title": "高崎市認可地縁団体印鑑条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-98.webp",
+      "alt": "地域団体の印鑑と登録書類のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A community association representative and municipal clerk reviewing a blank registration form, with a small traditional Japanese personal seal resting on a tray. No seal impression text, no official emblem."
+    },
+    {
+      "id": "gian-99",
+      "title": "高崎市認定こども園の認定に関する要件を定める条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-99.webp",
+      "alt": "認定こども園の認定要件を確認する様子のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A generic certified early childhood education center, an administrator and educator reviewing a blank checklist at the entrance, children playing safely in the background. Theme is accreditation requirements, not a specific reform outcome."
+    },
+    {
+      "id": "gian-100",
+      "title": "高崎市幼保連携型認定こども園の学級の編制、職員、設備及び運営に関する基準を定める条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-100.webp",
+      "alt": "こども園の教室と保育環境のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A bright generic integrated kindergarten and nursery classroom with a teacher supervising a small group of children, child-sized shelves, tables and soft play area. Theme is classroom and staffing standards, no exact staffing ratios."
+    },
+    {
+      "id": "gian-101",
+      "title": "高崎市家庭的保育事業等の設備及び運営に関する基準を定める条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-101.webp",
+      "alt": "家庭的な保育環境のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A small home-like childcare room, a caregiver seated on a rug supervising a few young children with simple toys, low shelves and soft daylight. No text, real home or exact mandated equipment."
+    },
+    {
+      "id": "gian-102",
+      "title": "高崎市乳児等通園支援事業の設備及び運営に関する基準を定める条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-102.webp",
+      "alt": "乳児の通園を支える保育環境のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A parent bringing an infant to a calm generic daycare nursery where a caregiver welcomes them, soft floor mats and infant toys in the background. No signage, schedules or claims about eligibility."
+    },
+    {
+      "id": "gian-103",
+      "title": "高崎市一時保護委託者の登録等に関する基準を定める条例の制定について",
+      "src": "/illustrations/takasaki/gian-103.webp",
+      "alt": "子どもの一時保護に関する登録手続きのイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. An adult caregiver and child welfare worker calmly discussing blank registration papers at a private consultation desk. A small child-friendly reading corner in background. Respectful and reassuring, no distressed child or abuse depiction."
+    },
+    {
+      "id": "gian-104",
+      "title": "高崎市児童福祉施設の設備及び運営に関する基準を定める条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-104.webp",
+      "alt": "児童福祉施設で子どもを支える様子のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A generic child welfare facility common room with accessible low furniture, a staff member helping children read and play. A calm everyday care setting, no identifiable real facility or reform claims."
+    },
+    {
+      "id": "gian-105",
+      "title": "高崎市指定通所支援の事業等の人員、設備及び運営に関する基準を定める条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-105.webp",
+      "alt": "子どもの通所支援のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A child with a mobility aid participating in a small daytime support activity with a trained adult at a low accessible table, simple blocks and picture cards without text. Dignified inclusive ordinary scene, no medical or therapeutic outcome claims."
+    },
+    {
+      "id": "gian-106",
+      "title": "高崎市指定障害児入所施設等の人員、設備及び運営に関する基準を定める条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-106.webp",
+      "alt": "子どもが暮らす支援施設のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A welcoming accessible residential care common space for children with disabilities, a caregiver helping a child who uses a wheelchair choose a book near accessible shelves. Respectful everyday support, no hospital ward or claimed policy change."
+    },
+    {
+      "id": "gian-107",
+      "title": "高崎市廃棄物の処理及び清掃に関する条例及び高崎市ごみ処理施設及び一般廃棄物の最終処分場に係る生活環境影響調査結果の縦覧等の手続に関する条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-107.webp",
+      "alt": "ごみの分別と清掃のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. Residents sorting ordinary recyclable materials into simple unlabelled containers while a sanitation worker checks a blank clipboard, clean neighborhood setting. Theme waste management and environmental review, no fictitious new sorting rules."
+    },
+    {
+      "id": "gian-108",
+      "title": "からすがわフルーツテラス設置及び管理に関する条例の制定について",
+      "src": "/illustrations/takasaki/gian-108.webp",
+      "alt": "果樹と交流スペースのイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A conceptual fruit-themed community terrace: small fruit trees with simple fruit baskets and modest outdoor tables, a couple of residents talking. Generic imaginative orchard terrace only, no actual proposed building facade, no invented opening date or signage."
+    },
+    {
+      "id": "gian-109",
+      "title": "高崎市景観条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-109.webp",
+      "alt": "まちなみの景観を考えるイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A municipal planner with an unlabeled sketchbook looking across a calm Japanese streetscape with modest shopfronts, trees and distant green hills. Neutral landscape planning theme, no before-after or actual landmark."
+    },
+    {
+      "id": "gian-110",
+      "title": "高崎市水道事業、簡易水道事業及び公共下水道事業の設置等に関する条例の一部改正について",
+      "src": "/illustrations/takasaki/gian-110.webp",
+      "alt": "暮らしを支える水道・下水道のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A gentle educational city infrastructure scene: ordinary homes above ground, a simple clearly separated blue clean-water pipe and gray wastewater pipe below, a utility worker with blank clipboard. Schematic illustrative pipes, no technical specification or actual network map."
+    },
+    {
+      "id": "gian-111",
+      "title": "令和8年度高崎市一般会計補正予算（第4号）",
+      "src": "/illustrations/takasaki/gian-111.webp",
+      "alt": "市の補正予算を確認するイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. Municipal staff reviewing an open budget folder with blank pages and a small generic town model on a desk, one resident listening. Theme a budget adjustment, no amounts, arrows, growth chart or claims of funding a particular project."
+    },
+    {
+      "id": "gian-112",
+      "title": "令和8年度高崎市介護保険特別会計補正予算（第1号）",
+      "src": "/illustrations/takasaki/gian-112.webp",
+      "alt": "高齢者の介護を支える予算のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. An older adult and a caregiver in a calm day room, with a small blank budget folder on a nearby municipal consultation desk. Focus dignified elder care and budget review, no specific benefits or amounts promised."
+    },
+    {
+      "id": "gian-113",
+      "title": "令和8年度高崎市農業集落排水事業特別会計補正予算（第1号）",
+      "src": "/illustrations/takasaki/gian-113.webp",
+      "alt": "農業集落の排水設備のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A small rural Japanese settlement beside fields, a modest generic wastewater treatment tank and simple underground pipe cutaway, a maintenance worker checking equipment. Focus rural wastewater budget, no technical guarantees or actual location."
+    },
+    {
+      "id": "gian-114",
+      "title": "校外学習中の事故に係る損害賠償に関する和解及びその損害賠償の額を定めることについて",
+      "src": "/illustrations/takasaki/gian-114.webp",
+      "alt": "事故の和解に関する書類を確認するイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. Two adult representatives with a neutral mediator calmly reviewing blank settlement documents at a table, an understated school excursion backpack on a chair nearby. No injured child, accident reenactment, blame, money amounts, or implied court finding."
+    },
+    {
+      "id": "gian-115",
+      "title": "高崎市教育委員会委員の任命同意について",
+      "src": "/illustrations/takasaki/gian-115.webp",
+      "alt": "教育委員の任命に関する書類のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A neutral education board appointment theme: empty chairs around a meeting table with blank nomination papers and a few schoolbooks, soft daylight. No candidate portrait, campaign symbols or approval gesture."
+    },
+    {
+      "id": "gian-116",
+      "title": "高崎市教育委員会委員の任命同意について",
+      "src": "/illustrations/takasaki/gian-116.webp",
+      "alt": "学校教育について話し合う会議室のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A different neutral education appointment scene: two generic adult administrators discussing a blank nomination folder in a modest school meeting room with books and a chalkboard with no writing. No identifiable candidate, election cues or endorsement."
+    },
+    {
+      "id": "gian-117",
+      "title": "人権擁護委員候補者の推薦について",
+      "src": "/illustrations/takasaki/gian-117.webp",
+      "alt": "人権相談を支える窓口のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A generic human rights consultation desk where an adult resident talks privately with a calm counselor, uncluttered warm interior. Theme human rights commissioner recommendation, no identifiable nominee or specific case details."
+    },
+    {
+      "id": "gian-118",
+      "title": "人権擁護委員候補者の推薦について",
+      "src": "/illustrations/takasaki/gian-118.webp",
+      "alt": "多様な住民の声を聞く相談のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A different human rights support illustration: an older adult and a younger adult conversing with a counselor around a small round table, diverse everyday residents in a modest community room. No candidate identity, text, campaign symbols or endorsement."
+    },
+    {
+      "id": "gian-119",
+      "title": "人権擁護委員候補者の推薦について",
+      "src": "/illustrations/takasaki/gian-119.webp",
+      "alt": "人権を尊重して話を聞く相談員のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A third distinct human rights recommendation theme: a counselor listening respectfully to a resident beside an accessible community reception counter, an empty chair and small houseplant. No actual nominee portrait, specific legal case or policy promises."
+    },
+    {
+      "id": "seigan-1",
+      "title": "日本政府に「核兵器禁止条約再検討会議」へのオブザーバー参加と非核三原則の堅持を求める意見書の採択について",
+      "src": "/illustrations/takasaki/seigan-1.webp",
+      "alt": "核兵器禁止条約に関する請願のイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A neutral civic petition about attending an international nuclear weapons treaty review conference as observer: ordinary residents reviewing a blank petition folder, a small globe and a distant generic international meeting table motif. No weapons, explosions, flags, slogans, activist logos, endorsement or claim of participation already occurring."
+    },
+    {
+      "id": "ikensho-1",
+      "title": "核兵器禁止条約第1回再検討会議へのオブザーバー参加を求める意見書",
+      "src": "/illustrations/takasaki/ikensho-1.webp",
+      "alt": "国際会議へのオブザーバー参加を考えるイメージ",
+      "prompt": "Create ONE standalone editorial illustration for a Japanese municipal council bill webpage. Wide landscape 16:9, polished soft hand-painted gouache texture, rounded simple shapes, warm ivory, muted mint and teal civic website palette. Clear small-screen composition. No text, numbers, charts, logos, party symbols, real politicians, identifiable real buildings, or approval/disapproval signals. No mockup, no collage. Illustration-story use case. A neutral international treaty observer participation opinion proposal: a generic circular international conference room with empty desks, a small globe and a blank document folder in foreground. No flags, country labels, real delegates, slogans, weapons, or suggestion attendance already decided."
+    }
+  ]
+}
