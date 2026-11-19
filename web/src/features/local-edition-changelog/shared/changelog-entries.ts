@@ -14,6 +14,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-19",
+    title: "栃木県日光市を追加しました",
+    href: routes.tochigiMap(),
+  },
+  {
+    date: "2026-11-19",
     title: "栃木県栃木市を追加しました",
     href: routes.tochigiMap(),
   },
