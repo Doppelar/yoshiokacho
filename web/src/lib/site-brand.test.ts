@@ -46,14 +46,19 @@ describe("getSiteBrand", () => {
     ).toBe("みらい議会＠高崎市");
   });
 
-  it("全国版のテーマのインタビュー・回答一覧では全国版にする", () => {
+  it("医療のこれからを考える会のページ・インタビュー・回答一覧は独自の名前にする", () => {
     const councilBills = { "bill-n": "national" };
-    expect(getSiteBrand("/bills/bill-n/interview", councilBills).name).toBe(
-      "みらい議会 全国版"
-    );
-    expect(getSiteBrand("/bills/bill-n/opinions", councilBills).name).toBe(
-      "みらい議会 全国版"
-    );
+    for (const pathname of [
+      "/japan/iryo",
+      "/bills/bill-n/interview",
+      "/bills/bill-n/opinions",
+    ]) {
+      expect(getSiteBrand(pathname, councilBills)).toEqual({
+        name: "医療のこれからを考える会",
+        href: "/japan/iryo",
+      });
+    }
+    expect(getSiteBrand("/japan").name).toBe("みらい議会 全国版");
   });
 
   it("吉岡町の議案や未知の議会の議案は吉岡町版のままにする", () => {

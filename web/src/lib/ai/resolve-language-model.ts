@@ -54,6 +54,37 @@ const GEMINI_DEFAULT_PROVIDER_OPTIONS = {
  */
 const FALLBACK_STATUSES = new Set([400, 404, 429, 500, 503]);
 
+/**
+ * モデルに合わせて思考（推論）の設定を軽くした送信本文を返す。変えないときは null。
+ * - Flash-Lite：最小（minimal）にして応答を速くする
+ * - Gemini 2.5：thinkingLevel 非対応のため、思考の量（thinkingBudget）を0にする
+ * - Gemma：思考の設定に非対応のため外す
+ * それ以外（3.x Flash など）は既定の low のまま。
+ */
+export function tuneThinkingForModel(
+  body: string,
+  model: string
+): string | null {
+  let parsed: { generationConfig?: { thinkingConfig?: unknown } };
+  try {
+    parsed = JSON.parse(body);
+  } catch {
+    return null;
+  }
+  const config = parsed.generationConfig;
+  if (!config?.thinkingConfig) return null;
+  if (model.startsWith("gemma")) {
+    delete config.thinkingConfig;
+  } else if (model.startsWith("gemini-2.5")) {
+    config.thinkingConfig = { thinkingBudget: 0 };
+  } else if (model.includes("flash-lite")) {
+    config.thinkingConfig = { thinkingLevel: "minimal" };
+  } else {
+    return null;
+  }
+  return JSON.stringify(parsed);
+}
+
 /** "a, b,,c" → ["a", "b", "c"] */
 export function parseModelList(value: string): string[] {
   return value
@@ -120,12 +151,28 @@ function createModelFallbackFetch(
       for (const model of models) {
         if (unusable.has(model)) continue;
         if (Date.now() - startedAt > timing.deadlineMs) break;
-        const response = await fetchWithResponseTimeout(
-          baseFetch,
-          replaceGeminiModelInUrl(url, model),
-          init,
-          timing.responseTimeoutMs
-        );
+        const modelUrl = replaceGeminiModelInUrl(url, model);
+        const send = (body: RequestInit["body"]) =>
+          fetchWithResponseTimeout(
+            baseFetch,
+            modelUrl,
+            { ...init, body },
+            timing.responseTimeoutMs
+          );
+        const originalBody = init?.body;
+        const tunedBody =
+          typeof originalBody === "string"
+            ? tuneThinkingForModel(originalBody, model)
+            : null;
+        let response = await send(tunedBody ?? originalBody);
+        // 軽くした設定が未対応（400）なら、同じモデルで元の設定のまま送り直す
+        if (tunedBody && response !== "timeout" && response.status === 400) {
+          await response.body?.cancel();
+          console.warn(
+            `Gemini model ${model} rejected tuned thinking; retrying`
+          );
+          response = await send(originalBody);
+        }
         if (response === "timeout") {
           console.warn(`Gemini model ${model} timed out; trying next`);
           continue;

@@ -55,8 +55,8 @@ export async function completeInterviewSession({
     throw new Error("No report found in conversation messages");
   }
 
-  // モデレーションスコアを評価（タイムアウト30秒）
-  const MODERATION_TIMEOUT_MS = 30_000;
+  // モデレーションスコアを評価（完了画面を待たせないようタイムアウト12秒。失敗しても保存は続ける）
+  const MODERATION_TIMEOUT_MS = 12_000;
   let moderationScore: number | null = null;
   let moderationReasoning: string | null = null;
   if (!canUseAi) {

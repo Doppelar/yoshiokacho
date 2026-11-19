@@ -4,6 +4,7 @@ import {
   parseModelList,
   replaceGeminiModelInUrl,
   resolveLanguageModel,
+  tuneThinkingForModel,
 } from "./resolve-language-model";
 
 function geminiOk(text: string): Response {
@@ -259,5 +260,66 @@ describe("resolveLanguageModel の再試行", () => {
       })
     ).rejects.toThrow();
     expect(calls).toHaveLength(FAST.maxRounds);
+  });
+});
+
+describe("tuneThinkingForModel", () => {
+  const body = JSON.stringify({
+    contents: [],
+    generationConfig: { thinkingConfig: { thinkingLevel: "low" } },
+  });
+  const thinking = (model: string) => {
+    const tuned = tuneThinkingForModel(body, model);
+    return tuned === null ? "unchanged" : JSON.parse(tuned).generationConfig;
+  };
+
+  it("Flash-Lite は思考を最小にする", () => {
+    expect(thinking("gemini-3.5-flash-lite")).toEqual({
+      thinkingConfig: { thinkingLevel: "minimal" },
+    });
+  });
+
+  it("Gemini 2.5 は思考の量を0にする", () => {
+    expect(thinking("gemini-2.5-flash-lite")).toEqual({
+      thinkingConfig: { thinkingBudget: 0 },
+    });
+  });
+
+  it("Gemma は思考の設定を外す", () => {
+    expect(thinking("gemma-4-31b-it")).toEqual({});
+  });
+
+  it("それ以外のモデルや思考の設定がない本文は変えない", () => {
+    expect(thinking("gemini-3.8-flash")).toBe("unchanged");
+    expect(tuneThinkingForModel("{}", "gemini-3.5-flash-lite")).toBeNull();
+    expect(
+      tuneThinkingForModel("not json", "gemini-3.5-flash-lite")
+    ).toBeNull();
+  });
+});
+
+describe("思考の軽量化が未対応のとき", () => {
+  it("同じモデルで元の設定（low）のまま送り直す", async () => {
+    const levels: string[] = [];
+    const fakeFetch: typeof fetch = async (_input, init) => {
+      const level = JSON.parse(String(init?.body)).generationConfig
+        .thinkingConfig.thinkingLevel;
+      levels.push(level);
+      return level === "minimal" ? geminiError(400) : geminiOk("ok");
+    };
+    const model = resolveLanguageModel("anthropic/claude-haiku-4.5", {
+      apiKey: "test-key",
+      model: "gemini-9-flash-lite,gemini-b",
+      fetch: fakeFetch,
+    });
+
+    const result = await generateText({
+      model,
+      prompt: "テスト",
+      maxRetries: 0,
+    });
+
+    expect(result.text).toBe("ok");
+    expect(levels).toEqual(["minimal", "low"]);
   });
 });
