@@ -28,6 +28,7 @@ import {
   GENERAL_QUESTIONS_SECTION_ID,
   TakasakiGeneralQuestions,
 } from "./takasaki-general-questions";
+import { TakasakiItemIllustration } from "./takasaki-item-illustration";
 
 export function TakasakiHome({
   sessionId,
@@ -145,6 +146,7 @@ function ItemCard({
             : "border p-4 shadow-none transition-colors hover:bg-muted/50"
         }
       >
+        <TakasakiItemIllustration itemId={item.id} compact />
         <p className="text-xs font-bold text-primary-accent">
           高崎市議会 {formatItemName(item)}
           {item.committee ? `・${item.committee}` : ""}
