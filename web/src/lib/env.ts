@@ -62,7 +62,10 @@ export const env = {
    */
   googleAi: {
     apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || undefined,
-    model: process.env.GOOGLE_AI_MODEL || "gemini-3.8-flash",
+    // 無料枠の1日の上限が大きい順（3.5/3.1 Flash Lite は500回、3.8 Flash は20回）
+    model:
+      process.env.GOOGLE_AI_MODEL ||
+      "gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-3.1-flash-lite-preview,gemini-3.8-flash",
   },
 } as const;
 
