@@ -4,6 +4,7 @@ import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSiteBrand } from "@/components/layouts/site-brand-provider";
 import { DifficultySelector } from "@/features/bill-difficulty/client/components/difficulty-selector";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
 import { InterviewHeaderActions } from "@/features/interview-session/client/components/interview-header-actions";
@@ -11,7 +12,6 @@ import { sendDifficultyStateEvent } from "@/lib/analytics/preference-state-event
 import { useOnPageView } from "@/lib/analytics/use-on-page-view";
 import { isInterviewPage, isMainPage } from "@/lib/page-layout-utils";
 import { routes } from "@/lib/routes";
-import { getSiteBrand } from "@/lib/site-brand";
 import { HamburgerMenu } from "./hamburger-menu";
 
 interface HeaderClientProps {
@@ -22,7 +22,7 @@ export function HeaderClient({ difficultyLevel }: HeaderClientProps) {
   const pathname = usePathname();
   const showDifficultySelector = isMainPage(pathname);
   const showInterviewActions = isInterviewPage(pathname);
-  const brand = getSiteBrand(pathname);
+  const brand = useSiteBrand();
   // 吉岡町版はロゴタイプ画像（サイト名入り）、全国版はテキストでサイト名を出す
   const showYoshiokaLogotype = brand.href === routes.home();
 

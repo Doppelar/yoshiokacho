@@ -5,6 +5,7 @@ import type { Route } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layouts/container";
+import { SiteBrandBill } from "@/components/layouts/site-brand-provider";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/breadcrumb";
 import { InterviewLandingSection } from "@/features/interview-config/client/components/interview-landing-section";
 import { getInterviewConfig } from "@/features/interview-config/server/loaders/get-interview-config";
@@ -54,6 +55,7 @@ export async function PublicReportPage({
 
   return (
     <div className="min-h-dvh bg-mirai-surface pt-24 md:pt-0">
+      <SiteBrandBill billId={data.bill_id} />
       <Container>
         <div className="flex flex-col gap-8 pb-8 md:pt-8">
           {/* パンくず + 法案タイトル */}

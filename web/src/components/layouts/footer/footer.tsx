@@ -4,18 +4,18 @@ import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSiteBrand } from "@/components/layouts/site-brand-provider";
 import { isInterviewPage } from "@/lib/page-layout-utils";
-import { getSiteBrand, type SiteBrand } from "@/lib/site-brand";
+import type { SiteBrand } from "@/lib/site-brand";
 import { primaryLinks } from "./footer.config";
 
 export function Footer() {
   const pathname = usePathname();
+  const brand = useSiteBrand();
 
   if (isInterviewPage(pathname)) {
     return null;
   }
-
-  const brand = getSiteBrand(pathname);
 
   return (
     <footer className="bg-mirai-gradient text-slate-900">

@@ -23,14 +23,35 @@ const NATIONAL_BRAND: SiteBrand = {
   href: routes.japanMap(),
 };
 
+/** 議会ID（bills.council）ごとのサイト名 */
+const COUNCIL_BRANDS: Readonly<Record<string, SiteBrand>> = {
+  takasaki: TAKASAKI_BRAND,
+};
+
+/** 吉岡町以外の議会の議案（bills.id → bills.council） */
+export type CouncilBills = Readonly<Record<string, string>>;
+
 /**
  * 表示中のページに合わせたサイト名とロゴのリンク先。
  * 全国地図と都道府県ページは全国版、高崎市のページは高崎市版として見せる。
+ * 議案のAIインタビュー・意見ページ（/bills/[id]/...）やレポートでは、
+ * その議案（pageBillId があればそれを優先）の議会に合わせる。
  */
-export function getSiteBrand(pathname: string): SiteBrand {
+export function getSiteBrand(
+  pathname: string,
+  councilBills: CouncilBills = {},
+  pageBillId: string | null = null
+): SiteBrand {
   if (isNationalEditionPage(pathname)) return NATIONAL_BRAND;
   if (isTakasakiPage(pathname)) return TAKASAKI_BRAND;
-  return YOSHIOKA_BRAND;
+  const billId = pageBillId ?? extractBillIdFromBillPath(pathname);
+  const council = billId === null ? undefined : councilBills[billId];
+  return (council && COUNCIL_BRANDS[council]) || YOSHIOKA_BRAND;
+}
+
+/** /bills/[id]/... と /preview/bills/[id]/... から議案IDを取り出す */
+function extractBillIdFromBillPath(pathname: string): string | null {
+  return pathname.match(/^(?:\/preview)?\/bills\/([^/]+)/)?.[1] ?? null;
 }
 
 function isTakasakiPage(pathname: string): boolean {
