@@ -9,7 +9,7 @@ export const KYOTO_MUNICIPALITIES: readonly RegionMunicipality[] = [
     mapX: 71.2,
     mapY: 61.9,
     status: "live",
-    href: "https://muse.ai/s/mierumiraijing-du-shi-ban-jxc6fxyxcxrxhgxa9/B3dV5HE0m4U0b6LtanUN4z3Gh7cJDmfL1d23zKwQGoE",
+    href: "https://muse.ai/s/mierumirai-kyoto-shi-ban-yxu6g2pxkovxtxo/Cc68nvIWYFZcg3NjqjR0E9E2S9UogAqcGxvjqrH5Btg",
     external: true,
   },
   {
