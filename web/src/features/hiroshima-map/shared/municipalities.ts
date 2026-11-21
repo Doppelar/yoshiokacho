@@ -128,7 +128,9 @@ export const HIROSHIMA_MUNICIPALITIES: readonly HiroshimaMunicipality[] = [
     type: "市",
     mapX: 30,
     mapY: 80.5,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-etajima-shi-dc6xsgkxaoho7/6ycjFmjkFaP3WjoTqIyhOggPFOI24U2QDwApbk5F-Tk",
+    external: true,
   },
   {
     id: "fuchu-town",
