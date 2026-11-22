@@ -20,6 +20,7 @@ import {
   getGeneralQuestions,
   hasCommitteeQuestions,
 } from "../../shared/utils/deliberations";
+import { getItemExplanation } from "../../shared/utils/item-explanations";
 import { findTakasakiSession } from "../../shared/utils/sessions";
 import {
   formatItemName,
@@ -159,6 +160,7 @@ function ItemCard({
   highlight?: boolean;
 }) {
   const tally = tallyRollCall(session, item);
+  const explanation = getItemExplanation(item.id);
 
   return (
     <Link href={routes.takasakiBillDetail(item.id) as Route}>
@@ -183,6 +185,11 @@ function ItemCard({
         >
           {item.title}
         </h4>
+        {explanation && (
+          <p className="mt-3 text-sm leading-6 text-mirai-text-secondary">
+            {explanation.plain[0]}
+          </p>
+        )}
         <p className="mt-2 text-sm font-bold">
           {formatResult(session, item)}
           {tally && (
