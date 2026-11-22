@@ -5,6 +5,7 @@ import {
 } from "../debate-summaries";
 import { TAKASAKI_COMMITTEE_DELIBERATIONS } from "../deliberations";
 import {
+  describeDifficulty,
   getItemDebateSummary,
   getSessionDebateSummary,
   selectDebateParagraphs,
@@ -20,6 +21,15 @@ describe("selectDebateParagraphs", () => {
 
   it("詳しくのときは詳しい段落を返す", () => {
     expect(selectDebateParagraphs(summary, "hard")).toEqual(["くわしい"]);
+  });
+});
+
+describe("describeDifficulty", () => {
+  it("今の表示内容と、スイッチを切り替えたときの内容を案内する", () => {
+    expect(describeDifficulty("normal")).toContain("わかりやすい言葉");
+    expect(describeDifficulty("normal")).toContain("スイッチを入れると");
+    expect(describeDifficulty("hard")).toContain("詳しい内容です");
+    expect(describeDifficulty("hard")).toContain("スイッチを切ると");
   });
 });
 
