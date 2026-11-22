@@ -32,16 +32,43 @@ describe("一般質問（議事ベース）", () => {
     }
   });
 
-  it("会議録が未公開の第5回定例会は、通告項目だけを持ち要旨を推測しない", () => {
+  it("令和8年第5回定例会は会議録から総括質疑2人・一般質問27人分の質問と答弁を持つ", () => {
     const set = getGeneralQuestions("r8-5");
-    expect(set?.status).toBe("pending");
+    expect(set?.status).toBe("published");
     expect(set?.questions).toHaveLength(27);
-    for (const question of set?.questions ?? []) {
-      expect(question.minutesUrl).toBeUndefined();
+    expect(set?.representativeQuestions?.map((q) => q.member)).toEqual([
+      "堀口順",
+      "宮原田綾香",
+    ]);
+    const all = [
+      ...(set?.representativeQuestions ?? []),
+      ...(set?.questions ?? []),
+    ];
+    for (const question of all) {
+      expect(question.minutesUrl).toMatch(
+        /^https:\/\/takasaki\.gijiroku\.com\/voices\/.*&FINO=\d+&HUID=\d+$/
+      );
+      expect(question.topics.length).toBeGreaterThan(0);
       for (const topic of question.topics) {
-        expect(topic.exchanges).toHaveLength(0);
+        expect(topic.exchanges.length).toBeGreaterThan(0);
+        for (const exchange of topic.exchanges) {
+          expect(exchange.question.length).toBeGreaterThan(0);
+          expect(exchange.answerer.length).toBeGreaterThan(0);
+          expect(exchange.answer.length).toBeGreaterThan(0);
+        }
       }
     }
+  });
+
+  it("第5回定例会の一般質問は質問通告の日程どおり9月7日から10日に並ぶ", () => {
+    const set = getGeneralQuestions("r8-5");
+    const groups = groupQuestionsByDate(set?.questions ?? []);
+    expect(groups.map((g) => [g.date, g.questions.length])).toEqual([
+      ["9月7日", 7],
+      ["9月8日", 7],
+      ["9月9日", 7],
+      ["9月10日", 6],
+    ]);
   });
 
   it("データのない会期は undefined", () => {
