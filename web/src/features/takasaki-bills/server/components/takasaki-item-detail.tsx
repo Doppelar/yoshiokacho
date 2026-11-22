@@ -19,6 +19,7 @@ import {
 import { TakasakiCommitteeDeliberations } from "./takasaki-committee-deliberations";
 import { TakasakiDebateSummarySection } from "./takasaki-debate-summary";
 import { TakasakiDisclaimer } from "./takasaki-disclaimer";
+import { TakasakiItemExplanationSection } from "./takasaki-item-explanation";
 import { TakasakiItemIllustration } from "./takasaki-item-illustration";
 
 export function TakasakiItemDetail({
@@ -46,6 +47,8 @@ export function TakasakiItemDetail({
         高崎市議会 {session.name} {formatItemName(item)}
       </p>
       <h1 className="mt-2 text-3xl font-bold leading-tight">{item.title}</h1>
+
+      <TakasakiItemExplanationSection itemId={item.id} />
 
       <TakasakiItemIllustration itemId={item.id} />
 
