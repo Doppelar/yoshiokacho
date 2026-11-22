@@ -1,6 +1,7 @@
 import "server-only";
 
 import { ChevronDown, ExternalLink } from "lucide-react";
+import type { ReactNode } from "react";
 import type {
   TakasakiExchange,
   TakasakiGeneralQuestion,
@@ -20,32 +21,70 @@ export function TakasakiGeneralQuestions({
 }) {
   const published = set.status === "published";
   return (
-    <section
-      id={GENERAL_QUESTIONS_SECTION_ID}
-      aria-labelledby={`${GENERAL_QUESTIONS_SECTION_ID}-heading`}
-      className="flex scroll-mt-28 flex-col gap-4 py-10"
-    >
-      <div className="space-y-2">
-        <h3
-          id={`${GENERAL_QUESTIONS_SECTION_ID}-heading`}
-          className="text-lg font-bold"
-        >
-          一般質問（{set.questions.length}人）
-        </h3>
-        <p className="text-sm leading-7 text-mirai-text-secondary">
-          {published
+    <>
+      {set.representativeQuestions?.length ? (
+        <QuestionsSection
+          id="representative-questions"
+          title="総括質疑"
+          description="決算などの議案について、会派の代表が市長の考えをただした質疑です。会議録から質問と答弁の要旨をまとめました。名前を押すと内容が開きます。"
+          questions={set.representativeQuestions}
+          published={published}
+        />
+      ) : null}
+      <QuestionsSection
+        id={GENERAL_QUESTIONS_SECTION_ID}
+        title="一般質問"
+        description={
+          published
             ? "議員が市の考えをただした一般質問です。質問通告の項目ごとに、会議録から質問と答弁の要旨をまとめました。名前を押すと内容が開きます。"
-            : "この会期の会議録はまだ公開されていません。現在は質問通告の項目のみを掲載しており、会議録の公開後に質問と答弁の要旨を追加します。"}
-        </p>
+            : "この会期の会議録はまだ公開されていません。現在は質問通告の項目のみを掲載しており、会議録の公開後に質問と答弁の要旨を追加します。"
+        }
+        questions={set.questions}
+        published={published}
+      >
         {published && set.absentMembers && set.absentMembers.length > 0 && (
           <p className="text-xs text-mirai-text-note">
             {set.absentMembers.join("・")}
             議員は質問を通告していましたが、会議を欠席したため質問は行われませんでした。
           </p>
         )}
+      </QuestionsSection>
+    </>
+  );
+}
+
+function QuestionsSection({
+  id,
+  title,
+  description,
+  questions,
+  published,
+  children,
+}: {
+  id: string;
+  title: string;
+  description: string;
+  questions: readonly TakasakiGeneralQuestion[];
+  published: boolean;
+  children?: ReactNode;
+}) {
+  return (
+    <section
+      id={id}
+      aria-labelledby={`${id}-heading`}
+      className="flex scroll-mt-28 flex-col gap-4 py-10"
+    >
+      <div className="space-y-2">
+        <h3 id={`${id}-heading`} className="text-lg font-bold">
+          {title}（{questions.length}人）
+        </h3>
+        <p className="text-sm leading-7 text-mirai-text-secondary">
+          {description}
+        </p>
+        {children}
       </div>
 
-      {groupQuestionsByDate(set.questions).map((group) => (
+      {groupQuestionsByDate(questions).map((group) => (
         <div key={group.date} className="space-y-3">
           <h4 className="text-sm font-bold text-primary-accent">
             {group.date}

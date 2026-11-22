@@ -58,6 +58,8 @@ export type TakasakiGeneralQuestionSet = {
   /** published: 会議録公開済みで要旨あり / pending: 会議録の公開待ち（通告のみ） */
   status: "published" | "pending";
   questions: readonly TakasakiGeneralQuestion[];
+  /** 決算などの議案について会派の代表が行う総括質疑。ない会期は省略 */
+  representativeQuestions?: readonly TakasakiGeneralQuestion[];
   /** 通告したが欠席などで質問しなかった議員 */
   absentMembers?: readonly string[];
 };
