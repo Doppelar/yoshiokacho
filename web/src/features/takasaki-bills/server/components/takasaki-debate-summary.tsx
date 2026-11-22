@@ -4,7 +4,10 @@ import { ScrollText } from "lucide-react";
 import { DifficultySelector } from "@/features/bill-difficulty/client/components/difficulty-selector";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
 import type { TakasakiDebateSummary } from "../../shared/types";
-import { selectDebateParagraphs } from "../../shared/utils/debate-summaries";
+import {
+  describeDifficulty,
+  selectDebateParagraphs,
+} from "../../shared/utils/debate-summaries";
 
 /** 会議録でどんな議論が交わされたかのまとめ。ふつう／詳しくを切り替えられる */
 export function TakasakiDebateSummarySection({
@@ -26,9 +29,7 @@ export function TakasakiDebateSummarySection({
         <DifficultySelector currentLevel={level} maintainScrollFromBottom />
       </div>
       <p className="text-xs text-mirai-text-note">
-        {level === "hard"
-          ? "専門用語や金額を含む詳しい内容です。スイッチを切ると、わかりやすい説明になります。"
-          : "わかりやすい言葉でまとめています。スイッチを入れると、専門用語や金額を含む詳しい内容になります。"}
+        {describeDifficulty(level)}
       </p>
       <div className="space-y-3 text-[15px] leading-7">
         {selectDebateParagraphs(summary, level).map((paragraph) => (

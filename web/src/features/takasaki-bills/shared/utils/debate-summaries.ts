@@ -30,3 +30,10 @@ export function selectDebateParagraphs(
 ): readonly string[] {
   return level === "hard" ? summary.detailed : summary.plain;
 }
+
+/** 「説明をもっと詳しく」スイッチの下に出す、今の表示内容の案内 */
+export function describeDifficulty(level: DifficultyLevelEnum): string {
+  return level === "hard"
+    ? "専門用語や金額を含む詳しい内容です。スイッチを切ると、わかりやすい説明になります。"
+    : "わかりやすい言葉でまとめています。スイッチを入れると、専門用語や金額を含む詳しい内容になります。";
+}
