@@ -1,4 +1,9 @@
-import type { TakasakiItem, TakasakiItemKind, TakasakiSession } from "../types";
+import type {
+  TakasakiItem,
+  TakasakiItemKind,
+  TakasakiRollCall,
+  TakasakiSession,
+} from "../types";
 import { getItemExplanation } from "./item-explanations";
 
 export type FactionVote = {
@@ -11,6 +16,10 @@ export type RollCallTally = {
   forCount: number;
   againstCount: number;
   byFaction: FactionVote[];
+  /** 採決に加わらない議長 */
+  chair: string;
+  /** 欠席・退席などで採決に加わらなかった議員 */
+  absentMembers: string[];
 };
 
 /** 「議案第92号」「請願第1号」のような表示名 */
@@ -19,27 +28,24 @@ export function formatItemName(item: Pick<TakasakiItem, "kind" | "number">) {
 }
 
 /**
- * 起立採決の賛否を会派ごとに集計する。議長は数えない。
+ * 起立採決の賛否を会派ごとに集計する。議長と、採決に加わらなかった議員は数えない。
  * 反対に挙がっていない議員は賛成とする。
  */
-export function tallyRollCall(
-  session: Pick<TakasakiSession, "members" | "chair" | "voteDetails">,
-  item: Pick<TakasakiItem, "rollCall">
-): RollCallTally | null {
-  if (session.voteDetails === "unconfirmed" || !item.rollCall) return null;
-
-  const against = new Set(item.rollCall.against);
+export function tallyVotes(
+  roster: Pick<TakasakiSession, "members" | "chair">,
+  rollCall: TakasakiRollCall
+): RollCallTally {
+  const against = new Set(rollCall.against);
+  const absent = new Set(rollCall.absent);
   const byFaction = new Map<string, FactionVote>();
 
-  for (const member of session.members) {
-    if (member.name === session.chair) continue;
-    const vote =
-      byFaction.get(member.faction) ??
-      ({
-        faction: member.faction,
-        forMembers: [],
-        againstMembers: [],
-      } as FactionVote);
+  for (const member of roster.members) {
+    if (member.name === roster.chair || absent.has(member.name)) continue;
+    const vote = byFaction.get(member.faction) ?? {
+      faction: member.faction,
+      forMembers: [],
+      againstMembers: [],
+    };
     if (against.has(member.name)) {
       vote.againstMembers.push(member.name);
     } else {
@@ -53,7 +59,18 @@ export function tallyRollCall(
     forCount: factions.reduce((sum, f) => sum + f.forMembers.length, 0),
     againstCount: factions.reduce((sum, f) => sum + f.againstMembers.length, 0),
     byFaction: factions,
+    chair: roster.chair,
+    absentMembers: [...absent],
   };
+}
+
+/** 議員別賛否を転記した会期の起立採決を集計する。簡易採決や未転記の会期は null */
+export function tallyRollCall(
+  session: Pick<TakasakiSession, "members" | "chair" | "voteDetails">,
+  item: Pick<TakasakiItem, "rollCall">
+): RollCallTally | null {
+  if (session.voteDetails === "unconfirmed" || !item.rollCall) return null;
+  return tallyVotes(session, item.rollCall);
 }
 
 /** 公式の審議結果一覧で、賛否が分かれた採決に添えられる記載 */
