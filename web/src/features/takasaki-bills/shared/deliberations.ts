@@ -1,3 +1,7 @@
+import { TAKASAKI_R7_1_GENERAL_QUESTIONS } from "./deliberations-r7-1";
+import { TAKASAKI_R7_3_GENERAL_QUESTIONS } from "./deliberations-r7-3";
+import { TAKASAKI_R7_4_GENERAL_QUESTIONS } from "./deliberations-r7-4";
+import { TAKASAKI_R7_5_GENERAL_QUESTIONS } from "./deliberations-r7-5";
 import { TAKASAKI_R8_5_GENERAL_QUESTIONS } from "./deliberations-r8-5";
 import type {
   TakasakiCommitteeDeliberation,
@@ -1880,6 +1884,10 @@ export const TAKASAKI_GENERAL_QUESTIONS: Readonly<
       },
     ],
   },
+  "r7-5": TAKASAKI_R7_5_GENERAL_QUESTIONS,
+  "r7-4": TAKASAKI_R7_4_GENERAL_QUESTIONS,
+  "r7-3": TAKASAKI_R7_3_GENERAL_QUESTIONS,
+  "r7-1": TAKASAKI_R7_1_GENERAL_QUESTIONS,
 };
 
 export const TAKASAKI_COMMITTEE_DELIBERATIONS: Readonly<

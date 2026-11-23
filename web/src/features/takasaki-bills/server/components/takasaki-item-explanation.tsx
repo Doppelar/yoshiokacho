@@ -3,7 +3,6 @@ import "server-only";
 import { BookOpen } from "lucide-react";
 import { DifficultySelector } from "@/features/bill-difficulty/client/components/difficulty-selector";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
-import { TAKASAKI_EXPLANATION_SOURCES } from "../../shared/item-explanations";
 import {
   describeDifficulty,
   selectDebateParagraphs,
@@ -62,7 +61,7 @@ export function TakasakiItemExplanationSection({
         <dl className="space-y-3 rounded-xl bg-muted p-4 text-sm leading-7">
           <div>
             <dt className="font-bold">
-              {itemId === "seigan-1" ? "請願者" : "議会への提出者"}
+              {explanation.introductionMembers ? "請願者" : "議会への提出者"}
             </dt>
             <dd>{explanation.submittedBy.join("、")}</dd>
           </div>
@@ -87,21 +86,18 @@ export function TakasakiItemExplanationSection({
       <div className="space-y-2 border-t pt-4 text-xs">
         <h3 className="font-bold">確認に使った公式資料</h3>
         <ul className="space-y-2">
-          {explanation.sourceIds.map((id) => {
-            const source = TAKASAKI_EXPLANATION_SOURCES[id];
-            return (
-              <li key={id}>
-                <a
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-accent underline underline-offset-2"
-                >
-                  {source.label}
-                </a>
-              </li>
-            );
-          })}
+          {explanation.sources.map((source) => (
+            <li key={source.url}>
+              <a
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-accent underline underline-offset-2"
+              >
+                {source.label}
+              </a>
+            </li>
+          ))}
         </ul>
         <p className="leading-6 text-mirai-text-note">
           公式資料をもとに本サイトがまとめた説明です。質疑・討論は掲載資料の要旨です。

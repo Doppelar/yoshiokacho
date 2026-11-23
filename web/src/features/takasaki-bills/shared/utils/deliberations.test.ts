@@ -71,8 +71,33 @@ describe("一般質問（議事ベース）", () => {
     ]);
   });
 
+  it.each([
+    ["r7-1", 4, 25],
+    ["r7-3", 0, 27],
+    ["r7-4", 2, 20],
+    ["r7-5", 0, 24],
+  ] as const)("令和7年の %s は会議録から総括質疑%i人・一般質問%i人分を持ち、項目名は会議録由来と示す", (sessionId, representative, general) => {
+    const set = getGeneralQuestions(sessionId);
+    expect(set?.status).toBe("published");
+    expect(set?.topicSource).toBe("minutes");
+    expect(set?.representativeQuestions ?? []).toHaveLength(representative);
+    expect(set?.questions).toHaveLength(general);
+    for (const question of [
+      ...(set?.representativeQuestions ?? []),
+      ...(set?.questions ?? []),
+    ]) {
+      expect(question.faction.length, question.member).toBeGreaterThan(0);
+      expect(question.minutesUrl).toMatch(
+        /^https:\/\/takasaki\.gijiroku\.com\/voices\/.*&FYY=2025&.*&FINO=\d+&HUID=\d+$/
+      );
+      for (const topic of question.topics) {
+        expect(topic.exchanges.length, question.member).toBeGreaterThan(0);
+      }
+    }
+  });
+
   it("データのない会期は undefined", () => {
-    expect(getGeneralQuestions("r7-1")).toBeUndefined();
+    expect(getGeneralQuestions("r7-2")).toBeUndefined();
   });
 
   it("質問の件数を数え、日付ごとにまとめる", () => {
