@@ -300,7 +300,9 @@ export const CHIBA_MUNICIPALITIES: readonly ChibaMunicipality[] = [
     type: "市",
     mapX: 52.6,
     mapY: 67.5,
-    status: "upcoming",
+    status: "live",
+    href: "https://shigikai-watch-z5ws.vercel.app/",
+    external: true,
   },
   {
     id: "oamishirasato",

@@ -31,6 +31,11 @@ export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
     href: routes.takasakiHome("r8-5"),
   },
   {
+    date: "2026-11-23",
+    title: "千葉県いすみ市を追加しました",
+    href: routes.chibaMap(),
+  },
+  {
     date: "2026-11-21",
     title: "広島県江田島市を追加しました",
     href: routes.hiroshimaMap(),
