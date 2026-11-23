@@ -46,6 +46,12 @@ describe("parseOpinionInput", () => {
     );
   });
 
+  it("当事者・事業者の立場も受け付ける", () => {
+    for (const commenterType of ["affected", "business"]) {
+      expect(parseOpinionInput({ ...validInput, commenterType }).ok).toBe(true);
+    }
+  });
+
   it("選択肢にない値は受け付けない", () => {
     expect(parseOpinionInput({ ...validInput, commenterType: "" }).ok).toBe(
       false

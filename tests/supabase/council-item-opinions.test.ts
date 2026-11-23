@@ -44,6 +44,16 @@ describe("高崎市などの議案への意見掲示板（実DB）", () => {
 
     const opinions = await findVisibleCouncilItemOpinions("takasaki", itemId);
     expect(opinions.map((opinion) => opinion.body)).toEqual(["公開する意見"]);
+
+    // 当事者・事業者の立場でも投稿できる
+    for (const commenterType of ["affected", "business"] as const) {
+      await insertCouncilItemOpinion({
+        ...base,
+        commenterType,
+        itemId: otherItemId,
+        body: `${commenterType}の意見`,
+      });
+    }
     expect(opinions[0]).toMatchObject({
       commenterType: "citizen",
       stance: "for",
