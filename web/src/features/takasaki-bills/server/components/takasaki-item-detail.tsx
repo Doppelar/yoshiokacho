@@ -48,7 +48,7 @@ export function TakasakiItemDetail({
       </p>
       <h1 className="mt-2 text-3xl font-bold leading-tight">{item.title}</h1>
 
-      <TakasakiItemExplanationSection itemId={item.id} />
+      <TakasakiItemExplanationSection itemId={item.id} level={level} />
 
       <TakasakiItemIllustration itemId={item.id} />
 
