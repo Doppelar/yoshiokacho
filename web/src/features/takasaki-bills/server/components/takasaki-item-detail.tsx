@@ -11,16 +11,14 @@ import { routes } from "@/lib/routes";
 import type { TakasakiItem, TakasakiSession } from "../../shared/types";
 import { getItemDebateSummary } from "../../shared/utils/debate-summaries";
 import { getCommitteeDeliberations } from "../../shared/utils/deliberations";
-import {
-  formatItemName,
-  formatResult,
-  tallyRollCall,
-} from "../../shared/utils/votes";
+import { getSplitVote, tallyItemVotes } from "../../shared/utils/split-votes";
+import { formatItemName, formatResult } from "../../shared/utils/votes";
 import { TakasakiCommitteeDeliberations } from "./takasaki-committee-deliberations";
 import { TakasakiDebateSummarySection } from "./takasaki-debate-summary";
 import { TakasakiDisclaimer } from "./takasaki-disclaimer";
 import { TakasakiItemExplanationSection } from "./takasaki-item-explanation";
 import { TakasakiItemIllustration } from "./takasaki-item-illustration";
+import { TakasakiVoteReasons } from "./takasaki-vote-reasons";
 
 export function TakasakiItemDetail({
   session,
@@ -31,7 +29,8 @@ export function TakasakiItemDetail({
   item: TakasakiItem;
   level: DifficultyLevelEnum;
 }) {
-  const tally = tallyRollCall(session, item);
+  const tally = tallyItemVotes(session, item);
+  const splitVote = getSplitVote(item.id);
   const debateSummary = getItemDebateSummary(item.id);
 
   return (
@@ -123,10 +122,26 @@ export function TakasakiItemDetail({
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-mirai-text-note">
+          <p className="text-xs leading-6 text-mirai-text-note">
             起立採決で、起立した議員を賛成、起立しなかった議員を反対としています。議長（
-            {session.chair}）は採決に加わりません。
+            {tally.chair}）は採決に加わりません。
+            {tally.absentMembers.length > 0 &&
+              `欠席などで採決に加わらなかった議員：${tally.absentMembers.join("、")}。`}
+            {splitVote && (
+              <>
+                出典：
+                <a
+                  href={splitVote.voteSource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2"
+                >
+                  {splitVote.voteSource.label}
+                </a>
+              </>
+            )}
           </p>
+          {splitVote && <TakasakiVoteReasons record={splitVote} />}
         </section>
       ) : session.voteDetails === "unconfirmed" ? (
         <p className="mt-8 text-sm text-mirai-text-secondary">

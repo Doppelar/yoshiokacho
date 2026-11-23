@@ -11,6 +11,13 @@ export type TakasakiCouncilMember = {
   faction: string;
 };
 
+/** 起立採決の記録。反対（起立しなかった）議員と、採決に加わらなかった議員 */
+export type TakasakiRollCall = {
+  against: readonly string[];
+  /** 欠席・退席などで採決に加わらなかった議員（議長を除く） */
+  absent?: readonly string[];
+};
+
 export type TakasakiItem = {
   id: string;
   kind: TakasakiItemKind;
@@ -24,7 +31,7 @@ export type TakasakiItem = {
    * 起立採決（賛否が分かれたもの）。反対（起立しなかった）議員だけを持ち、
    * 議長以外の残りの議員を賛成とみなす。簡易採決（全員異議なし）は undefined。
    */
-  rollCall?: { against: readonly string[] };
+  rollCall?: TakasakiRollCall;
 };
 
 /** 会議録から作成した質問と答弁の要旨（発言そのものではない） */
@@ -119,4 +126,32 @@ export type TakasakiItemExplanation = TakasakiDebateSummary & {
   /** 意見書を国などへ出すときの名義 */
   outgoingName?: string;
   sources: readonly TakasakiExplanationSource[];
+};
+
+/** 賛否が分かれた議案の、本会議の討論などで述べられた賛成・反対の理由（本サイトの要約） */
+export type TakasakiVoteReason = {
+  side: "賛成" | "反対";
+  member: string;
+  faction: string;
+  summary: string;
+  minutesUrl: string;
+};
+
+/** 議員別賛否を転記していない会期の、採決時点の議員名簿 */
+export type TakasakiVoteRoster = {
+  chair: string;
+  members: readonly TakasakiCouncilMember[];
+  source: TakasakiExplanationSource;
+};
+
+/** 賛否が分かれた議案の、誰が賛成・反対したかとその理由 */
+export type TakasakiSplitVoteRecord = {
+  /** 採決で諮った内容（例「請願を採択することに賛成」） */
+  question: string;
+  /** 議員別賛否を転記していない会期だけ持つ。議員名簿は会期の TakasakiVoteRoster */
+  rollCall?: TakasakiRollCall;
+  voteSource: TakasakiExplanationSource;
+  reasons: readonly TakasakiVoteReason[];
+  /** 本会議で討論がなかった等の補足 */
+  reasonsNote?: string;
 };

@@ -22,13 +22,13 @@ import {
 } from "../../shared/utils/deliberations";
 import { getItemExplanation } from "../../shared/utils/item-explanations";
 import { findTakasakiSession } from "../../shared/utils/sessions";
+import { tallyItemVotes } from "../../shared/utils/split-votes";
 import {
   formatItemName,
   formatResult,
   isSplitVote,
   isUnanimityConfirmed,
   sortItemsForDisplay,
-  tallyRollCall,
   tallySessionResults,
 } from "../../shared/utils/votes";
 import { TakasakiDebateSummarySection } from "./takasaki-debate-summary";
@@ -180,7 +180,7 @@ function ItemCard({
   voices?: VoiceTally;
   highlight?: boolean;
 }) {
-  const tally = tallyRollCall(session, item);
+  const tally = tallyItemVotes(session, item);
   const explanation = getItemExplanation(item.id);
 
   return (
