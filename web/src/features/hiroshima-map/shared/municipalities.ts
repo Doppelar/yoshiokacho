@@ -28,7 +28,9 @@ export const HIROSHIMA_MUNICIPALITIES: readonly HiroshimaMunicipality[] = [
     type: "市",
     mapX: 42.3,
     mapY: 76.4,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-kure-shi-xgxk6fnxs5tyio/L-kXwTXho-ecVq2zu6lp_gR55sxzNIjCMjIHDRUvZmc",
+    external: true,
   },
   {
     id: "takehara",
