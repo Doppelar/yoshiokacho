@@ -16,7 +16,9 @@ export const FUKUSHIMA_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "市",
     mapX: 44.654,
     mapY: 46.069,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-aizuwakamatsu-shi-yxb6lxq8xelxygxm/WYg5gDVoP7Xxy08NL-Iz8qUIImSzP_uq3ppDnLmsW3o",
+    external: true,
   },
   {
     id: "07203",
