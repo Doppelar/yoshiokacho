@@ -25,8 +25,11 @@ import { findTakasakiSession } from "../../shared/utils/sessions";
 import {
   formatItemName,
   formatResult,
+  isSplitVote,
+  isUnanimityConfirmed,
   sortItemsForDisplay,
   tallyRollCall,
+  tallySessionResults,
 } from "../../shared/utils/votes";
 import { TakasakiDebateSummarySection } from "./takasaki-debate-summary";
 import { TakasakiDisclaimer } from "./takasaki-disclaimer";
@@ -35,6 +38,10 @@ import {
   TakasakiGeneralQuestions,
 } from "./takasaki-general-questions";
 import { TakasakiItemIllustration } from "./takasaki-item-illustration";
+import {
+  SPLIT_ITEMS_SECTION_ID,
+  TakasakiSessionOverview,
+} from "./takasaki-session-overview";
 import { TakasakiVoiceSummary, VoiceCounts } from "./takasaki-voice-summary";
 
 export async function TakasakiHome({
@@ -46,8 +53,8 @@ export async function TakasakiHome({
 }) {
   const session = findTakasakiSession(sessionId);
   const items = sortItemsForDisplay(session.items);
-  const splitItems = items.filter((item) => item.rollCall);
-  const otherItems = items.filter((item) => !item.rollCall);
+  const splitItems = items.filter(isSplitVote);
+  const otherItems = items.filter((item) => !isSplitVote(item));
   const generalQuestions = getGeneralQuestions(session.id);
   const debateSummary = getSessionDebateSummary(session.id);
   const voiceTallies: VoiceTallies = await getCouncilVoiceTallies("takasaki");
@@ -100,22 +107,24 @@ export async function TakasakiHome({
         )}
       </section>
 
-      {debateSummary && (
-        <TakasakiDebateSummarySection
-          title="この会期でどんな議論があったか"
-          summary={debateSummary}
-          level={level}
-        />
-      )}
+      <TakasakiSessionOverview
+        tally={tallySessionResults(session.items)}
+        unanimityConfirmed={isUnanimityConfirmed(session)}
+      />
 
       {session.voteDetails === "unconfirmed" && (
-        <p className="mt-4 text-sm text-mirai-text-secondary">
-          議決結果は公式資料の記載です。この会期の議員別賛否は未掲載のため、賛否人数や全会一致かどうかは表示していません。
+        <p className="mt-3 text-xs leading-6 text-mirai-text-secondary">
+          この会期は議員別の賛否を掲載していないため、賛否の人数は表示していません。「賛否が分かれた議案」は、市の公式「議案等審議結果一覧」に「賛成多数」「賛成少数」と記載されたものです。
         </p>
       )}
       {splitItems.length > 0 && (
-        <section className="flex flex-col gap-4 pt-6">
-          <h3 className="text-lg font-bold">賛否が分かれた議案</h3>
+        <section
+          id={SPLIT_ITEMS_SECTION_ID}
+          className="flex scroll-mt-24 flex-col gap-4 pt-6"
+        >
+          <h3 className="text-lg font-bold">
+            賛否が分かれた議案（{splitItems.length}件）
+          </h3>
           {splitItems.map((item) => (
             <ItemCard
               key={item.id}
@@ -128,8 +137,20 @@ export async function TakasakiHome({
         </section>
       )}
 
+      {debateSummary && (
+        <TakasakiDebateSummarySection
+          title="この会期でどんな議論があったか"
+          summary={debateSummary}
+          level={level}
+        />
+      )}
+
       <section className="flex flex-col gap-3 py-10">
-        <h3 className="text-lg font-bold">議案・報告など</h3>
+        <h3 className="text-lg font-bold">
+          {splitItems.length > 0
+            ? "そのほかの議案・報告など"
+            : "議案・報告など"}
+        </h3>
         {otherItems.map((item) => (
           <ItemCard
             key={item.id}
