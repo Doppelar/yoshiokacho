@@ -1,11 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { TAKASAKI_SESSION_R8_5 } from "../session-r8-5";
+import { TAKASAKI_SESSIONS } from "../sessions";
 import type { TakasakiItem } from "../types";
+import { getItemExplanation } from "./item-explanations";
 import {
   formatItemName,
   formatResult,
+  isSplitVote,
+  isUnanimityConfirmed,
   sortItemsForDisplay,
   tallyRollCall,
+  tallySessionResults,
 } from "./votes";
 
 const session = TAKASAKI_SESSION_R8_5;
@@ -130,5 +135,95 @@ describe("sortItemsForDisplay", () => {
       "g2",
       "h",
     ]);
+  });
+});
+
+describe("isSplitVote", () => {
+  it("起立採決の記録か、公式資料の「賛成多数」「賛成少数」の記載で判断する", () => {
+    expect(isSplitVote({ result: "不採択", rollCall: { against: [] } })).toBe(
+      true
+    );
+    expect(isSplitVote({ result: "原案可決（賛成多数）" })).toBe(true);
+    expect(isSplitVote({ result: "不採択（賛成少数）" })).toBe(true);
+    expect(isSplitVote({ result: "原案可決" })).toBe(false);
+    expect(isSplitVote({ result: null })).toBe(false);
+  });
+});
+
+describe("tallySessionResults", () => {
+  it("可決・不採択・報告・継続審査と、全会一致・賛否が分かれたものを数え分ける", () => {
+    expect(
+      tallySessionResults([
+        { result: "原案可決" },
+        { result: "原案可決（賛成多数）" },
+        { result: "不採択（賛成少数）" },
+        { result: "同意" },
+        { result: null },
+        { result: "―" },
+      ])
+    ).toEqual({
+      total: 6,
+      passed: 3,
+      rejected: 1,
+      reports: 1,
+      undecided: 1,
+      unanimous: 2,
+      split: 2,
+    });
+  });
+
+  it.each([
+    ["r8-5", 4],
+    ["r8-4", 2],
+    ["r8-2", 4],
+    ["r7-5", 1],
+    ["r7-4", 6],
+    ["r7-1", 1],
+    ["r7-3", 0],
+  ] as const)("%s の賛否が分かれた議案は%i件で、件数の合計が全件と一致する", (id, split) => {
+    const target = TAKASAKI_SESSIONS.find((s) => s.id === id);
+    if (!target) throw new Error(`missing ${id}`);
+    const tally = tallySessionResults(target.items);
+    expect(tally.split).toBe(split);
+    expect(
+      tally.passed + tally.rejected + tally.reports + tally.undecided
+    ).toBe(tally.total);
+    expect(tally.unanimous + tally.split).toBe(tally.passed + tally.rejected);
+    expect(
+      sortItemsForDisplay(target.items).slice(0, split).every(isSplitVote)
+    ).toBe(true);
+  });
+});
+
+describe("isUnanimityConfirmed", () => {
+  const byId = (id: string) => {
+    const found = TAKASAKI_SESSIONS.find((s) => s.id === id);
+    if (!found) throw new Error(`missing ${id}`);
+    return found;
+  };
+
+  it("議員別賛否がある会期と、全議案に会議録からの解説がある令和7年の会期だけ true", () => {
+    for (const id of ["r8-5", "r7-1", "r7-2", "r7-3", "r7-4", "r7-5"]) {
+      expect(isUnanimityConfirmed(byId(id)), id).toBe(true);
+    }
+    for (const id of ["r8-1", "r8-2", "r8-3", "r8-4"]) {
+      expect(isUnanimityConfirmed(byId(id)), id).toBe(false);
+    }
+  });
+
+  it("解説で全会一致とする会期は、解説の採決の記述が公式資料の賛否の記載と食い違わない", () => {
+    for (const session of TAKASAKI_SESSIONS) {
+      if (session.voteDetails !== "unconfirmed") continue;
+      if (!isUnanimityConfirmed(session)) continue;
+      for (const item of session.items) {
+        if (item.result === null || item.result === "―") continue;
+        const text = getItemExplanation(item.id)?.discussion.detailed.join("");
+        expect(text, item.id).toMatch(
+          isSplitVote(item)
+            ? /賛成多数|賛成少数|起立多数|起立少数/
+            : /全会一致|起立全員|異議な|異議がな|簡易採決/
+        );
+      }
+    }
   });
 });

@@ -15,6 +15,12 @@ export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-24",
     title:
+      "高崎市の各会期の先頭に、議案の件数と可決・全会一致・賛否が分かれた件数の総まとめを載せ、賛否が分かれた議案を上に並べました",
+    href: routes.takasakiHome(),
+  },
+  {
+    date: "2026-11-24",
+    title:
       "高崎市の令和7年の全5会期に、議案179件の解説と総括質疑・一般質問の要旨を掲載しました",
     href: routes.takasakiHome("r7-5"),
   },
