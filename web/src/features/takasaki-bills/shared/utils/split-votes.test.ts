@@ -51,6 +51,19 @@ describe("賛否が分かれた議案の議員別賛否と理由", () => {
     }
   });
 
+  it("令和6年5月の議長交代後は後閑賢二議長を数えず、欠席者を賛成に数えない", () => {
+    const find = (id: string) => {
+      const found = splitItems.find(({ item }) => item.id === id);
+      if (!found) throw new Error(id);
+      return tallyItemVotes(found.session, found.item);
+    };
+    expect(find("r6-1-gian-49")?.chair).toBe("時田裕之");
+    const tally = find("r6-3-gian-86");
+    expect(tally?.chair).toBe("後閑賢二");
+    expect([tally?.forCount, tally?.againstCount]).toEqual([34, 2]);
+    expect(tally?.absentMembers).toEqual(["角倉邦良"]);
+  });
+
   it("理由は会議録の発言へのリンクを持ち、賛成か反対のどちらか", () => {
     for (const { item } of splitItems) {
       for (const reason of getSplitVote(item.id)?.reasons ?? []) {
