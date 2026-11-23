@@ -14,6 +14,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-24",
+    title: "福島県会津若松市を追加しました",
+    href: routes.fukushimaMap(),
+  },
+  {
+    date: "2026-11-24",
     title: "福島県の市町村地図を追加し、西会津町を掲載しました",
     href: routes.fukushimaMap(),
   },
