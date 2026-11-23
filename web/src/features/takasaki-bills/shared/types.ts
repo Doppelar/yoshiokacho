@@ -38,9 +38,9 @@ export type TakasakiExchange = {
 };
 
 export type TakasakiQuestionTopic = {
-  /** 質問通告要旨の項目名 */
+  /** 質問の項目名（質問通告要旨の項目名、通告要旨がない会期は会議録から付けたもの） */
   title: string;
-  /** 質問通告要旨の小項目 */
+  /** 質問の小項目 */
   points: readonly string[];
   exchanges: readonly TakasakiExchange[];
 };
@@ -62,6 +62,11 @@ export type TakasakiGeneralQuestionSet = {
   representativeQuestions?: readonly TakasakiGeneralQuestion[];
   /** 通告したが欠席などで質問しなかった議員 */
   absentMembers?: readonly string[];
+  /**
+   * 質問項目の題の出どころ。notice（省略時）: 質問通告要旨の記載どおり /
+   * minutes: 通告要旨がないため、本サイトが会議録から付けた
+   */
+  topicSource?: "notice" | "minutes";
 };
 
 export type TakasakiCommitteeDeliberation = {
@@ -93,4 +98,25 @@ export type TakasakiSession = {
 export type TakasakiDebateSummary = {
   plain: readonly string[];
   detailed: readonly string[];
+};
+
+/** 議案の解説で確認に使った公式資料 */
+export type TakasakiExplanationSource = {
+  label: string;
+  url: string;
+};
+
+/**
+ * 議案の内容と議論の解説（本サイト作成）。plain／detailed は議案の内容、
+ * discussion はどんな議論があったか。右上の「説明をもっと詳しく」で切り替える。
+ */
+export type TakasakiItemExplanation = TakasakiDebateSummary & {
+  discussion: TakasakiDebateSummary;
+  /** 議案の提出者（請願は請願者） */
+  submittedBy?: readonly string[];
+  /** 請願の紹介議員 */
+  introductionMembers?: readonly string[];
+  /** 意見書を国などへ出すときの名義 */
+  outgoingName?: string;
+  sources: readonly TakasakiExplanationSource[];
 };

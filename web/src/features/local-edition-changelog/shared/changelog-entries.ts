@@ -13,6 +13,12 @@ export type LocalEditionChangelogEntry = {
  */
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
+    date: "2026-11-24",
+    title:
+      "高崎市の令和7年の全5会期に、議案179件の解説と総括質疑・一般質問の要旨を掲載しました",
+    href: routes.takasakiHome("r7-5"),
+  },
+  {
     date: "2026-11-23",
     title:
       "高崎市の令和8年第5回定例会（9月）の全31議案に、内容と議論の解説を掲載しました",
