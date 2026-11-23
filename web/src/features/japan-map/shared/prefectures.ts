@@ -95,7 +95,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 37.75,
     mapX: 85,
     mapY: 40,
-    status: "upcoming",
+    status: "live",
+    href: routes.fukushimaMap(),
   },
   {
     id: "ibaraki",
