@@ -15,6 +15,12 @@ export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-24",
     title:
+      "高崎市の今の議員の任期（令和5年4月の選挙後）にあわせ、令和5年5月から令和6年12月までの9会期の議決結果を追加し、賛否が分かれた議案20件に議員ごとの賛成・反対とその理由を載せました",
+    href: routes.takasakiHome("r6-5"),
+  },
+  {
+    date: "2026-11-24",
+    title:
       "高崎市の賛否が分かれた議案18件に、議員ごとの賛成・反対と、討論で述べられた賛成・反対の理由を載せました",
     href: routes.takasakiHome(),
   },

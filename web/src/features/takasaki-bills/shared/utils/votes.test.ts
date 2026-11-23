@@ -180,6 +180,15 @@ describe("tallySessionResults", () => {
     ["r7-4", 6],
     ["r7-1", 1],
     ["r7-3", 0],
+    ["r6-5", 3],
+    ["r6-4", 1],
+    ["r6-3", 1],
+    ["r6-2", 0],
+    ["r6-1", 4],
+    ["r5-5", 5],
+    ["r5-4", 3],
+    ["r5-3", 3],
+    ["r5-2", 0],
   ] as const)("%s の賛否が分かれた議案は%i件で、件数の合計が全件と一致する", (id, split) => {
     const target = TAKASAKI_SESSIONS.find((s) => s.id === id);
     if (!target) throw new Error(`missing ${id}`);
@@ -206,7 +215,7 @@ describe("isUnanimityConfirmed", () => {
     for (const id of ["r8-5", "r7-1", "r7-2", "r7-3", "r7-4", "r7-5"]) {
       expect(isUnanimityConfirmed(byId(id)), id).toBe(true);
     }
-    for (const id of ["r8-1", "r8-2", "r8-3", "r8-4"]) {
+    for (const id of ["r8-1", "r8-2", "r8-3", "r8-4", "r6-5", "r5-3"]) {
       expect(isUnanimityConfirmed(byId(id)), id).toBe(false);
     }
   });
