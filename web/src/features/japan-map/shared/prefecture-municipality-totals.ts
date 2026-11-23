@@ -8,6 +8,7 @@ export const PREFECTURE_MUNICIPALITY_TOTALS: Readonly<Record<string, number>> =
     chiba: 54,
     ehime: 20,
     fukuoka: 60,
+    fukushima: 59,
     gunma: 35,
     hiroshima: 23,
     hyogo: 41,
