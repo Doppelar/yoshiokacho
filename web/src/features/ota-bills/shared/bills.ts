@@ -1,8 +1,14 @@
-import { OTA_OFFICIAL_SESSIONS as OTA_SESSIONS } from "./official-sessions";
+import { OTA_OFFICIAL_SESSIONS } from "./official-sessions";
+import { OTA_OFFICIAL_SESSIONS_2021_2024 } from "./official-sessions-2021-2024";
 import type { OtaBill, OtaLegacyBill } from "./types/ota-bill";
 import { buildOtaBills } from "./utils/build-ota-bills";
 
 export type { OtaBill, OtaBillStatus } from "./types/ota-bill";
+
+const OTA_SESSIONS = [
+  ...OTA_OFFICIAL_SESSIONS,
+  ...OTA_OFFICIAL_SESSIONS_2021_2024,
+];
 export { OTA_SESSIONS };
 
 const ORIGINAL_OTA_BILLS: readonly OtaLegacyBill[] = [
