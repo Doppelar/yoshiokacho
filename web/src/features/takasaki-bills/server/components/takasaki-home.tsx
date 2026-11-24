@@ -3,6 +3,7 @@ import "server-only";
 import { MessagesSquare } from "lucide-react";
 import type { Route } from "next";
 import Link from "next/link";
+import { SessionPicker } from "@/components/council/session-picker";
 import { Container } from "@/components/layouts/container";
 import { Card } from "@/components/ui/card";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
@@ -20,6 +21,7 @@ import {
   getGeneralQuestions,
   hasCommitteeQuestions,
 } from "../../shared/utils/deliberations";
+import { groupTakasakiSessionsByYear } from "../../shared/utils/group-sessions";
 import { getItemExplanation } from "../../shared/utils/item-explanations";
 import { findTakasakiSession } from "../../shared/utils/sessions";
 import { tallyItemVotes } from "../../shared/utils/split-votes";
@@ -77,18 +79,12 @@ export async function TakasakiHome({
 
       <TakasakiVoiceSummary tallies={voiceTallies} />
 
-      <nav aria-label="高崎市議会の会期" className="mt-8 flex flex-wrap gap-3">
-        {TAKASAKI_SESSIONS.map((entry) => (
-          <Link
-            key={entry.id}
-            href={routes.takasakiHome(entry.id) as Route}
-            aria-current={entry.id === session.id ? "page" : undefined}
-            className="rounded-lg border border-mirai-border px-3 py-2 text-sm underline underline-offset-2"
-          >
-            {entry.name}
-          </Link>
-        ))}
-      </nav>
+      <SessionPicker
+        heading="会期を選ぶ"
+        currentId={session.id}
+        groups={groupTakasakiSessionsByYear(TAKASAKI_SESSIONS)}
+        hrefFor={routes.takasakiHome}
+      />
       <section className="flex flex-col gap-2 pt-10">
         <h2 className="text-[22px] font-bold leading-[1.48] text-black">
           {session.name}
