@@ -3,6 +3,7 @@ import "server-only";
 import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SessionPicker } from "@/components/council/session-picker";
 import { Container } from "@/components/layouts/container";
 import { Card } from "@/components/ui/card";
 import { getDifficultyLevel } from "@/features/bill-difficulty/server/loaders/get-difficulty-level";
@@ -12,6 +13,7 @@ import {
   getOtaSession,
   OTA_SESSIONS,
 } from "@/features/ota-bills/shared/bills";
+import { groupOtaSessionsByFiscalYear } from "@/features/ota-bills/shared/utils/group-sessions";
 import { formatOtaVoteSummary } from "@/features/ota-bills/shared/utils/member-votes";
 import { AI_SUMMARY_DISCLAIMER } from "@/lib/disclaimers";
 import { routes } from "@/lib/routes";
@@ -37,21 +39,12 @@ export async function OtaHome({ sessionId }: { sessionId?: string }) {
         </p>
       </section>
 
-      <nav aria-label="会期を選ぶ" className="mt-8">
-        <h2 className="mb-3 text-lg font-bold">会期を選ぶ</h2>
-        <div className="flex flex-wrap gap-2">
-          {OTA_SESSIONS.map((item) => (
-            <Link
-              key={item.id}
-              href={routes.otaHome(item.id) as Route}
-              aria-current={item.id === session.id ? "page" : undefined}
-              className="rounded-lg border px-3 py-2 text-sm underline underline-offset-2 aria-[current=page]:bg-muted aria-[current=page]:font-bold"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </nav>
+      <SessionPicker
+        heading="会期を選ぶ"
+        currentId={session.id}
+        groups={groupOtaSessionsByFiscalYear(OTA_SESSIONS)}
+        hrefFor={routes.otaHome}
+      />
 
       <p className="mt-4 text-sm text-mirai-text-secondary">
         <a
