@@ -1,6 +1,33 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { formatDate, formatDateWithDots, getJapanTime } from "./date";
+import {
+  formatDate,
+  formatDateWithDots,
+  formatJapanIsoDate,
+  formatMonthDay,
+  getJapanTime,
+} from "./date";
+
+describe("formatJapanIsoDate", () => {
+  it("returns the JST date even when UTC is still the previous day", () => {
+    expect(formatJapanIsoDate(new Date("2026-11-24T15:30:00Z"))).toBe(
+      "2026-11-25"
+    );
+  });
+
+  it("zero-pads month and day", () => {
+    expect(formatJapanIsoDate(new Date("2026-03-04T03:00:00Z"))).toBe(
+      "2026-03-04"
+    );
+  });
+});
+
+describe("formatMonthDay", () => {
+  it("formats YYYY-MM-DD as month/day without zero-padding", () => {
+    expect(formatMonthDay("2026-11-05")).toBe("11/5");
+    expect(formatMonthDay("2026-01-23")).toBe("1/23");
+  });
+});
 
 describe("formatDate", () => {
   it("formats a date string in Japanese locale", () => {

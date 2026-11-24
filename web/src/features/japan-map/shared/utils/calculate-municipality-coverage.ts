@@ -13,6 +13,16 @@ export const NATIONAL_MUNICIPALITY_TOTAL = 1719 - 1 + 23;
 export const MUNICIPALITY_TOTAL_SOURCE =
   "https://www.stat.go.jp/data/kokusei/2025/kekka/pdf/outline.pdf#page=14";
 
+/** 掲載率（％、小数1桁）。 */
+export const toCoveragePercentage = (
+  published: number,
+  total: number = NATIONAL_MUNICIPALITY_TOTAL
+) => Number(((published / total) * 100).toFixed(1));
+
+/** 掲載率の表示 (例: 16.2％)。 */
+export const formatCoveragePercentage = (percentage: number) =>
+  `${percentage.toFixed(1)}％`;
+
 export function calculateMunicipalityCoverage(
   regions: readonly CoverageRegion[]
 ) {
@@ -30,8 +40,6 @@ export function calculateMunicipalityCoverage(
   return {
     published,
     total: NATIONAL_MUNICIPALITY_TOTAL,
-    percentage: Number(
-      ((published / NATIONAL_MUNICIPALITY_TOTAL) * 100).toFixed(1)
-    ),
+    percentage: toCoveragePercentage(published),
   };
 }
