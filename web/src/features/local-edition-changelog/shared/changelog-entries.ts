@@ -14,6 +14,12 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-24",
+    title:
+      "高崎市の令和2年3月から令和5年3月までの16会期の議決結果を追加し、賛否が分かれた議案36件に議員ごとの賛成・反対とその理由を載せました",
+    href: routes.takasakiHome("r5-1"),
+  },
+  {
+    date: "2026-11-24",
     title: "広島県呉市を追加しました",
     href: routes.hiroshimaMap(),
   },
