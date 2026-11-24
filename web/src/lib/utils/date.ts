@@ -33,3 +33,23 @@ export function getJapanTime(): Date {
     new Date().toLocaleString("en-US", { timeZone: "Asia/Tokyo" })
   );
 }
+
+const jstIsoDateFormat = new Intl.DateTimeFormat("sv-SE", {
+  timeZone: "Asia/Tokyo",
+});
+
+/**
+ * 日本時間の日付を YYYY-MM-DD で返す (例: 2026-11-25)
+ */
+export function formatJapanIsoDate(date: Date = new Date()): string {
+  return jstIsoDateFormat.format(date);
+}
+
+/**
+ * YYYY-MM-DD を「月/日」で返す (例: 2026-11-05 → 11/5)
+ * ゼロ埋めなし
+ */
+export function formatMonthDay(isoDate: string): string {
+  const [, month, day] = isoDate.split("-").map(Number);
+  return `${month}/${day}`;
+}

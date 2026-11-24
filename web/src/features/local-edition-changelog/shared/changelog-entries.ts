@@ -13,6 +13,11 @@ export type LocalEditionChangelogEntry = {
  */
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
+    date: "2026-11-25",
+    title: "全国ページに、全国掲載率の推移グラフを載せました",
+    href: routes.japanMap(),
+  },
+  {
     date: "2026-11-24",
     title:
       "太田市の令和4年5月以降23会期で、賛否が分かれた議案144件に議員ごとの賛成・反対を載せました",

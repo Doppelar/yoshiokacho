@@ -2,9 +2,11 @@ import "server-only";
 import { MUNICIPALITY_COVERAGE_REGIONS } from "../../shared/municipality-coverage-regions";
 import {
   calculateMunicipalityCoverage,
+  formatCoveragePercentage,
   MUNICIPALITY_TOTAL_SOURCE,
 } from "../../shared/utils/calculate-municipality-coverage";
 import { CompletedPrefectures } from "./completed-prefectures";
+import { CoverageTrendChart } from "./coverage-trend-chart";
 
 export function MunicipalityCoverage() {
   const { published, total, percentage } = calculateMunicipalityCoverage(
@@ -29,7 +31,7 @@ export function MunicipalityCoverage() {
           </span>
         </p>
         <p className="text-2xl font-bold tabular-nums text-primary-accent">
-          {percentage.toFixed(1)}％
+          {formatCoveragePercentage(percentage)}
         </p>
       </div>
       <div
@@ -56,6 +58,7 @@ export function MunicipalityCoverage() {
           全国数の出典：総務省統計局（2025年国勢調査）
         </a>
       </p>
+      <CoverageTrendChart published={published} />
       <CompletedPrefectures />
     </section>
   );

@@ -1,5 +1,21 @@
 import { describe, expect, it } from "vitest";
-import { calculateMunicipalityCoverage } from "./calculate-municipality-coverage";
+import {
+  calculateMunicipalityCoverage,
+  formatCoveragePercentage,
+  toCoveragePercentage,
+} from "./calculate-municipality-coverage";
+
+describe("掲載率の計算と表示", () => {
+  it("全国数で割って小数1桁に丸める", () => {
+    expect(toCoveragePercentage(282)).toBe(16.2);
+    expect(toCoveragePercentage(17, 100)).toBe(17);
+  });
+
+  it("小数1桁まで表示し、末尾の0も残す", () => {
+    expect(formatCoveragePercentage(1)).toBe("1.0％");
+    expect(formatCoveragePercentage(16.2)).toBe("16.2％");
+  });
+});
 
 describe("自治体の掲載率", () => {
   it("公開リンクがある自治体だけを数える", () => {
