@@ -32,7 +32,7 @@ export async function OtaHome({ sessionId }: { sessionId?: string }) {
           できる限りわかりやすく
         </h1>
         <p className="mt-4 text-[15px] leading-7 text-black">
-          2025年・2026年の太田市議会の公式議決一覧に基づき、会期ごとの議案・報告と議決結果を紹介します。
+          令和3年12月から現在までの太田市議会の公式議決一覧に基づき、会期ごとの議案・報告と議決結果を紹介します。
         </p>
       </section>
 

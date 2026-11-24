@@ -7,9 +7,9 @@ import {
   OTA_SESSIONS,
 } from "./bills";
 
-describe("太田市の2025–2026年会期別アーカイブ", () => {
-  it("公式9会期を重複しない詳細URLで掲載する", () => {
-    expect(OTA_SESSIONS).toHaveLength(9);
+describe("太田市の令和3年12月からの会期別アーカイブ", () => {
+  it("公式25会期を重複しない詳細URLで掲載する", () => {
+    expect(OTA_SESSIONS).toHaveLength(25);
     expect(new Set(OTA_BILLS.map((bill) => bill.id)).size).toBe(
       OTA_BILLS.length
     );
@@ -46,6 +46,17 @@ describe("太田市の2025–2026年会期別アーカイブ", () => {
         (bill) => bill.sessionId === "2025-09"
       )
     ).toBe(true);
+  });
+
+  it("令和3年12月〜令和6年12月の16会期を公式の議決一覧から掲載する", () => {
+    expect(OTA_SESSIONS.at(-1)?.id).toBe("2021-12");
+    expect(getOtaBillsForSession("2023-06")).toHaveLength(33);
+    const budget = getOtaBillById("2024-03-bill-10");
+    expect(budget?.officialName).toBe("令和6年度太田市一般会計予算について");
+    expect(budget?.vote).toBe("賛成多数");
+    expect(budget?.decisionDate).toBe("2024-03-15");
+    expect(getOtaBillById("2024-12-council-9")?.status).toBe("可決");
+    expect(getOtaBillById("2022-09-report-5")?.vote).toBeNull();
   });
 
   it("既存の9月原稿から未採決・未確定の表示を取り除く", () => {
