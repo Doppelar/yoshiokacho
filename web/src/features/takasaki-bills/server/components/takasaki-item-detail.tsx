@@ -3,6 +3,7 @@ import "server-only";
 import type { Route } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { FactionVoteTable } from "@/components/council/faction-vote-table";
 import { Container } from "@/components/layouts/container";
 import type { DifficultyLevelEnum } from "@/features/bill-difficulty/shared/types";
 import { CouncilItemInterviewSection } from "@/features/council-item-interviews/server/components/council-item-interview-section";
@@ -82,46 +83,11 @@ export function TakasakiItemDetail({
       />
 
       {tally ? (
-        <section className="mt-8 space-y-4">
-          <h2 className="text-xl font-bold">
-            議員ごとの賛否（賛成{tally.forCount}・反対{tally.againstCount}）
-          </h2>
-          <div className="overflow-x-auto rounded-2xl border bg-white">
-            <table className="w-full min-w-[480px] text-sm">
-              <thead className="bg-muted/50 text-left">
-                <tr>
-                  <th className="p-3">会派</th>
-                  <th className="p-3">賛成</th>
-                  <th className="p-3">反対</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y">
-                {tally.byFaction.map((faction) => (
-                  <tr key={faction.faction} className="align-top">
-                    <th className="whitespace-nowrap p-3 text-left">
-                      {faction.faction}
-                    </th>
-                    <td className="p-3">
-                      {faction.forMembers.length > 0 && (
-                        <span className="font-bold">
-                          {faction.forMembers.length}人：
-                        </span>
-                      )}
-                      {faction.forMembers.join("、")}
-                    </td>
-                    <td className="p-3">
-                      {faction.againstMembers.length > 0 && (
-                        <span className="font-bold">
-                          {faction.againstMembers.length}人：
-                        </span>
-                      )}
-                      {faction.againstMembers.join("、")}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <FactionVoteTable
+          forCount={tally.forCount}
+          againstCount={tally.againstCount}
+          byFaction={tally.byFaction}
+        >
           <p className="text-xs leading-6 text-mirai-text-note">
             起立採決で、起立した議員を賛成、起立しなかった議員を反対としています。議長（
             {tally.chair}）は採決に加わりません。
@@ -142,7 +108,7 @@ export function TakasakiItemDetail({
             )}
           </p>
           {splitVote && <TakasakiVoteReasons record={splitVote} />}
-        </section>
+        </FactionVoteTable>
       ) : session.voteDetails === "unconfirmed" ? (
         <p className="mt-8 text-sm text-mirai-text-secondary">
           この会期の議員別賛否は未転記です。賛否人数や全会一致かどうかは、このページから断定できません。公式資料で確認してください。

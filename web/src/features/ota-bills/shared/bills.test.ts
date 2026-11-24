@@ -71,3 +71,67 @@ describe("太田市の令和3年12月からの会期別アーカイブ", () => {
     }
   });
 });
+
+describe("太田市議会の議員別の賛否", () => {
+  const sessionsWithoutRollCall = new Set(["2021-12", "2022-03"]);
+  const hasRollCall = (bill: (typeof OTA_BILLS)[number]) =>
+    (bill.vote === "賛成多数" || bill.vote === "賛成少数") &&
+    !sessionsWithoutRollCall.has(bill.sessionId);
+  const findBill = (sessionId: string, kind: string, number: number) =>
+    OTA_BILLS.find(
+      (bill) =>
+        bill.sessionId === sessionId &&
+        bill.kind === kind &&
+        bill.number === number
+    );
+
+  it("賛否の公表がある会期の、賛否が分かれた議案すべてに議員別の賛否がある", () => {
+    const split = OTA_BILLS.filter(hasRollCall);
+    expect(split).toHaveLength(144);
+    for (const bill of split) {
+      expect(bill.memberVotes, bill.id).not.toBeNull();
+    }
+  });
+
+  it("全会一致の議案と、賛否の公表がない会期の議案には載せない", () => {
+    for (const bill of OTA_BILLS.filter((bill) => !hasRollCall(bill))) {
+      expect(bill.memberVotes, bill.id).toBeNull();
+    }
+  });
+
+  it("賛成・反対の人数が公式の賛成多数・賛成少数と合う", () => {
+    for (const bill of OTA_BILLS) {
+      if (!bill.memberVotes) continue;
+      const { forCount, againstCount } = bill.memberVotes.tally;
+      expect(forCount + againstCount, bill.id).toBeGreaterThan(20);
+      if (bill.vote === "賛成多数") {
+        expect(forCount, bill.id).toBeGreaterThan(againstCount);
+      } else {
+        expect(forCount, bill.id).toBeLessThan(againstCount);
+      }
+    }
+  });
+
+  it("令和8年9月の決算認定は共産党の1人だけが反対した", () => {
+    const votes = findBill("2026-09", "議案", 85)?.memberVotes;
+    expect(votes?.tally.forCount).toBe(28);
+    expect(votes?.tally.byFaction.flatMap((f) => f.againstMembers)).toEqual([
+      "水野正己",
+    ]);
+    expect(votes?.tally.notVoting).toEqual([
+      { label: "議長（表決に加わらない）", members: ["渡辺謙一郎"] },
+    ]);
+    expect(votes?.sourceUrl).toBe(
+      "https://www.city.ota.gunma.jp/uploaded/attachment/43608.pdf"
+    );
+  });
+
+  it("辞職勧告決議の否決は賛成少数で、除斥の議員を採決に数えない", () => {
+    const tally = findBill("2026-09", "議会議案", 4)?.memberVotes?.tally;
+    expect(tally?.forCount).toBe(8);
+    expect(tally?.againstCount).toBe(20);
+    expect(tally?.notVoting.find((v) => v.label === "除斥")?.members).toEqual([
+      "仁藤すぐる",
+    ]);
+  });
+});

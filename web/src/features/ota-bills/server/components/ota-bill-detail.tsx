@@ -9,6 +9,7 @@ import { getDifficultyLevel } from "@/features/bill-difficulty/server/loaders/ge
 import { getOtaBillById } from "@/features/ota-bills/shared/bills";
 import { AI_SUMMARY_DISCLAIMER } from "@/lib/disclaimers";
 import { routes } from "@/lib/routes";
+import { OtaMemberVotes } from "./ota-member-votes";
 
 export async function OtaBillDetail({ id }: { id: string }) {
   const bill = getOtaBillById(id);
@@ -53,6 +54,8 @@ export async function OtaBillDetail({ id }: { id: string }) {
       <section className="mt-8 whitespace-pre-wrap text-[15px] leading-7 text-black">
         {body ?? "本文はこれから掲載します。"}
       </section>
+
+      {bill.memberVotes && <OtaMemberVotes {...bill.memberVotes} />}
 
       {bill.sources.length > 0 && (
         <div className="mt-8 space-y-2">

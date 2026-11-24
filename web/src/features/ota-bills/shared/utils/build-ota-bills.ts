@@ -1,8 +1,11 @@
 import type {
   OtaBill,
   OtaLegacyBill,
+  OtaMemberVotes,
+  OtaMemberVotesBySession,
   OtaOfficialSession,
 } from "../types/ota-bill";
+import { otaMemberVoteKey, tallyOtaMemberVotes } from "./member-votes";
 
 /** Update only obsolete voting statements; preserve the existing policy explanation. */
 export function updateOtaDecisionText(text: string): string {
@@ -38,7 +41,7 @@ export function updateOtaDecisionText(text: string): string {
     ["賛成：未確定\n反対：未確定", "採決：賛成全員"],
     [
       "議員別の賛否は、採決後に公式資料で確認して掲載します。",
-      "議決一覧には議員別の賛否・人数は掲載されていません。",
+      "議員ごとの賛否は、市議会の「各議員の議案に対する賛否」で公表されています。",
     ],
     ["審議中", "可決"],
   ] as const;
@@ -48,9 +51,25 @@ export function updateOtaDecisionText(text: string): string {
   );
 }
 
+function findMemberVotes(
+  memberVotes: OtaMemberVotesBySession,
+  sessionId: string,
+  kind: string,
+  number: number
+): OtaMemberVotes | null {
+  const session = memberVotes[sessionId];
+  const marks = session?.votes[otaMemberVoteKey(kind, number)];
+  if (!session || !marks) return null;
+  return {
+    tally: tallyOtaMemberVotes(session.members, marks),
+    sourceUrl: session.sourceUrl,
+  };
+}
+
 export function buildOtaBills(
   sessions: readonly OtaOfficialSession[],
-  legacyBills: readonly OtaLegacyBill[]
+  legacyBills: readonly OtaLegacyBill[],
+  memberVotes: OtaMemberVotesBySession = {}
 ): OtaBill[] {
   return sessions.flatMap((session) =>
     session.items.map((item) => {
@@ -90,6 +109,12 @@ export function buildOtaBills(
         submittedDate: item.submittedDate,
         decisionDate: item.decisionDate,
         vote: item.vote,
+        memberVotes: findMemberVotes(
+          memberVotes,
+          session.id,
+          item.kind,
+          item.number
+        ),
         thumbnailUrl: legacy?.thumbnailUrl ?? null,
         normal: enrich(legacy?.normal),
         hard: enrich(legacy?.hard),

@@ -1,3 +1,4 @@
+import { OTA_MEMBER_VOTES } from "./member-votes-data";
 import { OTA_OFFICIAL_SESSIONS } from "./official-sessions";
 import { OTA_OFFICIAL_SESSIONS_2021_2024 } from "./official-sessions-2021-2024";
 import type { OtaBill, OtaLegacyBill } from "./types/ota-bill";
@@ -310,7 +311,8 @@ const ORIGINAL_OTA_BILLS: readonly OtaLegacyBill[] = [
 
 export const OTA_BILLS: readonly OtaBill[] = buildOtaBills(
   OTA_SESSIONS,
-  ORIGINAL_OTA_BILLS
+  ORIGINAL_OTA_BILLS,
+  OTA_MEMBER_VOTES
 );
 
 export function getOtaBillById(id: string): OtaBill | undefined {
