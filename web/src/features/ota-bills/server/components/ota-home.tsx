@@ -12,6 +12,7 @@ import {
   getOtaSession,
   OTA_SESSIONS,
 } from "@/features/ota-bills/shared/bills";
+import { formatOtaVoteSummary } from "@/features/ota-bills/shared/utils/member-votes";
 import { AI_SUMMARY_DISCLAIMER } from "@/lib/disclaimers";
 import { routes } from "@/lib/routes";
 
@@ -32,7 +33,7 @@ export async function OtaHome({ sessionId }: { sessionId?: string }) {
           できる限りわかりやすく
         </h1>
         <p className="mt-4 text-[15px] leading-7 text-black">
-          令和3年12月から現在までの太田市議会の公式議決一覧に基づき、会期ごとの議案・報告と議決結果を紹介します。
+          令和3年12月から現在までの太田市議会の公式議決一覧に基づき、会期ごとの議案・報告と議決結果を紹介します。賛否が分かれた議案は、令和4年5月以降、議員ごとの賛成・反対も載せています。
         </p>
       </section>
 
@@ -88,7 +89,10 @@ export async function OtaHome({ sessionId }: { sessionId?: string }) {
                       <h3 className="mt-1 text-2xl font-bold leading-tight">
                         {bill.officialName}
                       </h3>
-                      <p className="mt-2 text-xs font-bold">{bill.status}</p>
+                      <p className="mt-2 text-xs font-bold">
+                        {bill.status}
+                        {formatOtaVoteSummary(bill)}
+                      </p>
                       <p className="mt-2 text-sm text-mirai-text-secondary">
                         {summary ?? "本文はこれから掲載します。"}
                       </p>

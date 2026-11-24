@@ -15,6 +15,12 @@ export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-24",
     title:
+      "太田市の令和4年5月以降23会期で、賛否が分かれた議案144件に議員ごとの賛成・反対を載せました",
+    href: routes.otaHome(),
+  },
+  {
+    date: "2026-11-24",
+    title:
       "太田市の令和3年12月から令和6年12月までの16会期・462件の議決結果を追加しました",
     href: routes.otaHome(),
   },

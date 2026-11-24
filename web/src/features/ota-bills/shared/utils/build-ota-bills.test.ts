@@ -83,6 +83,42 @@ describe("太田市の公式議決結果の反映", () => {
     expect(bills[1].normal).toContain("賛成少数");
   });
 
+  it("議員別の賛否は同じ会期・種類・番号の議案だけに付ける", () => {
+    const records: OtaOfficialSession = {
+      ...session,
+      items: [
+        { ...session.items[0], number: 85, vote: "賛成多数" },
+        { ...session.items[0], number: 86 },
+      ],
+    };
+    const memberVotes = {
+      "2026-09": {
+        members: [
+          { name: "議員A", faction: "甲会" },
+          { name: "議員B", faction: "乙党" },
+          { name: "議員C", faction: "乙党" },
+        ],
+        sourceUrl: "https://example.com/votes.pdf",
+        votes: { 議案85: "/〇×", 議会議案86: "/〇〇" },
+      },
+    };
+    const [split, unanimous] = buildOtaBills([records], [], memberVotes);
+    expect(split.memberVotes?.tally.forCount).toBe(1);
+    expect(split.memberVotes?.tally.againstCount).toBe(1);
+    expect(split.memberVotes?.sourceUrl).toBe("https://example.com/votes.pdf");
+    expect(unanimous.memberVotes).toBeNull();
+  });
+
+  it("採決前の「議員別の賛否は採決後に掲載」を公表済みの表現に直す", () => {
+    expect(
+      updateOtaDecisionText(
+        "議員別の賛否は、採決後に公式資料で確認して掲載します。"
+      )
+    ).toBe(
+      "議員ごとの賛否は、市議会の「各議員の議案に対する賛否」で公表されています。"
+    );
+  });
+
   it("政策の実施予定・金額は採決予定の修正に巻き込まない", () => {
     const sentence = "配備先は次の予定です。契約金額は5,434万円です。";
     expect(updateOtaDecisionText(sentence)).toBe(sentence);
