@@ -189,6 +189,22 @@ describe("tallySessionResults", () => {
     ["r5-4", 3],
     ["r5-3", 3],
     ["r5-2", 0],
+    ["r5-1", 4],
+    ["r4-5", 3],
+    ["r4-4", 2],
+    ["r4-3", 0],
+    ["r4-2", 7],
+    ["r4-1", 2],
+    ["r3-5", 4],
+    ["r3-4", 1],
+    ["r3-3", 0],
+    ["r3-2", 0],
+    ["r3-1", 6],
+    ["r2-5", 1],
+    ["r2-4", 2],
+    ["r2-3", 0],
+    ["r2-2", 1],
+    ["r2-1", 3],
   ] as const)("%s の賛否が分かれた議案は%i件で、件数の合計が全件と一致する", (id, split) => {
     const target = TAKASAKI_SESSIONS.find((s) => s.id === id);
     if (!target) throw new Error(`missing ${id}`);

@@ -2107,6 +2107,1950 @@ export const TAKASAKI_VOTE_ROSTERS: Readonly<
       url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/26701.pdf",
     },
   },
+  "r2-1": {
+    chair: "松本賢一",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+      {
+        name: "三島久美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第273号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7912.pdf",
+    },
+  },
+  "r2-2": {
+    chair: "渡辺幹治",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+      {
+        name: "三島久美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第274号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7976.pdf",
+    },
+  },
+  "r2-4": {
+    chair: "渡辺幹治",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+      {
+        name: "三島久美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第276号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7964.pdf",
+    },
+  },
+  "r2-5": {
+    chair: "渡辺幹治",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+      {
+        name: "三島久美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第277号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7956.pdf",
+    },
+  },
+  "r3-1": {
+    chair: "渡辺幹治",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+      {
+        name: "三島久美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第278号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7948.pdf",
+    },
+  },
+  "r3-4": {
+    chair: "渡辺幹治",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+      {
+        name: "三島久美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第281号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8000.pdf",
+    },
+  },
+  "r3-5": {
+    chair: "渡辺幹治",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+      {
+        name: "三島久美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第282号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7992.pdf",
+    },
+  },
+  "r4-1": {
+    chair: "渡辺幹治",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三島久美子",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第283号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7984.pdf",
+    },
+  },
+  "r4-2": {
+    chair: "根岸赴夫",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三島久美子",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第284号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8048.pdf",
+    },
+  },
+  "r4-4": {
+    chair: "根岸赴夫",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三島久美子",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第286号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8036.pdf",
+    },
+  },
+  "r4-5": {
+    chair: "根岸赴夫",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三島久美子",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第287号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8028.pdf",
+    },
+  },
+  "r5-1": {
+    chair: "根岸赴夫",
+    members: [
+      {
+        name: "大河原吉明",
+        faction: "新風会",
+      },
+      {
+        name: "青木和也",
+        faction: "新風会",
+      },
+      {
+        name: "丸山芳典",
+        faction: "新風会",
+      },
+      {
+        name: "樋口哲郎",
+        faction: "新風会",
+      },
+      {
+        name: "清水明夫",
+        faction: "新風会",
+      },
+      {
+        name: "後藤彰",
+        faction: "新風会",
+      },
+      {
+        name: "片貝喜一郎",
+        faction: "新風会",
+      },
+      {
+        name: "時田裕之",
+        faction: "新風会",
+      },
+      {
+        name: "大竹隆一",
+        faction: "新風会",
+      },
+      {
+        name: "根岸赴夫",
+        faction: "新風会",
+      },
+      {
+        name: "飯塚邦広",
+        faction: "新風会",
+      },
+      {
+        name: "渡辺幹治",
+        faction: "新風会",
+      },
+      {
+        name: "長壁真樹",
+        faction: "新風会",
+      },
+      {
+        name: "白石隆夫",
+        faction: "新風会",
+      },
+      {
+        name: "柄沢高男",
+        faction: "新風会",
+      },
+      {
+        name: "松本賢一",
+        faction: "新風会",
+      },
+      {
+        name: "石川徹",
+        faction: "新風会",
+      },
+      {
+        name: "後閑太一",
+        faction: "新風会",
+      },
+      {
+        name: "後閑賢二",
+        faction: "新風会",
+      },
+      {
+        name: "丸山和久",
+        faction: "新風会",
+      },
+      {
+        name: "柴田正夫",
+        faction: "新風会",
+      },
+      {
+        name: "柴田和正",
+        faction: "新風会",
+      },
+      {
+        name: "田中治男",
+        faction: "新風会",
+      },
+      {
+        name: "荒木征二",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三井暢秀",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中島輝男",
+        faction: "市民クラブ",
+      },
+      {
+        name: "林恒徳",
+        faction: "市民クラブ",
+      },
+      {
+        name: "堀口順",
+        faction: "市民クラブ",
+      },
+      {
+        name: "三島久美子",
+        faction: "市民クラブ",
+      },
+      {
+        name: "高橋美奈雄",
+        faction: "市民クラブ",
+      },
+      {
+        name: "中村さと美",
+        faction: "公明党",
+      },
+      {
+        name: "小野聡子",
+        faction: "公明党",
+      },
+      {
+        name: "新保克佳",
+        faction: "公明党",
+      },
+      {
+        name: "逆瀬川義久",
+        faction: "公明党",
+      },
+      {
+        name: "丸山覚",
+        faction: "公明党",
+      },
+      {
+        name: "伊藤敦博",
+        faction: "日本共産党",
+      },
+      {
+        name: "依田好明",
+        faction: "日本共産党",
+      },
+      {
+        name: "谷川留美子",
+        faction: "無所属",
+      },
+    ],
+    source: {
+      label:
+        "たかさき市議会だより第288号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8020.pdf",
+    },
+  },
 };
 
 /**
@@ -3628,5 +5572,1657 @@ export const TAKASAKI_SPLIT_VOTES: Readonly<
     ],
     reasonsNote:
       "本会議で採択に反対の立場からの討論はありませんでした。市民経済常任委員長の報告では、委員会で「市はすでに自給率向上につながる施策を行っており、あえて宣言する必要はない」「食料自給率は国が目標を定めて国全体で目指すもので、市町村の宣言はなじまない」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r2-1-seigan-1": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "渡辺幹治",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第273号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7912.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "日米地位協定のもとで米軍は日本の航空法などが適用されず、事件・事故にも日本の警察が直接手を出せないと述べました。全国知事会も抜本的見直しを提言しているとして、市民の命と生活を守るため、協定の改定を国に求める意見書に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2020&TYY=2020&KGNO=683&FINO=1616&HUID=153302&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。総務常任委員長の報告では、委員会で「日米地位協定が果たしてきた役割や、国の専管事項であることを踏まえると意見書を出す必要はない」「締結から60年たち状況が変わったことには賛同できるが、オスプレイ等に触れた部分は理解に苦しむ」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r2-1-seigan-2": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "渡辺幹治",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第273号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7912.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "65歳以上の約半数が難聴でコミュニケーションに困難を抱え、孤立や認知症の要因にもなっていると述べました。補聴器は高価で、障害者認定で補助を受けられるのはごく一部だとして、自治体独自の購入助成と健診への聴力検査の追加を求める請願に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2020&TYY=2020&KGNO=683&FINO=1616&HUID=153302&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「新たに助成制度を作るより、障害者認定など今ある制度の周知が先」「補聴器購入費を医療費控除の対象にする制度がすでにある」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r2-1-seigan-3": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "渡辺幹治",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第273号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7912.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "国保税はほかの医療保険より高く、滞納で資格証明書になると窓口で全額を払えず受診を控えてしまうと述べました。約48億円ある国保の基金を使えば、18歳以下の子どもの均等割（1人3万2,400円）を減免できるとして、請願に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2020&TYY=2020&KGNO=683&FINO=1616&HUID=153304&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。市民経済常任委員長の報告では、委員会で「資格証明書の世帯でも高校生以下の子どもには保険証が交付されており、受診抑制にはつながらない」「18歳以下の均等割減免は国が制度として考えることで、自治体が財政負担するのはいかがなものか」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r2-2-shonin-5": {
+    question: "専決処分を承認することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第274号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7976.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "国保税の課税限度額を医療分で2万円、介護分で1万円引き上げる専決処分です。低所得者の軽減の拡充は約760万円と少なすぎ、加入者の負担を増やし続けるのは限界だと述べました。約48億円の基金を使い、コロナ禍の今こそ国保税を引き下げるべきだとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2020&TYY=2020&KGNO=694&FINO=1623&HUID=153714&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "承認に賛成の立場からの討論はありませんでした。",
+  },
+  "r2-4-gian-98": {
+    question: "委員長の報告のとおり認定することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第276号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7964.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "大型開発が優先され、福祉や生活道路、市営住宅の改修などが後回しになっていると述べました。東邦亜鉛の有害スラグ問題で市が措置命令を出すよう求め、国保の資格証明書の発行や、約48億円の基金があるのに国保税を引き下げないことにも同意できないとして、決算の認定に反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2020&TYY=2020&KGNO=716&FINO=1662&HUID=157098&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "飯塚邦広",
+        faction: "新風会",
+        summary:
+          "市税収入が前年より1%増え、30億円を財政調整基金に積み立てた健全な財政運営を評価しました。英語教育の充実や学校トイレの洋式化、子育て・介護SOSサービス、高崎芸術劇場の開館、台風19号からの迅速な復旧などを挙げ、認定に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2020&TYY=2020&KGNO=716&FINO=1662&HUID=157100&HATSUGENMODE=1",
+      },
+    ],
+  },
+  "r2-4-seigan-4": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第276号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7964.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "核兵器禁止条約は批准国が46か国に達し、まもなく発効すると述べました。唯一の戦争被爆国の日本政府は後ろ向きだが、地方議会が安全保障に口を出すべきでないという考えは住民の命を守る責任の放棄だとして、核兵器廃絶平和都市宣言をした市の議会として採択するよう求めました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2020&TYY=2020&KGNO=716&FINO=1662&HUID=157109&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。総務常任委員長の報告では、委員会で「地方議員には安全保障や外交の権限がなく、国会の慎重な審議に委ねるべき。安易な意見書は国会議員の判断に足かせをはめる」「核兵器禁止条約よりも核兵器不拡散条約を推進していくことが大切」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r2-5-seigan-5": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第277号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7956.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "国も自治体が給食費を全額補助することは認めているとし、子育て世帯の約7割が生活が苦しいと答えている中で、県内35市町村のうち11市町村がすでに無料化していると述べました。年18億円かかることは理解するとしつつ、中学3年生からの段階的実施や県への支援要請も含めて前向きな検討を求めました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2020&TYY=2020&KGNO=731&FINO=1682&HUID=158263&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「約18億円の食材費を市が負担すると、教育全体の質の低下が懸念される」「学校給食法で食材費は保護者負担とされており、各家庭の負担が原則」「市の子育て支援を総合的に見ると、無料化は時期尚早」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r3-1-gian-45": {
+    question: "委員長の報告のとおり原案可決とすることに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+      absent: ["堀口順"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第278号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7948.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "来年度の介護保険料を据え置く改正です。保険料は制度開始から20年で倍以上になったと述べ、約20億円の基金の一部を使えば、前橋市や伊勢崎市のように月800円程度の引き下げができるとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160471&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "松本賢一",
+        faction: "新風会",
+        summary:
+          "コロナ対応のなかでも市独自の経済対策で税収基盤を強め、福祉や教育、子育て支援を充実させてきたと述べ、新規事業が多く盛り込まれた令和3年度予算と関連議案のすべてに賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160473&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "三井暢秀",
+        faction: "市民クラブ",
+        summary:
+          "国の地方財政計画が前年度比1.0%減となるなか、一般会計を0.4%減にとどめた引き締まった予算だと評価し、関連議案を含めて速やかに可決することが市民福祉の向上につながるとして賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160475&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "新保克佳",
+        faction: "公明党",
+        summary:
+          "安心・安全で豊かな市民生活と、新型コロナの克服を目指す予算だと受け止め、関連議案のすべてを速やかに可決して執行することが難局を乗り越える市の役割だとして賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160477&HATSUGENMODE=1",
+      },
+    ],
+  },
+  "r3-1-gian-50": {
+    question: "委員長の報告のとおり原案可決とすることに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+      absent: ["堀口順"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第278号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7948.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "国保税を来年度も据え置く予算です。約48億円の国保の基金があり、コロナで最も影響を受けている自営業や非正規の加入者のために引き下げるべきだと述べました。せめて子どもの均等割を減額してほしいという要望も筋が通っているとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160471&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "松本賢一",
+        faction: "新風会",
+        summary:
+          "コロナ対応のなかでも市独自の経済対策で税収基盤を強め、福祉や教育、子育て支援を充実させてきたと述べ、新規事業が多く盛り込まれた令和3年度予算と関連議案のすべてに賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160473&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "三井暢秀",
+        faction: "市民クラブ",
+        summary:
+          "国の地方財政計画が前年度比1.0%減となるなか、一般会計を0.4%減にとどめた引き締まった予算だと評価し、関連議案を含めて速やかに可決することが市民福祉の向上につながるとして賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160475&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "新保克佳",
+        faction: "公明党",
+        summary:
+          "安心・安全で豊かな市民生活と、新型コロナの克服を目指す予算だと受け止め、関連議案のすべてを速やかに可決して執行することが難局を乗り越える市の役割だとして賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160477&HATSUGENMODE=1",
+      },
+    ],
+  },
+  "r3-1-gian-51": {
+    question: "委員長の報告のとおり原案可決とすることに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+      absent: ["堀口順"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第278号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7948.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "介護保険料を据え置く介護保険特別会計の予算です。高すぎる保険料を据え置くのは市民の生活に寄り添った施策とは言えず、ため込んだ基金を使って引き下げるべきだとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160471&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "松本賢一",
+        faction: "新風会",
+        summary:
+          "コロナ対応のなかでも市独自の経済対策で税収基盤を強め、福祉や教育、子育て支援を充実させてきたと述べ、新規事業が多く盛り込まれた令和3年度予算と関連議案のすべてに賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160473&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "三井暢秀",
+        faction: "市民クラブ",
+        summary:
+          "国の地方財政計画が前年度比1.0%減となるなか、一般会計を0.4%減にとどめた引き締まった予算だと評価し、関連議案を含めて速やかに可決することが市民福祉の向上につながるとして賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160475&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "新保克佳",
+        faction: "公明党",
+        summary:
+          "安心・安全で豊かな市民生活と、新型コロナの克服を目指す予算だと受け止め、関連議案のすべてを速やかに可決して執行することが難局を乗り越える市の役割だとして賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160477&HATSUGENMODE=1",
+      },
+    ],
+  },
+  "r3-1-seigan-1": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+      absent: ["堀口順"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第278号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7948.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "WHOは41デシベルから補聴器を勧めているが、日本では70デシベルを超えないと補助が受けられず、市内の65歳以上で補助を受けたのは令和元年に161人だけだと述べました。難聴は認知症などの引き金になるとして、補聴器購入の助成と健診への聴力検査の追加を求めました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160490&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「趣旨は理解できるが、国の基準で行っている健診などの現行制度で最善を尽くすことが優先」「聴力検査を入れるには防音室や機器、検査技師の養成など課題があり現実的でない」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r3-1-seigan-2": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+      absent: ["堀口順"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第278号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7948.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "資格証明書の世帯の多くは経済的に困窮しており、受診をためらって重症化するケースがあると述べました。子どもの均等割の減免は約1億5,800万円で、約48億円の基金で十分にできるとして、国の未就学児の軽減を待たずに18歳未満まで軽減するよう求めました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160490&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。市民経済常任委員長の報告では、委員会で「資格証明書は滞納世帯との相談の機会を確保するもので、短期被保険者証など柔軟な対応もしている」「資格証明書を交付しないのは納税の公平性に欠ける」「均等割の減免は国が制度として確立すべきで、国の未就学児の軽減の動向を注視したほうがよい」「基金は恒久財源ではない」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r3-1-seigan-3": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+      absent: ["堀口順"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第278号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7948.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "コロナ禍で医療崩壊の危機が叫ばれる背景には、社会保障費の抑制で病床や公的病院、保健所が減らされてきたことがあると述べました。医療・介護の財源確保や医師・看護師・介護職員の増員、保健所の拡充などを国に求める意見書に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=743&FINO=1703&HUID=160490&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「財源の裏づけがないまま、医療・介護職の増員と国民負担の軽減を求めるのは矛盾している」「国や県の動向を注視すべき内容もある」「市はコロナ禍で独自の支援も含めて医療機関と連携している」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r3-4-seigan-4": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第281号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8000.pdf",
+    },
+    reasons: [],
+    reasonsNote:
+      "本会議では討論がありませんでした。総務常任委員長の報告では、委員会で「請願の趣旨に賛成」という意見がある一方、「核保有国を対話のテーブルに着けなければ現実的に核はなくならず、そのアプローチを考えると願意に沿えない」「北朝鮮の脅威に対する最大の抑止力は日米安全保障条約で、国の専管事項。核兵器不拡散条約を推進するほうが重要」といった意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r3-5-gian-125": {
+    question: "委員長の報告のとおり原案可決とすることに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第282号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7992.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "重度心身障害者の医療費助成に令和5年8月から所得制限を入れる改正です。市の試算で約290人が対象から外れ、1人あたり年間約14万8,000円の窓口負担が生じると述べました。公平性を言うなら富裕層や大企業に負担を求めるべきで、弱者を狙った福祉医療の切り捨ては許せないとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=794&FINO=1772&HUID=165347&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r3-5-seigan-5": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第282号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7992.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "文部科学省も自治体の判断で給食費を無料にできるとしており、県内の8割の市町村がすでに完全または一部無料化していると述べました。就学援助は申請しにくく行き渡っていないとして、県と費用を分担する形も含め、一部からでも無料化に踏み出すよう求めました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=794&FINO=1772&HUID=165357&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「憲法は給食費の無償までは定めておらず、年約18億円の財源をどこから出すかが大きな問題」「将来の無償化も考えられなくはないが、保護者の自覚も含めて食材費は負担してほしい」「低所得者には就学援助や生活保護の給食費相当額がある」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r3-5-seigan-6": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第282号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7992.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "コロナの感染拡大で入院できずに亡くなる人が出たのは、長年保健所や病床を減らし、医師・看護師不足を放置してきた結果だと述べました。医療・介護職員の大幅な増員、公立・公的病院の再編統合の見直し、75歳以上の窓口負担2割化の中止などを国に求める意見書に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=794&FINO=1772&HUID=165357&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「市内では民間病院もコロナ患者を受け入れ、県は確保目標を上回る病床を確保するなど対応できている」「世代間の公平を考えると、後期高齢者に2割の自己負担をお願いするのは適当」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r3-5-seigan-7": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "飯塚邦広",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+        "三島久美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第282号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7992.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "土地利用規制法は十分な審議なしに成立し、何が阻害行為に当たるかを政府が決められると述べました。市内の自衛隊駐屯地や高崎駅周辺が対象になれば、不動産価値の下落や私権の制限が起こりうるとして、注視区域の指定で地元自治体の意見を聴くよう国に求める意見書に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2021&TYY=2021&KGNO=794&FINO=1772&HUID=165359&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。建設水道常任委員長の報告では、委員会で「法律の附帯決議で、注視区域の指定の際は地方公共団体の意見を聴くと基本方針に定めることになっており、改めて意見書を出す必要はない」「まずは国会の附帯決議が誠実に実行されることが大事」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r4-1-seigan-1": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "三島久美子",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+      absent: ["飯塚邦広"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第283号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7984.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "70デシベル未満の中程度の難聴には国の補助がなく、補聴器は両耳で30万円ほどかかり年金生活者には大きな負担だと述べました。全国35以上の市町村が独自に助成しており、認知症の予防や医療・介護費の抑制にもつながるとして、健診への聴力検査の追加と市独自の助成を求めました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=805&FINO=1793&HUID=167335&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「補聴器の補助の基準は国の制度で定められており、国で議論されるべき事項」「市は国の基準に基づいてできる限り対応しており、請願は市の状況にそぐわない」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r4-1-seigan-2": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "根岸赴夫",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "三島久美子",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+      absent: ["飯塚邦広"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第283号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/7984.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "群馬県の最低賃金は865円で、8時間働いても手取り12万〜14万円にしかならず、県境を越えると時給が100円違うと述べました。地域間格差が人口流出を招いているとして、全国一律の最低賃金制度と、賃上げのための中小企業への助成・融資の拡充を求める意見書に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=805&FINO=1793&HUID=167337&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。市民経済常任委員長の報告では、委員会で「時給1,500円という試算は現実とかけ離れている」「中小企業への支援は、国が業務改善助成金や事業再構築補助金などですでに取り組んでいる」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r4-2-gian-46": {
+    question: "原案のとおり可決することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第284号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8048.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "人事院勧告に基づいて職員の期末手当（ボーナス）を引き下げる改正で、職員1人あたり平均約10万6,000円の減収になります。物価高や円安で国民生活が厳しいなかでの賞与のカットは、保育士や学童クラブ指導員の給与を通じて地域経済にも悪影響を与えると述べました。コロナ対応で奮闘する職員の働きにも報いていないとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=816&FINO=1800&HUID=167668&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r4-2-gian-48": {
+    question: "原案のとおり可決することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第284号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8048.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "議案第46号の期末手当の引き下げに合わせて人件費を減らす補正予算です。物価高や円安で国民生活が厳しいなかでの賞与のカットは、保育士や学童クラブ指導員の給与を通じて地域経済にも悪影響を与えると述べました。コロナ対応で奮闘する職員の働きにも報いていないとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=816&FINO=1800&HUID=167668&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r4-2-gian-49": {
+    question: "原案のとおり可決することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第284号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8048.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "議案第46号の期末手当の引き下げに合わせて人件費を減らす補正予算です。物価高や円安で国民生活が厳しいなかでの賞与のカットは、保育士や学童クラブ指導員の給与を通じて地域経済にも悪影響を与えると述べました。コロナ対応で奮闘する職員の働きにも報いていないとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=816&FINO=1800&HUID=167668&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r4-2-gian-50": {
+    question: "原案のとおり可決することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第284号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8048.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "議案第46号の期末手当の引き下げに合わせて人件費を減らす補正予算です。物価高や円安で国民生活が厳しいなかでの賞与のカットは、保育士や学童クラブ指導員の給与を通じて地域経済にも悪影響を与えると述べました。コロナ対応で奮闘する職員の働きにも報いていないとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=816&FINO=1800&HUID=167668&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r4-2-gian-51": {
+    question: "原案のとおり可決することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第284号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8048.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "議案第46号の期末手当の引き下げに合わせて人件費を減らす補正予算です。物価高や円安で国民生活が厳しいなかでの賞与のカットは、保育士や学童クラブ指導員の給与を通じて地域経済にも悪影響を与えると述べました。コロナ対応で奮闘する職員の働きにも報いていないとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=816&FINO=1800&HUID=167668&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r4-2-gian-52": {
+    question: "原案のとおり可決することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第284号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8048.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "議案第46号の期末手当の引き下げに合わせて人件費を減らす補正予算です。物価高や円安で国民生活が厳しいなかでの賞与のカットは、保育士や学童クラブ指導員の給与を通じて地域経済にも悪影響を与えると述べました。コロナ対応で奮闘する職員の働きにも報いていないとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=816&FINO=1800&HUID=167668&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r4-2-gian-53": {
+    question: "原案のとおり可決することに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第284号 4ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8048.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "議案第46号の期末手当の引き下げに合わせて人件費を減らす補正予算です。物価高や円安で国民生活が厳しいなかでの賞与のカットは、保育士や学童クラブ指導員の給与を通じて地域経済にも悪影響を与えると述べました。コロナ対応で奮闘する職員の働きにも報いていないとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=816&FINO=1800&HUID=167668&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r4-4-seigan-3": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "飯塚邦広",
+        "渡辺幹治",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "三島久美子",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第286号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8036.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "核兵器禁止条約は2021年に発効し66か国が批准した一方、NPT再検討会議は2回続けて決裂したと述べました。ロシアが核の使用をちらつかせる今こそ、唯一の戦争被爆国としてせめて締約国会議にオブザーバー参加すべきで、県内でも21自治体が同じ意見書を出しているとして賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=838&FINO=1840&HUID=170978&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。総務常任委員長の報告では、委員会で「核兵器廃絶には共感するが、安全保障環境が厳しさを増す中では米国と歩調を合わせ、核兵器不拡散条約で成果を得ることが重要」「国民を守る手段や優先順位は国の専管事項で、国会の慎重な審議に委ねるべき」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r4-4-seigan-4": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "飯塚邦広",
+        "渡辺幹治",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "三島久美子",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第286号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8036.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "インボイス制度が始まると売上げ1,000万円以下の免税業者に事務と税の負担がかかり、登録しなければ仕事を失うおそれがあると述べました。対象はフリーランスやシルバー人材センターで働く高齢者まで約1,000万人に及び、日本商工会議所なども慎重な検討を求めているとして、実施中止を求める意見書に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=838&FINO=1840&HUID=170980&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。市民経済常任委員長の報告では、委員会で「益税の解消や、消費税分を価格転嫁できない下請取引の慣習の見直しなどのメリットがある」「消費税分が益税として事業者に残る不公平感もあり、導入は仕方がない」「導入の意義は認めざるを得ないが、実施時期やサポート体制の議論はまだ必要」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r4-5-gian-103": {
+    question: "委員長の報告のとおり原案可決とすることに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+      absent: ["長壁真樹", "白石隆夫", "高橋美奈雄"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第287号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8028.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "国の個人情報保護法の改正に合わせ、市の個人情報保護条例を国のルールに一元化する条例です。自治体が独自に積み上げてきた保護の仕組みを取り崩し、地方自治を侵害すると述べました。個人情報が本人の同意なく企業の利益のために使われ、プライバシーが侵害されるおそれがあるとして反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=853&FINO=1861&HUID=172305&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote: "賛成の立場からの討論はありませんでした。",
+  },
+  "r4-5-seigan-5": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "飯塚邦広",
+        "渡辺幹治",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "三島久美子",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+      absent: ["長壁真樹", "白石隆夫", "高橋美奈雄"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第287号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8028.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "給食費の無料化は5年で全国224自治体に広がり、県内で何の補助もしていないのは高崎市を含む4市町村だけになったと述べました。いきなりの無料化が難しくても、一部補助や学年ごとの段階的な実施、国や県への支援要請から進めるよう求めました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=853&FINO=1861&HUID=172314&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「保護者負担の軽減には賛成だが、無料化には約17億円かかる」「支払いが難しい家庭には就学援助があり、安全・安心な自校方式の給食を続けるためにも食材費は負担してほしい」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r4-5-seigan-6": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "飯塚邦広",
+        "渡辺幹治",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田正夫",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "三島久美子",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+      absent: ["長壁真樹", "白石隆夫", "高橋美奈雄"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第287号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8028.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "1病床あたりの医師・看護師の数は欧米より大幅に少なく、長時間労働と低い賃金が続いていると述べました。防衛費を5年で43兆円に増やすより看護師を増やすべきだとして、医療・介護職員の配置基準の見直しと大幅な増員、処遇改善を国に求める意見書に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2022&TYY=2022&KGNO=853&FINO=1861&HUID=172314&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「少子高齢化が急速に進む中、利用者に所得に応じた負担をしてもらうのは必要」「処遇改善はすでに国が実施している」「現場の中から少しずつ変えていくしかない」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r5-1-gian-37": {
+    question: "委員長の報告のとおり原案可決とすることに賛成",
+    rollCall: {
+      against: ["伊藤敦博", "依田好明"],
+      absent: ["柴田正夫"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第288号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8020.pdf",
+    },
+    reasons: [
+      {
+        side: "反対",
+        member: "依田好明",
+        faction: "日本共産党",
+        summary:
+          "高校生世代までの医療費無料化などは評価しつつ、給食費の無料化に前向きでないこと、利用者が少なく渋滞の原因にもなっているアリーナシャトルの運行継続、中学2年生全員への民間の英語4技能テスト、デマンド交通を否定していることに反対しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2023&TYY=2023&KGNO=866&FINO=1883&HUID=174106&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "時田裕之",
+        faction: "新風会",
+        summary:
+          "コロナ後の社会経済の正常化が期待される一方、物価高で市民生活は厳しいと述べ、「新しい高崎」の実現に向けて提案された全ての議案に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2023&TYY=2023&KGNO=866&FINO=1883&HUID=174108&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "林恒徳",
+        faction: "市民クラブ",
+        summary:
+          "市税収入を過去の実績に基づいて見込んだ、背伸びをしない予算づくりを評価し、令和5年度予算と関連議案に賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2023&TYY=2023&KGNO=866&FINO=1883&HUID=174110&HATSUGENMODE=1",
+      },
+      {
+        side: "賛成",
+        member: "丸山覚",
+        faction: "公明党",
+        summary:
+          "経費を削減して債務残高を圧縮しつつ、成長につながる事業に財源を重点配分する財政運営を評価し、道路の穴ぼこ補修などの生活環境の改善策も挙げて賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2023&TYY=2023&KGNO=866&FINO=1883&HUID=174112&HATSUGENMODE=1",
+      },
+    ],
+  },
+  "r5-1-seigan-1": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "飯塚邦広",
+        "渡辺幹治",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田和正",
+        "田中治男",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+      absent: ["柴田正夫"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第288号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8020.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "保育現場の事故や虐待の背景には慢性的な人手不足があり、4・5歳児30人を保育士1人がみる今の配置基準は70年以上前のものだと述べました。国が子育て支援を打ち出した今こそ自治体から声を上げるべきで、国の動向を見守るのは地方議員の責任放棄だとして賛成しました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2023&TYY=2023&KGNO=866&FINO=1883&HUID=174121&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「保育士の配置基準や処遇改善はすでに国が異次元の少子化対策の一環として検討を始めており、まずは経過を見守るべき」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。採決では市民クラブの7人も採択に賛成しました。",
+  },
+  "r5-1-seigan-2": {
+    question: "請願を採択することに賛成",
+    rollCall: {
+      against: [
+        "大河原吉明",
+        "青木和也",
+        "丸山芳典",
+        "樋口哲郎",
+        "清水明夫",
+        "後藤彰",
+        "片貝喜一郎",
+        "時田裕之",
+        "大竹隆一",
+        "飯塚邦広",
+        "渡辺幹治",
+        "長壁真樹",
+        "白石隆夫",
+        "柄沢高男",
+        "松本賢一",
+        "石川徹",
+        "後閑太一",
+        "後閑賢二",
+        "丸山和久",
+        "柴田和正",
+        "田中治男",
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "三島久美子",
+        "高橋美奈雄",
+        "中村さと美",
+        "小野聡子",
+        "新保克佳",
+        "逆瀬川義久",
+        "丸山覚",
+        "谷川留美子",
+      ],
+      absent: ["柴田正夫"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第288号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8020.pdf",
+    },
+    reasons: [
+      {
+        side: "賛成",
+        member: "伊藤敦博",
+        faction: "日本共産党",
+        summary:
+          "加齢性難聴の人は全国で1,400万人以上いるのに、補聴器を持つ人は14.4%にとどまり、最大の理由は値段の高さだと述べました。全国約120の自治体が補助しており、認知症の予防や医療費の抑制にもつながるとして、補聴器購入の公的な助成を求めました。",
+        minutesUrl:
+          "https://takasaki.gijiroku.com/voices/cgi/voiweb.exe?ACT=203&KENSAKU=0&SORT=0&KTYP=0,1,2,3&KGTP=1,2,3&FYY=2023&TYY=2023&KGNO=866&FINO=1883&HUID=174121&HATSUGENMODE=1",
+      },
+    ],
+    reasonsNote:
+      "本会議で採択に反対の立場からの討論はありませんでした。教育福祉常任委員長の報告では、委員会で「市は国の基準に基づいてできる限り対応しており、国で議論されるべき内容」「難聴による障害者には補聴器購入の助成制度がすでにある」といった採択に賛成でない意見があったと報告されています（発言した委員名は報告されていません）。",
+  },
+  "r5-1-ikensho-1": {
+    question: "原案のとおり可決することに賛成",
+    rollCall: {
+      against: [
+        "荒木征二",
+        "三井暢秀",
+        "中島輝男",
+        "林恒徳",
+        "堀口順",
+        "三島久美子",
+        "高橋美奈雄",
+        "伊藤敦博",
+        "依田好明",
+      ],
+      absent: ["柴田正夫"],
+    },
+    voteSource: {
+      label:
+        "たかさき市議会だより第288号 12ページ（議案等審議結果・賛否一覧表）",
+      url: "https://www.city.takasaki.gunma.jp/uploaded/attachment/8020.pdf",
+    },
+    reasons: [],
+    reasonsNote:
+      "提出者の説明と委員会付託は省略され、本会議では質疑・討論がありませんでした。",
   },
 };

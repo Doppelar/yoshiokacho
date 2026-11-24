@@ -64,6 +64,25 @@ describe("賛否が分かれた議案の議員別賛否と理由", () => {
     expect(tally?.absentMembers).toEqual(["角倉邦良"]);
   });
 
+  it("令和2年5月と令和4年5月の議長交代を反映し、欠席者を数えない", () => {
+    const find = (id: string) => {
+      const found = splitItems.find(({ item }) => item.id === id);
+      if (!found) throw new Error(id);
+      return tallyItemVotes(found.session, found.item);
+    };
+    expect(find("r2-1-seigan-1")?.chair).toBe("松本賢一");
+    expect(find("r2-2-shonin-5")?.chair).toBe("渡辺幹治");
+    expect(find("r4-1-seigan-1")?.chair).toBe("渡辺幹治");
+    const tally = find("r4-5-gian-103");
+    expect(tally?.chair).toBe("根岸赴夫");
+    expect([tally?.forCount, tally?.againstCount]).toEqual([32, 2]);
+    expect(tally?.absentMembers).toEqual([
+      "長壁真樹",
+      "白石隆夫",
+      "高橋美奈雄",
+    ]);
+  });
+
   it("理由は会議録の発言へのリンクを持ち、賛成か反対のどちらか", () => {
     for (const { item } of splitItems) {
       for (const reason of getSplitVote(item.id)?.reasons ?? []) {

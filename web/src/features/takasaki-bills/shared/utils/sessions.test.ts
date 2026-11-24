@@ -3,16 +3,20 @@ import { TAKASAKI_SESSIONS } from "../sessions";
 import { findTakasakiItem, findTakasakiSession } from "./sessions";
 import { formatResult, tallyRollCall } from "./votes";
 
-describe("高崎市の令和5年5月（一般選挙後）からの会期", () => {
-  it("公式一覧の全19会期を公開し、詳細IDの衝突を防ぐ", () => {
-    expect(TAKASAKI_SESSIONS).toHaveLength(19);
+describe("高崎市の令和2年からの会期", () => {
+  it("公式一覧の全35会期を公開し、詳細IDの衝突を防ぐ", () => {
+    expect(TAKASAKI_SESSIONS).toHaveLength(35);
     expect(TAKASAKI_SESSIONS.map((s) => s.items.length)).toEqual([
-      31, 46, 7, 49, 4, 52, 36, 22, 5, 64, 40, 31, 24, 6, 75, 43, 28, 44, 9,
+      31, 46, 7, 49, 4, 52, 36, 22, 5, 64, 40, 31, 24, 6, 75, 43, 28, 44, 9, 60,
+      35, 32, 17, 14, 50, 28, 23, 36, 9, 72, 50, 28, 52, 10, 53,
     ]);
     const ids = TAKASAKI_SESSIONS.flatMap((s) => s.items.map((i) => i.id));
     expect(new Set(ids).size).toBe(ids.length);
     expect(findTakasakiItem("gian-92")?.session.id).toBe("r8-5");
     expect(findTakasakiItem("r5-3-gian-94")?.item.title).toBe(
+      "高崎市農業委員会委員の任命同意について"
+    );
+    expect(findTakasakiItem("r2-3-gian-70")?.item.title).toBe(
       "高崎市農業委員会委員の任命同意について"
     );
     expect(findTakasakiItem("r7-1-gian-1")?.item.title).toBe(
