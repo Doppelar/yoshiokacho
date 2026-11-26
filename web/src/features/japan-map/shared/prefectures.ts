@@ -65,7 +65,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 38.27,
     mapX: 92,
     mapY: 32,
-    status: "upcoming",
+    status: "live",
+    href: routes.miyagiMap(),
   },
   {
     id: "akita",

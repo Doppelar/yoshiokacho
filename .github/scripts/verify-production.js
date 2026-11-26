@@ -45,6 +45,10 @@ function loadExpectations() {
       path: "/fukushima",
       file: "web/src/features/fukushima-map/shared/municipalities.ts",
     },
+    {
+      path: "/miyagi",
+      file: "web/src/features/miyagi-map/shared/municipalities.ts",
+    },
   ];
   return maps.map((map) => ({
     path: map.path,

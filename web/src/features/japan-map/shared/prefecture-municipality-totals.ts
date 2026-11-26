@@ -16,6 +16,7 @@ export const PREFECTURE_MUNICIPALITY_TOTALS: Readonly<Record<string, number>> =
     kanagawa: 33,
     kyoto: 26,
     mie: 29,
+    miyagi: 35,
     nagano: 77,
     nara: 39,
     oita: 18,
