@@ -228,7 +228,9 @@ export const FUKUSHIMA_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "町",
     mapX: 36.863,
     mapY: 39.663,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-aizubange-machi-zxb71xpxkcj8z3/-WhkmZQho4b7S3ci7KEOBVLiwg5FWujPZA16T7V8x60",
+    external: true,
   },
   {
     id: "07422",
