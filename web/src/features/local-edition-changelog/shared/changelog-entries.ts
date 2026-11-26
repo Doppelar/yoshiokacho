@@ -14,6 +14,11 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-26",
+    title: "宮城県の市町村地図を追加し、仙台市を掲載しました",
+    href: routes.miyagiMap(),
+  },
+  {
+    date: "2026-11-26",
     title: "福島県会津坂下町を追加しました",
     href: routes.fukushimaMap(),
   },
