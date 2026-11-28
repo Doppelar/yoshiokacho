@@ -583,7 +583,9 @@ export const HOKKAIDO_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "村",
     mapX: 23.8,
     mapY: 58.5,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-akaigawa-mura-fxp6xqxsxiplxvxsp/b9iftoqBns1jsjoO3hkqNdIIWg_P824zVVfpjY3T3dI",
+    external: true,
   },
   {
     id: "01423",
