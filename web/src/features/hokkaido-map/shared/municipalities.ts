@@ -59,7 +59,9 @@ export const HOKKAIDO_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "市",
     mapX: 51.9,
     mapY: 65.1,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-obihiro-shi-jxp6xqxsnqaxo4xz/jHyKk8FQydZ-hMwiVUl4uB2vaYWweYgOmnYrJjf2zIw",
+    external: true,
   },
   {
     id: "01208",
@@ -67,7 +69,9 @@ export const HOKKAIDO_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "市",
     mapX: 61,
     mapY: 40.8,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-kitami-shi-xzxa6xfxmr7y5xin/TVB1tGEnYSEKoY4a7uE16_ao3LjwnJA-PX5NpL9e9FE",
+    external: true,
   },
   {
     id: "01209",
