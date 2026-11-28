@@ -34,7 +34,8 @@ export const PREFECTURES: readonly Prefecture[] = [
     lat: 43.45,
     mapX: 27,
     mapY: 23,
-    status: "upcoming",
+    status: "live",
+    href: routes.hokkaidoMap(),
   },
   {
     id: "aomori",
