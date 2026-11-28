@@ -46,6 +46,10 @@ function loadExpectations() {
       file: "web/src/features/fukushima-map/shared/municipalities.ts",
     },
     {
+      path: "/hokkaido",
+      file: "web/src/features/hokkaido-map/shared/municipalities.ts",
+    },
+    {
       path: "/miyagi",
       file: "web/src/features/miyagi-map/shared/municipalities.ts",
     },

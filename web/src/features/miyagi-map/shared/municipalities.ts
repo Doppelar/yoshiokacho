@@ -66,7 +66,9 @@ export const MIYAGI_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "市",
     mapX: 51.6,
     mapY: 57,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-tagajo-shi-kxb6xqxrrxvexu5xa/-dggdASfRIp89-51NDae2i2KG0L4K56UrxLEu02itQQ",
+    external: true,
   },
   {
     id: "04211",

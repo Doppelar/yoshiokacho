@@ -13,6 +13,17 @@ export type LocalEditionChangelogEntry = {
  */
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
+    date: "2026-11-28",
+    title: "宮城県多賀城市を追加しました",
+    href: routes.miyagiMap(),
+  },
+  {
+    date: "2026-11-28",
+    title:
+      "北海道の市町村地図を追加し、室蘭市・帯広市・北見市・赤井川村を掲載しました",
+    href: routes.hokkaidoMap(),
+  },
+  {
     date: "2026-11-26",
     title: "宮城県の市町村地図を追加し、仙台市を掲載しました",
     href: routes.miyagiMap(),

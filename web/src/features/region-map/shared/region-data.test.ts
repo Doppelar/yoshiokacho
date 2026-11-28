@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { AOMORI_MUNICIPALITIES } from "@/features/aomori-map/shared/municipalities";
 import { FUKUSHIMA_MUNICIPALITIES } from "@/features/fukushima-map/shared/municipalities";
+import { HOKKAIDO_MUNICIPALITIES } from "@/features/hokkaido-map/shared/municipalities";
 import { KYOTO_MUNICIPALITIES } from "@/features/kyoto-map/shared/municipalities";
 import { MIYAGI_MUNICIPALITIES } from "@/features/miyagi-map/shared/municipalities";
 import { SHIMANE_MUNICIPALITIES } from "@/features/shimane-map/shared/municipalities";
@@ -18,6 +19,7 @@ describe("県別市町村地図データ", () => {
     ["京都府", KYOTO_MUNICIPALITIES, 26],
     ["福島県", FUKUSHIMA_MUNICIPALITIES, 59],
     ["宮城県", MIYAGI_MUNICIPALITIES, 35],
+    ["北海道", HOKKAIDO_MUNICIPALITIES, 179],
   ] as const) {
     it(name + "の全自治体を重複せず保持し、地図上に配置する", () => {
       expect(data).toHaveLength(expectedCount);

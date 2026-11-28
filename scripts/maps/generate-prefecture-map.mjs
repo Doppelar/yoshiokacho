@@ -19,6 +19,14 @@ const PREFECTURES = {
   fukuoka: { code: "40", name: "福岡県", labelSize: 11 },
   gunma: { code: "10", name: "群馬県", labelSize: 12 },
   hiroshima: { code: "34", name: "広島県", labelSize: 13 },
+  // 北方領土の6村（01695〜01700）は179市町村に含めず、地図の枠合わせからも外す。
+  hokkaido: {
+    code: "01",
+    name: "北海道",
+    labelSize: 8,
+    minStep: 1,
+    exclude: new Set(["01695", "01696", "01697", "01698", "01699", "01700"]),
+  },
   kanagawa: { code: "14", name: "神奈川県", labelSize: 12 },
   kyoto: { code: "26", name: "京都府", labelSize: 12 },
   miyagi: { code: "04", name: "宮城県", labelSize: 12 },
@@ -87,7 +95,7 @@ const features = topology.objects.city.geometries.map((geometry) => {
   return {
     code: N03_007,
     name: N03_004 ?? N03_003 ?? "",
-    municipality: Number(N03_007) % 1000 < 800,
+    municipality: Number(N03_007) % 1000 < 800 && !pref.exclude?.has(N03_007),
     polygons: geometry.arcs.map((polygon) => polygon.map(ring)),
   };
 });
@@ -156,21 +164,24 @@ function firstPoint(feature) {
   return feature.polygons[0][0][0];
 }
 
+// 北海道のように点が多いと Math.min(...xs) は呼び出しスタックを超えるため、1つずつ比べる。
+function range(values) {
+  let min = Infinity;
+  let max = -Infinity;
+  for (const v of values) {
+    if (v < min) min = v;
+    if (v > max) max = v;
+  }
+  return [min, max];
+}
+
 function bounds(fitFeatures) {
-  const lats = fitFeatures.flatMap((f) => f.polygons.flat(2).map(([, lat]) => lat));
-  const cosLat = Math.cos(
-    (((Math.min(...lats) + Math.max(...lats)) / 2) * Math.PI) / 180
-  );
   const points = fitFeatures.flatMap((f) => f.polygons.flat(2));
-  const xs = points.map(([lon]) => lon * cosLat);
-  const ys = points.map(([, lat]) => -lat);
-  return {
-    cosLat,
-    minX: Math.min(...xs),
-    maxX: Math.max(...xs),
-    minY: Math.min(...ys),
-    maxY: Math.max(...ys),
-  };
+  const [minLat, maxLat] = range(points.map(([, lat]) => lat));
+  const cosLat = Math.cos((((minLat + maxLat) / 2) * Math.PI) / 180);
+  const [minX, maxX] = range(points.map(([lon]) => lon * cosLat));
+  const [minY, maxY] = range(points.map(([, lat]) => -lat));
+  return { cosLat, minX, maxX, minY, maxY };
 }
 
 // 幅 width の枠に収める投影。原点 (ox, oy) から描く。
@@ -187,15 +198,29 @@ function createProjection(fitFeatures, width, ox, oy, padding) {
 
 const fmt = (n) => n.toFixed(1);
 
+// minStep（px）を指定した県は、直前に残した点から minStep 未満の点を省き、
+// minStep 未満の大きさの小島は描かない（北海道の SVG を軽くするため）。
+function thin(points, step) {
+  if (!step) return points;
+  const kept = [points[0]];
+  for (const p of points.slice(1)) {
+    const last = kept[kept.length - 1];
+    if (Math.hypot(p[0] - last[0], p[1] - last[1]) >= step) kept.push(p);
+  }
+  const [minX, maxX] = range(kept.map(([x]) => x));
+  const [minY, maxY] = range(kept.map(([, y]) => y));
+  return kept.length >= 3 && Math.max(maxX - minX, maxY - minY) >= step
+    ? kept
+    : [];
+}
+
 function pathData(polygons, project) {
   return polygons
     .flat()
+    .map((points) => thin(points.map(project), pref.minStep))
+    .filter((points) => points.length)
     .map(
-      (points) =>
-        `M${points
-          .map(project)
-          .map(([x, y]) => `${fmt(x)},${fmt(y)}`)
-          .join("L")}Z`
+      (points) => `M${points.map(([x, y]) => `${fmt(x)},${fmt(y)}`).join("L")}Z`
     )
     .join("");
 }
