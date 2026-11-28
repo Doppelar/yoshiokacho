@@ -14,7 +14,7 @@ export type LocalEditionChangelogEntry = {
 export const LOCAL_EDITION_CHANGELOG: readonly LocalEditionChangelogEntry[] = [
   {
     date: "2026-11-28",
-    title: "北海道愛別町を追加しました",
+    title: "北海道赤平市・愛別町を追加しました",
     href: routes.hokkaidoMap(),
   },
   {

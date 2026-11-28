@@ -151,7 +151,9 @@ export const HOKKAIDO_MUNICIPALITIES: readonly RegionMunicipality[] = [
     type: "市",
     mapX: 39.1,
     mapY: 47.1,
-    status: "upcoming",
+    status: "live",
+    href: "https://muse.ai/s/mirai-gikai-akabira-shi-xnxv6txzfxkxnxux0xv/CIJ1LVQCraMV8McYx4oPcOQUBJEBBr76zX2Htg869GI",
+    external: true,
   },
   {
     id: "01219",
